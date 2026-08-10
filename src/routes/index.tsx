@@ -96,7 +96,7 @@ function CategoryBand({ label, highlight }: { label: string; highlight: string }
   return (
     <section className="surface-band">
       <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-        <h2 className="text-3xl font-semibold sm:text-4xl">
+        <h2 className="font-body text-3xl font-bold sm:text-4xl">
           {label} <span className="text-brand-cyan">{highlight}</span>
         </h2>
       </div>
@@ -175,7 +175,7 @@ function Index() {
               <span className="inline-block rounded-full border border-border px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em]">
                 About me
               </span>
-              <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
+              <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
                 Hi, I&apos;m Bruce Mabasa.
               </h1>
               <p className="mt-5 max-w-xl text-muted-foreground">
@@ -278,7 +278,7 @@ function Index() {
         {/* Tools & LMS */}
         <section className="surface-band">
           <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-            <h2 className="text-3xl font-semibold sm:text-4xl">
+            <h2 className="font-body text-3xl font-bold sm:text-4xl">
               eLearning Tools &amp;{" "}
               <span className="text-brand-cyan">Learning Management Systems</span>
             </h2>
@@ -302,7 +302,7 @@ function Index() {
               <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
                 Methodology
               </span>
-              <h2 className="mt-6 text-4xl font-bold sm:text-5xl">
+              <h2 className="mt-6 font-body text-4xl font-bold sm:text-5xl">
                 How your course gets built
                 <br />
                 <span className="text-brand-cyan">the ADDIE</span>{" "}
@@ -326,7 +326,7 @@ function Index() {
                   <span className="inline-block rounded-full bg-accent px-3 py-1 text-[11px] font-medium text-accent-foreground">
                     {stage.stage}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold">{stage.title}</h3>
+                  <h3 className="mt-4 font-body text-xl font-bold">{stage.title}</h3>
                   <p className="mt-3 text-sm opacity-80">{stage.copy}</p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
                     {stage.tags.map((tag) => (
