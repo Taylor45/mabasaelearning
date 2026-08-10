@@ -120,7 +120,7 @@ function CardRow({ items }: { items: { title: string; img: string }[] }) {
             />
             <Link
               to="/elearning-development"
-              className="mt-6 w-full rounded-sm bg-[var(--gradient-cta,transparent)] border border-transparent bg-card px-6 py-2.5 text-center font-display text-card-foreground transition-opacity hover:opacity-90"
+              className="mt-6 w-full rounded-sm bg-card px-6 py-2.5 text-center font-display text-card-foreground transition-opacity hover:opacity-90"
             >
               {item.title}
             </Link>
