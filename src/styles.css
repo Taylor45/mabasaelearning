@@ -22,6 +22,10 @@
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --color-ink: var(--ink);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-sky: var(--brand-sky);
+  --color-surface-light: var(--surface-light);
+  --color-surface-light-foreground: var(--surface-light-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -86,6 +90,10 @@
   --input: oklch(1 0 0 / 18%);
   --ring: oklch(0.7 0.13 258);
   --ink: oklch(0.09 0 0);
+  --brand-cyan: oklch(0.79 0.12 197);
+  --brand-sky: oklch(0.72 0.14 245);
+  --surface-light: oklch(1 0 0);
+  --surface-light-foreground: oklch(0.24 0.06 262);
   --gradient-hero: linear-gradient(115deg, oklch(0.13 0.06 262) 0%, oklch(0.2 0.1 263) 45%, oklch(0.42 0.17 259) 100%);
   --gradient-band: linear-gradient(100deg, oklch(0.15 0.07 262) 0%, oklch(0.32 0.14 261) 60%, oklch(0.45 0.18 259) 100%);
   --shadow-elevated: 0 24px 60px -24px oklch(0 0 0 / 0.65);
