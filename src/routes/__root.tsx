@@ -77,16 +77,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Melvon Mabasa | eLearning Portfolio" },
+      {
+        name: "description",
+        content:
+          "Instructional design and eLearning development portfolio of Melvon Mabasa.",
+      },
+      { name: "author", content: "Melvon Mabasa" },
+      { property: "og:title", content: "Melvon Mabasa | eLearning Portfolio" },
+      {
+        property: "og:description",
+        content:
+          "Instructional design and eLearning development portfolio of Melvon Mabasa.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Work+Sans:wght@300;400;500&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
