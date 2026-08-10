@@ -6,17 +6,17 @@ import portrait from "@/assets/melvon-portrait.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Melvon Mabasa | eLearning & Instructional Design Portfolio" },
+      { title: "Mabasa | eLearning & Instructional Design Portfolio" },
       {
         name: "description",
         content:
-          "Portfolio of Melvon Mabasa — instructional design, eLearning development, prompt engineering, UX/UI and AI in learning.",
+          "Portfolio of  Mabasa — instructional design, eLearning development, prompt engineering, UX/UI and AI in learning.",
       },
-      { property: "og:title", content: "Melvon Mabasa | eLearning Portfolio" },
+      { property: "og:title", content: "Mabasa | eLearning & Instructional Design Portfolio" },
       {
         property: "og:description",
         content:
-          "Instructional design, eLearning development, multimedia and AI in learning.",
+          "Portfolio of  Mabasa — instructional design, eLearning development, prompt engineering, UX/UI and AI in learning.",
       },
     ],
   }),
