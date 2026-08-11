@@ -375,24 +375,30 @@ function Index() {
               </p>
             </div>
 
-            <div className="mt-14 grid gap-6 md:grid-cols-2">
+            <div className="mx-auto mt-14 grid max-w-[860px] gap-2.5 sm:gap-[clamp(12px,2vw,18px)] md:grid-cols-2">
               {addieStages.map((stage, i) => (
                 <div
                   key={stage.title}
-                  className={`rounded-2xl bg-surface-light px-8 py-8 text-center text-surface-light-foreground shadow-elevated ${
-                    i === addieStages.length - 1 ? "md:col-span-2 md:mx-auto md:max-w-md" : ""
+                  className={`rounded-xl bg-surface-light px-4 py-4 text-center text-surface-light-foreground shadow-elevated transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(0,8,30,0.45),0_4px_10px_rgba(0,8,30,0.25)] sm:rounded-[14px] sm:px-[clamp(16px,2.2vw,22px)] sm:py-[clamp(18px,2.5vw,24px)] ${
+                    i === addieStages.length - 1
+                      ? "md:col-span-2 md:mx-auto md:w-[calc(50%-9px)]"
+                      : ""
                   }`}
                 >
-                  <span className="inline-block rounded-full bg-accent px-3 py-1 text-[11px] font-medium text-accent-foreground">
+                  <span className="mb-3 inline-flex items-center gap-1.5 rounded-[7px] bg-[linear-gradient(120deg,#0047B3,#1DA8E2)] px-[11px] py-[5px] text-[9.5px] font-bold tracking-[0.05em] text-white">
                     {stage.stage}
                   </span>
-                  <h3 className="mt-4 font-body text-xl font-bold">{stage.title}</h3>
-                  <p className="mt-3 text-sm opacity-80">{stage.copy}</p>
-                  <div className="mt-5 flex flex-wrap justify-center gap-2">
+                  <h3 className="mb-2 font-body text-base font-semibold tracking-[-0.01em] sm:text-[clamp(1.02rem,2vw,1.25rem)]">
+                    {stage.title}
+                  </h3>
+                  <p className="mx-auto mb-3 max-w-[340px] text-[11px] leading-[1.55] text-[#5b6472] sm:mb-4 sm:text-xs">
+                    {stage.copy}
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-1.5">
                     {stage.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-accent/40 px-3 py-1 text-[10px] uppercase tracking-[0.12em]"
+                        className="whitespace-nowrap rounded-full border-[1.2px] border-[#1DA8E2]/50 bg-white px-[9px] py-1 text-[8.5px] font-semibold uppercase tracking-[0.02em] text-[#0047B3] transition-all duration-200 hover:-translate-y-px hover:border-transparent hover:bg-[linear-gradient(120deg,#19D4C8,#1DA8E2)] hover:text-white sm:px-[11px] sm:py-[5px] sm:text-[9px]"
                       >
                         {tag}
                       </span>
