@@ -345,9 +345,9 @@ function Index() {
           </div>
         </section>
         <section className="surface-hero">
-          <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 lg:grid-cols-2">
-            <ToolColumn label="Authoring & design tools" items={authoringTools} />
-            <ToolColumn label="Learning management systems" items={lmsPlatforms} />
+          <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-[clamp(14px,4vw,40px)] px-5 py-16">
+            <ToolCarousel label="Authoring & Design Tools" items={authoringTools} />
+            <ToolCarousel label="Learning Management Systems" items={lmsPlatforms} />
           </div>
         </section>
 
