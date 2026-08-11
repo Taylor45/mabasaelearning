@@ -65,31 +65,31 @@ const addieStages = [
     stage: "Stage 1 · Analysis",
     title: "Understanding the Need",
     copy: "We unpack the learning gap — who the learners are, what they know, and what success looks like — then audit content to flag what becomes video, H5P, or text.",
-    tags: ["Needs assessment", "Audience profile", "Content audit"],
+    tags: ["Needs Assessment", "Audience Profile", "Content Audit"],
   },
   {
     stage: "Stage 2 · Design",
     title: "Storyboarding the Experience",
     copy: "Every objective is mapped to an interaction, visual, or media type. Storyboards lock pacing, logic, and look and feel before development time is spent.",
-    tags: ["Storyboards", "Interaction mapping", "Visual style guide"],
+    tags: ["Storyboards", "Interaction Mapping", "Visual Style Guide"],
   },
   {
     stage: "Stage 3 · Development",
     title: "Building the Multimedia",
     copy: "The hands-on build: narrated video in Camtasia, branching scenarios in Articulate 360 and H5P, motion and graphics in Adobe Suite — tested against the storyboard.",
-    tags: ["Video production", "H5P / Articulate builds", "Motion & graphics"],
+    tags: ["Video Production", "H5P / Articulate Builds", "Motion & Graphics"],
   },
   {
     stage: "Stage 4 · Implementation",
     title: "Launching in Your LMS",
     copy: "Assets are packaged into your LMS — typically Blackboard Ultra — with SCORM/xAPI tracking, then piloted with a small group before full rollout.",
-    tags: ["LMS integration", "SCORM / xAPI setup", "Pilot testing"],
+    tags: ["LMS Integration", "SCORM / xAPI Setup", "Pilot Testing"],
   },
   {
     stage: "Stage 5 · Evaluation",
     title: "Measuring What Landed",
     copy: "We review completion, engagement, and quiz data against the Kirkpatrick levels set in Stage 1 — findings feed straight into a revision plan.",
-    tags: ["Learning analytics", "Kirkpatrick evaluation", "Iteration plan"],
+    tags: ["Learning Analytics", "Kirkpatrick Evaluation", "Iteration Plan"],
   },
 ];
 
