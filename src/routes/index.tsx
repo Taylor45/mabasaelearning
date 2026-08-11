@@ -43,21 +43,21 @@ const categoryTwo = [
 ];
 
 const authoringTools = [
-  { short: "H5", name: "H5P", tag: "Interactive content" },
-  { short: "A3", name: "Articulate 360", tag: "Authoring" },
-  { short: "Ca", name: "Camtasia", tag: "Video" },
-  { short: "Ai", name: "Adobe Suite", tag: "Graphics" },
-  { short: "Ge", name: "Genially", tag: "Interactions" },
-  { short: "Fi", name: "Figma", tag: "UX / UI" },
+  { short: "H5", name: "H5P", tag: "Interactive content", from: "#0047b3", to: "#1da8e2" },
+  { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#1da8e2", to: "#19d4c8" },
+  { short: "Ca", name: "Camtasia", tag: "Video", from: "#0047b3", to: "#19d4c8" },
+  { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#19d4c8", to: "#0047b3" },
+  { short: "Ge", name: "Genially", tag: "Interactions", from: "#1da8e2", to: "#0047b3" },
+  { short: "Fi", name: "Figma", tag: "UX / UI", from: "#19d4c8", to: "#1da8e2" },
 ];
 
 const lmsPlatforms = [
-  { short: "Mo", name: "Moodle", tag: "LMS" },
-  { short: "Ca", name: "Canvas", tag: "LMS" },
-  { short: "Bb", name: "Blackboard Ultra", tag: "LMS" },
-  { short: "No", name: "NovaEd", tag: "LMS" },
-  { short: "Br", name: "Brightspace", tag: "LMS" },
-  { short: "GC", name: "Google Classroom", tag: "LMS" },
+  { short: "Mo", name: "Moodle", tag: "LMS", from: "#0047b3", to: "#1da8e2" },
+  { short: "Ca", name: "Canvas", tag: "LMS", from: "#1da8e2", to: "#19d4c8" },
+  { short: "Bb", name: "Blackboard Ultra", tag: "LMS", from: "#0047b3", to: "#19d4c8" },
+  { short: "No", name: "NovaEd", tag: "LMS", from: "#19d4c8", to: "#0047b3" },
+  { short: "Br", name: "Brightspace", tag: "LMS", from: "#1da8e2", to: "#0047b3" },
+  { short: "GC", name: "Google Classroom", tag: "LMS", from: "#19d4c8", to: "#1da8e2" },
 ];
 
 const addieStages = [
