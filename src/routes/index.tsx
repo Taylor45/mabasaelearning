@@ -43,21 +43,21 @@ const categoryTwo = [
 ];
 
 const authoringTools = [
-  { short: "H5", name: "H5P", tag: "Interactive content" },
-  { short: "A3", name: "Articulate 360", tag: "Authoring" },
-  { short: "Ca", name: "Camtasia", tag: "Video" },
-  { short: "Ai", name: "Adobe Suite", tag: "Graphics" },
-  { short: "Ge", name: "Genially", tag: "Interactions" },
-  { short: "Fi", name: "Figma", tag: "UX / UI" },
+  { short: "H5", name: "H5P", tag: "Interactive content", from: "#0047b3", to: "#1da8e2" },
+  { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#1da8e2", to: "#19d4c8" },
+  { short: "Ca", name: "Camtasia", tag: "Video", from: "#0047b3", to: "#19d4c8" },
+  { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#19d4c8", to: "#0047b3" },
+  { short: "Ge", name: "Genially", tag: "Interactions", from: "#1da8e2", to: "#0047b3" },
+  { short: "Fi", name: "Figma", tag: "UX / UI", from: "#19d4c8", to: "#1da8e2" },
 ];
 
 const lmsPlatforms = [
-  { short: "Mo", name: "Moodle", tag: "LMS" },
-  { short: "Ca", name: "Canvas", tag: "LMS" },
-  { short: "Bb", name: "Blackboard Ultra", tag: "LMS" },
-  { short: "No", name: "NovaEd", tag: "LMS" },
-  { short: "Br", name: "Brightspace", tag: "LMS" },
-  { short: "GC", name: "Google Classroom", tag: "LMS" },
+  { short: "Mo", name: "Moodle", tag: "LMS", from: "#0047b3", to: "#1da8e2" },
+  { short: "Ca", name: "Canvas", tag: "LMS", from: "#1da8e2", to: "#19d4c8" },
+  { short: "Bb", name: "Blackboard Ultra", tag: "LMS", from: "#0047b3", to: "#19d4c8" },
+  { short: "No", name: "NovaEd", tag: "LMS", from: "#19d4c8", to: "#0047b3" },
+  { short: "Br", name: "Brightspace", tag: "LMS", from: "#1da8e2", to: "#0047b3" },
+  { short: "GC", name: "Google Classroom", tag: "LMS", from: "#19d4c8", to: "#1da8e2" },
 ];
 
 const addieStages = [
@@ -166,32 +166,59 @@ function CardRow({ items }: { items: { title: string; img: string }[] }) {
   );
 }
 
-function ToolColumn({
-  label,
-  items,
-}: {
-  label: string;
-  items: { short: string; name: string; tag: string }[];
-}) {
+type Tool = { short: string; name: string; tag: string; from: string; to: string };
+
+function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setActive((i) => (i + 1) % items.length), 5000);
+    return () => clearInterval(id);
+  }, [items.length]);
+
   return (
-    <div>
-      <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">
+    <div className="w-full max-w-[420px]">
+      <p className="mb-3.5 text-center font-mono text-[0.7rem] font-bold uppercase tracking-[2px] text-brand-sky">
         {label}
       </p>
-      <div className="mt-6 grid gap-4 sm:grid-cols-3">
-        {items.map((tool) => (
+      <div className="relative flex h-[clamp(96px,20vw,180px)] items-center justify-center overflow-hidden rounded-2xl bg-surface-light shadow-elevated">
+        {items.map((tool, i) => (
           <div
             key={tool.name}
-            className="flex flex-col items-center rounded-xl bg-surface-light px-4 py-6 text-surface-light-foreground"
+            className={`absolute flex flex-col items-center gap-2 transition-all duration-600 sm:gap-3 ${
+              i === active
+                ? "translate-y-0 scale-100 opacity-100"
+                : "pointer-events-none translate-y-3.5 scale-95 opacity-0"
+            }`}
           >
-            <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent font-display text-lg text-accent-foreground">
+            <span
+              className="flex h-[42px] w-[42px] items-center justify-center rounded-[11px] text-[0.95rem] font-extrabold text-white sm:h-[58px] sm:w-[58px] sm:rounded-[14px] sm:text-[1.25rem] lg:h-[72px] lg:w-[72px] lg:rounded-[18px] lg:text-[1.6rem]"
+              style={{ backgroundImage: `linear-gradient(120deg, ${tool.from}, ${tool.to})` }}
+            >
               {tool.short}
             </span>
-            <p className="mt-3 text-center text-sm font-semibold">{tool.name}</p>
-            <span className="mt-2 rounded-full bg-accent/15 px-3 py-0.5 text-[10px] uppercase tracking-[0.15em]">
+            <p className="text-[0.72rem] font-bold text-surface-light-foreground sm:text-[0.82rem] lg:text-[1.05rem]">
+              {tool.name}
+            </p>
+            <span className="rounded-full bg-[linear-gradient(120deg,#0047b3,#1da8e2)] px-2.5 py-1 font-mono text-[0.55rem] uppercase tracking-[1.5px] text-white sm:text-[0.65rem]">
               {tool.tag}
             </span>
           </div>
+        ))}
+      </div>
+      <div className="mt-3.5 flex justify-center gap-2">
+        {items.map((tool, i) => (
+          <button
+            key={tool.name}
+            type="button"
+            aria-label={`Show ${tool.name}`}
+            onClick={() => setActive(i)}
+            className={`h-[7px] w-[7px] rounded-full transition-all duration-300 ${
+              i === active
+                ? "scale-[1.3] bg-[linear-gradient(90deg,#19d4c8,#1da8e2)]"
+                : "bg-white/25"
+            }`}
+          />
         ))}
       </div>
     </div>
@@ -318,9 +345,9 @@ function Index() {
           </div>
         </section>
         <section className="surface-hero">
-          <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 lg:grid-cols-2">
-            <ToolColumn label="Authoring & design tools" items={authoringTools} />
-            <ToolColumn label="Learning management systems" items={lmsPlatforms} />
+          <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-[clamp(14px,4vw,40px)] px-5 py-16">
+            <ToolCarousel label="Authoring & Design Tools" items={authoringTools} />
+            <ToolCarousel label="Learning Management Systems" items={lmsPlatforms} />
           </div>
         </section>
 
