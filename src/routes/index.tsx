@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -101,6 +102,40 @@ function CategoryBand({ label, highlight }: { label: string; highlight: string }
         </h2>
       </div>
     </section>
+  );
+}
+
+const roles = [
+  "Learning Designer",
+  "Learning Technology Analyst",
+  "eLearning Specialist",
+  "Instructional Designer",
+];
+
+function RoleLoop() {
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setFade(true);
+      setTimeout(() => {
+        setIndex((i) => (i + 1) % roles.length);
+        setFade(false);
+      }, 500);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <span className="ml-auto text-sm text-muted-foreground max-md:order-3 max-md:ml-0 max-md:mt-1 max-md:w-full">
+      —{" "}
+      <span
+        className={`transition-opacity duration-500 ${fade ? "opacity-0" : "opacity-100"}`}
+      >
+        {roles[index]}
+      </span>
+    </span>
   );
 }
 
@@ -249,11 +284,11 @@ function Index() {
 
         {/* Stat band */}
         <section className="bg-ink">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-10 gap-y-4 px-5 py-10">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-10 gap-y-4 px-5 py-10 max-[480px]:flex-col max-[480px]:items-start max-[480px]:px-5 max-[480px]:py-4">
             {[
-              ["01", "3+", "Years experience"],
-              ["02", "Engaging", "Highly engaging course"],
-              ["03", "Impactful", "Learning experiences"],
+              ["01", "3+", "Years Experience"],
+              ["02", "Engaging", "Highly Engaging Course"],
+              ["03", "Impactful", "Learning Experiences"],
             ].map(([num, big, small]) => (
               <div key={num} className="flex items-baseline gap-2">
                 <span className="text-[10px] tracking-[0.2em] text-brand-sky">{num}</span>
@@ -263,9 +298,7 @@ function Index() {
                 </span>
               </div>
             ))}
-            <span className="ml-auto text-sm text-muted-foreground">
-              — Instructional Designer
-            </span>
+            <RoleLoop />
           </div>
         </section>
 
