@@ -231,7 +231,7 @@ function Index() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}
-        <section className="surface-hero">
+        <section className="bg-surface-light text-surface-light-foreground">
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 py-20 md:grid-cols-[1.35fr_1fr]">
             <div>
               <span className="inline-block rounded-full border border-border px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em]">
