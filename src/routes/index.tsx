@@ -313,7 +313,7 @@ function Index() {
 
         {/* Thin rule */}
         <div className="bg-surface-light">
-          <div className="mx-auto h-0.5 max-w-6xl bg-accent" />
+          <div className="mx-auto h-0.5 max-w-6xl bg-foreground" />
         </div>
 
         {/* Stat band */}
@@ -359,7 +359,7 @@ function Index() {
         </section>
 
         <div className="surface-hero">
-          <div className="mx-auto h-0.5 max-w-6xl bg-accent" />
+          <div className="mx-auto h-0.5 max-w-6xl bg-foreground" />
         </div>
 
         {/* ADDIE methodology */}
