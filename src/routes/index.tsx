@@ -144,20 +144,27 @@ function CardRow({ items }: { items: { title: string; img: string }[] }) {
     <section className="bg-surface-light">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
-          <div key={item.title} className="flex flex-col items-center">
+          <div key={item.title} className="group flex flex-col items-center">
             <img
               src={item.img}
               alt={item.title}
               loading="lazy"
-              className="h-56 w-full object-contain"
+              className="h-56 w-full object-contain transition-transform duration-300 group-hover:-translate-y-1"
               width={480}
               height={480}
             />
             <Link
               to="/elearning-development"
-              className="mt-6 w-full rounded-sm bg-card px-6 py-2.5 text-center font-display text-card-foreground transition-opacity hover:opacity-90"
+              aria-label={`Explore ${item.title}`}
+              className="mt-6 inline-flex w-full items-center justify-between gap-3 rounded-xl border border-brand-sky/40 bg-card/80 px-5 py-3 font-display text-card-foreground shadow-[0_2px_10px_rgba(0,8,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(120deg,#0047B3,#1DA8E2)] hover:text-white hover:shadow-[0_14px_28px_rgba(0,8,30,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light active:translate-y-0"
             >
-              {item.title}
+              <span className="text-left text-sm sm:text-base">{item.title}</span>
+              <span
+                aria-hidden="true"
+                className="translate-x-0 text-lg transition-transform duration-300 group-hover:translate-x-1"
+              >
+                →
+              </span>
             </Link>
           </div>
         ))}
