@@ -359,7 +359,7 @@ function Index() {
         </section>
 
         <div className="surface-hero">
-          <div className="mx-auto h-0.5 max-w-6xl bg-foreground" />
+          <div className="h-0.5 w-full bg-foreground" />
         </div>
 
         {/* ADDIE methodology */}
