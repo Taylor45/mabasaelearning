@@ -156,7 +156,7 @@ function CardRow({ items }: { items: { title: string; img: string }[] }) {
             <Link
               to="/elearning-development"
               aria-label={`Explore ${item.title}`}
-              className="mt-6 inline-flex w-full items-center justify-between gap-3 rounded-xl border border-brand-sky/40 bg-card/80 px-5 py-3 font-display text-card-foreground shadow-[0_2px_10px_rgba(0,8,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(120deg,#0047B3,#1DA8E2)] hover:text-white hover:shadow-[0_14px_28px_rgba(0,8,30,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light active:translate-y-0"
+              className="mt-6 inline-flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border-2 border-accent bg-card px-5 py-3 font-display text-card-foreground shadow-[0_2px_10px_rgba(0,8,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground hover:shadow-[0_14px_28px_rgba(0,8,30,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light active:translate-y-0"
             >
               <span className="text-left text-sm sm:text-base">{item.title}</span>
               <span
