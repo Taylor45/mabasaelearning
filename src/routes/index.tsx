@@ -240,22 +240,22 @@ function Index() {
               <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
                 Hi, I&apos;m Bruce Mabasa.
               </h1>
-              <p className="mt-5 max-w-xl text-muted-foreground">
+              <p className="mt-5 max-w-xl text-surface-light-foreground/70">
                 I&apos;m passionate about transforming the way people learn. I believe
                 learning should be{" "}
-                <strong className="font-semibold text-foreground">
+                <strong className="font-semibold text-surface-light-foreground">
                   evolving, inclusive, impactful, interactive
                 </strong>
                 , and most importantly,{" "}
-                <strong className="font-semibold text-foreground">fun</strong>.
+                <strong className="font-semibold text-surface-light-foreground">fun</strong>.
               </p>
-              <p className="mt-4 max-w-xl text-muted-foreground">
+              <p className="mt-4 max-w-xl text-surface-light-foreground/70">
                 I stand at the intersection of{" "}
                 <span className="font-semibold text-brand-sky">Education</span>,{" "}
                 <span className="font-semibold text-brand-sky">Creativity</span>, and{" "}
                 <span className="font-semibold text-brand-sky">Technology</span>.
               </p>
-              <ul className="mt-6 space-y-3 text-muted-foreground">
+              <ul className="mt-6 space-y-3 text-surface-light-foreground/70">
                 {[
                   ["Mission:", "To craft engaging and visually compelling user experiences that enhance digital education and foster meaningful skills development."],
                   ["Vision:", "To shape the future of learning through innovative and human-centered design."],
@@ -264,7 +264,7 @@ function Index() {
                   <li key={label} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-cyan" />
                     <span>
-                      <strong className="font-semibold text-foreground">{label}</strong>{" "}
+                      <strong className="font-semibold text-surface-light-foreground">{label}</strong>{" "}
                       {copy}
                     </span>
                   </li>
@@ -273,8 +273,8 @@ function Index() {
             </div>
 
             <div className="flex flex-col items-center">
-              <div className="rounded-full border-2 border-foreground/80 p-3">
-                <div className="rounded-full border border-foreground/50 p-2">
+              <div className="rounded-full border-2 border-surface-light-foreground/80 p-3">
+                <div className="rounded-full border border-surface-light-foreground/50 p-2">
                   <img
                     src={portrait}
                     alt="Portrait of Bruce Mabasa"
@@ -289,7 +289,7 @@ function Index() {
                   href="https://www.linkedin.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-sm border border-foreground/70 px-6 py-2.5 text-center font-display transition-colors hover:bg-primary hover:text-primary-foreground"
+                  className="rounded-sm border border-surface-light-foreground/70 px-6 py-2.5 text-center font-display transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
                   Let`s Connect: LinkedIn
                 </a>
