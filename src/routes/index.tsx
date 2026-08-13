@@ -173,7 +173,7 @@ function CardRow({
   items,
   intro,
 }: {
-  items: { title: string; img: string; copy: string }[];
+  items: { title: string; img: string; copy: string; to: string }[];
   intro: string;
 }) {
   return (
@@ -186,7 +186,7 @@ function CardRow({
           {items.map((item) => (
             <Link
               key={item.title}
-              to="/elearning-development"
+              to={item.to}
               aria-label={`Explore ${item.title}`}
               className="group flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
             >
