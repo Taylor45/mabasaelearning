@@ -12,6 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-development'
+import { Route as ElearningDevelopmentIndexRouteImport } from './routes/elearning-development.index'
+import { Route as ElearningDevelopmentAiInElearningRouteImport } from './routes/elearning-development.ai-in-elearning'
+import { Route as ElearningDevelopmentElearningMultimediaRouteImport } from './routes/elearning-development.elearning-multimedia'
+import { Route as ElearningDevelopmentInstructionalDesignRouteImport } from './routes/elearning-development.instructional-design'
+import { Route as ElearningDevelopmentPromptEngineeringRouteImport } from './routes/elearning-development.prompt-engineering'
+import { Route as ElearningDevelopmentWebDesignUxUiRouteImport } from './routes/elearning-development.web-design-ux-ui'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +34,115 @@ const ElearningDevelopmentRoute = ElearningDevelopmentRouteImport.update({
   path: '/elearning-development',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ElearningDevelopmentIndexRoute =
+  ElearningDevelopmentIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
+const ElearningDevelopmentAiInElearningRoute =
+  ElearningDevelopmentAiInElearningRouteImport.update({
+    id: '/ai-in-elearning',
+    path: '/ai-in-elearning',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
+const ElearningDevelopmentElearningMultimediaRoute =
+  ElearningDevelopmentElearningMultimediaRouteImport.update({
+    id: '/elearning-multimedia',
+    path: '/elearning-multimedia',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
+const ElearningDevelopmentInstructionalDesignRoute =
+  ElearningDevelopmentInstructionalDesignRouteImport.update({
+    id: '/instructional-design',
+    path: '/instructional-design',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
+const ElearningDevelopmentPromptEngineeringRoute =
+  ElearningDevelopmentPromptEngineeringRouteImport.update({
+    id: '/prompt-engineering',
+    path: '/prompt-engineering',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
+const ElearningDevelopmentWebDesignUxUiRoute =
+  ElearningDevelopmentWebDesignUxUiRouteImport.update({
+    id: '/web-design-ux-ui',
+    path: '/web-design-ux-ui',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/elearning-development': typeof ElearningDevelopmentRoute
+  '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
+  '/elearning-development/ai-in-elearning': typeof ElearningDevelopmentAiInElearningRoute
+  '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
+  '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
+  '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
+  '/elearning-development/web-design-ux-ui': typeof ElearningDevelopmentWebDesignUxUiRoute
+  '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/elearning-development': typeof ElearningDevelopmentRoute
+  '/elearning-development/ai-in-elearning': typeof ElearningDevelopmentAiInElearningRoute
+  '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
+  '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
+  '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
+  '/elearning-development/web-design-ux-ui': typeof ElearningDevelopmentWebDesignUxUiRoute
+  '/elearning-development': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/elearning-development': typeof ElearningDevelopmentRoute
+  '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
+  '/elearning-development/ai-in-elearning': typeof ElearningDevelopmentAiInElearningRoute
+  '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
+  '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
+  '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
+  '/elearning-development/web-design-ux-ui': typeof ElearningDevelopmentWebDesignUxUiRoute
+  '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/elearning-development'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/elearning-development'
+    | '/elearning-development/ai-in-elearning'
+    | '/elearning-development/elearning-multimedia'
+    | '/elearning-development/instructional-design'
+    | '/elearning-development/prompt-engineering'
+    | '/elearning-development/web-design-ux-ui'
+    | '/elearning-development/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/elearning-development'
-  id: '__root__' | '/' | '/contact' | '/elearning-development'
+  to:
+    | '/'
+    | '/contact'
+    | '/elearning-development/ai-in-elearning'
+    | '/elearning-development/elearning-multimedia'
+    | '/elearning-development/instructional-design'
+    | '/elearning-development/prompt-engineering'
+    | '/elearning-development/web-design-ux-ui'
+    | '/elearning-development'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/elearning-development'
+    | '/elearning-development/ai-in-elearning'
+    | '/elearning-development/elearning-multimedia'
+    | '/elearning-development/instructional-design'
+    | '/elearning-development/prompt-engineering'
+    | '/elearning-development/web-design-ux-ui'
+    | '/elearning-development/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  ElearningDevelopmentRoute: typeof ElearningDevelopmentRoute
+  ElearningDevelopmentRoute: typeof ElearningDevelopmentRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -82,13 +168,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ElearningDevelopmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/elearning-development/': {
+      id: '/elearning-development/'
+      path: '/'
+      fullPath: '/elearning-development/'
+      preLoaderRoute: typeof ElearningDevelopmentIndexRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
+    '/elearning-development/ai-in-elearning': {
+      id: '/elearning-development/ai-in-elearning'
+      path: '/ai-in-elearning'
+      fullPath: '/elearning-development/ai-in-elearning'
+      preLoaderRoute: typeof ElearningDevelopmentAiInElearningRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
+    '/elearning-development/elearning-multimedia': {
+      id: '/elearning-development/elearning-multimedia'
+      path: '/elearning-multimedia'
+      fullPath: '/elearning-development/elearning-multimedia'
+      preLoaderRoute: typeof ElearningDevelopmentElearningMultimediaRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
+    '/elearning-development/instructional-design': {
+      id: '/elearning-development/instructional-design'
+      path: '/instructional-design'
+      fullPath: '/elearning-development/instructional-design'
+      preLoaderRoute: typeof ElearningDevelopmentInstructionalDesignRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
+    '/elearning-development/prompt-engineering': {
+      id: '/elearning-development/prompt-engineering'
+      path: '/prompt-engineering'
+      fullPath: '/elearning-development/prompt-engineering'
+      preLoaderRoute: typeof ElearningDevelopmentPromptEngineeringRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
+    '/elearning-development/web-design-ux-ui': {
+      id: '/elearning-development/web-design-ux-ui'
+      path: '/web-design-ux-ui'
+      fullPath: '/elearning-development/web-design-ux-ui'
+      preLoaderRoute: typeof ElearningDevelopmentWebDesignUxUiRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
   }
 }
+
+interface ElearningDevelopmentRouteChildren {
+  ElearningDevelopmentAiInElearningRoute: typeof ElearningDevelopmentAiInElearningRoute
+  ElearningDevelopmentElearningMultimediaRoute: typeof ElearningDevelopmentElearningMultimediaRoute
+  ElearningDevelopmentInstructionalDesignRoute: typeof ElearningDevelopmentInstructionalDesignRoute
+  ElearningDevelopmentPromptEngineeringRoute: typeof ElearningDevelopmentPromptEngineeringRoute
+  ElearningDevelopmentWebDesignUxUiRoute: typeof ElearningDevelopmentWebDesignUxUiRoute
+  ElearningDevelopmentIndexRoute: typeof ElearningDevelopmentIndexRoute
+}
+
+const ElearningDevelopmentRouteChildren: ElearningDevelopmentRouteChildren = {
+  ElearningDevelopmentAiInElearningRoute:
+    ElearningDevelopmentAiInElearningRoute,
+  ElearningDevelopmentElearningMultimediaRoute:
+    ElearningDevelopmentElearningMultimediaRoute,
+  ElearningDevelopmentInstructionalDesignRoute:
+    ElearningDevelopmentInstructionalDesignRoute,
+  ElearningDevelopmentPromptEngineeringRoute:
+    ElearningDevelopmentPromptEngineeringRoute,
+  ElearningDevelopmentWebDesignUxUiRoute:
+    ElearningDevelopmentWebDesignUxUiRoute,
+  ElearningDevelopmentIndexRoute: ElearningDevelopmentIndexRoute,
+}
+
+const ElearningDevelopmentRouteWithChildren =
+  ElearningDevelopmentRoute._addFileChildren(ElearningDevelopmentRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  ElearningDevelopmentRoute: ElearningDevelopmentRoute,
+  ElearningDevelopmentRoute: ElearningDevelopmentRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
