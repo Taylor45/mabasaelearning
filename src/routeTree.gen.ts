@@ -15,6 +15,7 @@ import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-dev
 import { Route as ElearningDevelopmentIndexRouteImport } from './routes/elearning-development.index'
 import { Route as ElearningDevelopmentElearningMultimediaRouteImport } from './routes/elearning-development.elearning-multimedia'
 import { Route as ElearningDevelopmentInstructionalDesignRouteImport } from './routes/elearning-development.instructional-design'
+import { Route as ElearningDevelopmentPromptEngineeringRouteImport } from './routes/elearning-development.prompt-engineering'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -49,6 +50,12 @@ const ElearningDevelopmentInstructionalDesignRoute =
     path: '/instructional-design',
     getParentRoute: () => ElearningDevelopmentRoute,
   } as any)
+const ElearningDevelopmentPromptEngineeringRoute =
+  ElearningDevelopmentPromptEngineeringRouteImport.update({
+    id: '/prompt-engineering',
+    path: '/prompt-engineering',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -56,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
+  '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
   '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesByTo {
@@ -63,6 +71,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
+  '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
   '/elearning-development': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesById {
@@ -72,6 +81,7 @@ export interface FileRoutesById {
   '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
+  '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
   '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRouteTypes {
@@ -82,6 +92,7 @@ export interface FileRouteTypes {
     | '/elearning-development'
     | '/elearning-development/elearning-multimedia'
     | '/elearning-development/instructional-design'
+    | '/elearning-development/prompt-engineering'
     | '/elearning-development/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -89,6 +100,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/elearning-development/elearning-multimedia'
     | '/elearning-development/instructional-design'
+    | '/elearning-development/prompt-engineering'
     | '/elearning-development'
   id:
     | '__root__'
@@ -97,6 +109,7 @@ export interface FileRouteTypes {
     | '/elearning-development'
     | '/elearning-development/elearning-multimedia'
     | '/elearning-development/instructional-design'
+    | '/elearning-development/prompt-engineering'
     | '/elearning-development/'
   fileRoutesById: FileRoutesById
 }
@@ -150,12 +163,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ElearningDevelopmentInstructionalDesignRouteImport
       parentRoute: typeof ElearningDevelopmentRoute
     }
+    '/elearning-development/prompt-engineering': {
+      id: '/elearning-development/prompt-engineering'
+      path: '/prompt-engineering'
+      fullPath: '/elearning-development/prompt-engineering'
+      preLoaderRoute: typeof ElearningDevelopmentPromptEngineeringRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
   }
 }
 
 interface ElearningDevelopmentRouteChildren {
   ElearningDevelopmentElearningMultimediaRoute: typeof ElearningDevelopmentElearningMultimediaRoute
   ElearningDevelopmentInstructionalDesignRoute: typeof ElearningDevelopmentInstructionalDesignRoute
+  ElearningDevelopmentPromptEngineeringRoute: typeof ElearningDevelopmentPromptEngineeringRoute
   ElearningDevelopmentIndexRoute: typeof ElearningDevelopmentIndexRoute
 }
 
@@ -164,6 +185,8 @@ const ElearningDevelopmentRouteChildren: ElearningDevelopmentRouteChildren = {
     ElearningDevelopmentElearningMultimediaRoute,
   ElearningDevelopmentInstructionalDesignRoute:
     ElearningDevelopmentInstructionalDesignRoute,
+  ElearningDevelopmentPromptEngineeringRoute:
+    ElearningDevelopmentPromptEngineeringRoute,
   ElearningDevelopmentIndexRoute: ElearningDevelopmentIndexRoute,
 }
 
