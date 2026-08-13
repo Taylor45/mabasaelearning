@@ -380,10 +380,16 @@ function Index() {
         </section>
 
         <CategoryBand label="Category 1:" highlight="Design & Strategy" />
-        <CardRow items={categoryOne} />
+        <CardRow
+          items={categoryOne}
+          intro="Laying the foundation for impactful learning experiences through smart design, strategy, and innovation."
+        />
 
         <CategoryBand label="Category 2:" highlight="Development & AI" />
-        <CardRow items={categoryTwo} />
+        <CardRow
+          items={categoryTwo}
+          intro="Bringing learning to life with modern development, multimedia craft, and AI-powered design."
+        />
 
         {/* Tools & LMS */}
         <section className="surface-band">
