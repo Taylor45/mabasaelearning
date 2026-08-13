@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-development'
+import { Route as ElearningDevelopmentIndexRouteImport } from './routes/elearning-development.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +29,49 @@ const ElearningDevelopmentRoute = ElearningDevelopmentRouteImport.update({
   path: '/elearning-development',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ElearningDevelopmentIndexRoute =
+  ElearningDevelopmentIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/elearning-development': typeof ElearningDevelopmentRoute
+  '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
+  '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/elearning-development': typeof ElearningDevelopmentRoute
+  '/elearning-development': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/elearning-development': typeof ElearningDevelopmentRoute
+  '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
+  '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/elearning-development'
+  fullPaths:
+    '/' | '/contact' | '/elearning-development' | '/elearning-development/'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/contact' | '/elearning-development'
-  id: '__root__' | '/' | '/contact' | '/elearning-development'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/elearning-development'
+    | '/elearning-development/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  ElearningDevelopmentRoute: typeof ElearningDevelopmentRoute
+  ElearningDevelopmentRoute: typeof ElearningDevelopmentRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -82,13 +97,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ElearningDevelopmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/elearning-development/': {
+      id: '/elearning-development/'
+      path: '/'
+      fullPath: '/elearning-development/'
+      preLoaderRoute: typeof ElearningDevelopmentIndexRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
   }
 }
+
+interface ElearningDevelopmentRouteChildren {
+  ElearningDevelopmentIndexRoute: typeof ElearningDevelopmentIndexRoute
+}
+
+const ElearningDevelopmentRouteChildren: ElearningDevelopmentRouteChildren = {
+  ElearningDevelopmentIndexRoute: ElearningDevelopmentIndexRoute,
+}
+
+const ElearningDevelopmentRouteWithChildren =
+  ElearningDevelopmentRoute._addFileChildren(ElearningDevelopmentRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  ElearningDevelopmentRoute: ElearningDevelopmentRoute,
+  ElearningDevelopmentRoute: ElearningDevelopmentRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
