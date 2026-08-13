@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-development'
 import { Route as ElearningDevelopmentIndexRouteImport } from './routes/elearning-development.index'
+import { Route as ElearningDevelopmentElearningMultimediaRouteImport } from './routes/elearning-development.elearning-multimedia'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,16 +36,24 @@ const ElearningDevelopmentIndexRoute =
     path: '/',
     getParentRoute: () => ElearningDevelopmentRoute,
   } as any)
+const ElearningDevelopmentElearningMultimediaRoute =
+  ElearningDevelopmentElearningMultimediaRouteImport.update({
+    id: '/elearning-multimedia',
+    path: '/elearning-multimedia',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
+  '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesById {
@@ -52,19 +61,29 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
+  '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/contact' | '/elearning-development' | '/elearning-development/'
+    | '/'
+    | '/contact'
+    | '/elearning-development'
+    | '/elearning-development/elearning-multimedia'
+    | '/elearning-development/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/elearning-development'
+  to:
+    | '/'
+    | '/contact'
+    | '/elearning-development/elearning-multimedia'
+    | '/elearning-development'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/elearning-development'
+    | '/elearning-development/elearning-multimedia'
     | '/elearning-development/'
   fileRoutesById: FileRoutesById
 }
@@ -104,14 +123,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ElearningDevelopmentIndexRouteImport
       parentRoute: typeof ElearningDevelopmentRoute
     }
+    '/elearning-development/elearning-multimedia': {
+      id: '/elearning-development/elearning-multimedia'
+      path: '/elearning-multimedia'
+      fullPath: '/elearning-development/elearning-multimedia'
+      preLoaderRoute: typeof ElearningDevelopmentElearningMultimediaRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
   }
 }
 
 interface ElearningDevelopmentRouteChildren {
+  ElearningDevelopmentElearningMultimediaRoute: typeof ElearningDevelopmentElearningMultimediaRoute
   ElearningDevelopmentIndexRoute: typeof ElearningDevelopmentIndexRoute
 }
 
 const ElearningDevelopmentRouteChildren: ElearningDevelopmentRouteChildren = {
+  ElearningDevelopmentElearningMultimediaRoute:
+    ElearningDevelopmentElearningMultimediaRoute,
   ElearningDevelopmentIndexRoute: ElearningDevelopmentIndexRoute,
 }
 
