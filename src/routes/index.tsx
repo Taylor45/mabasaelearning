@@ -33,16 +33,19 @@ export const Route = createFileRoute("/")({
 const categoryOne = [
   {
     title: "Prompt Engineering",
+    to: "/elearning-development/prompt-engineering" as const,
     img: illPrompt,
     copy: "Design effective prompts that drive clearer thinking and smarter outputs.",
   },
   {
     title: "Instructional Design",
+    to: "/elearning-development/instructional-design" as const,
     img: illDesign,
     copy: "Craft learner-centered experiences that inspire understanding and retention.",
   },
   {
     title: "eLearning Development",
+    to: "/elearning-development" as const,
     img: illDev,
     copy: "Build engaging digital learning solutions that deliver results.",
   },
@@ -51,16 +54,19 @@ const categoryOne = [
 const categoryTwo = [
   {
     title: "Web Design / UX & UI",
+    to: "/elearning-development/web-design-ux-ui" as const,
     img: illWeb,
     copy: "Shape clean, accessible interfaces that make learning effortless to navigate.",
   },
   {
     title: "eLearning Multimedia",
+    to: "/elearning-development/elearning-multimedia" as const,
     img: illMedia,
     copy: "Produce video, motion, and interactive media that bring content to life.",
   },
   {
     title: "AI In eLearning",
+    to: "/elearning-development/ai-in-elearning" as const,
     img: illAi,
     copy: "Apply AI to personalise learning and accelerate content production.",
   },
