@@ -31,15 +31,39 @@ export const Route = createFileRoute("/")({
 });
 
 const categoryOne = [
-  { title: "Prompt engineering", img: illPrompt },
-  { title: "Instructional Design", img: illDesign },
-  { title: "eLearning Development", img: illDev },
+  {
+    title: "Prompt Engineering",
+    img: illPrompt,
+    copy: "Design effective prompts that drive clearer thinking and smarter outputs.",
+  },
+  {
+    title: "Instructional Design",
+    img: illDesign,
+    copy: "Craft learner-centered experiences that inspire understanding and retention.",
+  },
+  {
+    title: "eLearning Development",
+    img: illDev,
+    copy: "Build engaging digital learning solutions that deliver results.",
+  },
 ];
 
 const categoryTwo = [
-  { title: "Web design/UX & UI", img: illWeb },
-  { title: "eLearning Multimedia", img: illMedia },
-  { title: "AI In eLearning", img: illAi },
+  {
+    title: "Web Design / UX & UI",
+    img: illWeb,
+    copy: "Shape clean, accessible interfaces that make learning effortless to navigate.",
+  },
+  {
+    title: "eLearning Multimedia",
+    img: illMedia,
+    copy: "Produce video, motion, and interactive media that bring content to life.",
+  },
+  {
+    title: "AI In eLearning",
+    img: illAi,
+    copy: "Apply AI to personalise learning and accelerate content production.",
+  },
 ];
 
 const authoringTools = [
@@ -139,35 +163,54 @@ function RoleLoop() {
   );
 }
 
-function CardRow({ items }: { items: { title: string; img: string }[] }) {
+function CardRow({
+  items,
+  intro,
+}: {
+  items: { title: string; img: string; copy: string }[];
+  intro: string;
+}) {
   return (
     <section className="bg-surface-light">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item) => (
-          <div key={item.title} className="group flex flex-col items-center">
-            <img
-              src={item.img}
-              alt={item.title}
-              loading="lazy"
-              className="h-56 w-full object-contain transition-transform duration-300 group-hover:-translate-y-1"
-              width={480}
-              height={480}
-            />
+      <div className="mx-auto max-w-6xl px-5 py-16">
+        <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-surface-light-foreground/80 sm:text-xl">
+          {intro}
+        </p>
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item) => (
             <Link
+              key={item.title}
               to="/elearning-development"
               aria-label={`Explore ${item.title}`}
-              className="mt-6 inline-flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border-2 border-accent bg-card px-5 py-3 font-display text-card-foreground shadow-[0_2px_10px_rgba(0,8,30,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground hover:shadow-[0_14px_28px_rgba(0,8,30,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light active:translate-y-0"
+              className="group flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
             >
-              <span className="text-left text-sm sm:text-base">{item.title}</span>
-              <span
-                aria-hidden="true"
-                className="translate-x-0 text-lg transition-transform duration-300 group-hover:translate-x-1"
-              >
-                →
+              <img
+                src={item.img}
+                alt={item.title}
+                loading="lazy"
+                className="h-48 w-full object-contain"
+                width={480}
+                height={480}
+              />
+              <h3 className="mt-8 font-body text-xl font-bold text-surface-light-foreground">
+                {item.title}
+              </h3>
+              <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                {item.copy}
+              </p>
+              <span className="mt-6 block h-px w-full bg-surface-light-foreground/12" />
+              <span className="mt-5 flex items-center justify-between text-sm font-semibold text-brand-sky">
+                Explore
+                <span
+                  aria-hidden="true"
+                  className="text-lg transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
               </span>
             </Link>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -337,10 +380,16 @@ function Index() {
         </section>
 
         <CategoryBand label="Category 1:" highlight="Design & Strategy" />
-        <CardRow items={categoryOne} />
+        <CardRow
+          items={categoryOne}
+          intro="Laying the foundation for impactful learning experiences through smart design, strategy, and innovation."
+        />
 
         <CategoryBand label="Category 2:" highlight="Development & AI" />
-        <CardRow items={categoryTwo} />
+        <CardRow
+          items={categoryTwo}
+          intro="Bringing learning to life with modern development, multimedia craft, and AI-powered design."
+        />
 
         {/* Tools & LMS */}
         <section className="surface-band">
