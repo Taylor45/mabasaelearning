@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-development'
 import { Route as ElearningDevelopmentIndexRouteImport } from './routes/elearning-development.index'
+import { Route as ElearningDevelopmentAiInElearningRouteImport } from './routes/elearning-development.ai-in-elearning'
 import { Route as ElearningDevelopmentElearningMultimediaRouteImport } from './routes/elearning-development.elearning-multimedia'
 import { Route as ElearningDevelopmentInstructionalDesignRouteImport } from './routes/elearning-development.instructional-design'
 import { Route as ElearningDevelopmentPromptEngineeringRouteImport } from './routes/elearning-development.prompt-engineering'
@@ -37,6 +38,12 @@ const ElearningDevelopmentIndexRoute =
   ElearningDevelopmentIndexRouteImport.update({
     id: '/',
     path: '/',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
+const ElearningDevelopmentAiInElearningRoute =
+  ElearningDevelopmentAiInElearningRouteImport.update({
+    id: '/ai-in-elearning',
+    path: '/ai-in-elearning',
     getParentRoute: () => ElearningDevelopmentRoute,
   } as any)
 const ElearningDevelopmentElearningMultimediaRoute =
@@ -68,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
+  '/elearning-development/ai-in-elearning': typeof ElearningDevelopmentAiInElearningRoute
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
   '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
@@ -77,6 +85,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/elearning-development/ai-in-elearning': typeof ElearningDevelopmentAiInElearningRoute
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
   '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
@@ -88,6 +97,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
+  '/elearning-development/ai-in-elearning': typeof ElearningDevelopmentAiInElearningRoute
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
   '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
   '/elearning-development/prompt-engineering': typeof ElearningDevelopmentPromptEngineeringRoute
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/elearning-development'
+    | '/elearning-development/ai-in-elearning'
     | '/elearning-development/elearning-multimedia'
     | '/elearning-development/instructional-design'
     | '/elearning-development/prompt-engineering'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/elearning-development/ai-in-elearning'
     | '/elearning-development/elearning-multimedia'
     | '/elearning-development/instructional-design'
     | '/elearning-development/prompt-engineering'
@@ -119,6 +131,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/elearning-development'
+    | '/elearning-development/ai-in-elearning'
     | '/elearning-development/elearning-multimedia'
     | '/elearning-development/instructional-design'
     | '/elearning-development/prompt-engineering'
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ElearningDevelopmentIndexRouteImport
       parentRoute: typeof ElearningDevelopmentRoute
     }
+    '/elearning-development/ai-in-elearning': {
+      id: '/elearning-development/ai-in-elearning'
+      path: '/ai-in-elearning'
+      fullPath: '/elearning-development/ai-in-elearning'
+      preLoaderRoute: typeof ElearningDevelopmentAiInElearningRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
     '/elearning-development/elearning-multimedia': {
       id: '/elearning-development/elearning-multimedia'
       path: '/elearning-multimedia'
@@ -194,6 +214,7 @@ declare module '@tanstack/react-router' {
 }
 
 interface ElearningDevelopmentRouteChildren {
+  ElearningDevelopmentAiInElearningRoute: typeof ElearningDevelopmentAiInElearningRoute
   ElearningDevelopmentElearningMultimediaRoute: typeof ElearningDevelopmentElearningMultimediaRoute
   ElearningDevelopmentInstructionalDesignRoute: typeof ElearningDevelopmentInstructionalDesignRoute
   ElearningDevelopmentPromptEngineeringRoute: typeof ElearningDevelopmentPromptEngineeringRoute
@@ -202,6 +223,8 @@ interface ElearningDevelopmentRouteChildren {
 }
 
 const ElearningDevelopmentRouteChildren: ElearningDevelopmentRouteChildren = {
+  ElearningDevelopmentAiInElearningRoute:
+    ElearningDevelopmentAiInElearningRoute,
   ElearningDevelopmentElearningMultimediaRoute:
     ElearningDevelopmentElearningMultimediaRoute,
   ElearningDevelopmentInstructionalDesignRoute:
