@@ -33,19 +33,16 @@ export const Route = createFileRoute("/")({
 const categoryOne = [
   {
     title: "Prompt Engineering",
-    to: "/elearning-development/prompt-engineering" as const,
     img: illPrompt,
     copy: "Design effective prompts that drive clearer thinking and smarter outputs.",
   },
   {
     title: "Instructional Design",
-    to: "/elearning-development/instructional-design" as const,
     img: illDesign,
     copy: "Craft learner-centered experiences that inspire understanding and retention.",
   },
   {
     title: "eLearning Development",
-    to: "/elearning-development" as const,
     img: illDev,
     copy: "Build engaging digital learning solutions that deliver results.",
   },
@@ -54,19 +51,16 @@ const categoryOne = [
 const categoryTwo = [
   {
     title: "Web Design / UX & UI",
-    to: "/elearning-development/web-design-ux-ui" as const,
     img: illWeb,
     copy: "Shape clean, accessible interfaces that make learning effortless to navigate.",
   },
   {
     title: "eLearning Multimedia",
-    to: "/elearning-development/elearning-multimedia" as const,
     img: illMedia,
     copy: "Produce video, motion, and interactive media that bring content to life.",
   },
   {
     title: "AI In eLearning",
-    to: "/elearning-development/ai-in-elearning" as const,
     img: illAi,
     copy: "Apply AI to personalise learning and accelerate content production.",
   },
@@ -173,7 +167,7 @@ function CardRow({
   items,
   intro,
 }: {
-  items: { title: string; img: string; copy: string; to: string }[];
+  items: { title: string; img: string; copy: string }[];
   intro: string;
 }) {
   return (
@@ -186,7 +180,7 @@ function CardRow({
           {items.map((item) => (
             <Link
               key={item.title}
-              to={item.to}
+              to="/elearning-development"
               aria-label={`Explore ${item.title}`}
               className="group flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
             >
