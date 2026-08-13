@@ -14,6 +14,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-development'
 import { Route as ElearningDevelopmentIndexRouteImport } from './routes/elearning-development.index'
 import { Route as ElearningDevelopmentElearningMultimediaRouteImport } from './routes/elearning-development.elearning-multimedia'
+import { Route as ElearningDevelopmentInstructionalDesignRouteImport } from './routes/elearning-development.instructional-design'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -42,18 +43,26 @@ const ElearningDevelopmentElearningMultimediaRoute =
     path: '/elearning-multimedia',
     getParentRoute: () => ElearningDevelopmentRoute,
   } as any)
+const ElearningDevelopmentInstructionalDesignRoute =
+  ElearningDevelopmentInstructionalDesignRouteImport.update({
+    id: '/instructional-design',
+    path: '/instructional-design',
+    getParentRoute: () => ElearningDevelopmentRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
+  '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
   '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
+  '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
   '/elearning-development': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRoutesById {
@@ -62,6 +71,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/elearning-development': typeof ElearningDevelopmentRouteWithChildren
   '/elearning-development/elearning-multimedia': typeof ElearningDevelopmentElearningMultimediaRoute
+  '/elearning-development/instructional-design': typeof ElearningDevelopmentInstructionalDesignRoute
   '/elearning-development/': typeof ElearningDevelopmentIndexRoute
 }
 export interface FileRouteTypes {
@@ -71,12 +81,14 @@ export interface FileRouteTypes {
     | '/contact'
     | '/elearning-development'
     | '/elearning-development/elearning-multimedia'
+    | '/elearning-development/instructional-design'
     | '/elearning-development/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contact'
     | '/elearning-development/elearning-multimedia'
+    | '/elearning-development/instructional-design'
     | '/elearning-development'
   id:
     | '__root__'
@@ -84,6 +96,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/elearning-development'
     | '/elearning-development/elearning-multimedia'
+    | '/elearning-development/instructional-design'
     | '/elearning-development/'
   fileRoutesById: FileRoutesById
 }
@@ -130,17 +143,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ElearningDevelopmentElearningMultimediaRouteImport
       parentRoute: typeof ElearningDevelopmentRoute
     }
+    '/elearning-development/instructional-design': {
+      id: '/elearning-development/instructional-design'
+      path: '/instructional-design'
+      fullPath: '/elearning-development/instructional-design'
+      preLoaderRoute: typeof ElearningDevelopmentInstructionalDesignRouteImport
+      parentRoute: typeof ElearningDevelopmentRoute
+    }
   }
 }
 
 interface ElearningDevelopmentRouteChildren {
   ElearningDevelopmentElearningMultimediaRoute: typeof ElearningDevelopmentElearningMultimediaRoute
+  ElearningDevelopmentInstructionalDesignRoute: typeof ElearningDevelopmentInstructionalDesignRoute
   ElearningDevelopmentIndexRoute: typeof ElearningDevelopmentIndexRoute
 }
 
 const ElearningDevelopmentRouteChildren: ElearningDevelopmentRouteChildren = {
   ElearningDevelopmentElearningMultimediaRoute:
     ElearningDevelopmentElearningMultimediaRoute,
+  ElearningDevelopmentInstructionalDesignRoute:
+    ElearningDevelopmentInstructionalDesignRoute,
   ElearningDevelopmentIndexRoute: ElearningDevelopmentIndexRoute,
 }
 
