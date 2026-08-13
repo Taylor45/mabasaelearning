@@ -38,33 +38,3 @@ function ELearningLayout() {
     </div>
   );
 }
-
-const unusedSections = [
-  {
-    title: "Articulate Storyline Courses (Interactive & SCORM Package)",
-    blurb:
-      "Scenario-driven modules with branching, knowledge checks, and SCORM tracking built for LMS delivery.",
-    projects: [
-      { name: "Compliance Essentials", action: "View Course" },
-      { name: "Onboarding Journey", action: "View Course" },
-    ],
-  },
-  {
-    title: "Genially & Interactive eBook (SCORM Package)",
-    blurb:
-      "Highly visual interactive experiences and downloadable eBooks that pair storytelling with practice.",
-    projects: [
-      { name: "Interactive Learning Guide", action: "View Course" },
-      { name: "Digital eBook", action: "View eBook" },
-    ],
-  },
-  {
-    title: "iSpring & Interactive eBook (SCORM Package)",
-    blurb:
-      "Rapid-authored PowerPoint-to-SCORM courses with quizzing, narration, and mobile-ready playback.",
-    projects: [
-      { name: "Product Knowledge Course", action: "View Course" },
-      { name: "Safety Refresher", action: "View Course" },
-    ],
-  },
-];
