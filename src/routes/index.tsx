@@ -31,15 +31,39 @@ export const Route = createFileRoute("/")({
 });
 
 const categoryOne = [
-  { title: "Prompt engineering", img: illPrompt },
-  { title: "Instructional Design", img: illDesign },
-  { title: "eLearning Development", img: illDev },
+  {
+    title: "Prompt Engineering",
+    img: illPrompt,
+    copy: "Design effective prompts that drive clearer thinking and smarter outputs.",
+  },
+  {
+    title: "Instructional Design",
+    img: illDesign,
+    copy: "Craft learner-centered experiences that inspire understanding and retention.",
+  },
+  {
+    title: "eLearning Development",
+    img: illDev,
+    copy: "Build engaging digital learning solutions that deliver results.",
+  },
 ];
 
 const categoryTwo = [
-  { title: "Web design/UX & UI", img: illWeb },
-  { title: "eLearning Multimedia", img: illMedia },
-  { title: "AI In eLearning", img: illAi },
+  {
+    title: "Web Design / UX & UI",
+    img: illWeb,
+    copy: "Shape clean, accessible interfaces that make learning effortless to navigate.",
+  },
+  {
+    title: "eLearning Multimedia",
+    img: illMedia,
+    copy: "Produce video, motion, and interactive media that bring content to life.",
+  },
+  {
+    title: "AI In eLearning",
+    img: illAi,
+    copy: "Apply AI to personalise learning and accelerate content production.",
+  },
 ];
 
 const authoringTools = [
