@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
+import storylineAiLiteracy from "@/assets/storyline-ai-literacy.png.asset.json";
 
 export const Route = createFileRoute("/elearning-development")({
   head: () => ({
@@ -27,8 +29,16 @@ const sections = [
     blurb:
       "Scenario-driven modules with branching, knowledge checks, and SCORM tracking built for LMS delivery.",
     projects: [
-      { name: "Compliance Essentials", action: "View Course" },
-      { name: "Onboarding Journey", action: "View Course" },
+      {
+        name: "Mastering Stakeholder Communication",
+        action: "View Course",
+        image: storylineStakeholder.url,
+      },
+      {
+        name: "AI Literacy for Instructional Design",
+        action: "View Course",
+        image: storylineAiLiteracy.url,
+      },
     ],
   },
   {
@@ -36,8 +46,8 @@ const sections = [
     blurb:
       "Highly visual interactive experiences and downloadable eBooks that pair storytelling with practice.",
     projects: [
-      { name: "Interactive Learning Guide", action: "View Course" },
-      { name: "Digital eBook", action: "View eBook" },
+      { name: "Interactive Learning Guide", action: "View Course", image: null },
+      { name: "Digital eBook", action: "View eBook", image: null },
     ],
   },
   {
@@ -45,8 +55,8 @@ const sections = [
     blurb:
       "Rapid-authored PowerPoint-to-SCORM courses with quizzing, narration, and mobile-ready playback.",
     projects: [
-      { name: "Product Knowledge Course", action: "View Course" },
-      { name: "Safety Refresher", action: "View Course" },
+      { name: "Product Knowledge Course", action: "View Course", image: null },
+      { name: "Safety Refresher", action: "View Course", image: null },
     ],
   },
 ];
@@ -79,7 +89,18 @@ function ELearningPage() {
                     key={project.name}
                     className="overflow-hidden rounded-sm border border-border bg-card shadow-elevated"
                   >
-                    <div className="surface-band h-44" />
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={`${project.name} course preview`}
+                        loading="lazy"
+                        width={1000}
+                        height={559}
+                        className="h-44 w-full object-cover"
+                      />
+                    ) : (
+                      <div className="surface-band h-44" />
+                    )}
                     <div className="flex items-center justify-between gap-4 p-5">
                       <h3 className="text-base">{project.name}</h3>
                       <a
