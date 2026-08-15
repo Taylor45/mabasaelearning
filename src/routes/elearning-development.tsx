@@ -83,31 +83,34 @@ function ELearningPage() {
               <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
                 {section.blurb}
               </p>
-              <div className="mt-7 grid gap-6 sm:grid-cols-2">
+              <div className="mt-7 grid gap-8 sm:grid-cols-2 lg:gap-10">
                 {section.projects.map((project) => (
                   <article
                     key={project.name}
-                    className="overflow-hidden rounded-sm border border-border bg-card shadow-elevated"
+                    className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated transition-transform duration-300 hover:-translate-y-1"
                   >
                     {project.image ? (
-                      <img
-                        src={project.image}
-                        alt={`${project.name} course preview`}
-                        loading="lazy"
-                        width={1000}
-                        height={559}
-                        className="h-44 w-full object-cover"
-                      />
+                      <div className="aspect-video w-full overflow-hidden bg-muted">
+                        <img
+                          src={project.image}
+                          alt={`${project.name} course preview`}
+                          loading="lazy"
+                          width={1000}
+                          height={563}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
+                      </div>
                     ) : (
-                      <div className="surface-band h-44" />
+                      <div className="surface-band aspect-video w-full" />
                     )}
-                    <div className="flex items-center justify-between gap-4 p-5">
-                      <h3 className="text-base">{project.name}</h3>
+                    <div className="flex flex-1 flex-col items-start gap-4 p-6">
+                      <h3 className="text-lg leading-snug">{project.name}</h3>
                       <a
                         href="#"
-                        className="shrink-0 rounded-sm border border-border px-4 py-2 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-primary hover:text-primary-foreground"
+                        className="mt-auto inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                       >
                         {project.action}
+                        <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
                       </a>
                     </div>
                   </article>
