@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
@@ -32,12 +33,12 @@ const sections = [
       {
         name: "Mastering Stakeholder Communication",
         action: "View Course",
-        image: storylineStakeholder.url,
+        images: [storylineStakeholder.url],
       },
       {
         name: "AI Literacy for Instructional Design",
         action: "View Course",
-        image: storylineAiLiteracy.url,
+        images: [storylineAiLiteracy.url],
       },
     ],
   },
@@ -46,8 +47,8 @@ const sections = [
     blurb:
       "Highly visual interactive experiences and downloadable eBooks that pair storytelling with practice.",
     projects: [
-      { name: "Interactive Learning Guide", action: "View Course", image: null },
-      { name: "Digital eBook", action: "View eBook", image: null },
+      { name: "Interactive Learning Guide", action: "View Course", images: [] },
+      { name: "Digital eBook", action: "View eBook", images: [] },
     ],
   },
   {
@@ -55,11 +56,58 @@ const sections = [
     blurb:
       "Rapid-authored PowerPoint-to-SCORM courses with quizzing, narration, and mobile-ready playback.",
     projects: [
-      { name: "Product Knowledge Course", action: "View Course", image: null },
-      { name: "Safety Refresher", action: "View Course", image: null },
+      { name: "Product Knowledge Course", action: "View Course", images: [] },
+      { name: "Safety Refresher", action: "View Course", images: [] },
     ],
   },
 ];
+
+function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length < 2) return;
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % images.length),
+      4000
+    );
+    return () => clearInterval(id);
+  }, [images.length]);
+
+  return (
+    <div className="relative aspect-video w-full overflow-hidden bg-muted">
+      {images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={i === 0 ? alt : ""}
+          aria-hidden={i !== index}
+          loading="lazy"
+          width={1000}
+          height={563}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 group-hover:scale-[1.03] ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+      {images.length > 1 && (
+        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Show image ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`h-2 w-2 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                i === index ? "bg-accent" : "bg-foreground/50"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 function ELearningPage() {
   return (
@@ -89,17 +137,11 @@ function ELearningPage() {
                     key={project.name}
                     className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated transition-transform duration-300 hover:-translate-y-1"
                   >
-                    {project.image ? (
-                      <div className="aspect-video w-full overflow-hidden bg-muted">
-                        <img
-                          src={project.image}
-                          alt={`${project.name} course preview`}
-                          loading="lazy"
-                          width={1000}
-                          height={563}
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                        />
-                      </div>
+                    {project.images.length > 0 ? (
+                      <ImageCarousel
+                        images={project.images}
+                        alt={`${project.name} course preview`}
+                      />
                     ) : (
                       <div className="surface-band aspect-video w-full" />
                     )}
