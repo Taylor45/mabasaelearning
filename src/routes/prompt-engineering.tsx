@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
-import illustration from "@/assets/ill-prompt-engineering.png";
 
 export const Route = createFileRoute("/prompt-engineering")({
   head: () => ({
@@ -28,7 +27,6 @@ function PromptEngineeringPage() {
       eyebrow="Design & Strategy"
       title="Prompt Engineering"
       intro="Designing effective prompts and AI workflows that drive clearer thinking, faster drafting, and smarter learning outputs."
-      image={illustration}
       blocks={blocks}
     />
   );

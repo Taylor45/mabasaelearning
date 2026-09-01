@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
-import illustration from "@/assets/ill-instructional-design.png";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
@@ -28,7 +27,6 @@ function InstructionalDesignPage() {
       eyebrow="Design & Strategy"
       title="Instructional Design"
       intro="Crafting learner-centred experiences that inspire understanding, retention, and measurable performance change."
-      image={illustration}
       blocks={blocks}
     />
   );
