@@ -9,7 +9,6 @@ export function ServicePage({
   eyebrow,
   title,
   intro,
-  image,
   blocks,
   children,
 }: {
