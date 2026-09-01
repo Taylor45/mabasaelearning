@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
-import illustration from "@/assets/ill-ai-elearning.png";
 
 export const Route = createFileRoute("/ai-in-elearning")({
   head: () => ({
@@ -28,7 +27,6 @@ function AiInELearningPage() {
       eyebrow="Development & AI"
       title="AI In eLearning"
       intro="Applying AI to personalise learning, accelerate content production, and turn learner data into decisions."
-      image={illustration}
       blocks={blocks}
     />
   );

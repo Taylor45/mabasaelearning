@@ -9,14 +9,12 @@ export function ServicePage({
   eyebrow,
   title,
   intro,
-  image,
   blocks,
   children,
 }: {
   eyebrow: string;
   title: string;
   intro: string;
-  image?: string;
   blocks: ServiceBlock[];
   children?: ReactNode;
 }) {
@@ -25,7 +23,7 @@ export function ServicePage({
       <SiteHeader />
       <main className="flex-1">
         <section className="surface-hero">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-[1.3fr_1fr]">
+          <div className="mx-auto max-w-6xl px-5 py-20">
             <div>
               <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
                 {eyebrow}
@@ -41,16 +39,6 @@ export function ServicePage({
                 Start a project
               </Link>
             </div>
-            {image ? (
-              <img
-                src={image}
-                alt={title}
-                loading="lazy"
-                width={480}
-                height={480}
-                className="mx-auto h-64 w-full max-w-xs object-contain"
-              />
-            ) : null}
           </div>
         </section>
 

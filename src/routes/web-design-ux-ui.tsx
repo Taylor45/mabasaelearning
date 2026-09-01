@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
-import illustration from "@/assets/ill-web-design.png";
 
 export const Route = createFileRoute("/web-design-ux-ui")({
   head: () => ({
@@ -28,7 +27,6 @@ function WebDesignPage() {
       eyebrow="Development & AI"
       title="Web Design / UX & UI"
       intro="Shaping clean, accessible interfaces and design systems that make learning effortless to navigate."
-      image={illustration}
       blocks={blocks}
     />
   );

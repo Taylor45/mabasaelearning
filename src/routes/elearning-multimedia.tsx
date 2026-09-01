@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
-import illustration from "@/assets/ill-multimedia.png";
 
 export const Route = createFileRoute("/elearning-multimedia")({
   head: () => ({
@@ -28,7 +27,6 @@ function MultimediaPage() {
       eyebrow="Development & AI"
       title="eLearning Multimedia"
       intro="Producing video, motion, and interactive media that bring learning content to life across every device."
-      image={illustration}
       blocks={blocks}
     />
   );
