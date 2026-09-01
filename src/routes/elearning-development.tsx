@@ -4,6 +4,12 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
 import storylineAiLiteracy from "@/assets/storyline-ai-literacy.png.asset.json";
+import geniallyGuide1 from "@/assets/genially-guide-1.png.asset.json";
+import geniallyGuide2 from "@/assets/genially-guide-2.png.asset.json";
+import digitalEbook1 from "@/assets/digital-ebook-1.png.asset.json";
+import ispringCourse1 from "@/assets/ispring-course-1.png.asset.json";
+import ispringCourse2 from "@/assets/ispring-course-2.png.asset.json";
+import ispringSafety1 from "@/assets/ispring-safety-1.png.asset.json";
 
 export const Route = createFileRoute("/elearning-development")({
   head: () => ({
@@ -53,8 +59,12 @@ const sections = [
     blurb:
       "Highly visual interactive experiences and downloadable eBooks that pair storytelling with practice.",
     projects: [
-      { name: "Interactive Learning Guide", action: "View Course", images: [] },
-      { name: "Digital eBook", action: "View eBook", images: [] },
+      {
+        name: "Interactive Learning Guide",
+        action: "View Course",
+        images: [geniallyGuide1.url, geniallyGuide2.url],
+      },
+      { name: "Digital eBook", action: "View eBook", images: [digitalEbook1.url] },
     ],
   },
   {
@@ -62,8 +72,12 @@ const sections = [
     blurb:
       "Rapid-authored PowerPoint-to-SCORM courses with quizzing, narration, and mobile-ready playback.",
     projects: [
-      { name: "Product Knowledge Course", action: "View Course", images: [] },
-      { name: "Safety Refresher", action: "View Course", images: [] },
+      {
+        name: "Product Knowledge Course",
+        action: "View Course",
+        images: [ispringCourse1.url, ispringCourse2.url],
+      },
+      { name: "Safety Refresher", action: "View Course", images: [ispringSafety1.url] },
     ],
   },
 ];
