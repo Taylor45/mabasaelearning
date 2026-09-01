@@ -33,12 +33,18 @@ const sections = [
       {
         name: "Mastering Stakeholder Communication",
         action: "View Course",
-        images: [storylineStakeholder.url],
+        images: [
+          "/__l5e/assets-v1/559cfe86-3387-41f3-9eb2-a5a03c362c4f/storyline-stakeholder-communication.png",
+          storylineStakeholder.url,
+        ],
       },
       {
         name: "AI Literacy for Instructional Design",
         action: "View Course",
-        images: [storylineAiLiteracy.url],
+        images: [
+          "/__l5e/assets-v1/f8a711a1-f971-4a5d-90a1-eb7fa32d4106/storyline-ai-literacy.png",
+          storylineAiLiteracy.url,
+        ],
       },
     ],
   },
