@@ -129,6 +129,24 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
   );
 }
 
+const blocks = [
+  {
+    title: "Interactive Course Development",
+    copy: "Scenario-based modules with branching, knowledge checks, and gamified interactions that keep learners engaged from start to finish.",
+    tags: ["Articulate Storyline", "Branching", "Gamification"],
+  },
+  {
+    title: "SCORM & LMS Packaging",
+    copy: "Courses packaged to SCORM 1.2 / xAPI standards with completion tracking, quiz scoring, and seamless upload to any LMS.",
+    tags: ["SCORM", "xAPI", "LMS Testing"],
+  },
+  {
+    title: "Rapid Authoring",
+    copy: "Fast-turnaround PowerPoint-to-SCORM builds with narration, quizzing, and mobile-ready playback using iSpring and Genially.",
+    tags: ["iSpring", "Genially", "Mobile-Ready"],
+  },
+];
+
 function ELearningPage() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -141,6 +159,36 @@ function ELearningPage() {
               A selection of courses, interactive experiences, and SCORM packages
               designed and developed end to end.
             </p>
+          </div>
+        </section>
+
+        <section className="bg-surface-light">
+          <div className="mx-auto max-w-6xl px-5 py-16">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {blocks.map((block) => (
+                <article
+                  key={block.title}
+                  className="flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
+                >
+                  <h2 className="font-body text-xl font-bold text-surface-light-foreground">
+                    {block.title}
+                  </h2>
+                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                    {block.copy}
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {block.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
