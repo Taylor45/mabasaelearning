@@ -162,6 +162,10 @@ function ELearningPage() {
           </div>
         </section>
 
+        <div className="surface-hero">
+          <div className="h-0.5 w-full bg-foreground" />
+        </div>
+
         <section className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-16">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -192,14 +196,18 @@ function ELearningPage() {
           </div>
         </section>
 
-        <div className="mx-auto max-w-6xl px-5 py-16">
-          {sections.map((section) => (
-            <section key={section.title} className="mb-16 last:mb-0">
-              <h2 className="text-2xl">{section.title}</h2>
-              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-                {section.blurb}
-              </p>
-              <div className="mt-7 grid gap-8 sm:grid-cols-2 lg:gap-10">
+        {sections.map((section) => (
+          <section key={section.title}>
+            <div className="surface-band border-y border-foreground/10">
+              <div className="mx-auto max-w-6xl px-5 py-7">
+                <h2 className="font-body text-xl font-bold sm:text-2xl">{section.title}</h2>
+                <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+                  {section.blurb}
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto max-w-6xl px-5 py-12">
+              <div className="grid gap-8 sm:grid-cols-2 lg:gap-10">
                 {section.projects.map((project) => (
                   <article
                     key={project.name}
@@ -226,9 +234,9 @@ function ELearningPage() {
                   </article>
                 ))}
               </div>
-            </section>
-          ))}
-        </div>
+            </div>
+          </section>
+        ))}
       </main>
       <SiteFooter />
     </div>
