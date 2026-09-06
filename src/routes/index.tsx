@@ -184,18 +184,13 @@ function RoleLoop() {
 
 function CardRow({
   items,
-  intro,
 }: {
   items: { title: string; img: string; copy: string; to: ServiceLink }[];
-  intro: string;
 }) {
   return (
     <section className="bg-surface-light">
       <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-surface-light-foreground/80 sm:text-xl">
-          {intro}
-        </p>
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <Link
               key={item.title}
