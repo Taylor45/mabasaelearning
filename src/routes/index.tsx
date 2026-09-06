@@ -139,7 +139,7 @@ function CategoryBand({ label, highlight, intro }: { label: string; highlight: s
           {label} <span className="text-brand-cyan">{highlight}</span>
         </h2>
         {intro ? (
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-surface-light-foreground/80 sm:text-xl">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-foreground sm:text-xl">
             {intro}
           </p>
         ) : null}
