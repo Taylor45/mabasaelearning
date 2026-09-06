@@ -60,7 +60,7 @@ const sections = [
       "Highly visual interactive experiences and downloadable eBooks that pair storytelling with practice.",
     projects: [
       {
-        name: "Interactive Learning Guide",
+        name: "ADDIE Instructional Design Model",
         action: "View Course",
         images: [geniallyGuide1.url, geniallyGuide2.url],
       },
