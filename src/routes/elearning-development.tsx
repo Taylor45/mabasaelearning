@@ -32,7 +32,7 @@ export const Route = createFileRoute("/elearning-development")({
 
 const sections = [
   {
-    title: "Articulate Storyline Courses (Interactive & SCORM Package)",
+    title: "Articulate Storyline Courses ",
     blurb:
       "Scenario-driven modules with branching, knowledge checks, and SCORM tracking built for LMS delivery.",
     projects: [
@@ -55,7 +55,7 @@ const sections = [
     ],
   },
   {
-    title: "Genially & Interactive eBook (SCORM Package)",
+    title: "Genially & Interactive eBook",
     blurb:
       "Highly visual interactive experiences and downloadable eBooks that pair storytelling with practice.",
     projects: [
@@ -68,16 +68,16 @@ const sections = [
     ],
   },
   {
-    title: "iSpring & Interactive eBook (SCORM Package)",
+    title: "iSpring & Interactive eBook ",
     blurb:
       "Rapid-authored PowerPoint-to-SCORM courses with quizzing, narration, and mobile-ready playback.",
     projects: [
       {
-        name: "Product Knowledge Course",
+        name: "Onboarding Short Course",
         action: "View Course",
         images: [ispringCourse1.url, ispringCourse2.url],
       },
-      { name: "Safety Refresher", action: "View Course", images: [ispringSafety1.url] },
+      { name: "Train the Trainer Guide", action: "View Course", images: [ispringSafety1.url] },
     ],
   },
 ];
