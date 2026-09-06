@@ -139,7 +139,7 @@ function CategoryBand({ label, highlight, intro }: { label: string; highlight: s
           {label} <span className="text-brand-cyan">{highlight}</span>
         </h2>
         {intro ? (
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-surface-light-foreground/80 sm:text-xl">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-foreground sm:text-xl">
             {intro}
           </p>
         ) : null}
@@ -242,7 +242,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
 
   return (
     <div className="w-full max-w-[420px]">
-      <p className="mb-3.5 text-center font-mono text-[0.7rem] font-bold uppercase tracking-[2px] text-brand-sky">
+      <p className="mb-3.5 text-center font-mono text-[0.7rem] font-bold uppercase tracking-[2px] text-white">
         {label}
       </p>
       <div className="relative flex h-[clamp(96px,20vw,180px)] items-center justify-center overflow-hidden rounded-2xl bg-surface-light shadow-elevated">
@@ -431,7 +431,7 @@ function Index() {
         <section className="surface-hero">
           <div className="mx-auto max-w-6xl px-5 py-20">
             <div className="text-center">
-              <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
+              <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-white">
                 Methodology
               </span>
               <h2 className="mt-6 font-body text-4xl font-bold sm:text-5xl">
