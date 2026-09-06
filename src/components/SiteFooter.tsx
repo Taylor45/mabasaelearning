@@ -1,7 +1,7 @@
 const expertise = [
   "Instructional Desgin",
   "Articulate Storyline 360 & xAPI",
-  "Generative AI (ChatGPTs & Claude",
+  "Prompt Engineering-Generative AIs",
   "eLearning Graphic Design",
   "eLearning Multimedia",
   "UX/UI Design",
