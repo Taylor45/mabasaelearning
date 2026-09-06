@@ -131,13 +131,18 @@ const addieStages = [
   },
 ];
 
-function CategoryBand({ label, highlight }: { label: string; highlight: string }) {
+function CategoryBand({ label, highlight, intro }: { label: string; highlight: string; intro?: string }) {
   return (
     <section className="surface-band">
       <div className="mx-auto max-w-6xl px-5 py-16 text-center">
         <h2 className="font-body text-3xl font-bold sm:text-4xl">
           {label} <span className="text-brand-cyan">{highlight}</span>
         </h2>
+        {intro ? (
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-surface-light-foreground/80 sm:text-xl">
+            {intro}
+          </p>
+        ) : null}
       </div>
     </section>
   );
@@ -179,18 +184,13 @@ function RoleLoop() {
 
 function CardRow({
   items,
-  intro,
 }: {
   items: { title: string; img: string; copy: string; to: ServiceLink }[];
-  intro: string;
 }) {
   return (
     <section className="bg-surface-light">
       <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-surface-light-foreground/80 sm:text-xl">
-          {intro}
-        </p>
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <Link
               key={item.title}
@@ -393,17 +393,19 @@ function Index() {
           </div>
         </section>
 
-        <CategoryBand label="Category 1:" highlight="Design & Strategy" />
-        <CardRow
-          items={categoryOne}
+        <CategoryBand
+          label="Category 1:"
+          highlight="Design & Strategy"
           intro="Laying the foundation for impactful learning experiences through smart design, strategy, and innovation."
         />
+        <CardRow items={categoryOne} />
 
-        <CategoryBand label="Category 2:" highlight="Development & AI" />
-        <CardRow
-          items={categoryTwo}
+        <CategoryBand
+          label="Category 2:"
+          highlight="Development & AI"
           intro="Bringing learning to life with modern development, multimedia craft, and AI-powered design."
         />
+        <CardRow items={categoryTwo} />
 
         {/* Tools & LMS */}
         <section className="surface-band">
