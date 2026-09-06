@@ -131,13 +131,18 @@ const addieStages = [
   },
 ];
 
-function CategoryBand({ label, highlight }: { label: string; highlight: string }) {
+function CategoryBand({ label, highlight, intro }: { label: string; highlight: string; intro?: string }) {
   return (
     <section className="surface-band">
       <div className="mx-auto max-w-6xl px-5 py-16 text-center">
         <h2 className="font-body text-3xl font-bold sm:text-4xl">
           {label} <span className="text-brand-cyan">{highlight}</span>
         </h2>
+        {intro ? (
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-surface-light-foreground/80 sm:text-xl">
+            {intro}
+          </p>
+        ) : null}
       </div>
     </section>
   );
