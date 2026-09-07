@@ -14,6 +14,12 @@ import healthIcon from "@/assets/health-icon.jpg.asset.json";
 import bannerHcm710 from "@/assets/banner-hcm710.png.asset.json";
 import bannerScm710a from "@/assets/banner-scm710-a.png.asset.json";
 import bannerScm710b from "@/assets/banner-scm710-b.png.asset.json";
+import iconIntroduce from "@/assets/icon-Introduce.png.asset.json";
+import iconLearningOutcomes from "@/assets/icon-Learning_outcomes.png.asset.json";
+import iconTimeSpent from "@/assets/icon-Time_spent.png.asset.json";
+import iconTranscripts from "@/assets/icon-Transcripts.png.asset.json";
+import iconWatchVideo from "@/assets/icon-Watch_the_video.png.asset.json";
+import iconWriting from "@/assets/icon-4.png.asset.json";
 
 export const Route = createFileRoute("/elearning-multimedia")({
   head: () => ({
@@ -48,6 +54,56 @@ const banners = [
   { src: bannerScm710a.url, alt: "Social Determinants of Health (SCM 710) course banner" },
   { src: bannerScm710b.url, alt: "Social Determinants of Health (SCM 710) banner with logo" },
 ];
+
+const courseIcons = [
+  { src: iconIntroduce.url, alt: "Introduce module icon" },
+  { src: iconLearningOutcomes.url, alt: "Learning outcomes module icon" },
+  { src: iconTimeSpent.url, alt: "Time spent module icon" },
+  { src: iconTranscripts.url, alt: "Transcripts module icon" },
+  { src: iconWatchVideo.url, alt: "Watch the video module icon" },
+  { src: iconWriting.url, alt: "Writing and documentation module icon" },
+];
+
+function IconCarousel({ images }: { images: { src: string; alt: string }[] }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % images.length), 3000);
+    return () => clearInterval(id);
+  }, [images.length]);
+
+  return (
+    <figure className="relative aspect-square w-full overflow-hidden rounded-md border border-foreground/15 bg-card">
+      {images.map((image, i) => (
+        <img
+          key={image.src}
+          src={image.src}
+          alt={i === 0 ? image.alt : ""}
+          aria-hidden={i !== index}
+          loading="lazy"
+          width={512}
+          height={512}
+          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-700 ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            aria-label={`Show icon ${i + 1}`}
+            onClick={() => setIndex(i)}
+            className={`h-2 w-2 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+              i === index ? "bg-accent" : "bg-foreground/50"
+            }`}
+          />
+        ))}
+      </div>
+    </figure>
+  );
+}
 
 function BannerCarousel({ images }: { images: { src: string; alt: string }[] }) {
   const [index, setIndex] = useState(0);
@@ -176,8 +232,9 @@ function MultimediaShowcase() {
       <ShowcaseHeading blurb="Course banners and module icons that establish visual identity and navigation cues across learning materials.">
         Banners / Icons
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr_1fr]">
         <BannerCarousel images={banners} />
+        <IconCarousel images={courseIcons} />
         <GalleryImage src={healthIcon.url} alt="Learning module target icon" className="mx-auto aspect-square w-full max-w-48" />
       </div>
 
