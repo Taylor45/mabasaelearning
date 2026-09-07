@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ServicePage } from "@/components/ServicePage";
 import graphicDesign1 from "@/assets/graphic-design-1.jpg.asset.json";
 import graphicDesign2 from "@/assets/graphic-design-2.jpg.asset.json";
@@ -10,6 +11,9 @@ import aiScenes1 from "@/assets/ai-scenes-1.jpg.asset.json";
 import aiScenes2 from "@/assets/ai-scenes-2.jpg.asset.json";
 import healthBanner from "@/assets/health-banner.jpg.asset.json";
 import healthIcon from "@/assets/health-icon.jpg.asset.json";
+import bannerHcm710 from "@/assets/banner-hcm710.png.asset.json";
+import bannerScm710a from "@/assets/banner-scm710-a.png.asset.json";
+import bannerScm710b from "@/assets/banner-scm710-b.png.asset.json";
 
 export const Route = createFileRoute("/elearning-multimedia")({
   head: () => ({
