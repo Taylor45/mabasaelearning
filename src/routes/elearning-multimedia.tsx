@@ -111,11 +111,11 @@ function MultimediaShowcase() {
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 lg:grid-cols-[3fr_1fr]">
         <GalleryImage src={aiAvatarsBoard.url} alt="Collection of AI-generated professional learning avatars" className="aspect-video" />
         <GalleryImage src={aiAvatarPortrait.url} alt="AI-generated professional male learning avatar" className="min-h-72" />
-      <ShowcaseHeading blurb="AI-generated workplace and healthcare scenario storyboards created through iterative prompt engineering.">
-        Generative AI & Prompt Engineering (Scenes)
-      </ShowcaseHeading>
+      </div>
 
-      <ShowcaseHeading>Generative AI &amp; Prompt Engineering (Scenes)</ShowcaseHeading>
+      <ShowcaseHeading blurb="AI-generated workplace and healthcare scenario storyboards created through iterative prompt engineering.">
+        Generative AI &amp; Prompt Engineering (Scenes)
+      </ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
         <GalleryImage src={aiScenes1.url} alt="AI-generated workplace learning scenario storyboard" className="aspect-video" />
         <GalleryImage src={aiScenes2.url} alt="AI-generated healthcare learning scenario storyboard" className="aspect-video" />
