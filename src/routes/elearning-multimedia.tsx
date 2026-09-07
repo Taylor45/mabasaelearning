@@ -62,6 +62,7 @@ const courseIcons = [
   { src: iconTranscripts.url, alt: "Transcripts module icon" },
   { src: iconWatchVideo.url, alt: "Watch the video module icon" },
   { src: iconWriting.url, alt: "Writing and documentation module icon" },
+  { src: healthIcon.url, alt: "Learning module target icon" },
 ];
 
 function IconCarousel({ images }: { images: { src: string; alt: string }[] }) {
@@ -73,7 +74,7 @@ function IconCarousel({ images }: { images: { src: string; alt: string }[] }) {
   }, [images.length]);
 
   return (
-    <figure className="relative aspect-square w-full overflow-hidden rounded-md border border-foreground/15 bg-card">
+    <figure className="relative mx-auto aspect-square w-full max-w-48 overflow-hidden rounded-md border border-foreground/15 bg-card">
       {images.map((image, i) => (
         <img
           key={image.src}
@@ -232,10 +233,9 @@ function MultimediaShowcase() {
       <ShowcaseHeading blurb="Course banners and module icons that establish visual identity and navigation cues across learning materials.">
         Banners / Icons
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr]">
         <BannerCarousel images={banners} />
         <IconCarousel images={courseIcons} />
-        <GalleryImage src={healthIcon.url} alt="Learning module target icon" className="mx-auto aspect-square w-full max-w-48" />
       </div>
 
       <ShowcaseHeading blurb="Genially-powered interactive images that turn static content into explorable, clickable learning experiences.">
