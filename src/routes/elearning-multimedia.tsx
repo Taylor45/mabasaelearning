@@ -46,11 +46,12 @@ const videos = [
   { id: "ql_PpesheF8", title: "ACADEX reflection session motion graphic" },
 ];
 
-function ShowcaseHeading({ children }: { children: string }) {
+function ShowcaseHeading({ children, blurb }: { children: string; blurb?: string }) {
   return (
     <div className="surface-band border-y border-foreground/10">
       <div className="mx-auto max-w-6xl px-5 py-7">
         <h2 className="font-body text-xl font-bold sm:text-2xl">{children}</h2>
+        {blurb && <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{blurb}</p>}
       </div>
     </div>
   );
@@ -74,7 +75,9 @@ function GalleryImage({ src, alt, className = "" }: { src: string; alt: string; 
 function MultimediaShowcase() {
   return (
     <section aria-label="Multimedia portfolio" className="surface-hero">
-      <ShowcaseHeading>Graphic Design</ShowcaseHeading>
+      <ShowcaseHeading blurb="Branded visual assets, symposium banners, and promotional graphics designed for online and distance education events.">
+        Graphic Design
+      </ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
         {graphicDesigns.map((image) => (
           <GalleryImage key={image.src} {...image} className="aspect-video" />
@@ -100,7 +103,9 @@ function MultimediaShowcase() {
         ))}
       </div>
 
-      <ShowcaseHeading>Generative AI Prompt Engineering (Avatars)</ShowcaseHeading>
+      <ShowcaseHeading blurb="AI-generated professional avatars and character portraits engineered through structured prompt design for learning scenarios.">
+        Generative AI Prompt Engineering (Avatars)
+      </ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 lg:grid-cols-[3fr_1fr]">
         <GalleryImage src={aiAvatarsBoard.url} alt="Collection of AI-generated professional learning avatars" className="aspect-video" />
         <GalleryImage src={aiAvatarPortrait.url} alt="AI-generated professional male learning avatar" className="min-h-72" />
@@ -112,13 +117,17 @@ function MultimediaShowcase() {
         <GalleryImage src={aiScenes2.url} alt="AI-generated healthcare learning scenario storyboard" className="aspect-video" />
       </div>
 
-      <ShowcaseHeading>Banners / Icons</ShowcaseHeading>
+      <ShowcaseHeading blurb="Course banners and module icons that establish visual identity and navigation cues across learning materials.">
+        Banners / Icons
+      </ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr]">
         <GalleryImage src={healthBanner.url} alt="Health policy and management course banner" className="aspect-[5/1]" />
         <GalleryImage src={healthIcon.url} alt="Learning module target icon" className="mx-auto aspect-square w-full max-w-48" />
       </div>
 
-      <ShowcaseHeading>Interactive Images</ShowcaseHeading>
+      <ShowcaseHeading blurb="Genially-powered interactive images that turn static content into explorable, clickable learning experiences.">
+        Interactive Images
+      </ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
         <iframe
           src="https://view.genially.com/6729c6fc4c6f9a8e6bcb4bf3"
