@@ -232,8 +232,9 @@ function MultimediaShowcase() {
       <ShowcaseHeading blurb="Course banners and module icons that establish visual identity and navigation cues across learning materials.">
         Banners / Icons
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr_1fr]">
         <BannerCarousel images={banners} />
+        <IconCarousel images={courseIcons} />
         <GalleryImage src={healthIcon.url} alt="Learning module target icon" className="mx-auto aspect-square w-full max-w-48" />
       </div>
 
