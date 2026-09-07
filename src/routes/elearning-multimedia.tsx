@@ -14,6 +14,12 @@ import healthIcon from "@/assets/health-icon.jpg.asset.json";
 import bannerHcm710 from "@/assets/banner-hcm710.png.asset.json";
 import bannerScm710a from "@/assets/banner-scm710-a.png.asset.json";
 import bannerScm710b from "@/assets/banner-scm710-b.png.asset.json";
+import iconIntroduce from "@/assets/icon-Introduce.png.asset.json";
+import iconLearningOutcomes from "@/assets/icon-Learning_outcomes.png.asset.json";
+import iconTimeSpent from "@/assets/icon-Time_spent.png.asset.json";
+import iconTranscripts from "@/assets/icon-Transcripts.png.asset.json";
+import iconWatchVideo from "@/assets/icon-Watch_the_video.png.asset.json";
+import iconWriting from "@/assets/icon-4.png.asset.json";
 
 export const Route = createFileRoute("/elearning-multimedia")({
   head: () => ({
