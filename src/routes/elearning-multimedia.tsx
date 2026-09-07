@@ -84,7 +84,9 @@ function MultimediaShowcase() {
         ))}
       </div>
 
-      <ShowcaseHeading>Videos (Canva, CapCut &amp; Camtasia)</ShowcaseHeading>
+      <ShowcaseHeading blurb="Scripted, narrated, and edited learning videos covering AI-powered design, motion graphics, and event highlights.">
+        Videos (Canva, CapCut & Camtasia)
+      </ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
         {videos.map((video, index) => (
           <figure
@@ -109,7 +111,9 @@ function MultimediaShowcase() {
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 lg:grid-cols-[3fr_1fr]">
         <GalleryImage src={aiAvatarsBoard.url} alt="Collection of AI-generated professional learning avatars" className="aspect-video" />
         <GalleryImage src={aiAvatarPortrait.url} alt="AI-generated professional male learning avatar" className="min-h-72" />
-      </div>
+      <ShowcaseHeading blurb="AI-generated workplace and healthcare scenario storyboards created through iterative prompt engineering.">
+        Generative AI & Prompt Engineering (Scenes)
+      </ShowcaseHeading>
 
       <ShowcaseHeading>Generative AI &amp; Prompt Engineering (Scenes)</ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
