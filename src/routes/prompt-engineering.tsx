@@ -28,13 +28,13 @@ const materialSections = [
       "Prompt sets and worksheets used to generate consistent AI avatars, narration tone, and gamified learning activities.",
     items: [
       {
-        name: "Prompting",
+        name: "AI Avatar Image Prompting Guide",
         src: "https://docs.google.com/document/d/1ZyG0XoReb6op2_N3S6I_AZ2iiFz_3HwmH14bXCiJ0uY/preview",
         href: "https://docs.google.com/document/d/1ZyG0XoReb6op2_N3S6I_AZ2iiFz_3HwmH14bXCiJ0uY/view",
         action: "Open Document",
       },
       {
-        name: "Gamified_Learning_Prompt_Worksheet",
+        name: "Gamified Learning Prompt Worksheet",
         src: "https://docs.google.com/document/d/1IMJZSaM928JGmkdZ-9z9uLTvGLHDQ47I1O3zmd0qk-U/preview",
         href: "https://docs.google.com/document/d/1IMJZSaM928JGmkdZ-9z9uLTvGLHDQ47I1O3zmd0qk-U/view",
         action: "Open Document",
