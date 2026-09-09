@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -47,6 +47,7 @@ const sections = [
       {
         name: "AI Literacy for Instructional Design",
         action: "View Course",
+        link: { to: "/design-process", label: "Design Process" },
         images: [
           "/__l5e/assets-v1/f8a711a1-f971-4a5d-90a1-eb7fa32d4106/storyline-ai-literacy.png",
           storylineAiLiteracy.url,
@@ -223,13 +224,24 @@ function ELearningPage() {
                     )}
                     <div className="flex flex-1 flex-col items-start gap-4 p-6">
                       <h3 className="text-lg leading-snug">{project.name}</h3>
-                      <a
-                        href="#"
-                        className="mt-auto inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
-                      >
-                        {project.action}
-                        <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
-                      </a>
+                      <div className="mt-auto flex flex-wrap items-center gap-3">
+                        <a
+                          href="#"
+                          className="inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                        >
+                          {project.action}
+                          <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                        </a>
+                        {project.link && (
+                          <Link
+                            to={project.link.to}
+                            className="inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-2.5 text-xs uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                          >
+                            {project.link.label}
+                            <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </article>
                 ))}
