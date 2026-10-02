@@ -131,12 +131,12 @@ const addieStages = [
   },
 ];
 
-function CategoryBand({ label, highlight, intro }: { label: string; highlight: string; intro?: string }) {
+function CategoryBand({ highlight, intro }: { highlight: string; intro?: string }) {
   return (
     <section className="surface-band">
       <div className="mx-auto max-w-6xl px-5 py-16 text-center">
         <h2 className="font-body text-3xl font-bold sm:text-4xl">
-          {label} <span className="text-brand-cyan">{highlight}</span>
+          <span className="text-brand-cyan">{highlight}</span>
         </h2>
         {intro ? (
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-foreground sm:text-xl">
@@ -394,14 +394,12 @@ function Index() {
         </section>
 
         <CategoryBand
-          label="Category 1:"
           highlight="Design & Strategy"
           intro="Laying the foundation for impactful learning experiences through smart design, strategy, and innovation."
         />
         <CardRow items={categoryOne} />
 
         <CategoryBand
-          label="Category 2:"
           highlight="Development & AI"
           intro="Bringing learning to life with modern development, multimedia craft, and AI-powered design."
         />
