@@ -394,14 +394,12 @@ function Index() {
         </section>
 
         <CategoryBand
-          label="Category 1:"
           highlight="Design & Strategy"
           intro="Laying the foundation for impactful learning experiences through smart design, strategy, and innovation."
         />
         <CardRow items={categoryOne} />
 
         <CategoryBand
-          label="Category 2:"
           highlight="Development & AI"
           intro="Bringing learning to life with modern development, multimedia craft, and AI-powered design."
         />
