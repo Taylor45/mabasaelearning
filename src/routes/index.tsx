@@ -446,11 +446,17 @@ function Index() {
               </p>
             </div>
 
-            <div className="mx-auto mt-14 grid max-w-[860px] gap-2.5 sm:gap-[clamp(12px,2vw,18px)] md:grid-cols-2">
+          </div>
+        </section>
+
+        {/* ADDIE flash cards on white */}
+        <section className="bg-surface-light">
+          <div className="mx-auto max-w-6xl px-5 py-20">
+            <div className="mx-auto grid max-w-[860px] gap-2.5 sm:gap-[clamp(12px,2vw,18px)] md:grid-cols-2">
               {addieStages.map((stage, i) => (
                 <div
                   key={stage.title}
-                  className={`rounded-xl bg-surface-light px-4 py-4 text-center text-surface-light-foreground shadow-elevated transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(0,8,30,0.45),0_4px_10px_rgba(0,8,30,0.25)] sm:rounded-[14px] sm:px-[clamp(16px,2.2vw,22px)] sm:py-[clamp(18px,2.5vw,24px)] ${
+                  className={`rounded-xl border border-surface-light-foreground/12 bg-surface-light px-4 py-4 text-center text-surface-light-foreground shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] sm:rounded-[14px] sm:px-[clamp(16px,2.2vw,22px)] sm:py-[clamp(18px,2.5vw,24px)] ${
                     i === addieStages.length - 1
                       ? "md:col-span-2 md:mx-auto md:w-[calc(50%-9px)]"
                       : ""
