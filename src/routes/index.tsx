@@ -412,6 +412,9 @@ function Index() {
               eLearning Tools &amp;{" "}
               <span className="text-brand-cyan">Learning Management Systems</span>
             </h2>
+            <p className="mt-4 text-sm text-muted-foreground sm:text-base">
+              Tools I use to design, develop, deliver, manage, and evaluate digital learning experiences
+            </p>
           </div>
         </section>
         <section className="surface-hero">
