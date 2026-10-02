@@ -81,21 +81,20 @@ const categoryTwo: { title: string; img: string; copy: string; to: ServiceLink }
 ];
 
 const authoringTools = [
-  { short: "H5", name: "H5P", tag: "Interactive content", from: "#0047b3", to: "#1da8e2" },
-  { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#1da8e2", to: "#19d4c8" },
+  { short: "H5", name: "H5P", tag: "Interactive content", from: "#19d4c8", to: "#0047b3" },
+  { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#0047b3", to: "#1da8e2" },
   { short: "Ca", name: "Camtasia", tag: "Video", from: "#0047b3", to: "#19d4c8" },
-  { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#19d4c8", to: "#0047b3" },
+  { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#b5691a", to: "#0047b3" },
   { short: "Ge", name: "Genially", tag: "Interactions", from: "#1da8e2", to: "#0047b3" },
-  { short: "Fi", name: "Figma", tag: "UX / UI", from: "#19d4c8", to: "#1da8e2" },
+  { short: "Fi", name: "Figma", tag: "UX / UI", from: "#7a2fd6", to: "#1da8e2" },
 ];
 
 const lmsPlatforms = [
-  { short: "Mo", name: "Moodle", tag: "LMS", from: "#0047b3", to: "#1da8e2" },
-  { short: "Ca", name: "Canvas", tag: "LMS", from: "#1da8e2", to: "#19d4c8" },
-  { short: "Bb", name: "Blackboard Ultra", tag: "LMS", from: "#0047b3", to: "#19d4c8" },
-  { short: "No", name: "NovaEd", tag: "LMS", from: "#19d4c8", to: "#0047b3" },
-  { short: "Br", name: "Brightspace", tag: "LMS", from: "#1da8e2", to: "#0047b3" },
-  { short: "GC", name: "Google Classroom", tag: "LMS", from: "#19d4c8", to: "#1da8e2" },
+  { short: "Mo", name: "Moodle", tag: "LMS", from: "#19d4c8", to: "#001233" },
+  { short: "Ca", name: "Canvas", tag: "LMS", from: "#0047b3", to: "#7a2fd6" },
+  { short: "Bb", name: "Blackboard Ultra", tag: "LMS", from: "#001a4d", to: "#1da8e2" },
+  { short: "No", name: "NovaEd", tag: "LMS", from: "#1da8e2", to: "#19d4c8" },
+  { short: "Br", name: "Brightspace", tag: "LMS", from: "#7a2fd6", to: "#0047b3" },
 ];
 
 const addieStages = [
@@ -257,7 +256,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
           >
             <span
               className="flex h-[42px] w-[42px] items-center justify-center rounded-[11px] text-[0.95rem] font-extrabold text-white sm:h-[58px] sm:w-[58px] sm:rounded-[14px] sm:text-[1.25rem] lg:h-[72px] lg:w-[72px] lg:rounded-[18px] lg:text-[1.6rem]"
-              style={{ backgroundImage: `linear-gradient(120deg, ${tool.from}, ${tool.to})` }}
+              style={{ backgroundImage: `linear-gradient(135deg, ${tool.from}, ${tool.to})` }}
             >
               {tool.short}
             </span>
