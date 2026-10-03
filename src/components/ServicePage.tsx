@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -32,12 +31,6 @@ export function ServicePage({
                 {title}
               </h1>
               <p className="mt-5 max-w-2xl text-muted-foreground">{intro}</p>
-              <Link
-                to="/contact"
-                className="mt-8 inline-flex rounded-sm bg-primary px-6 py-2.5 font-display text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                Start a project
-              </Link>
             </div>
           </div>
         </section>
