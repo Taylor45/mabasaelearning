@@ -59,7 +59,8 @@ function PromptEngineeringPage() {
               <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{section.blurb}</p>
             </div>
           </div>
-          <div className="mx-auto max-w-6xl px-5 py-12">
+            <div className="bg-ink">
+              <div className="mx-auto max-w-6xl px-5 py-12">
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
               {section.items.map((item) => (
                 <article
@@ -90,7 +91,8 @@ function PromptEngineeringPage() {
                 </article>
               ))}
             </div>
-          </div>
+              </div>
+            </div>
         </section>
       ))}
     </ServicePage>
