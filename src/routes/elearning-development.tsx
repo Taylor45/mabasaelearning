@@ -25,6 +25,8 @@ export const Route = createFileRoute("/elearning-development")({
         property: "og:description",
         content: "Storyline, Genially, iSpring and interactive eBook SCORM projects.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ELearningPage,
