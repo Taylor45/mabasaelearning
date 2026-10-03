@@ -150,10 +150,10 @@ const blocks = [
 
 function ELearningPage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-black">
       <SiteHeader />
       <main className="flex-1">
-        <section className="surface-hero">
+        <section className="bg-black">
           <div className="mx-auto max-w-6xl px-5 py-20">
             <h1 className="text-4xl sm:text-5xl">eLearning Development</h1>
             <p className="mt-4 max-w-2xl text-muted-foreground">
@@ -163,11 +163,11 @@ function ELearningPage() {
           </div>
         </section>
 
-        <div className="surface-hero">
+        <div className="bg-black">
           <div className="h-0.5 w-full bg-foreground" />
         </div>
 
-        <section className="bg-surface-light">
+        <section className="bg-black">
           <div className="mx-auto max-w-6xl px-5 py-16">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {blocks.map((block) => (
@@ -198,8 +198,8 @@ function ELearningPage() {
         </section>
 
         {sections.map((section) => (
-          <section key={section.title}>
-            <div className="surface-band border-y border-foreground/10">
+          <section key={section.title} className="bg-black">
+            <div className="border-y border-foreground/10">
               <div className="mx-auto max-w-6xl px-5 py-7">
                 <h2 className="font-body text-xl font-bold sm:text-2xl">{section.title}</h2>
                 <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
