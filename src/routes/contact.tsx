@@ -24,7 +24,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const channels = [
-  { label: "LinkedIn", value: "Let`s Connect: LinkedIn", href: "https://www.linkedin.com" },
+  { label: "LinkedIn", value: "Let`s Connect: LinkedIn", href: "https://www.linkedin.com/in/bruce-mabasa-12121426a" },
   { label: "Resume", value: "View Resume", href: "#" },
 ];
 
