@@ -200,7 +200,7 @@ function ELearningPage() {
         </section>
 
         {sections.map((section) => (
-          <section key={section.title}>
+          <section key={section.title} className="bg-ink">
             <div className="surface-band border-y border-foreground/10">
               <div className="mx-auto max-w-6xl px-5 py-7">
                 <h2 className="font-body text-xl font-bold sm:text-2xl">{section.title}</h2>

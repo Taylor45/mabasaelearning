@@ -130,7 +130,7 @@ function DesignProcessPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
-      <main className="flex-1">
+      <main className="flex-1 bg-ink">
         <section className="surface-hero">
           <div className="mx-auto max-w-6xl px-5 pb-16 pt-10">
             <img
