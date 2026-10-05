@@ -69,7 +69,7 @@ export function ServicePage({
           </div>
         </section>
 
-        {children}
+        {children && <div className="bg-ink">{children}</div>}
       </main>
       <SiteFooter />
     </div>
