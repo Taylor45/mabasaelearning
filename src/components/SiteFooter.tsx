@@ -41,16 +41,38 @@ export function SiteFooter() {
             <p className="text-sm font-semibold">GLOBAL SUPPORT</p>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:brucemabasa4@gmail.com" className="hover:text-foreground">
+                <a
+                  href="mailto:brucemabasa4@gmail.com"
+                  className="inline-flex items-center gap-3 hover:text-foreground"
+                >
+                  <Mail aria-hidden="true" size={16} className="shrink-0 text-brand-cyan" />
                   brucemabasa4@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+27825965691" className="hover:text-foreground">
+                <a
+                  href="tel:+27825965691"
+                  className="inline-flex items-center gap-3 hover:text-foreground"
+                >
+                  <Phone aria-hidden="true" size={16} className="shrink-0 text-brand-cyan" />
                   +27 (0) 82 596 5691
                 </a>
               </li>
-              <li>Gauteng, South Africa &amp; Remote Global</li>
+              <li className="inline-flex items-center gap-3">
+                <MapPin aria-hidden="true" size={16} className="shrink-0 text-brand-cyan" />
+                Gauteng, South Africa &amp; Remote Global
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 hover:text-foreground"
+                >
+                  <Linkedin aria-hidden="true" size={16} className="shrink-0 text-brand-cyan" />
+                  Let`s Connect: LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>
