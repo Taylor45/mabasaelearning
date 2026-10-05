@@ -64,7 +64,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/in/bruce-mabasa-12121426a"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-3 hover:text-foreground"

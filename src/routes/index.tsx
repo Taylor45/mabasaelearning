@@ -351,7 +351,7 @@ function Index() {
               </div>
               <div className="mt-10 flex w-full max-w-sm flex-col gap-4">
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/in/bruce-mabasa-12121426a"
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-sm border border-foreground/70 px-6 py-2.5 text-center font-display transition-colors hover:bg-primary hover:text-primary-foreground"
