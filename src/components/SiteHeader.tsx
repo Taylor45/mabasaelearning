@@ -24,7 +24,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-ink/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+      <div className="flex h-16 w-full items-center justify-between px-5">
         <Link to="/" className="flex items-center gap-3">
           <span className="font-display text-xl tracking-tight">Mabasa.</span>
           <span className="rounded-full border border-border px-3 py-0.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground max-sm:hidden">
