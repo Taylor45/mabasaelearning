@@ -424,10 +424,6 @@ function Index() {
           </div>
         </section>
 
-        <div className="surface-hero">
-          <div className="h-0.5 w-full bg-foreground" />
-        </div>
-
         {/* ADDIE methodology */}
         <section className="surface-hero">
           <div className="mx-auto max-w-6xl px-5 py-20">
