@@ -85,7 +85,7 @@ export function SiteFooter() {
             </span>
           </div>
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Mabasa eLearning Consulting. All rights
+            &copy; {new Date().getFullYear()} Mabasa eLearning. All rights
             reserved.
           </p>
         </div>
