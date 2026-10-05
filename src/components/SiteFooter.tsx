@@ -1,3 +1,5 @@
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+
 const expertise = [
   "Instructional Desgin",
   "Articulate Storyline 360 & xAPI",
