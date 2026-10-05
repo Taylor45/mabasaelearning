@@ -156,7 +156,10 @@ function ELearningPage() {
       <main className="flex-1">
         <section className="surface-hero">
           <div className="mx-auto max-w-6xl px-5 py-20">
-            <h1 className="text-4xl sm:text-5xl">eLearning Development</h1>
+            <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
+              Development &amp; AI
+            </span>
+            <h1 className="mt-5 text-4xl sm:text-5xl">eLearning Development</h1>
             <p className="mt-4 max-w-2xl text-muted-foreground">
               A selection of courses, interactive experiences, and SCORM packages
               designed and developed end to end.
