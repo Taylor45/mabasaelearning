@@ -119,13 +119,13 @@ function WebDesignPage() {
               {wireframes.map((wire) => (
                 <figure
                   key={wire.src}
-                  className="group overflow-hidden rounded-md border border-border bg-card shadow-elevated"
+                  className="group flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md border border-border bg-card shadow-elevated"
                 >
                   <img
                     src={wire.src}
                     alt={wire.alt}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                 </figure>
               ))}
