@@ -11,19 +11,20 @@ export function WireframeViewer({ images }: { images: Wireframe[] }) {
   const [viewport, setViewport] = useState({ width: 1, height: 1 });
   const [natural, setNatural] = useState({ width: 1, height: 1 });
   const canvas = useRef<HTMLDivElement>(null);
+  const [canvasElement, setCanvasElement] = useState<HTMLDivElement | null>(null);
   const drag = useRef<{ x: number; y: number; left: number; top: number } | null>(null);
   const image = active === null ? undefined : images[active];
 
   useEffect(() => {
-    if (active === null || !canvas.current) return;
-    const element = canvas.current;
+    if (active === null || !canvasElement) return;
+    const element = canvasElement;
     const observer = new ResizeObserver(() => {
       setViewport({ width: element.clientWidth, height: element.clientHeight });
     });
     observer.observe(element);
     element.scrollTo(0, 0);
     return () => observer.disconnect();
-  }, [active]);
+  }, [active, canvasElement]);
 
   function move(direction: number) {
     setActive((current) => current === null ? null : (current + direction + images.length) % images.length);
@@ -73,7 +74,7 @@ export function WireframeViewer({ images }: { images: Wireframe[] }) {
             </div>
           </header>
           <div
-            ref={canvas}
+            ref={(element) => { canvas.current = element; setCanvasElement(element); }}
             className={`min-h-0 flex-1 overflow-auto overscroll-contain ${zoom > 1 ? "cursor-grab active:cursor-grabbing" : ""}`}
             onDoubleClick={() => setZoom((value) => value === 1 ? 2 : 1)}
             onPointerDown={(event) => {
