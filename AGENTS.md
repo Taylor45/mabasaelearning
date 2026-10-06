@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep wireframe gallery interactions in a dedicated browser-side viewer using Radix Dialog for modal focus management and keyboard dismissal.

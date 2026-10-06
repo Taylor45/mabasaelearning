@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
+import { WireframeViewer } from "@/components/WireframeViewer";
 import appImg from "@/assets/uxui/app.jpg.asset.json";
 import wire1 from "@/assets/uxui/wire1.png.asset.json";
 import wire2 from "@/assets/uxui/wire2.png.asset.json";
@@ -115,21 +116,7 @@ function WebDesignPage() {
         </div>
         <div className="bg-ink">
           <div className="mx-auto max-w-6xl px-5 py-12">
-            <div className="grid gap-8 sm:grid-cols-2 lg:gap-10">
-              {wireframes.map((wire) => (
-                <figure
-                  key={wire.src}
-                  className="group flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md border border-border bg-card shadow-elevated"
-                >
-                  <img
-                    src={wire.src}
-                    alt={wire.alt}
-                    loading="lazy"
-                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </figure>
-              ))}
-            </div>
+            <WireframeViewer images={wireframes} />
           </div>
         </div>
       </section>
