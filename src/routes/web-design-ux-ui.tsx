@@ -51,9 +51,9 @@ function WebDesignPage() {
             </p>
           </div>
         </div>
-        <div className="bg-ink">
+        <div className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-12">
-            <h3 className="font-body text-lg font-bold text-foreground sm:text-xl">UX Research &amp; Design Case Study</h3>
+            <h3 className="font-body text-lg font-bold text-surface-light-foreground sm:text-xl">UX Research &amp; Design Case Study</h3>
             <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-10">
               <article className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
                 <div className="aspect-[4/3] w-full bg-muted">
@@ -114,7 +114,7 @@ function WebDesignPage() {
             </p>
           </div>
         </div>
-        <div className="bg-ink">
+        <div className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-12">
             <WireframeViewer images={wireframes} />
           </div>
