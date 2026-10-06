@@ -130,7 +130,7 @@ function DesignProcessPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
-      <main className="flex-1 bg-ink">
+      <main className="flex-1">
         <section className="surface-hero">
           <div className="mx-auto max-w-6xl px-5 pb-16 pt-10">
             <img
@@ -157,15 +157,18 @@ function DesignProcessPage() {
         </div>
 
         <Band title="Description" />
-        <div className="mx-auto max-w-6xl px-5 py-12 text-muted-foreground">
+        <div className="bg-surface-light text-surface-light-foreground/75">
+          <div className="mx-auto max-w-6xl px-5 py-12">
           <p>
             A short course I designed and developed on Articulate Storyline 360, focused on
             empowering instructional designers with AI prompting skills.
           </p>
+          </div>
         </div>
 
         <Band title="Overview" />
-        <div className="mx-auto max-w-6xl space-y-5 px-5 py-12 text-muted-foreground">
+        <div className="bg-surface-light text-surface-light-foreground/75">
+          <div className="mx-auto max-w-6xl space-y-5 px-5 py-12">
           <p>
             AI Literacy has become one of my favorite areas to explore within learning experience
             design. Throughout my journey as a Learning Experience Designer (LXD), I&apos;ve noticed
@@ -178,22 +181,24 @@ function DesignProcessPage() {
             understand AI but also learn how to craft and analyze effective prompts to achieve more
             accurate, relevant, and impactful results in their design process.
           </p>
+          </div>
         </div>
 
         <Band
           title="My Process"
           blurb="To plan and create an effective learning experience, I used two frameworks to create structure and a meaningful learning experience: ADDIE and Bloom's Taxonomy."
         />
-        <div className="mx-auto max-w-6xl px-5 py-12">
+        <div className="bg-surface-light text-surface-light-foreground">
+          <div className="mx-auto max-w-6xl px-5 py-12">
           <h3 className="text-xl">Instructional Design</h3>
-          <p className="mt-2 max-w-3xl text-muted-foreground">
+          <p className="mt-2 max-w-3xl text-surface-light-foreground/75">
             When starting a new module/course, I always begin by asking: Who are the learners?
             What&apos;s the desired outcome? This helps me design content that feels relevant, not
             generic.
           </p>
 
           <h3 className="mt-10 text-xl">1. Bloom&apos;s Taxonomy</h3>
-          <p className="mt-2 max-w-3xl text-muted-foreground">
+          <p className="mt-2 max-w-3xl text-surface-light-foreground/75">
             This helps shift learning from just remembering to actually applying and creating. It
             guides me to build outcomes like:
           </p>
@@ -201,7 +206,7 @@ function DesignProcessPage() {
             {bloom.map((b) => (
               <span
                 key={b}
-                className="rounded-full border border-accent px-4 py-1.5 text-sm text-white"
+                  className="rounded-full border border-accent px-4 py-1.5 text-sm text-surface-light-foreground"
               >
                 {b}
               </span>
@@ -209,7 +214,7 @@ function DesignProcessPage() {
           </div>
 
           <h3 className="mt-12 text-xl">2. ADDIE Model</h3>
-          <p className="mt-2 max-w-3xl text-muted-foreground">
+          <p className="mt-2 max-w-3xl text-surface-light-foreground/75">
             ADDIE is a simple step-by-step approach to building learning content. This model helps
             me structure my course/module in a more effective way.
           </p>
@@ -230,7 +235,7 @@ function DesignProcessPage() {
           </div>
 
           <h3 className="mt-12 text-xl">Design thinking</h3>
-          <ul className="mt-3 max-w-3xl list-disc space-y-2 pl-5 text-muted-foreground">
+          <ul className="mt-3 max-w-3xl list-disc space-y-2 pl-5 text-surface-light-foreground/75">
             <li>
               How does design change behavior? Good design increases retention and drives measurable
               results.
@@ -242,27 +247,29 @@ function DesignProcessPage() {
             <li>UX/UI is the bridge between learning goals and learner success.</li>
             <li>I rely on UX/UI principles to make learning simple and engaging.</li>
           </ul>
+          </div>
         </div>
 
         <Band title="The project features" />
-        <div className="mx-auto max-w-6xl space-y-5 px-5 py-12 text-muted-foreground">
+        <div className="bg-surface-light text-surface-light-foreground/75">
+          <div className="mx-auto max-w-6xl space-y-5 px-5 py-12">
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              <span className="text-foreground">Knowledge Checks:</span> True/False, drag-and-drop,
+              <span className="text-surface-light-foreground">Knowledge Checks:</span> True/False, drag-and-drop,
               and short-answer questions.
             </li>
             <li>
-              <span className="text-foreground">Multimedia Elements:</span> Text-to-speech audio and
+              <span className="text-surface-light-foreground">Multimedia Elements:</span> Text-to-speech audio and
               unique characters.
             </li>
             <li>
-              <span className="text-foreground">Content Development:</span> The course structure and
+              <span className="text-surface-light-foreground">Content Development:</span> The course structure and
               content were developed and refined using ChatGPT, Claude.ai, and other reliable
               sources.
             </li>
           </ul>
           <p>
-            <span className="text-foreground">Authoring Tools Used:</span> {tools}
+            <span className="text-surface-light-foreground">Authoring Tools Used:</span> {tools}
           </p>
 
           <div className="pt-4">
@@ -289,13 +296,15 @@ function DesignProcessPage() {
               <span aria-hidden="true">→</span>
             </a>
           </div>
+          </div>
         </div>
 
         <Band
           title="Course Materials"
           blurb="Explore the design document, instructional design and storyboard behind the course."
         />
-        <div className="mx-auto max-w-6xl space-y-10 px-5 py-12">
+        <div className="bg-surface-light">
+          <div className="mx-auto max-w-6xl space-y-10 px-5 py-12">
           {materials.map((m) => (
             <article
               key={m.title}
@@ -321,21 +330,25 @@ function DesignProcessPage() {
               />
             </article>
           ))}
+          </div>
         </div>
 
         <Band title="Design System" />
-        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:grid-cols-2">
+        <div className="bg-surface-light">
+          <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:grid-cols-2">
           {designSystem.map((img) => (
             <Shot key={img.alt} src={img.src} alt={img.alt} />
           ))}
+          </div>
         </div>
 
         <Band title="Design process (Thumbnail)" />
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-2">
+        <div className="bg-surface-light text-surface-light-foreground">
+          <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-2">
           <div className="space-y-4">
             <Shot src={initialDesign} alt="Initial design concept for the course thumbnail" />
             <h3 className="text-xl">Initial Design:</h3>
-            <p className="text-muted-foreground">
+            <p className="text-surface-light-foreground/75">
               The concept was inspired by a reference image depicting a group of professionals. My
               objective was to represent a diverse, modern workforce, ensuring inclusivity across
               gender and cultural identity.
@@ -344,29 +357,35 @@ function DesignProcessPage() {
           <div className="space-y-4">
             <Shot src={finalDesign} alt="Final design of the course thumbnail" />
             <h3 className="text-xl">Final Design:</h3>
-            <p className="text-muted-foreground">
+            <p className="text-surface-light-foreground/75">
               The final image was designed to clearly communicate its intended context. A clean
               image was generated from the reference image and refined in Photoshop.
             </p>
           </div>
+          </div>
         </div>
 
         <Band title="Course Development in Storyline" />
-        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:grid-cols-2">
+        <div className="bg-surface-light">
+          <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:grid-cols-2">
           {development.map((img) => (
             <Shot key={img.alt} src={img.src} alt={img.alt} />
           ))}
+          </div>
         </div>
 
         <Band title="Course Delivery" />
-        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:grid-cols-2">
+        <div className="bg-surface-light">
+          <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:grid-cols-2">
           {delivery.map((img) => (
             <Shot key={img.alt} src={img.src} alt={img.alt} />
           ))}
+          </div>
         </div>
 
         <Band title="Project Reflection:" />
-        <div className="mx-auto max-w-6xl space-y-5 px-5 py-12 text-muted-foreground">
+        <div className="bg-surface-light text-surface-light-foreground/75">
+          <div className="mx-auto max-w-6xl space-y-5 px-5 py-12">
           <p>
             When the project was completed, I shared it with several colleagues, and the response
             was overwhelmingly positive. They particularly appreciated the scenario-based approach,
@@ -381,6 +400,7 @@ function DesignProcessPage() {
             allow the experience to build progressively on their answers, offering more personalized
             feedback and deeper, constructive critique.
           </p>
+          </div>
         </div>
       </main>
       <SiteFooter />

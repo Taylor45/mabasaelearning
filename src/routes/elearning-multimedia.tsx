@@ -183,7 +183,7 @@ function GalleryImage({ src, alt, className = "" }: { src: string; alt: string; 
 
 function MultimediaShowcase() {
   return (
-    <section aria-label="Multimedia portfolio" className="bg-ink">
+    <section aria-label="Multimedia portfolio" className="bg-surface-light">
       <ShowcaseHeading blurb="Branded visual assets, symposium banners, and promotional graphics designed for online and distance education events.">
         Graphic Design
       </ShowcaseHeading>
