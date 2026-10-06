@@ -46,7 +46,16 @@ export function WireframeViewer({ images }: { images: Wireframe[] }) {
               aria-label={`Open ${wire.alt}`}
               onClick={() => { setActive(index); setZoom(1); }}
             >
-              <img src={wire.src} alt={wire.alt} loading="lazy" className="h-full w-full object-contain transition-transform duration-500 motion-reduce:transition-none group-hover:scale-105" />
+              <span
+                className="block h-full w-full overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              >
+                <img
+                  src={wire.src}
+                  alt={wire.alt}
+                  loading="lazy"
+                  className="block w-full object-contain object-top transition-transform duration-500 motion-reduce:transition-none group-hover:scale-105"
+                />
+              </span>
             </Button>
           </figure>
         ))}
