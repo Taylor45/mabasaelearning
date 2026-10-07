@@ -9,6 +9,9 @@ import illDev from "@/assets/ill-elearning-development.png";
 import illWeb from "@/assets/ill-web-design.png";
 import illMedia from "@/assets/ill-multimedia.png";
 import illAi from "@/assets/ill-ai-elearning.png";
+import h5pLogoAsset from "@/assets/h5p-logo.png.asset.json";
+
+const h5pLogo = h5pLogoAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,7 +86,7 @@ const categoryTwo: { title: string; img: string; copy: string; to: ServiceLink }
 ];
 
 const authoringTools = [
-  { short: "H5", name: "H5P", tag: "Interactive content", from: "#19d4c8", to: "#0047b3" },
+  { short: "H5", name: "H5P", tag: "Interactive content", from: "#19d4c8", to: "#0047b3", img: h5pLogo },
   { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#0047b3", to: "#1da8e2" },
   { short: "Ca", name: "Camtasia", tag: "Video", from: "#0047b3", to: "#19d4c8" },
   { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#b5691a", to: "#0047b3" },
@@ -231,7 +234,7 @@ function CardRow({
   );
 }
 
-type Tool = { short: string; name: string; tag: string; from: string; to: string };
+type Tool = { short: string; name: string; tag: string; from: string; to: string; img?: string };
 
 function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
   const [active, setActive] = useState(0);
@@ -256,12 +259,21 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
                 : "pointer-events-none translate-y-3.5 scale-95 opacity-0"
             }`}
           >
-            <span
-              className="flex h-[42px] w-[42px] items-center justify-center rounded-[11px] text-[0.95rem] font-extrabold text-white sm:h-[58px] sm:w-[58px] sm:rounded-[14px] sm:text-[1.25rem] lg:h-[72px] lg:w-[72px] lg:rounded-[18px] lg:text-[1.6rem]"
-              style={{ backgroundImage: `linear-gradient(135deg, ${tool.from}, ${tool.to})` }}
-            >
-              {tool.short}
-            </span>
+            {tool.img ? (
+              <img
+                src={tool.img}
+                alt={`${tool.name} logo`}
+                loading="lazy"
+                className="h-[42px] w-[42px] rounded-[11px] object-contain sm:h-[58px] sm:w-[58px] sm:rounded-[14px] lg:h-[72px] lg:w-[72px] lg:rounded-[18px]"
+              />
+            ) : (
+              <span
+                className="flex h-[42px] w-[42px] items-center justify-center rounded-[11px] text-[0.95rem] font-extrabold text-white sm:h-[58px] sm:w-[58px] sm:rounded-[14px] sm:text-[1.25rem] lg:h-[72px] lg:w-[72px] lg:rounded-[18px] lg:text-[1.6rem]"
+                style={{ backgroundImage: `linear-gradient(135deg, ${tool.from}, ${tool.to})` }}
+              >
+                {tool.short}
+              </span>
+            )}
             <p className="text-[0.72rem] font-bold text-surface-light-foreground sm:text-[0.82rem] lg:text-[1.05rem]">
               {tool.name}
             </p>
