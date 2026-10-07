@@ -20,6 +20,7 @@ import geniallyLogo from "@/assets/Genially.png.asset.json";
 import htmlLogo from "@/assets/HTML_JavaScript.png.asset.json";
 import ispringLogo from "@/assets/ISpring.png.asset.json";
 import moodleLogo from "@/assets/Moodle.png.asset.json";
+import brightspaceLogo from "@/assets/BrightspaceLogo.png.asset.json";
 
 const h5pLogo = h5pLogoAsset.url;
 
@@ -112,7 +113,7 @@ const lmsPlatforms = [
   { short: "Ca", name: "Canvas", tag: "LMS", from: "#0047b3", to: "#7a2fd6" },
   { short: "Bb", name: "Blackboard Ultra", tag: "LMS", from: "#001a4d", to: "#1da8e2", img: blackboardLogo.url, scale: 1.25 },
   { short: "No", name: "NovaEd", tag: "LMS", from: "#1da8e2", to: "#19d4c8" },
-  { short: "Br", name: "Brightspace", tag: "LMS", from: "#7a2fd6", to: "#0047b3" },
+  { short: "Br", name: "Brightspace", tag: "LMS", from: "#f9a25b", to: "#e2551f", img: brightspaceLogo.url, scale: 1.45 },
 ];
 
 const addieStages = [
