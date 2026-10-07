@@ -148,6 +148,7 @@ function BannerCarousel({ images }: { images: { src: string; alt: string }[] }) 
 }
 
 const videos = [
+  { id: "a_PCmEe1IjY", title: "Introduction Video" },
   { id: "c7jg8flVMd0", title: "AI-Powered Learning Experience Design with NoteLMS" },
   { id: "NKolBmwAArU", title: "SOAR banner created with Camtasia" },
   { id: "ZwUPGMLVuVI", title: "Learning summary video" },
@@ -197,10 +198,10 @@ function MultimediaShowcase() {
         Videos (Canva, CapCut & Camtasia)
       </ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
-        {videos.map((video, index) => (
+        {videos.map((video) => (
           <figure
             key={video.id}
-            className={`overflow-hidden rounded-md border border-foreground/15 bg-card ${index === 4 ? "sm:col-span-2" : ""}`}
+            className="overflow-hidden rounded-md border border-foreground/15 bg-card"
           >
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${video.id}`}
