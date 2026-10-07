@@ -253,7 +253,7 @@ function LogoFrame({ tool, active }: { tool: Tool; active: boolean }) {
   const ring = `linear-gradient(135deg, ${tool.from}, ${tool.to})`;
   return (
     <span
-      className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[15px] p-[3px] transition-shadow duration-500 sm:h-[64px] sm:w-[64px] sm:rounded-[20px] sm:p-[3.5px] lg:h-[88px] lg:w-[88px] lg:rounded-[27px] lg:p-[4px]"
+      className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[13px] p-[2.5px] transition-shadow duration-500 sm:h-[64px] sm:w-[64px] sm:rounded-[20px] sm:p-[3.5px] lg:h-[88px] lg:w-[88px] lg:rounded-[27px] lg:p-[4px]"
       style={{
         backgroundImage: ring,
         boxShadow: active
@@ -261,7 +261,7 @@ function LogoFrame({ tool, active }: { tool: Tool; active: boolean }) {
           : `0 8px 18px -12px ${tool.from}80, 0 0 0 1px rgb(255 255 255 / 45%)`,
       }}
     >
-      <span className="flex h-full w-full items-center justify-center rounded-[12px] bg-white p-[8px] sm:rounded-[16px] sm:p-[11px] lg:rounded-[23px] lg:p-[15px]">
+      <span className="flex h-full w-full items-center justify-center rounded-[10px] bg-white p-[6px] sm:rounded-[16px] sm:p-[11px] lg:rounded-[23px] lg:p-[15px]">
         {tool.img ? (
           <img
             src={tool.img}
