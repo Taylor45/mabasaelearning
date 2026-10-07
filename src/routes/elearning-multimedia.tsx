@@ -200,9 +200,9 @@ function MultimediaShowcase() {
       <ShowcaseHeading blurb="Branded visual assets, symposium banners, and promotional graphics designed for online and distance education events.">
         Graphic Design
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2">
         {graphicDesigns.map((image) => (
-          <GalleryImage key={image.src} {...image} className="aspect-video" />
+          <GalleryImage key={image.src} {...image} natural />
         ))}
       </div>
 
