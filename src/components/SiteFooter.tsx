@@ -18,7 +18,7 @@ export function SiteFooter() {
           <div>
             <p className="text-sm text-muted-foreground">
               Set up courses on various LMS platforms, including Canvas, Blackboard
-              Ultra, Moodle, NovaEd, and Brightspace.
+              Ultra, Moodle, NovoEd, and Brightspace.
             </p>
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.1em]">
               3+ years eLearning &amp; development leadership
