@@ -249,6 +249,39 @@ function CardRow({
 
 type Tool = { short: string; name: string; tag: string; from: string; to: string; img?: string };
 
+function LogoFrame({ tool, active }: { tool: Tool; active: boolean }) {
+  const ring = `linear-gradient(135deg, ${tool.from}, ${tool.to})`;
+  return (
+    <span
+      className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[13px] p-[2.5px] transition-shadow duration-500 sm:h-[64px] sm:w-[64px] sm:rounded-[20px] sm:p-[3.5px] lg:h-[88px] lg:w-[88px] lg:rounded-[27px] lg:p-[4px]"
+      style={{
+        backgroundImage: ring,
+        boxShadow: active
+          ? `0 16px 34px -14px ${tool.from}b3, 0 0 0 1px rgb(255 255 255 / 60%)`
+          : `0 8px 18px -12px ${tool.from}80, 0 0 0 1px rgb(255 255 255 / 45%)`,
+      }}
+    >
+      <span className="flex h-full w-full items-center justify-center rounded-[10px] bg-white p-[6px] sm:rounded-[16px] sm:p-[11px] lg:rounded-[23px] lg:p-[15px]">
+        {tool.img ? (
+          <img
+            src={tool.img}
+            alt={`${tool.name} logo`}
+            loading="lazy"
+            className="h-full w-full object-contain"
+          />
+        ) : (
+          <span
+            className="bg-clip-text text-[1rem] font-extrabold text-transparent sm:text-[1.35rem] lg:text-[1.8rem]"
+            style={{ backgroundImage: ring }}
+          >
+            {tool.short}
+          </span>
+        )}
+      </span>
+    </span>
+  );
+}
+
 function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
   const [active, setActive] = useState(0);
 
@@ -272,21 +305,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
                 : "pointer-events-none translate-y-3.5 scale-95 opacity-0"
             }`}
           >
-            {tool.img ? (
-              <img
-                src={tool.img}
-                alt={`${tool.name} logo`}
-                loading="lazy"
-                className="h-[42px] w-[42px] object-contain sm:h-[58px] sm:w-[58px] lg:h-[72px] lg:w-[72px]"
-              />
-            ) : (
-              <span
-                className="flex h-[42px] w-[42px] items-center justify-center rounded-[11px] text-[0.95rem] font-extrabold text-white sm:h-[58px] sm:w-[58px] sm:rounded-[14px] sm:text-[1.25rem] lg:h-[72px] lg:w-[72px] lg:rounded-[18px] lg:text-[1.6rem]"
-                style={{ backgroundImage: `linear-gradient(135deg, ${tool.from}, ${tool.to})` }}
-              >
-                {tool.short}
-              </span>
-            )}
+            <LogoFrame tool={tool} active={i === active} />
             <p className="text-[0.72rem] font-bold text-surface-light-foreground sm:text-[0.82rem] lg:text-[1.05rem]">
               {tool.name}
             </p>
