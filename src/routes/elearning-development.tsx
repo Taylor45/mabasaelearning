@@ -40,7 +40,10 @@ const sections = [
     projects: [
       {
         name: "Mastering Stakeholder Communication",
-        action: "View Course",
+        links: [
+          { label: "View Course", href: "https://taylor45.github.io/Mastering-Stakeholder-Communication/" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/edit?usp=sharing" },
+        ],
         images: [
           "/__l5e/assets-v1/559cfe86-3387-41f3-9eb2-a5a03c362c4f/storyline-stakeholder-communication.png",
           storylineStakeholder.url,
@@ -48,7 +51,10 @@ const sections = [
       },
       {
         name: "AI Literacy for Instructional Design",
-        action: "View Course",
+        links: [
+          { label: "View Course", href: "https://taylor45.github.io/Storyline/" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing" },
+        ],
         images: [
           "/__l5e/assets-v1/f8a711a1-f971-4a5d-90a1-eb7fa32d4106/storyline-ai-literacy.png",
           storylineAiLiteracy.url,
@@ -63,23 +69,38 @@ const sections = [
     projects: [
       {
         name: "ADDIE Instructional Design Model",
-        action: "View Course",
+        links: [
+          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing" },
+        ],
         images: [geniallyGuide1.url, geniallyGuide2.url],
       },
-      { name: "Digital eBook", action: "View eBook", images: [digitalEbook1.url] },
+      {
+        name: "Digital eBook",
+        links: [
+          { label: "View eBook", href: "https://read.bookcreator.com/QPcUKyNvDVPMQ5RGGKJAjxWhTP12/JDaqxZtXT6mXbh1IHZoWkQ" },
+          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing" },
+        ],
+        images: [digitalEbook1.url],
+      },
     ],
   },
   {
-    title: "iSpring & Interactive eBook ",
+    title: "iSpring & Interactive eBook ",
     blurb:
       "Rapid-authored PowerPoint-to-SCORM courses with quizzing, narration, and mobile-ready playback.",
     projects: [
       {
         name: "Onboarding Short Course",
-        action: "View Course",
+        links: [
+          { label: "Design Process", href: "https://taylor45.github.io/Onboarding-Course-Storyboard/" },
+        ],
         images: [ispringCourse1.url, ispringCourse2.url],
       },
-      { name: "Train the Trainer Guide", action: "View Course", images: [ispringSafety1.url] },
+      {
+        name: "Train the Trainer Guide",
+        links: [{ label: "View Course", href: "https://taylor45.github.io/Interactive-Slides/" }],
+        images: [ispringSafety1.url],
+      },
     ],
   },
 ];
@@ -230,13 +251,20 @@ function ELearningPage() {
                     <div className="flex flex-1 flex-col items-start gap-4 p-6">
                       <h3 className="text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex flex-wrap items-center gap-3">
-                        <a
-                          href="#"
-                          className="inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
-                        >
-                          {project.action}
-                          <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
-                        </a>
+                        {project.links.map((link, li) => (
+                          <a
+                            key={link.label}
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={`inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card ${
+                              li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : ""
+                            }`}
+                          >
+                            {link.label}
+                            <span aria-hidden="true">→</span>
+                          </a>
+                        ))}
                       </div>
                     </div>
                   </article>
