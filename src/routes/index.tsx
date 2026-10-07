@@ -83,7 +83,7 @@ const categoryTwo: { title: string; img: string; copy: string; to: ServiceLink }
 ];
 
 const authoringTools = [
-  { short: "H5", name: "H5P", tag: "Interactive content", from: "#19d4c8", to: "#0047b3" },
+  { short: "H5", name: "H5P", tag: "Interactive content", from: "#19d4c8", to: "#0047b3", img: h5pLogo },
   { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#0047b3", to: "#1da8e2" },
   { short: "Ca", name: "Camtasia", tag: "Video", from: "#0047b3", to: "#19d4c8" },
   { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#b5691a", to: "#0047b3" },
@@ -231,7 +231,7 @@ function CardRow({
   );
 }
 
-type Tool = { short: string; name: string; tag: string; from: string; to: string };
+type Tool = { short: string; name: string; tag: string; from: string; to: string; img?: string };
 
 function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
   const [active, setActive] = useState(0);
