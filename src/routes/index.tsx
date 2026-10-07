@@ -10,6 +10,16 @@ import illWeb from "@/assets/ill-web-design.png";
 import illMedia from "@/assets/ill-multimedia.png";
 import illAi from "@/assets/ill-ai-elearning.png";
 import h5pLogoAsset from "@/assets/h5p-logo.png.asset.json";
+import adobeLogo from "@/assets/Adobe_Creative_Cloud.png.asset.json";
+import articulateLogo from "@/assets/Articulate_360.png.asset.json";
+import blackboardLogo from "@/assets/Blackboard_Ultra.png.asset.json";
+import camtasiaLogo from "@/assets/Camtasia.png.asset.json";
+import canvaLogo from "@/assets/Canva.png.asset.json";
+import figmaLogo from "@/assets/Figma.png.asset.json";
+import geniallyLogo from "@/assets/Genially.png.asset.json";
+import htmlLogo from "@/assets/HTML_JavaScript.png.asset.json";
+import ispringLogo from "@/assets/ISpring.png.asset.json";
+import moodleLogo from "@/assets/Moodle.png.asset.json";
 
 const h5pLogo = h5pLogoAsset.url;
 
@@ -87,17 +97,20 @@ const categoryTwo: { title: string; img: string; copy: string; to: ServiceLink }
 
 const authoringTools = [
   { short: "H5", name: "H5P", tag: "Interactive content", from: "#19d4c8", to: "#0047b3", img: h5pLogo },
-  { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#0047b3", to: "#1da8e2" },
-  { short: "Ca", name: "Camtasia", tag: "Video", from: "#0047b3", to: "#19d4c8" },
-  { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#b5691a", to: "#0047b3" },
-  { short: "Ge", name: "Genially", tag: "Interactions", from: "#1da8e2", to: "#0047b3" },
-  { short: "Fi", name: "Figma", tag: "UX / UI", from: "#7a2fd6", to: "#1da8e2" },
+  { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#0047b3", to: "#1da8e2", img: articulateLogo.url },
+  { short: "Ca", name: "Camtasia", tag: "Video", from: "#0047b3", to: "#19d4c8", img: camtasiaLogo.url },
+  { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#b5691a", to: "#0047b3", img: adobeLogo.url },
+  { short: "Ge", name: "Genially", tag: "Interactions", from: "#1da8e2", to: "#0047b3", img: geniallyLogo.url },
+  { short: "Fi", name: "Figma", tag: "UX / UI", from: "#7a2fd6", to: "#1da8e2", img: figmaLogo.url },
+  { short: "Cv", name: "Canva", tag: "Graphics", from: "#0047b3", to: "#7a2fd6", img: canvaLogo.url },
+  { short: "JS", name: "HTML / JavaScript", tag: "Development", from: "#0047b3", to: "#1da8e2", img: htmlLogo.url },
+  { short: "iS", name: "iSpring", tag: "Authoring", from: "#19d4c8", to: "#0047b3", img: ispringLogo.url },
 ];
 
 const lmsPlatforms = [
-  { short: "Mo", name: "Moodle", tag: "LMS", from: "#19d4c8", to: "#001233" },
+  { short: "Mo", name: "Moodle", tag: "LMS", from: "#19d4c8", to: "#001233", img: moodleLogo.url },
   { short: "Ca", name: "Canvas", tag: "LMS", from: "#0047b3", to: "#7a2fd6" },
-  { short: "Bb", name: "Blackboard Ultra", tag: "LMS", from: "#001a4d", to: "#1da8e2" },
+  { short: "Bb", name: "Blackboard Ultra", tag: "LMS", from: "#001a4d", to: "#1da8e2", img: blackboardLogo.url },
   { short: "No", name: "NovaEd", tag: "LMS", from: "#1da8e2", to: "#19d4c8" },
   { short: "Br", name: "Brightspace", tag: "LMS", from: "#7a2fd6", to: "#0047b3" },
 ];
@@ -264,7 +277,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
                 src={tool.img}
                 alt={`${tool.name} logo`}
                 loading="lazy"
-                className="h-[42px] w-[42px] rounded-[11px] object-contain sm:h-[58px] sm:w-[58px] sm:rounded-[14px] lg:h-[72px] lg:w-[72px] lg:rounded-[18px]"
+                className="h-[42px] w-[42px] object-contain sm:h-[58px] sm:w-[58px] lg:h-[72px] lg:w-[72px]"
               />
             ) : (
               <span
