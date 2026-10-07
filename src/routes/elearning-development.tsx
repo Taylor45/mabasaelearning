@@ -259,7 +259,7 @@ function ELearningPage() {
                             rel="noreferrer"
                             className={`inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card ${
                               li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : ""
-                            }`}
+                            } ${li === 0 && project.links.length > 1 ? "mr-auto" : ""}`}
                           >
                             {link.label}
                             <span aria-hidden="true">→</span>
