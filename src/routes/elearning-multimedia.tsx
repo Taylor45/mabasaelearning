@@ -167,7 +167,17 @@ function ShowcaseHeading({ children, blurb }: { children: string; blurb?: string
   );
 }
 
-function GalleryImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+function GalleryImage({
+  src,
+  alt,
+  className = "",
+  natural = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  natural?: boolean;
+}) {
   return (
     <figure className={`overflow-hidden rounded-md border border-foreground/15 bg-card ${className}`}>
       <img
@@ -176,7 +186,9 @@ function GalleryImage({ src, alt, className = "" }: { src: string; alt: string; 
         loading="lazy"
         width={1280}
         height={720}
-        className="h-full w-full object-contain transition-transform duration-500 hover:scale-[1.015]"
+        className={`${
+          natural ? "block h-auto w-full" : "h-full w-full object-contain"
+        } transition-transform duration-500 hover:scale-[1.015]`}
       />
     </figure>
   );
@@ -188,9 +200,9 @@ function MultimediaShowcase() {
       <ShowcaseHeading blurb="Branded visual assets, symposium banners, and promotional graphics designed for online and distance education events.">
         Graphic Design
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2">
         {graphicDesigns.map((image) => (
-          <GalleryImage key={image.src} {...image} className="aspect-video" />
+          <GalleryImage key={image.src} {...image} natural />
         ))}
       </div>
 
