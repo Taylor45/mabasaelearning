@@ -196,7 +196,7 @@ function MultimediaShowcase() {
       <ShowcaseHeading blurb="Scripted, narrated, and edited learning videos covering AI-powered design, motion graphics, and event highlights.">
         Videos (Canva, CapCut & Camtasia)
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
         {videos.map((video, index) => (
           <figure
             key={video.id}
