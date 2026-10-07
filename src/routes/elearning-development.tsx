@@ -250,7 +250,7 @@ function ELearningPage() {
                     )}
                     <div className="flex flex-1 flex-col items-start gap-4 p-6">
                       <h3 className="text-lg leading-snug">{project.name}</h3>
-                      <div className="mt-auto flex flex-wrap items-center gap-3">
+                      <div className="mt-auto flex w-full flex-wrap items-center justify-end gap-3">
                         {project.links.map((link, li) => (
                           <a
                             key={link.label}
