@@ -54,6 +54,19 @@ const materialSections = [
       },
     ],
   },
+  {
+    title: "Course Content Development",
+    blurb:
+      "Course development instructions that translate approved storyboards into structured, build-ready content for development.",
+    items: [
+      {
+        name: "Course Development Instructions",
+        src: "https://docs.google.com/document/d/12Mi2LwwQJKDtUH9iXlZJz1tX6qPnAih81NI9eKfhHrg/preview",
+        href: "https://docs.google.com/document/d/12Mi2LwwQJKDtUH9iXlZJz1tX6qPnAih81NI9eKfhHrg/view",
+        action: "Open Document",
+      },
+    ],
+  },
 ];
 
 function InstructionalDesignPage() {
