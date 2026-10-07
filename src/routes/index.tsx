@@ -247,7 +247,7 @@ function CardRow({
   );
 }
 
-type Tool = { short: string; name: string; tag: string; from: string; to: string; img?: string };
+type Tool = { short: string; name: string; tag: string; from: string; to: string; img?: string; scale?: number };
 
 function LogoFrame({ tool, active }: { tool: Tool; active: boolean }) {
   const ring = `linear-gradient(135deg, ${tool.from}, ${tool.to})`;
@@ -261,13 +261,14 @@ function LogoFrame({ tool, active }: { tool: Tool; active: boolean }) {
           : `0 8px 18px -12px ${tool.from}80, 0 0 0 1px rgb(255 255 255 / 45%)`,
       }}
     >
-      <span className="flex h-full w-full items-center justify-center rounded-[10px] bg-white p-[6px] sm:rounded-[16px] sm:p-[11px] lg:rounded-[23px] lg:p-[15px]">
+      <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-[10px] bg-white p-[4px] sm:rounded-[16px] sm:p-[7px] lg:rounded-[23px] lg:p-[10px]">
         {tool.img ? (
           <img
             src={tool.img}
             alt={`${tool.name} logo`}
             loading="lazy"
             className="h-full w-full object-contain"
+            style={{ transform: `scale(${tool.scale ?? 1})` }}
           />
         ) : (
           <span
