@@ -21,6 +21,8 @@ import htmlLogo from "@/assets/HTML_JavaScript.png.asset.json";
 import ispringLogo from "@/assets/ISpring.png.asset.json";
 import moodleLogo from "@/assets/Moodle.png.asset.json";
 import brightspaceLogo from "@/assets/BrightspaceLogo.png.asset.json";
+import canvasLogo from "@/assets/Canvas_LMS.png.asset.json";
+import novoedLogo from "@/assets/NovoEd.png.asset.json";
 
 const h5pLogo = h5pLogoAsset.url;
 
@@ -110,9 +112,9 @@ const authoringTools = [
 
 const lmsPlatforms = [
   { short: "Mo", name: "Moodle", tag: "LMS", from: "#19d4c8", to: "#001233", img: moodleLogo.url, scale: 1.9 },
-  { short: "Ca", name: "Canvas", tag: "LMS", from: "#0047b3", to: "#7a2fd6" },
+  { short: "Ca", name: "Canvas", tag: "LMS", from: "#ff6b5e", to: "#e00000", img: canvasLogo.url, scale: 0.9 },
   { short: "Bb", name: "Blackboard Ultra", tag: "LMS", from: "#001a4d", to: "#1da8e2", img: blackboardLogo.url, scale: 1.25 },
-  { short: "No", name: "NovaEd", tag: "LMS", from: "#1da8e2", to: "#19d4c8" },
+  { short: "No", name: "NovaEd", tag: "LMS", from: "#eb5e4a", to: "#12182e", img: novoedLogo.url, scale: 1.1 },
   { short: "Br", name: "Brightspace", tag: "LMS", from: "#f9a25b", to: "#e2551f", img: brightspaceLogo.url, scale: 1.45 },
 ];
 
