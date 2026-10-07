@@ -101,8 +101,8 @@ const categoryTwo: { title: string; img: string; copy: string; to: ServiceLink }
 const authoringTools = [
   { short: "H5", name: "H5P", tag: "Interactive content", from: "#19d4c8", to: "#0047b3", img: h5pLogo, scale: 1.05 },
   { short: "A3", name: "Articulate 360", tag: "Authoring", from: "#0047b3", to: "#1da8e2", img: articulateLogo.url, scale: 2.1 },
-  { short: "Ca", name: "Camtasia", tag: "Video", from: "#0047b3", to: "#19d4c8", img: camtasiaLogo.url, scale: 2.3 },
-  { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#b5691a", to: "#0047b3", img: adobeLogo.url, scale: 1.95 },
+  { short: "Ca", name: "Camtasia", tag: "Video", from: "#418503", to: "#8bc643", img: camtasiaLogo.url, scale: 1.1 },
+  { short: "Ai", name: "Adobe Suite", tag: "Graphics", from: "#e61577", to: "#ffd200", img: adobeLogo.url, scale: 1.05 },
   { short: "Ge", name: "Genially", tag: "Interactions", from: "#1da8e2", to: "#0047b3", img: geniallyLogo.url, scale: 1.9 },
   { short: "Fi", name: "Figma", tag: "UX / UI", from: "#7a2fd6", to: "#1da8e2", img: figmaLogo.url, scale: 1.45 },
   { short: "Cv", name: "Canva", tag: "Graphics", from: "#0047b3", to: "#7a2fd6", img: canvaLogo.url, scale: 1.15 },
