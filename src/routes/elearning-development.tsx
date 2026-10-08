@@ -46,7 +46,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "Mastering Stakeholder Communication",
         links: [
           { label: "View Course", href: "https://taylor45.github.io/Mastering-Stakeholder-Communication/" },
-          { label: "Design Process", href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/edit?usp=sharing" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/edit?usp=sharing", preview: true },
         ],
         images: [
           "/__l5e/assets-v1/559cfe86-3387-41f3-9eb2-a5a03c362c4f/storyline-stakeholder-communication.png",
