@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
+import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
 import storylineAiLiteracy from "@/assets/storyline-ai-literacy.png.asset.json";
 import geniallyGuide1 from "@/assets/genially-guide-1.png.asset.json";
@@ -33,7 +34,9 @@ export const Route = createFileRoute("/elearning-development")({
   component: ELearningPage,
 });
 
-const sections = [
+type ProjectLink = { label: string; href: string; preview?: boolean };
+
+const sections: { title: string; blurb: string; projects: { name: string; links: ProjectLink[]; images: string[] }[] }[] = [
   {
     title: "Articulate Storyline Courses ",
     blurb:
@@ -43,7 +46,7 @@ const sections = [
         name: "Mastering Stakeholder Communication",
         links: [
           { label: "View Course", href: "https://taylor45.github.io/Mastering-Stakeholder-Communication/" },
-          { label: "Design Process", href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/edit?usp=sharing" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/edit?usp=sharing", preview: true },
         ],
         images: [
           "/__l5e/assets-v1/559cfe86-3387-41f3-9eb2-a5a03c362c4f/storyline-stakeholder-communication.png",
@@ -54,7 +57,7 @@ const sections = [
         name: "AI Literacy for Instructional Design",
         links: [
           { label: "View Course", href: "https://taylor45.github.io/Storyline/" },
-          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing", preview: true },
         ],
         images: [
           "/__l5e/assets-v1/f8a711a1-f971-4a5d-90a1-eb7fa32d4106/storyline-ai-literacy.png",
@@ -71,7 +74,7 @@ const sections = [
       {
         name: "ADDIE Instructional Design Model",
         links: [
-          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing", preview: true },
           { label: "View Course", href: "https://view.genially.com/6941bdb422107ef3f6f9798b" },
         ],
         images: [geniallyGuide1.url, geniallyGuide2.url],
@@ -80,7 +83,7 @@ const sections = [
         name: "Digital eBook",
         links: [
           { label: "VIEW EBOOK", href: "https://read.bookcreator.com/QPcUKyNvDVPMQ5RGGKJAjxWhTP12/JDaqxZtXT6mXbh1IHZoWkQ" },
-          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing" },
+          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing", preview: true },
         ],
         images: [digitalEbook1.url],
       },
@@ -94,7 +97,7 @@ const sections = [
       {
         name: "Onboarding Short Course",
         links: [
-          { label: "Design Process", href: "https://docs.google.com/document/d/119C3v8BY-gFXwdF89U8fu9tp6kT-b0idIahm7uO7evs/edit?usp=sharing" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/119C3v8BY-gFXwdF89U8fu9tp6kT-b0idIahm7uO7evs/edit?usp=sharing", preview: true },
           { label: "View Course", href: "https://taylor45.github.io/Onboarding-Course/" },
         ],
         images: [ispringCourse1.url, ispringCourse2.url],
@@ -254,21 +257,38 @@ function ELearningPage() {
                     <div className="flex flex-1 flex-col items-start gap-4 p-6">
                       <h3 className="text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
-                        {project.links.map((link, li) => (
-                          <Button
-                            asChild
-                            variant="outline"
-                            key={link.label}
-                            className={`h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5 ${
-                              li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : "bg-transparent text-card-foreground"
-                            } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`}
-                          >
-                            <a href={link.href} target="_blank" rel="noreferrer">
+                        {project.links.map((link, li) => {
+                          const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5 ${
+                            li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : "bg-transparent text-card-foreground"
+                          } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`;
+                          const inner = (
+                            <>
                               <span className="min-w-0 break-words">{link.label}</span>
                               <span className="shrink-0" aria-hidden="true">→</span>
-                            </a>
-                          </Button>
-                        ))}
+                            </>
+                          );
+                          return link.preview ? (
+                            <DocumentPreviewButton
+                              key={link.label}
+                              href={link.href}
+                              title={`${link.label} — ${project.name}`}
+                              className={buttonClasses}
+                            >
+                              {inner}
+                            </DocumentPreviewButton>
+                          ) : (
+                            <Button
+                              asChild
+                              variant="outline"
+                              key={link.label}
+                              className={buttonClasses}
+                            >
+                              <a href={link.href} target="_blank" rel="noreferrer">
+                                {inner}
+                              </a>
+                            </Button>
+                          );
+                        })}
                       </div>
                     </div>
                   </article>
