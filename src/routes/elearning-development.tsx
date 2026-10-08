@@ -83,7 +83,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "Digital eBook",
         links: [
           { label: "VIEW EBOOK", href: "https://read.bookcreator.com/QPcUKyNvDVPMQ5RGGKJAjxWhTP12/JDaqxZtXT6mXbh1IHZoWkQ" },
-          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing" },
+          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing", preview: true },
         ],
         images: [digitalEbook1.url],
       },
