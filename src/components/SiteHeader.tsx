@@ -28,8 +28,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 bg-ink/95 backdrop-blur">
       <div className="grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 md:flex md:justify-between">
         <Link to="/" className="flex min-w-0 items-center gap-3">
-          <span className="font-display text-xl tracking-tight">Mabasa.</span>
-          <span className="rounded-full border border-border px-3 py-0.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground max-sm:hidden">
+          <span className="font-display text-lg">Mabasa.</span>
+          <span className="rounded-full border border-border px-3 py-0.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             eLearning
           </span>
         </Link>
