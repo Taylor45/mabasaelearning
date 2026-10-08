@@ -34,7 +34,7 @@ function ContactPage() {
       <SiteHeader />
       <main className="flex-1">
         <section className="surface-hero">
-          <div className="mx-auto max-w-3xl px-5 py-24 text-center">
+          <div className="mx-auto max-w-3xl px-5 py-12 text-center sm:py-24">
             <h1 className="text-4xl sm:text-5xl">Let`s work together</h1>
             <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
               Available for instructional design, course development, and learning

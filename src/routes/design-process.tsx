@@ -310,8 +310,8 @@ function DesignProcessPage() {
               key={m.title}
               className="overflow-hidden rounded-md border border-border bg-card shadow-elevated"
             >
-              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border px-6 py-5">
-                <h3 className="text-lg">{m.title}</h3>
+              <div className="grid grid-cols-1 items-center gap-4 border-b border-border px-4 py-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:px-6">
+                <h3 className="min-w-0 text-lg">{m.title}</h3>
                 <a
                   href={m.href}
                   target="_blank"
@@ -326,7 +326,7 @@ function DesignProcessPage() {
                 src={m.embed}
                 title={m.title}
                 loading="lazy"
-                className="h-[560px] w-full bg-white"
+                className="h-[min(560px,75dvh)] w-full bg-surface-light sm:h-[560px]"
               />
             </article>
           ))}

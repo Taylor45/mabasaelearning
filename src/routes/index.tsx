@@ -211,13 +211,13 @@ function CardRow({
   return (
     <section className="bg-surface-light">
       <div className="mx-auto max-w-6xl px-5 py-16">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <Link
               key={item.title}
               to={item.to}
               aria-label={`Explore ${item.title}`}
-              className="group flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
+              className="group flex min-w-0 flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
             >
               <img
                 src={item.img}
@@ -515,7 +515,7 @@ function Index() {
                   <h3 className="mb-2 font-body text-base font-semibold tracking-[-0.01em] sm:text-[clamp(1.02rem,2vw,1.25rem)]">
                     {stage.title}
                   </h3>
-                  <p className="mx-auto mb-3 max-w-[340px] text-[11px] leading-[1.55] text-[#5b6472] sm:mb-4 sm:text-xs">
+                  <p className="mx-auto mb-3 max-w-[340px] text-sm leading-relaxed text-surface-light-foreground/75 sm:mb-4">
                     {stage.copy}
                   </p>
                   <div className="flex flex-wrap justify-center gap-1.5">
