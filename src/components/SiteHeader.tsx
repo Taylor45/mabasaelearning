@@ -1,5 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { ChevronDown, Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const serviceItems = [
   { to: "/elearning-development", label: "eLearning Development" },
@@ -11,27 +15,25 @@ const serviceItems = [
 ] as const;
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
-  const wrapRef = useRef<HTMLDivElement>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    function onDocClick(e: MouseEvent) {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
-    }
-    document.addEventListener("mousedown", onDocClick);
-    return () => document.removeEventListener("mousedown", onDocClick);
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => { if (desktop.matches) setMobileOpen(false); };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
   }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-ink/95 backdrop-blur">
-      <div className="flex h-16 w-full items-center justify-between px-5">
-        <Link to="/" className="flex items-center gap-3">
+      <div className="grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 md:flex md:justify-between">
+        <Link to="/" className="flex min-w-0 items-center gap-3">
           <span className="font-display text-xl tracking-tight">Mabasa.</span>
           <span className="rounded-full border border-border px-3 py-0.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground max-sm:hidden">
             eLearning
           </span>
         </Link>
-        <nav className="flex items-center gap-5 text-sm">
+        <nav aria-label="Main navigation" className="hidden shrink-0 items-center gap-5 text-sm md:flex">
           <Link
             to="/"
             activeOptions={{ exact: true }}
@@ -40,46 +42,20 @@ export function SiteHeader() {
             Home
           </Link>
 
-          <div
-            ref={wrapRef}
-            className="relative"
-            onMouseEnter={() => setOpen(true)}
-            onMouseLeave={() => setOpen(false)}
-          >
-            <button
-              type="button"
-              aria-haspopup="menu"
-              aria-expanded={open}
-              onClick={() => setOpen((v) => !v)}
-              className="flex items-center gap-1.5 font-display text-muted-foreground transition-colors hover:text-foreground"
-            >
-              eLearning Development
-              <span
-                aria-hidden="true"
-                className={`text-[0.65rem] transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-              >
-                ▼
-              </span>
-            </button>
-            {open && (
-              <div
-                role="menu"
-                className="absolute right-0 top-full z-50 w-64 overflow-hidden rounded-xl border border-border bg-ink shadow-elevated"
-              >
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="h-11 px-0 font-display font-normal text-muted-foreground hover:bg-transparent hover:text-foreground">
+                eLearning Development <ChevronDown aria-hidden="true" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-64 bg-ink text-foreground">
                 {serviceItems.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    role="menuitem"
-                    onClick={() => setOpen(false)}
-                    className="block px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground [&.active]:text-foreground"
-                  >
-                    {item.label}
-                  </Link>
+                  <DropdownMenuItem key={item.to} asChild>
+                    <Link to={item.to} className="min-h-11 cursor-pointer [&.active]:underline">{item.label}</Link>
+                  </DropdownMenuItem>
                 ))}
-              </div>
-            )}
-          </div>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <Link
             to="/contact"
@@ -88,6 +64,24 @@ export function SiteHeader() {
             Contact
           </Link>
         </nav>
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" aria-label="Open navigation" className="h-11 w-11 shrink-0 text-foreground md:hidden">
+              <Menu aria-hidden="true" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent className="w-[min(90vw,360px)] overflow-y-auto bg-ink px-5 pt-7" aria-describedby={undefined}>
+            <SheetTitle className="font-display text-xl">Mabasa.</SheetTitle>
+            <nav aria-label="Mobile navigation" className="mt-8 flex flex-col gap-1">
+              <Link to="/" activeOptions={{ exact: true }} onClick={() => setMobileOpen(false)} className="flex min-h-12 items-center rounded-md px-3 font-display text-foreground hover:bg-muted [&.active]:bg-muted">Home</Link>
+              <p className="mb-1 mt-5 px-3 text-xs uppercase tracking-widest text-muted-foreground">eLearning</p>
+              {serviceItems.map((item) => (
+                <Link key={item.to} to={item.to} onClick={() => setMobileOpen(false)} className="flex min-h-12 items-center rounded-md px-3 py-3 text-sm text-foreground hover:bg-muted [&.active]:bg-muted">{item.label}</Link>
+              ))}
+              <Link to="/contact" onClick={() => setMobileOpen(false)} className="mt-4 flex min-h-12 items-center rounded-md border-t border-border px-3 font-display text-foreground hover:bg-muted [&.active]:bg-muted">Contact</Link>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
