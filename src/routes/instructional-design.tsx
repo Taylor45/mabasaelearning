@@ -29,13 +29,13 @@ const materialSections = [
       "Scripts and design documents that define objectives, structure, narration, and on-screen treatment before development starts.",
     items: [
       {
-        name: "Mastering Stakeholder Communication: Strategies for Building Trust and Resolving Conflicts (Script)",
+        name: "Design Document: Mastering Stakeholder Communication: Strategies for Building Trust and Resolving Conflicts",
         src: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/preview",
         href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/view",
         action: "Open Document",
       },
       {
-        name: "Design Document",
+        name: "Storyboard: AI Literacy for Instructional Design: Mastering the Art of Prompting",
         src: "https://docs.google.com/document/d/1TYlHIjUqmdO01_oJ4xOTnclFsvSGpzTO8A2s4ZNw2bg/preview",
         href: "https://docs.google.com/document/d/1TYlHIjUqmdO01_oJ4xOTnclFsvSGpzTO8A2s4ZNw2bg/view",
         action: "Open Document",
@@ -48,7 +48,7 @@ const materialSections = [
       "Slide-by-slide visual storyboards and wireframes showing layout, interaction, and media placement for each screen.",
     items: [
       {
-        name: "Storyboard - Bruce Mabasa",
+        name: " Visual Storyboard & Wireframe: AI Literacy for Instructional Design: Mastering the Art of Prompting",
         src: "https://docs.google.com/presentation/d/176EaR6tffi9aB69xWrPpqO38WecJj1BVWksGVQ7t7NE/embed?start=false&loop=false&delayms=5000",
         href: "https://docs.google.com/presentation/d/176EaR6tffi9aB69xWrPpqO38WecJj1BVWksGVQ7t7NE/present",
         action: "Open Presentation",
