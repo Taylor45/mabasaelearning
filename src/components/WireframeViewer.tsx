@@ -37,25 +37,21 @@ export function WireframeViewer({ images }: { images: Wireframe[] }) {
 
   return (
     <Dialog.Root open={active !== null} onOpenChange={(open) => { if (!open) setActive(null); }}>
-      <div className="grid gap-8 sm:grid-cols-2 lg:gap-10">
+      <div className="grid items-start gap-8 sm:grid-cols-2 lg:gap-10">
         {images.map((wire, index) => (
-          <figure key={wire.src} className="aspect-[4/3] overflow-hidden rounded-md border border-border bg-card shadow-elevated">
+          <figure key={wire.src} className="overflow-hidden rounded-md border border-border bg-card shadow-elevated">
             <Button
               variant="ghost"
-              className="group h-full w-full rounded-none p-0 focus-visible:ring-inset"
+              className="group block h-auto w-full rounded-none p-0 focus-visible:ring-inset"
               aria-label={`Open ${wire.alt}`}
               onClick={() => { setActive(index); setZoom(1); }}
             >
-              <span
-                className="block h-full w-full overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              >
-                <img
-                  src={wire.src}
-                  alt={wire.alt}
-                  loading="lazy"
-                  className="block w-full object-contain object-top transition-transform duration-500 motion-reduce:transition-none group-hover:scale-105"
-                />
-              </span>
+              <img
+                src={wire.src}
+                alt={wire.alt}
+                loading="lazy"
+                className="block h-auto w-full object-contain object-top transition-transform duration-500 motion-reduce:transition-none group-hover:scale-105"
+              />
             </Button>
           </figure>
         ))}
