@@ -257,21 +257,38 @@ function ELearningPage() {
                     <div className="flex flex-1 flex-col items-start gap-4 p-6">
                       <h3 className="text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
-                        {project.links.map((link, li) => (
-                          <Button
-                            asChild
-                            variant="outline"
-                            key={link.label}
-                            className={`h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5 ${
-                              li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : "bg-transparent text-card-foreground"
-                            } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`}
-                          >
-                            <a href={link.href} target="_blank" rel="noreferrer">
+                        {project.links.map((link, li) => {
+                          const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5 ${
+                            li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : "bg-transparent text-card-foreground"
+                          } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`;
+                          const inner = (
+                            <>
                               <span className="min-w-0 break-words">{link.label}</span>
                               <span className="shrink-0" aria-hidden="true">→</span>
-                            </a>
-                          </Button>
-                        ))}
+                            </>
+                          );
+                          return link.preview ? (
+                            <DocumentPreviewButton
+                              key={link.label}
+                              href={link.href}
+                              title={`${link.label} — ${project.name}`}
+                              className={buttonClasses}
+                            >
+                              {inner}
+                            </DocumentPreviewButton>
+                          ) : (
+                            <Button
+                              asChild
+                              variant="outline"
+                              key={link.label}
+                              className={buttonClasses}
+                            >
+                              <a href={link.href} target="_blank" rel="noreferrer">
+                                {inner}
+                              </a>
+                            </Button>
+                          );
+                        })}
                       </div>
                     </div>
                   </article>
