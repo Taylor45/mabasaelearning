@@ -34,7 +34,9 @@ export const Route = createFileRoute("/elearning-development")({
   component: ELearningPage,
 });
 
-const sections = [
+type ProjectLink = { label: string; href: string; preview?: boolean };
+
+const sections: { title: string; blurb: string; projects: { name: string; links: ProjectLink[]; images: string[] }[] }[] = [
   {
     title: "Articulate Storyline Courses ",
     blurb:
