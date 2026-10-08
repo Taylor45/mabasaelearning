@@ -87,23 +87,25 @@ function InstructionalDesignPage() {
           </div>
           <div className="bg-surface-light">
             <div className="mx-auto max-w-6xl px-5 py-12">
-              <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
+               <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
               {section.items.map((item) => (
                 <article
                   key={item.name}
-                  className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated"
+                   className="group flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated"
                 >
-                  <div className="aspect-[4/3] w-full bg-muted">
+                   <div className={item.action === "Open Presentation"
+                     ? "aspect-video w-full min-w-0 bg-muted sm:aspect-[4/3]"
+                     : "h-[min(480px,70dvh)] w-full min-w-0 bg-muted sm:aspect-[4/3] sm:h-auto"}>
                     <iframe
                       src={item.src}
                       title={item.name}
                       loading="lazy"
                       allowFullScreen
-                      className="h-full w-full border-0"
+                       className="block h-full w-full max-w-full border-0"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col items-start gap-4 p-6">
-                    <h3 className="text-lg leading-snug">{item.name}</h3>
+                   <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
+                     <h3 className="max-w-full break-words text-lg leading-snug">{item.name}</h3>
                     <a
                       href={item.href}
                       target="_blank"
