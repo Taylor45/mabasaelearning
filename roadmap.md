@@ -1,2 +1,2 @@
-- [ ] Fix the top navigation for phones and tablets.
-- [ ] Fix mobile content sizing and verify portfolio pages at narrow widths.
+- [x] Fix the top navigation for phones and tablets.
+- [x] Fix mobile content sizing and verify portfolio pages at narrow widths.
