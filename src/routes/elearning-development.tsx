@@ -97,7 +97,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
       {
         name: "Onboarding Short Course",
         links: [
-          { label: "Design Process", href: "https://docs.google.com/document/d/119C3v8BY-gFXwdF89U8fu9tp6kT-b0idIahm7uO7evs/edit?usp=sharing" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/119C3v8BY-gFXwdF89U8fu9tp6kT-b0idIahm7uO7evs/edit?usp=sharing", preview: true },
           { label: "View Course", href: "https://taylor45.github.io/Onboarding-Course/" },
         ],
         images: [ispringCourse1.url, ispringCourse2.url],
