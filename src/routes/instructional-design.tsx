@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
+import { DocumentPreview } from "@/components/DocumentPreview";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
@@ -93,17 +94,7 @@ function InstructionalDesignPage() {
                   key={item.name}
                    className="group flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated"
                 >
-                   <div className={item.action === "Open Presentation"
-                     ? "aspect-video w-full min-w-0 bg-muted sm:aspect-[4/3]"
-                     : "h-[min(480px,70dvh)] w-full min-w-0 bg-muted sm:aspect-[4/3] sm:h-auto"}>
-                    <iframe
-                      src={item.src}
-                      title={item.name}
-                      loading="lazy"
-                      allowFullScreen
-                       className="block h-full w-full max-w-full border-0"
-                    />
-                  </div>
+                   <DocumentPreview src={item.src} title={item.name} href={item.href} presentation={item.action === "Open Presentation"} />
                    <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
                      <h3 className="max-w-full break-words text-lg leading-snug">{item.name}</h3>
                     <a

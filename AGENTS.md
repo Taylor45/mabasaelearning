@@ -10,4 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Keep wireframe gallery interactions in a dedicated browser-side viewer using Radix Dialog for modal focus management and keyboard dismissal.
+- Keep document fullscreen previews in a shared Radix Dialog viewer so mobile reading fills the viewport and closing restores focus.
 - Use the shared header's Radix menu on desktop and focus-managed sheet on mobile so all portfolio navigation remains keyboard and touch accessible.
