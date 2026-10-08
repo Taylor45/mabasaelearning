@@ -96,7 +96,10 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
     projects: [
       {
         name: "Onboarding Short Course",
-        links: [{ label: "View Course", href: "https://taylor45.github.io/Onboarding-Course/" }],
+        links: [
+          { label: "Design Process", href: "https://taylor45.github.io/Onboarding-Course-Storyboard/" },
+          { label: "View Course", href: "https://taylor45.github.io/Onboarding-Course/" },
+        ],
         images: [ispringCourse1.url, ispringCourse2.url],
       },
       {
