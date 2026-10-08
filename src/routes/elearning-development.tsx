@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Button } from "@/components/ui/button";
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
 import storylineAiLiteracy from "@/assets/storyline-ai-literacy.png.asset.json";
 import geniallyGuide1 from "@/assets/genially-guide-1.png.asset.json";
@@ -250,20 +251,21 @@ function ELearningPage() {
                     )}
                     <div className="flex flex-1 flex-col items-start gap-4 p-6">
                       <h3 className="text-lg leading-snug">{project.name}</h3>
-                      <div className="mt-auto flex w-full flex-wrap items-center justify-end gap-3">
+                      <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {project.links.map((link, li) => (
-                          <a
+                          <Button
+                            asChild
+                            variant="outline"
                             key={link.label}
-                            href={link.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={`inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card ${
-                              li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : ""
-                            } ${li === 0 && project.links.length > 1 ? "mr-auto" : ""}`}
+                            className={`h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5 ${
+                              li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : "bg-transparent text-card-foreground"
+                            } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`}
                           >
-                            {link.label}
-                            <span aria-hidden="true">→</span>
-                          </a>
+                            <a href={link.href} target="_blank" rel="noreferrer">
+                              <span className="min-w-0 break-words">{link.label}</span>
+                              <span className="shrink-0" aria-hidden="true">→</span>
+                            </a>
+                          </Button>
                         ))}
                       </div>
                     </div>
