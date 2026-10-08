@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ServicePage } from "@/components/ServicePage";
+import { VideoPreview } from "@/components/VideoPreview";
 import graphicDesign1 from "@/assets/graphic-design-1.jpg.asset.json";
 import graphicDesign2 from "@/assets/graphic-design-2.jpg.asset.json";
 import graphicDesign3 from "@/assets/graphic-design-3.jpg.asset.json";
@@ -211,19 +212,7 @@ function MultimediaShowcase() {
       </ShowcaseHeading>
       <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
         {videos.map((video) => (
-          <figure
-            key={video.id}
-            className="overflow-hidden rounded-md border border-foreground/15 bg-card"
-          >
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${video.id}`}
-              title={video.title}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="aspect-video w-full"
-            />
-          </figure>
+          <VideoPreview key={video.id} {...video} />
         ))}
       </div>
 
