@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Button } from "@/components/ui/button";
 import portrait from "@/assets/melvon-portrait.png";
 import illPrompt from "@/assets/ill-prompt-engineering.png";
 import illDesign from "@/assets/ill-instructional-design.png";
@@ -210,13 +211,13 @@ function CardRow({
   return (
     <section className="bg-surface-light">
       <div className="mx-auto max-w-6xl px-5 py-16">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <Link
               key={item.title}
               to={item.to}
               aria-label={`Explore ${item.title}`}
-              className="group flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
+              className="group flex min-w-0 flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
             >
               <img
                 src={item.img}
@@ -256,7 +257,7 @@ function LogoFrame({ tool, active }: { tool: Tool; active: boolean }) {
   const ring = `linear-gradient(135deg, ${tool.from}, ${tool.to})`;
   return (
     <span
-      className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[13px] p-[2.5px] transition-shadow duration-500 sm:h-[64px] sm:w-[64px] sm:rounded-[20px] sm:p-[3.5px] lg:h-[88px] lg:w-[88px] lg:rounded-[27px] lg:p-[4px]"
+      className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[20px] p-[3.5px] transition-shadow duration-500 lg:h-[88px] lg:w-[88px] lg:rounded-[27px] lg:p-[4px]"
       style={{
         backgroundImage: ring,
         boxShadow: active
@@ -299,7 +300,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
       <p className="mb-3.5 text-center font-mono text-[0.7rem] font-bold uppercase tracking-[2px] text-white">
         {label}
       </p>
-      <div className="relative flex h-[clamp(96px,20vw,180px)] items-center justify-center overflow-hidden rounded-2xl bg-surface-light shadow-elevated">
+      <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-2xl bg-surface-light shadow-elevated lg:h-48">
         {items.map((tool, i) => (
           <div
             key={tool.name}
@@ -310,7 +311,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
             }`}
           >
             <LogoFrame tool={tool} active={i === active} />
-            <p className="text-[0.72rem] font-bold text-surface-light-foreground sm:text-[0.82rem] lg:text-[1.05rem]">
+            <p className="text-sm font-bold text-surface-light-foreground lg:text-[1.05rem]">
               {tool.name}
             </p>
             <span className="rounded-full bg-[linear-gradient(120deg,#0047b3,#1da8e2)] px-2.5 py-1 font-mono text-[0.55rem] uppercase tracking-[1.5px] text-white sm:text-[0.65rem]">
@@ -319,19 +320,19 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
           </div>
         ))}
       </div>
-      <div className="mt-3.5 flex justify-center gap-2">
+      <div className="mt-2 flex flex-wrap justify-center">
         {items.map((tool, i) => (
-          <button
+          <Button variant="ghost" size="icon"
             key={tool.name}
             type="button"
             aria-label={`Show ${tool.name}`}
             onClick={() => setActive(i)}
-            className={`h-[7px] w-[7px] rounded-full transition-all duration-300 ${
+             className={`flex h-11 w-9 items-center justify-center rounded-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
               i === active
-                ? "scale-[1.3] bg-[linear-gradient(90deg,#19d4c8,#1da8e2)]"
-                : "bg-white/25"
+                 ? "text-brand-cyan"
+                 : "text-foreground/30"
             }`}
-          />
+           ><span className={`h-2 w-2 rounded-full bg-current ${i === active ? "scale-125" : ""}`} /></Button>
         ))}
       </div>
     </div>
@@ -345,7 +346,7 @@ function Index() {
       <main className="flex-1">
         {/* Hero */}
         <section className="surface-hero">
-          <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 py-20 md:grid-cols-[1.35fr_1fr]">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 sm:gap-14 sm:py-20 md:grid-cols-[1.35fr_1fr]">
             <div>
               <span className="inline-block rounded-full border border-border px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em]">
                 About me
@@ -385,13 +386,13 @@ function Index() {
               </ul>
             </div>
 
-            <div className="flex flex-col items-center">
+            <div className="flex min-w-0 flex-col items-center">
               <div className="rounded-full border-2 border-foreground/80 p-3">
                 <div className="rounded-full border border-foreground/50 p-2">
                   <img
                     src={portrait}
                     alt="Portrait of Bruce Mabasa"
-                    className="h-60 w-60 rounded-full object-cover sm:h-72 sm:w-72"
+                    className="h-52 w-52 rounded-full object-cover min-[360px]:h-60 min-[360px]:w-60 sm:h-72 sm:w-72"
                     width={288}
                     height={288}
                   />
@@ -430,7 +431,7 @@ function Index() {
               ["02", "Engaging", "Highly Engaging Course"],
               ["03", "Impactful", "Learning Experiences"],
             ].map(([num, big, small]) => (
-              <div key={num} className="flex items-baseline gap-2">
+              <div key={num} className="grid min-w-0 grid-cols-[auto_auto_minmax(0,1fr)] items-baseline gap-2">
                 <span className="text-[10px] tracking-[0.2em] text-brand-sky">{num}</span>
                 <span className="text-lg font-bold">{big}</span>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
@@ -514,7 +515,7 @@ function Index() {
                   <h3 className="mb-2 font-body text-base font-semibold tracking-[-0.01em] sm:text-[clamp(1.02rem,2vw,1.25rem)]">
                     {stage.title}
                   </h3>
-                  <p className="mx-auto mb-3 max-w-[340px] text-[11px] leading-[1.55] text-[#5b6472] sm:mb-4 sm:text-xs">
+                  <p className="mx-auto mb-3 max-w-[340px] text-sm leading-relaxed text-surface-light-foreground/75 sm:mb-4">
                     {stage.copy}
                   </p>
                   <div className="flex flex-wrap justify-center gap-1.5">

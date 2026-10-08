@@ -97,8 +97,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Mabasa | eLearning & Instructional Design Portfolio" },
       { name: "twitter:description", content: "Portfolio of  Mabasa — instructional design, eLearning development, prompt engineering, UX/UI and AI in learning." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/261d244e65f2b2ddc2886c3f9cff0c5d/id-preview-89e49bf2--8968383d-40a9-4c16-ab00-d251550e7576.lovable.app-1786363616897.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/261d244e65f2b2ddc2886c3f9cff0c5d/id-preview-89e49bf2--8968383d-40a9-4c16-ab00-d251550e7576.lovable.app-1786363616897.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
