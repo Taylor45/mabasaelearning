@@ -57,7 +57,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "AI Literacy for Instructional Design",
         links: [
           { label: "View Course", href: "https://taylor45.github.io/Storyline/" },
-          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing", preview: true },
         ],
         images: [
           "/__l5e/assets-v1/f8a711a1-f971-4a5d-90a1-eb7fa32d4106/storyline-ai-literacy.png",
