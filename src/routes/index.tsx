@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Button } from "@/components/ui/button";
 import portrait from "@/assets/melvon-portrait.png";
 import illPrompt from "@/assets/ill-prompt-engineering.png";
 import illDesign from "@/assets/ill-instructional-design.png";
@@ -310,7 +311,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
             }`}
           >
             <LogoFrame tool={tool} active={i === active} />
-             className="text-sm font-bold text-surface-light-foreground lg:text-[1.05rem]">
+            <p className="text-sm font-bold text-surface-light-foreground lg:text-[1.05rem]">
               {tool.name}
             </p>
             <span className="rounded-full bg-[linear-gradient(120deg,#0047b3,#1da8e2)] px-2.5 py-1 font-mono text-[0.55rem] uppercase tracking-[1.5px] text-white sm:text-[0.65rem]">
@@ -321,7 +322,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
       </div>
       <div className="mt-2 flex flex-wrap justify-center">
         {items.map((tool, i) => (
-          <button
+          <Button variant="ghost" size="icon"
             key={tool.name}
             type="button"
             aria-label={`Show ${tool.name}`}
@@ -331,7 +332,7 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
                  ? "text-brand-cyan"
                  : "text-foreground/30"
             }`}
-           ><span className={`h-2 w-2 rounded-full bg-current ${i === active ? "scale-125" : ""}`} /></button>
+           ><span className={`h-2 w-2 rounded-full bg-current ${i === active ? "scale-125" : ""}`} /></Button>
         ))}
       </div>
     </div>
