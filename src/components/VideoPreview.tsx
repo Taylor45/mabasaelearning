@@ -30,8 +30,8 @@ export function VideoPreview({ id, title }: { id: string; title: string }) {
               <Button variant="ghost" size="icon" className="h-11 w-11 shrink-0" title="Close fullscreen preview" aria-label="Close fullscreen preview"><X /></Button>
             </Dialog.Close>
           </header>
-          <div className="flex min-h-0 flex-1 items-center justify-center">
-            <iframe src={src} title={`${title} — fullscreen`} allow={videoPermissions} allowFullScreen className="block h-full w-full min-w-0 border-0" />
+          <div className="flex min-h-0 flex-1 items-center justify-center [container-type:size]">
+            <iframe src={src} title={`${title} — fullscreen`} allow={videoPermissions} allowFullScreen className="block aspect-video h-auto w-[min(100cqw,177.777cqh)] min-w-0 border-0" />
           </div>
         </Dialog.Content>
       </Dialog.Portal>
