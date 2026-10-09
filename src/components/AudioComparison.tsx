@@ -140,7 +140,7 @@ function AudioPlayer({ badge, title, subtitle, src, active, onPlay }: {
       <input type="range" min={0} max={duration || 1} step={0.1} value={Math.min(time, duration || 1)}
         aria-label={`Seek ${title}`} disabled={!duration}
         onChange={(event) => { if (media.current) media.current.currentTime = Number(event.target.value); }}
-        className="audio-seek mt-5" style={{ "--seek": `${progress}%` } as React.CSSProperties} />
+        className="audio-seek mt-5" style={{ "--seek": `${progress}%` } as CSSProperties} />
 
       <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
         <Button size="icon" className="size-12 shrink-0 rounded-full bg-brand-deep text-surface-light shadow-card hover:bg-brand-deep/90"
