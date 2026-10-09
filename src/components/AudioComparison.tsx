@@ -40,7 +40,10 @@ function AudioPlayer({ title, subtitle, src, active, onPlay }: {
           normalize: true,
         });
         wave.current = instance;
-        instance.on("ready", () => { if (!disposed) setReady(true); });
+        instance.on("ready", () => {
+          if (!disposed) { setReady(true); setDuration(media.current?.duration ?? 0); }
+        });
+        if (media.current.readyState >= 1) setDuration(media.current.duration);
         instance.on("error", () => { if (!disposed) setError(true); });
       } catch { if (!disposed) setError(true); }
     }
