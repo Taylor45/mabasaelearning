@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ServicePage } from "@/components/ServicePage";
 import { VideoPreview } from "@/components/VideoPreview";
+import { AudioComparison } from "@/components/AudioComparison";
 import graphicDesign1 from "@/assets/graphic-design-1.jpg.asset.json";
 import graphicDesign2 from "@/assets/graphic-design-2.jpg.asset.json";
 import graphicDesign3 from "@/assets/graphic-design-3.jpg.asset.json";
@@ -215,6 +216,11 @@ function MultimediaShowcase() {
           <VideoPreview key={video.id} {...video} />
         ))}
       </div>
+
+      <ShowcaseHeading blurb="Original and AI-cloned narration for a health systems learning module.">
+        Audio &amp; Narration
+      </ShowcaseHeading>
+      <AudioComparison />
 
       <ShowcaseHeading blurb="AI-generated professional avatars and character portraits engineered through structured prompt design for learning scenarios.">
         Generative AI Prompt Engineering (Avatars)
