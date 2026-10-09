@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type WaveSurfer from "wavesurfer.js";
 import { Pause, Play, RotateCcw, Volume1, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
