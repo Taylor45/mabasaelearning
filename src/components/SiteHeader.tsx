@@ -85,7 +85,8 @@ export function SiteHeader() {
               {serviceItems.map((item) => (
                 <Link key={item.to} to={item.to} onClick={() => setMobileOpen(false)} className="flex min-h-12 items-center rounded-md px-3 py-3 text-sm text-foreground hover:bg-muted [&.active]:bg-muted">{item.label}</Link>
               ))}
-              <Link to="/contact" onClick={() => setMobileOpen(false)} className="mt-4 flex min-h-12 items-center rounded-md border-t border-border px-3 font-display text-foreground hover:bg-muted [&.active]:bg-muted">Contact</Link>
+              <Link to="/how-cool-is-that" onClick={() => setMobileOpen(false)} className="mt-4 flex min-h-12 items-center rounded-md border-t border-border px-3 font-display text-foreground hover:bg-muted [&.active]:bg-muted">How Cool Is That?</Link>
+              <Link to="/contact" onClick={() => setMobileOpen(false)} className="flex min-h-12 items-center rounded-md px-3 font-display text-foreground hover:bg-muted [&.active]:bg-muted">Contact</Link>
             </nav>
           </SheetContent>
         </Sheet>
