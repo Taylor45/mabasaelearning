@@ -20,7 +20,7 @@ export const Route = createFileRoute("/how-cool-is-that")({
       {
         property: "og:description",
         content:
-          "Nine trends reshaping eLearning and Development in 2026, and what I build differently because of each one.",
+          "Five trends reshaping eLearning and Development in 2026, and what I build differently because of each one.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -72,34 +72,6 @@ const trends = [
     copy: "The LMS keeps doing what it does well, but AI-powered experiences get embedded where the work happens. With AI-generated content flooding in, the designer's job shifts to curator and editor.",
     tags: ["Ecosystem", "Curation", "Communities of Practice"],
     cool: "The library stops being a warehouse and starts being a concierge.",
-  },
-  {
-    number: "06",
-    title: "Designing For Data",
-    copy: "The waterfall model — first best guess, then measure afterwards — is finished. What learners know, what they can do, and how confident they are get asked before design starts.",
-    tags: ["Evidence", "Measurement", "Credibility"],
-    cool: "Every course arrives with evidence, not just a completion percentage.",
-  },
-  {
-    number: "07",
-    title: "Live Experiential Learning",
-    copy: "A high-energy reimagining of instructor-led training: shared quests, in person or virtual, where people adapt to nuanced situations in real time and coach one another.",
-    tags: ["Peer Facilitation", "Virtual Quests", "Collaboration"],
-    cool: "Rooms with energy again — and peers doing the scaling, on a lean budget.",
-  },
-  {
-    number: "08",
-    title: "Gamification 2.0",
-    copy: "AI collapses the old trade-off between authentic and affordable. Intrinsic rewards — mastery, purpose, autonomy — replace superficial points, and simulations adapt to each decision.",
-    tags: ["Dynamic Simulations", "Intrinsic Rewards", "Adaptive Storylines"],
-    cool: "Scenarios that react to your choices instead of scoring your clicks.",
-  },
-  {
-    number: "09",
-    title: "AI Literacy & Psychological Safety",
-    copy: "AI upskilling can trigger fear and shame. The work is role-based AI skills alongside a clear message: people are not training their replacements. Then protect the unpromptable — empathy, creativity, connection.",
-    tags: ["Role-Based Skills", "Trust", "The Unpromptable"],
-    cool: "Teach the tool, protect the human. The parts AI cannot do are the parts worth paying for.",
   },
 ];
 
