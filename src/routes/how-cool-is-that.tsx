@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Plus } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -76,6 +76,48 @@ const trends = [
 ];
 
 
+
+const articles = [
+  {
+    slug: "ai-moved-from-pilot-to-plumbing",
+    date: "October 2026",
+    tag: "AI in Learning",
+    title: "AI has moved from pilot to plumbing",
+    excerpt:
+      "The question on projects is no longer \"should we use AI?\" — it is \"where does it quietly remove friction?\" Here is where I see it earning its keep.",
+    body: [
+      "Two years ago every proposal had an AI experiment bolted onto the side of it. This year the conversation has changed: AI is expected to be inside the workflow, invisible, doing the boring parts well.",
+      "On my builds that means three things. First, drafting and localisation happen in hours, not weeks — which frees budget for the design decisions that actually need a human. Second, learners get answers at the moment of need instead of a module they will never open. Third, the data coming back is finally useful: not completion rates, but the questions people actually ask.",
+      "The risk is sameness. When everyone can generate a course in an afternoon, the differentiator is curation, context and tone — the things that make learning feel like it came from your organisation, not from a template.",
+    ],
+  },
+  {
+    slug: "learning-debt-is-real",
+    date: "September 2026",
+    tag: "Strategy",
+    title: "Learning debt is real — and it is compounding",
+    excerpt:
+      "Every quick fix, skipped induction and outdated module adds up. Learning debt behaves exactly like technical debt, and most organisations are carrying more than they think.",
+    body: [
+      "Technical debt is a familiar idea: ship fast now, pay interest later. Learning works the same way. Every process that changed without the training changing with it, every work-around a team invented and never documented, every new hire who learned from the person next to them instead of from a designed experience — that is principal plus interest.",
+      "You feel it as longer ramp-up times, inconsistent quality between teams, and the same questions landing in the same inboxes every week.",
+      "The fix is not a bigger course catalogue. It is a habit: treat every process change as a learning change, keep content small enough to update in an afternoon, and measure whether people can do the thing — not whether they opened the thing.",
+    ],
+  },
+  {
+    slug: "budgets-want-proof",
+    date: "August 2026",
+    tag: "Measurement",
+    title: "Budgets now demand proof, not completions",
+    excerpt:
+      "Completion rates and smile sheets no longer unlock budget. The teams getting funded are the ones who can show behaviour change and business movement.",
+    body: [
+      "The most useful sentence I heard at a panel this year: \"Nobody ever cut a budget they could prove was working.\" L&D has spent years reporting activity — seats filled, modules completed, satisfaction scores — and wondering why it is first in line for cuts.",
+      "The shift I am making on projects: agree the business metric before storyboarding a single screen. If the course is about safety, the metric is incidents. If it is onboarding, the metric is time-to-competence. If we cannot name the metric, we are not ready to build.",
+      "It sounds obvious, but it changes the design. You build less content and more practice, because practice is what moves the number.",
+    ],
+  },
+];
 
 function BandTitle({
   heading,
@@ -238,6 +280,61 @@ function HowCoolIsThatPage() {
           </AccordionPrimitive.Root>
         </section>
 
+        {/* Blog */}
+        <BandTitle
+          heading="From the blog"
+          blurb="Articles I publish on eLearning trends, tools and the craft of building learning that actually works."
+          padClass="pt-8 pb-4"
+        />
+        <section className="bg-surface-light pt-8">
+          <div className="mx-auto flex max-w-4xl flex-col gap-5 px-5 pb-20">
+            {articles.map((article) => (
+              <AccordionPrimitive.Root key={article.slug} type="multiple">
+                <AccordionPrimitive.Item
+                  value={article.slug}
+                  className="min-w-0 border border-surface-light-foreground/15 bg-surface-light shadow-[0_2px_8px_rgba(0,8,30,0.05)]"
+                >
+                  <div className="px-5 py-6 sm:px-8 sm:py-8">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70">
+                        {article.tag}
+                      </span>
+                      <span className="text-xs text-surface-light-foreground/60">{article.date}</span>
+                    </div>
+                    <h3 className="mt-3 font-body text-lg font-bold text-surface-light-foreground sm:text-xl">
+                      {article.title}
+                    </h3>
+                    <p className="mt-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                      {article.excerpt}
+                    </p>
+                    <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                      <div className="mt-4 space-y-4 border-t border-surface-light-foreground/10 pt-4">
+                        {article.body.map((paragraph) => (
+                          <p
+                            key={paragraph.slice(0, 40)}
+                            className="text-[0.95rem] leading-relaxed text-surface-light-foreground/75"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </AccordionPrimitive.Content>
+                    <AccordionPrimitive.Header className="mt-4">
+                      <AccordionPrimitive.Trigger className="group inline-flex items-center gap-2 text-sm font-semibold text-brand-sky focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                        <span className="group-data-[state=open]:hidden">Read article</span>
+                        <span className="hidden group-data-[state=open]:inline">Close article</span>
+                        <ArrowRight
+                          aria-hidden="true"
+                          className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-90"
+                        />
+                      </AccordionPrimitive.Trigger>
+                    </AccordionPrimitive.Header>
+                  </div>
+                </AccordionPrimitive.Item>
+              </AccordionPrimitive.Root>
+            ))}
+          </div>
+        </section>
 
       </main>
       <SiteFooter />
