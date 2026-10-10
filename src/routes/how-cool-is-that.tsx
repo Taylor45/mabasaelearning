@@ -231,8 +231,8 @@ function HowCoolIsThatPage() {
         {/* Trend list */}
         <BandTitle
           heading="Check out our Frequently Asked Questions section!"
-          blurb=".................................................................."
-          padClass="pt-14 pb-5"
+          blurb="The questions I am asked most often about where learning is heading — answered in plain language, with the reasoning and the evidence behind each one."
+          padClass="pt-8 pb-4"
         />
         <section className="bg-surface-light pt-8">
           <AccordionPrimitive.Root type="multiple" className="mx-auto flex max-w-4xl flex-col gap-5 px-5 pb-20">
