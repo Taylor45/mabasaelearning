@@ -15,6 +15,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DesignProcessRouteImport } from './routes/design-process'
 import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-development'
 import { Route as ElearningMultimediaRouteImport } from './routes/elearning-multimedia'
+import { Route as HowCoolIsThatRouteImport } from './routes/how-cool-is-that'
 import { Route as InstructionalDesignRouteImport } from './routes/instructional-design'
 import { Route as PromptEngineeringRouteImport } from './routes/prompt-engineering'
 import { Route as WebDesignUxUiRouteImport } from './routes/web-design-ux-ui'
@@ -49,6 +50,11 @@ const ElearningMultimediaRoute = ElearningMultimediaRouteImport.update({
   path: '/elearning-multimedia',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowCoolIsThatRoute = HowCoolIsThatRouteImport.update({
+  id: '/how-cool-is-that',
+  path: '/how-cool-is-that',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InstructionalDesignRoute = InstructionalDesignRouteImport.update({
   id: '/instructional-design',
   path: '/instructional-design',
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
   '/elearning-multimedia': typeof ElearningMultimediaRoute
+  '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
   '/web-design-ux-ui': typeof WebDesignUxUiRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
   '/elearning-multimedia': typeof ElearningMultimediaRoute
+  '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
   '/web-design-ux-ui': typeof WebDesignUxUiRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
   '/elearning-multimedia': typeof ElearningMultimediaRoute
+  '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
   '/web-design-ux-ui': typeof WebDesignUxUiRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/design-process'
     | '/elearning-development'
     | '/elearning-multimedia'
+    | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
     | '/web-design-ux-ui'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/design-process'
     | '/elearning-development'
     | '/elearning-multimedia'
+    | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
     | '/web-design-ux-ui'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/design-process'
     | '/elearning-development'
     | '/elearning-multimedia'
+    | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
     | '/web-design-ux-ui'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   DesignProcessRoute: typeof DesignProcessRoute
   ElearningDevelopmentRoute: typeof ElearningDevelopmentRoute
   ElearningMultimediaRoute: typeof ElearningMultimediaRoute
+  HowCoolIsThatRoute: typeof HowCoolIsThatRoute
   InstructionalDesignRoute: typeof InstructionalDesignRoute
   PromptEngineeringRoute: typeof PromptEngineeringRoute
   WebDesignUxUiRoute: typeof WebDesignUxUiRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ElearningMultimediaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-cool-is-that': {
+      id: '/how-cool-is-that'
+      path: '/how-cool-is-that'
+      fullPath: '/how-cool-is-that'
+      preLoaderRoute: typeof HowCoolIsThatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/instructional-design': {
       id: '/instructional-design'
       path: '/instructional-design'
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   DesignProcessRoute: DesignProcessRoute,
   ElearningDevelopmentRoute: ElearningDevelopmentRoute,
   ElearningMultimediaRoute: ElearningMultimediaRoute,
+  HowCoolIsThatRoute: HowCoolIsThatRoute,
   InstructionalDesignRoute: InstructionalDesignRoute,
   PromptEngineeringRoute: PromptEngineeringRoute,
   WebDesignUxUiRoute: WebDesignUxUiRoute,

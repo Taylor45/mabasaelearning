@@ -1,2 +1,3 @@
 - [x] Fix the top navigation for phones and tablets.
 - [x] Fix mobile content sizing and verify portfolio pages at narrow widths.
+- [x] Add the "How cool is that?" page covering the latest eLearning & Development trends, and link it from the header.
