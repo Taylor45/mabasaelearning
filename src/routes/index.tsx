@@ -160,7 +160,7 @@ function CategoryBand({ highlight, intro }: { highlight: string; intro?: string 
           {highlight}
         </h2>
         {intro ? (
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-foreground sm:text-xl">
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
             {intro}
           </p>
         ) : null}
