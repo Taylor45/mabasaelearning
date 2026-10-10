@@ -154,23 +154,6 @@ function HowCoolIsThatPage() {
             <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
               How cool is that?
             </h1>
-            <p className="mt-5 max-w-2xl text-muted-foreground">
-              Every year I read the research, sit with the tools, and then ask the only question
-              that matters on a project: does this actually make learning better for the person
-              doing the work? This page is that filter — the trends shaping eLearning and
-              Development in 2026, in plain language, with the honest bit about what I would
-              build differently because of each one.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {forces.map((force) => (
-                <span
-                  key={force}
-                  className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
-                >
-                  {force}
-                </span>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -178,56 +161,25 @@ function HowCoolIsThatPage() {
           <div className="h-0.5 w-full bg-foreground" />
         </div>
 
-        {/* Signals */}
+        {/* Intro */}
         <section className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-16">
-            <h2 className="text-center font-body text-3xl font-bold text-surface-light-foreground sm:text-4xl">
-              Software Engineering &amp; eLearning Technology
-            </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-relaxed text-surface-light-foreground/75 sm:text-base">
-              Sometimes an eLearning project requires more than authoring tools. With extensive
-              software engineering experience, we can develop the technology behind your learning
-              experience—or help solve a technical challenge in an existing application.
+            <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-surface-light-foreground/75 sm:text-base">
+              Every year I read the research, sit with the tools, and then ask the only question
+              that matters on a project: does this actually make learning better for the person
+              doing the work? This page is that filter — the trends shaping eLearning and
+              Development in 2026, in plain language, with the honest bit about what I would
+              build differently because of each one.
             </p>
-            <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-surface-light-foreground/75 sm:text-base">
-              Our expertise includes both{" "}
-              <strong className="font-bold text-surface-light-foreground">
-                eLearning-specific technologies
-              </strong>{" "}
-              and{" "}
-              <strong className="font-bold text-surface-light-foreground">
-                general software development
-              </strong>
-              , allowing us to bridge the gap between instructional design and the underlying
-              technology.
-            </p>
-            <div className="mx-auto mt-10 grid max-w-4xl gap-10 sm:grid-cols-2">
-              <div className="min-w-0">
-                <h3 className="font-body text-xl font-bold text-surface-light-foreground">
-                  eLearning Technology
-                </h3>
-                <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-surface-light-foreground/75">
-                  <li>xAPI &amp; CMI5 development and integration</li>
-                  <li>SCORM and LMS communication</li>
-                  <li>Learning Record Store (LRS) integrations</li>
-                  <li>Custom eLearning and LMS integrations</li>
-                  <li>Learning data and API development</li>
-                  <li>JavaScript-based course functionality</li>
-                </ul>
-              </div>
-              <div className="min-w-0">
-                <h3 className="font-body text-xl font-bold text-surface-light-foreground">
-                  Software Development
-                </h3>
-                <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-surface-light-foreground/75">
-                  <li>Custom web applications and APIs</li>
-                  <li>Database design and integration</li>
-                  <li>Third-party API integrations</li>
-                  <li>Custom tools and automation</li>
-                  <li>Software debugging and technical troubleshooting</li>
-                  <li>Cloud-based application development</li>
-                </ul>
-              </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-2">
+              {forces.map((force) => (
+                <span
+                  key={force}
+                  className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-xs text-surface-light-foreground/70"
+                >
+                  {force}
+                </span>
+              ))}
             </div>
           </div>
         </section>
