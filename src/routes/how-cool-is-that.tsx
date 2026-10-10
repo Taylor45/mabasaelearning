@@ -154,23 +154,6 @@ function HowCoolIsThatPage() {
             <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
               How cool is that?
             </h1>
-            <p className="mt-5 max-w-2xl text-muted-foreground">
-              Every year I read the research, sit with the tools, and then ask the only question
-              that matters on a project: does this actually make learning better for the person
-              doing the work? This page is that filter — the trends shaping eLearning and
-              Development in 2026, in plain language, with the honest bit about what I would
-              build differently because of each one.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {forces.map((force) => (
-                <span
-                  key={force}
-                  className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
-                >
-                  {force}
-                </span>
-              ))}
-            </div>
           </div>
         </section>
 
