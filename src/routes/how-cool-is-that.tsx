@@ -283,37 +283,45 @@ function HowCoolIsThatPage() {
           blurb="Pulled from this year's research and expert panels, then rewritten as the things I actually have to decide on a build."
         />
         <section className="bg-surface-light">
-          <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 pb-20 sm:grid-cols-2 lg:grid-cols-3">
+          <AccordionPrimitive.Root type="multiple" className="mx-auto flex max-w-4xl flex-col gap-5 px-5 pb-20">
             {trends.map((trend) => (
-              <article
+              <AccordionPrimitive.Item
                 key={trend.number}
-                className="flex h-full min-w-0 flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
+                value={trend.number}
+                className="min-w-0 border border-surface-light-foreground/15 bg-surface-light shadow-[0_2px_8px_rgba(0,8,30,0.05)]"
               >
-                <div className="flex items-baseline gap-3">
-                  <span className="font-display text-2xl text-brand-sky">{trend.number}</span>
-                  <h3 className="font-body text-xl font-bold text-surface-light-foreground">
-                    {trend.title}
-                  </h3>
-                </div>
-                <p className="mt-3 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                  {trend.copy}
-                </p>
-                <p className="mt-5 border-l-2 border-brand-sky pl-3 text-[0.9rem] font-medium italic text-surface-light-foreground">
-                  {trend.cool}
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {trend.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70"
-                    >
-                      {tag}
+                <AccordionPrimitive.Header>
+                  <AccordionPrimitive.Trigger className="group flex w-full items-center justify-between gap-4 px-5 py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:px-8 sm:py-8">
+                    <span className="flex min-w-0 items-baseline gap-3">
+                      <span className="font-display text-lg text-brand-sky">{trend.number}</span>
+                      <span className="font-body text-lg font-bold text-surface-light-foreground sm:text-xl">
+                        {trend.title}
+                      </span>
                     </span>
-                  ))}
-                </div>
-              </article>
+                    <Plus aria-hidden="true" className="h-6 w-6 shrink-0 text-brand-sky transition-transform duration-200 group-data-[state=open]:rotate-45" />
+                  </AccordionPrimitive.Trigger>
+                </AccordionPrimitive.Header>
+                <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                  <div className="px-5 pb-7 sm:px-8">
+                    <p className="text-[0.95rem] leading-relaxed text-surface-light-foreground/75">{trend.copy}</p>
+                    <p className="mt-5 border-l-2 border-brand-sky pl-3 text-[0.9rem] font-medium italic text-surface-light-foreground">
+                      {trend.cool}
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {trend.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </AccordionPrimitive.Content>
+              </AccordionPrimitive.Item>
             ))}
-          </div>
+          </AccordionPrimitive.Root>
         </section>
 
         {/* What I do about it */}
