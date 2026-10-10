@@ -251,30 +251,56 @@ function HowCoolIsThatPage() {
         </div>
 
         {/* Signals */}
-        <section className="bg-ink">
-          <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:grid-cols-3">
-            {signals.map((signal) => (
-              <div key={signal.index} className="min-w-0">
-                <span className="text-[10px] tracking-[0.2em] text-brand-sky">
-                  {signal.index}
-                </span>
-                <h2 className="mt-2 font-body text-lg font-bold text-white">
-                  {signal.headline}
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {signal.copy}
-                </p>
-                <a
-                  href={signal.source.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-brand-cyan hover:underline"
-                >
-                  {signal.source.label}
-                  <ArrowUpRight aria-hidden="true" size={14} className="shrink-0" />
-                </a>
+        <section className="bg-surface-light">
+          <div className="mx-auto max-w-6xl px-5 py-16">
+            <h2 className="text-center font-body text-3xl font-bold text-surface-light-foreground sm:text-4xl">
+              Software Engineering &amp; eLearning Technology
+            </h2>
+            <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-relaxed text-surface-light-foreground/75 sm:text-base">
+              Sometimes an eLearning project requires more than authoring tools. With extensive
+              software engineering experience, we can develop the technology behind your learning
+              experience—or help solve a technical challenge in an existing application.
+            </p>
+            <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-surface-light-foreground/75 sm:text-base">
+              Our expertise includes both{" "}
+              <strong className="font-bold text-surface-light-foreground">
+                eLearning-specific technologies
+              </strong>{" "}
+              and{" "}
+              <strong className="font-bold text-surface-light-foreground">
+                general software development
+              </strong>
+              , allowing us to bridge the gap between instructional design and the underlying
+              technology.
+            </p>
+            <div className="mx-auto mt-10 grid max-w-4xl gap-10 sm:grid-cols-2">
+              <div className="min-w-0">
+                <h3 className="font-body text-xl font-bold text-surface-light-foreground">
+                  eLearning Technology
+                </h3>
+                <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-surface-light-foreground/75">
+                  <li>xAPI &amp; CMI5 development and integration</li>
+                  <li>SCORM and LMS communication</li>
+                  <li>Learning Record Store (LRS) integrations</li>
+                  <li>Custom eLearning and LMS integrations</li>
+                  <li>Learning data and API development</li>
+                  <li>JavaScript-based course functionality</li>
+                </ul>
               </div>
-            ))}
+              <div className="min-w-0">
+                <h3 className="font-body text-xl font-bold text-surface-light-foreground">
+                  Software Development
+                </h3>
+                <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-surface-light-foreground/75">
+                  <li>Custom web applications and APIs</li>
+                  <li>Database design and integration</li>
+                  <li>Third-party API integrations</li>
+                  <li>Custom tools and automation</li>
+                  <li>Software debugging and technical troubleshooting</li>
+                  <li>Cloud-based application development</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
