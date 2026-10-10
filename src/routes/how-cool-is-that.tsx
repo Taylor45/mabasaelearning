@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ArrowUpRight, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -75,44 +75,6 @@ const trends = [
   },
 ];
 
-const responses = [
-  {
-    title: "Build the knowledge base first",
-    copy: "Before anyone asks for a chatbot, the source material needs to be cleaned, indexed and owned. That is where conversational learning either works or embarrasses you.",
-    to: "/ai-in-elearning",
-    label: "AI In eLearning",
-  },
-  {
-    title: "Design the moment of need",
-    copy: "I map the real performance gap first, then decide whether the answer is a course at all — often it is a job aid, a prompt, or a scenario.",
-    to: "/instructional-design",
-    label: "Instructional Design",
-  },
-  {
-    title: "Build the simulation, not click-next",
-    copy: "Branching scenarios in Articulate 360 and H5P that adapt to what the learner decides, so practice feels like the job rather than a quiz.",
-    to: "/elearning-development",
-    label: "eLearning Development",
-  },
-  {
-    title: "Give it a face and a voice",
-    copy: "Narrated video, motion and cloned narration make short-form content land — and make it cheap enough to refresh when the answer changes.",
-    to: "/elearning-multimedia",
-    label: "eLearning Multimedia",
-  },
-  {
-    title: "Make it readable on a phone",
-    copy: "Flow-of-work learning is mobile learning. Wireframes, accessibility and contrast get settled before a single slide is produced.",
-    to: "/web-design-ux-ui",
-    label: "Web Design / UX & UI",
-  },
-  {
-    title: "Write prompts that hold up",
-    copy: "Prompt patterns for drafting, branching logic, localisation and quiz banks — reviewed by a human before anything reaches a learner.",
-    to: "/prompt-engineering",
-    label: "Prompt Engineering",
-  },
-];
 
 
 function BandTitle({
@@ -276,35 +238,6 @@ function HowCoolIsThatPage() {
           </AccordionPrimitive.Root>
         </section>
 
-        {/* What I do about it */}
-        <BandTitle
-          heading="What I build differently because of them"
-          blurb="A trend is only useful when it changes a decision. Here is where each one lands in my process."
-        />
-        <section className="bg-surface-light">
-          <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 pb-20 sm:grid-cols-2 lg:grid-cols-3">
-            {responses.map((response) => (
-              <article
-                key={response.title}
-                className="flex h-full min-w-0 flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
-              >
-                <h3 className="font-body text-lg font-bold text-surface-light-foreground">
-                  {response.title}
-                </h3>
-                <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                  {response.copy}
-                </p>
-                <Link
-                  to={response.to}
-                  className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold text-surface-light-foreground underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  {response.label}
-                  <ArrowUpRight aria-hidden="true" size={16} className="shrink-0" />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </section>
 
       </main>
       <SiteFooter />
