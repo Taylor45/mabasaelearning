@@ -280,8 +280,8 @@ function HowCoolIsThatPage() {
 
         {/* Trend list */}
         <BandTitle
-          heading="Nine trends worth your attention"
-          blurb="Pulled from this year's research and expert panels, then rewritten as the things I actually have to decide on a build."
+          heading="Check out our Frequently Asked Questions section!"
+          blurb=".................................................................."
         />
         <section className="bg-surface-light">
           <AccordionPrimitive.Root type="multiple" className="mx-auto flex max-w-4xl flex-col gap-5 px-5 pb-20">
