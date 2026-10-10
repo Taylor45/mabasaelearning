@@ -37,36 +37,6 @@ const forces = [
   "L&D Operations & Strategy",
 ];
 
-const signals = [
-  {
-    index: "01",
-    headline: "AI has stopped being a pilot",
-    copy: "After years of experimentation, AI is now embedded in the daily workflow of most learning teams — the hard part is no longer adopting it, it is governing it.",
-    source: {
-      label: "Confirm — State of Digital Learning Report 2026",
-      href: "https://www.confirm.com/guides/state-of-digital-learning-2026",
-    },
-  },
-  {
-    index: "02",
-    headline: "Learning debt is quietly building",
-    copy: "Work keeps outpacing development, so skills and knowledge bleed away unless someone is measuring the gap. It is now a named macro trend, not a feeling.",
-    source: {
-      label: "TalentLMS — 2026 L&D Benchmark Report",
-      href: "https://www.talentlms.com/research/learning-development-report-2026",
-    },
-  },
-  {
-    index: "03",
-    headline: "Proof, or the budget moves",
-    copy: "Investment is being held to a higher standard. The ask is a visible line from a learning experience to business effect, not a completion certificate.",
-    source: {
-      label: "EIDesign — L&D Trends 2026",
-      href: "https://elearningindustry.com/ld-trends-2026-forces-reshaping-enterprise-elearning-ebook-launch",
-    },
-  },
-];
-
 const trends = [
   {
     number: "01",
