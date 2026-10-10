@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Plus } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -76,6 +76,48 @@ const trends = [
 ];
 
 
+
+const articles = [
+  {
+    slug: "ai-moved-from-pilot-to-plumbing",
+    date: "October 2026",
+    tag: "AI in Learning",
+    title: "AI has moved from pilot to plumbing",
+    excerpt:
+      "The question on projects is no longer \"should we use AI?\" — it is \"where does it quietly remove friction?\" Here is where I see it earning its keep.",
+    body: [
+      "Two years ago every proposal had an AI experiment bolted onto the side of it. This year the conversation has changed: AI is expected to be inside the workflow, invisible, doing the boring parts well.",
+      "On my builds that means three things. First, drafting and localisation happen in hours, not weeks — which frees budget for the design decisions that actually need a human. Second, learners get answers at the moment of need instead of a module they will never open. Third, the data coming back is finally useful: not completion rates, but the questions people actually ask.",
+      "The risk is sameness. When everyone can generate a course in an afternoon, the differentiator is curation, context and tone — the things that make learning feel like it came from your organisation, not from a template.",
+    ],
+  },
+  {
+    slug: "learning-debt-is-real",
+    date: "September 2026",
+    tag: "Strategy",
+    title: "Learning debt is real — and it is compounding",
+    excerpt:
+      "Every quick fix, skipped induction and outdated module adds up. Learning debt behaves exactly like technical debt, and most organisations are carrying more than they think.",
+    body: [
+      "Technical debt is a familiar idea: ship fast now, pay interest later. Learning works the same way. Every process that changed without the training changing with it, every work-around a team invented and never documented, every new hire who learned from the person next to them instead of from a designed experience — that is principal plus interest.",
+      "You feel it as longer ramp-up times, inconsistent quality between teams, and the same questions landing in the same inboxes every week.",
+      "The fix is not a bigger course catalogue. It is a habit: treat every process change as a learning change, keep content small enough to update in an afternoon, and measure whether people can do the thing — not whether they opened the thing.",
+    ],
+  },
+  {
+    slug: "budgets-want-proof",
+    date: "August 2026",
+    tag: "Measurement",
+    title: "Budgets now demand proof, not completions",
+    excerpt:
+      "Completion rates and smile sheets no longer unlock budget. The teams getting funded are the ones who can show behaviour change and business movement.",
+    body: [
+      "The most useful sentence I heard at a panel this year: \"Nobody ever cut a budget they could prove was working.\" L&D has spent years reporting activity — seats filled, modules completed, satisfaction scores — and wondering why it is first in line for cuts.",
+      "The shift I am making on projects: agree the business metric before storyboarding a single screen. If the course is about safety, the metric is incidents. If it is onboarding, the metric is time-to-competence. If we cannot name the metric, we are not ready to build.",
+      "It sounds obvious, but it changes the design. You build less content and more practice, because practice is what moves the number.",
+    ],
+  },
+];
 
 function BandTitle({
   heading,
