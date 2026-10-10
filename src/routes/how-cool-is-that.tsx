@@ -280,6 +280,61 @@ function HowCoolIsThatPage() {
           </AccordionPrimitive.Root>
         </section>
 
+        {/* Blog */}
+        <BandTitle
+          heading="From the blog"
+          blurb="Articles I publish on eLearning trends, tools and the craft of building learning that actually works."
+          padClass="pt-8 pb-4"
+        />
+        <section className="bg-surface-light pt-8">
+          <div className="mx-auto flex max-w-4xl flex-col gap-5 px-5 pb-20">
+            {articles.map((article) => (
+              <AccordionPrimitive.Root key={article.slug} type="multiple">
+                <AccordionPrimitive.Item
+                  value={article.slug}
+                  className="min-w-0 border border-surface-light-foreground/15 bg-surface-light shadow-[0_2px_8px_rgba(0,8,30,0.05)]"
+                >
+                  <div className="px-5 py-6 sm:px-8 sm:py-8">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70">
+                        {article.tag}
+                      </span>
+                      <span className="text-xs text-surface-light-foreground/60">{article.date}</span>
+                    </div>
+                    <h3 className="mt-3 font-body text-lg font-bold text-surface-light-foreground sm:text-xl">
+                      {article.title}
+                    </h3>
+                    <p className="mt-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                      {article.excerpt}
+                    </p>
+                    <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                      <div className="mt-4 space-y-4 border-t border-surface-light-foreground/10 pt-4">
+                        {article.body.map((paragraph) => (
+                          <p
+                            key={paragraph.slice(0, 40)}
+                            className="text-[0.95rem] leading-relaxed text-surface-light-foreground/75"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </AccordionPrimitive.Content>
+                    <AccordionPrimitive.Header className="mt-4">
+                      <AccordionPrimitive.Trigger className="group inline-flex items-center gap-2 text-sm font-semibold text-brand-sky focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                        <span className="group-data-[state=open]:hidden">Read article</span>
+                        <span className="hidden group-data-[state=open]:inline">Close article</span>
+                        <ArrowRight
+                          aria-hidden="true"
+                          className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-90"
+                        />
+                      </AccordionPrimitive.Trigger>
+                    </AccordionPrimitive.Header>
+                  </div>
+                </AccordionPrimitive.Item>
+              </AccordionPrimitive.Root>
+            ))}
+          </div>
+        </section>
 
       </main>
       <SiteFooter />
