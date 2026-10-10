@@ -58,6 +58,13 @@ export function SiteHeader() {
           </DropdownMenu>
 
           <Link
+            to="/how-cool-is-that"
+            className="font-display text-muted-foreground transition-colors hover:text-foreground [&.active]:text-foreground [&.active]:underline [&.active]:underline-offset-8"
+          >
+            How Cool Is That?
+          </Link>
+
+          <Link
             to="/contact"
             className="font-display text-muted-foreground transition-colors hover:text-foreground [&.active]:text-foreground [&.active]:underline [&.active]:underline-offset-8"
           >
