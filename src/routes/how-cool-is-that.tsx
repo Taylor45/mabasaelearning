@@ -114,32 +114,6 @@ const responses = [
   },
 ];
 
-const sources = [
-  {
-    label: "SweetRush — L&D And Talent Trends 2026: Human Connection, AI, And \u201CUnpromptability\u201D",
-    href: "https://elearningindustry.com/ld-and-talent-trends-2026-human-connection-ai-and-unpromptability",
-  },
-  {
-    label: "Confirm — State Of Digital Learning Report 2026",
-    href: "https://www.confirm.com/guides/state-of-digital-learning-2026",
-  },
-  {
-    label: "TalentLMS — The 2026 L&D Benchmark Report",
-    href: "https://www.talentlms.com/research/learning-development-report-2026",
-  },
-  {
-    label: "EIDesign — L&D Trends 2026: The 5 Forces Reshaping Enterprise eLearning",
-    href: "https://elearningindustry.com/ld-trends-2026-forces-reshaping-enterprise-elearning-ebook-launch",
-  },
-  {
-    label: "Gartner — Hype Cycle for Corporate Learning Technologies, 2026",
-    href: "https://emt.gartnerweb.com/en/documents/8164329",
-  },
-  {
-    label: "Training Industry — Learning and Development Trends",
-    href: "https://trainingindustry.com/learning-and-development-trends/",
-  },
-];
 
 function BandTitle({
   heading,
@@ -332,41 +306,6 @@ function HowCoolIsThatPage() {
           </div>
         </section>
 
-        {/* Sources */}
-        <section className="bg-ink">
-          <div className="mx-auto max-w-6xl px-5 py-16">
-            <h2 className="font-body text-2xl font-bold text-white sm:text-3xl">
-              Where this comes from
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-              I would rather cite the research than repeat it from memory. These are the 2026
-              reports and panels behind the trends above.
-            </p>
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {sources.map((source) => (
-                <li key={source.href}>
-                  <a
-                    href={source.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex min-w-0 items-start justify-between gap-4 rounded-xl border border-border px-4 py-3 text-sm text-muted-foreground transition-colors hover:border-brand-cyan hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  >
-                    <span>{source.label}</span>
-                    <ArrowUpRight
-                      aria-hidden="true"
-                      size={16}
-                      className="mt-0.5 shrink-0 text-brand-cyan"
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-xs text-muted-foreground">
-              Published 2026. I keep this page as a running read on where learning is going, so
-              it gets revised as the tools settle.
-            </p>
-          </div>
-        </section>
       </main>
       <SiteFooter />
     </div>
