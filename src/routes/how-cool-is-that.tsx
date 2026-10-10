@@ -141,10 +141,18 @@ const sources = [
   },
 ];
 
-function BandTitle({ heading, blurb }: { heading: string; blurb: string }) {
+function BandTitle({
+  heading,
+  blurb,
+  padClass = "py-16",
+}: {
+  heading: string;
+  blurb: string;
+  padClass?: string;
+}) {
   return (
     <section className="surface-band">
-      <div className="mx-auto max-w-6xl px-5 py-16 text-center">
+      <div className={`mx-auto max-w-6xl px-5 text-center ${padClass}`}>
         <h2 className="font-body text-3xl font-bold text-white sm:text-4xl">{heading}</h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
           {blurb}
@@ -250,8 +258,9 @@ function HowCoolIsThatPage() {
         <BandTitle
           heading="Check out our Frequently Asked Questions section!"
           blurb=".................................................................."
+          padClass="pt-14 pb-5"
         />
-        <section className="bg-surface-light">
+        <section className="bg-surface-light pt-8">
           <AccordionPrimitive.Root type="multiple" className="mx-auto flex max-w-4xl flex-col gap-5 px-5 pb-20">
             {trends.map((trend) => (
               <AccordionPrimitive.Item
