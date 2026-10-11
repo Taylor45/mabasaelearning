@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Plus } from "lucide-react";
+import { ArrowRight, Image as ImageIcon, Plus } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/how-cool-is-that")({
   head: () => ({
@@ -93,6 +94,21 @@ function BandTitle({
         </p>
       </div>
     </section>
+  );
+}
+
+function WorkTile({ label, wide = false }: { label: string; wide?: boolean }) {
+  return (
+    <div
+      className={`flex min-w-0 items-center justify-center rounded-2xl border border-dashed border-surface-light-foreground/25 bg-surface-light-foreground/5 px-4 ${
+        wide ? "aspect-[16/9] sm:col-span-2" : "aspect-video"
+      }`}
+    >
+      <span className="flex flex-col items-center gap-2 text-center text-xs text-surface-light-foreground/50">
+        <ImageIcon aria-hidden="true" className="h-7 w-7" />
+        {label}
+      </span>
+    </div>
   );
 }
 
@@ -191,6 +207,38 @@ function HowCoolIsThatPage() {
               </AccordionPrimitive.Item>
             ))}
           </AccordionPrimitive.Root>
+        </section>
+
+        {/* Latest work */}
+        <BandTitle
+          heading="Latest work"
+          blurb="A snapshot of recent builds across instructional design, multimedia and AI-assisted learning — the same filter applied to every one of them."
+          padClass="pt-8 pb-4"
+        />
+        <section className="bg-surface-light pt-8 pb-20">
+          <div className="mx-auto grid max-w-6xl min-w-0 gap-5 px-5 lg:grid-cols-[1.6fr_1fr]">
+            <div className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2">
+              <WorkTile wide label="Featured project image" />
+              <WorkTile label="Project detail image" />
+              <WorkTile label="Project detail image" />
+            </div>
+            <article className="flex min-w-0 flex-col rounded-2xl border border-surface-light-foreground/15 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)]">
+              <h3 className="font-body text-lg font-bold text-surface-light-foreground sm:text-xl">
+                Learning that holds up at the desk
+              </h3>
+              <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                Every project here started from the same question: what does the person doing the
+                work actually need at the moment of need? The answer usually looks shorter, more
+                visual and more honest than the course someone asked for.
+              </p>
+              <Button asChild variant="outline" className="mt-6 w-fit">
+                <Link to="/elearning-multimedia">
+                  View
+                  <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                </Link>
+              </Button>
+            </article>
+          </div>
         </section>
 
       </main>
