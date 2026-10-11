@@ -92,24 +92,24 @@ function AboutPage() {
         {/* eLearning Development + strengths */}
         <section className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-16">
-            <h2 className="font-body text-xl font-bold text-surface-light-foreground sm:text-2xl">
+            <h2 className="text-center font-body text-xl font-bold text-surface-light-foreground sm:text-2xl">
               eLearning Development
             </h2>
-            <p className="mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+            <p className="mx-auto mt-3 max-w-2xl text-center text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
               Tap into our creative and technical expertise. Our team delivers high-impact
               courses and interactive experiences that grab attention and drive results.
             </p>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-3">
               {strengths.map((item) => (
                 <article
                   key={item.title}
-                  className="flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
+                  className="flex min-w-0 flex-col items-center text-center"
                 >
-                  <item.icon aria-hidden="true" className="h-7 w-7 text-brand-sky" />
-                  <h3 className="mt-4 font-body text-lg font-bold text-surface-light-foreground">
+                  <item.icon aria-hidden="true" strokeWidth={1.5} className="h-20 w-20 text-accent" />
+                  <h3 className="mt-6 font-body text-lg font-bold text-surface-light-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                  <p className="mt-3 max-w-64 text-sm leading-relaxed text-surface-light-foreground/75">
                     {item.copy}
                   </p>
                 </article>
