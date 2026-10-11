@@ -68,14 +68,14 @@ function AboutPage() {
       <main className="flex-1">
         {/* Hero */}
         <section className="surface-hero">
-          <div className="mx-auto max-w-6xl px-5 py-20">
+          <div className="mx-auto max-w-6xl px-5 py-20 text-center">
             <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               About Me
             </span>
             <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
               Never stop <span className="text-brand-cyan">learning</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-muted-foreground">
+            <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
               With nearly three years plus of experience in the field of learning and
               development, I am blessed to work in a career that I truly love and strive to
               improve. Living a, "Never stop learning," lifestyle, I do what I can to not only
