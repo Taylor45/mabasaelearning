@@ -110,6 +110,11 @@ function HowCoolIsThatPage() {
             <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
               How cool is that?
             </h1>
+            <p className="mt-5 max-w-2xl text-muted-foreground">
+              A plain-language read on the trends reshaping eLearning and Development in 2026 —
+              what each one actually changes about how learning gets built, and what it is worth
+              to the person doing the work.
+            </p>
           </div>
         </section>
 
