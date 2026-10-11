@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake } from "lucide-react";
+import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake, Code2, Layers3 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -68,14 +68,14 @@ function AboutPage() {
       <main className="flex-1">
         {/* Hero */}
         <section className="surface-hero">
-          <div className="mx-auto max-w-6xl px-5 py-20">
+          <div className="mx-auto max-w-6xl px-5 py-16 text-center sm:py-20">
             <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               About Me
             </span>
-            <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
-              Never stop learning
+            <h1 className="mt-6 font-body text-4xl font-bold leading-tight sm:text-5xl">
+              Never stop <span className="text-brand-cyan">learning</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground">
               With nearly three years plus of experience in the field of learning and
               development, I am blessed to work in a career that I truly love and strive to
               improve. Living a, "Never stop learning," lifestyle, I do what I can to not only
@@ -84,10 +84,6 @@ function AboutPage() {
             </p>
           </div>
         </section>
-
-        <div className="surface-hero">
-          <div className="h-0.5 w-full bg-foreground" />
-        </div>
 
         {/* eLearning Development + strengths */}
         <section className="bg-surface-light">
@@ -106,7 +102,7 @@ function AboutPage() {
                   className="flex min-w-0 flex-col items-center text-center"
                 >
                   <item.icon aria-hidden="true" strokeWidth={1.5} className="h-20 w-20 text-accent" />
-                  <h3 className="mt-6 font-body text-lg font-bold text-surface-light-foreground">
+                  <h3 className="mt-6 font-body text-lg font-bold text-accent">
                     {item.title}
                   </h3>
                   <p className="mt-3 max-w-64 text-sm leading-relaxed text-surface-light-foreground/75">
@@ -121,7 +117,7 @@ function AboutPage() {
         {/* Bridge the gaps */}
         <section className="surface-band">
           <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-            <h2 className="font-body text-xl font-bold text-white sm:text-2xl">
+            <h2 className="font-body text-xl font-bold text-foreground sm:text-2xl">
               I aim to bridge the following gaps
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground">
@@ -147,12 +143,13 @@ function AboutPage() {
                 between instructional design and the underlying technology.
               </p>
             </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)]">
-                <h4 className="font-body text-lg font-bold text-surface-light-foreground">
+            <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
+              <article className="min-w-0 md:pr-8">
+                <Layers3 aria-hidden="true" strokeWidth={1.5} className="mx-auto h-16 w-16 text-accent" />
+                <h4 className="mt-6 text-center font-body text-lg font-bold text-accent">
                   eLearning Technology
                 </h4>
-                <ul className="mt-4 space-y-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                <ul className="mx-auto mt-6 max-w-sm space-y-3 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
                   {elearningTech.map((item) => (
                     <li key={item} className="flex gap-3">
                       <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-cyan" />
@@ -161,11 +158,12 @@ function AboutPage() {
                   ))}
                 </ul>
               </article>
-              <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)]">
-                <h4 className="font-body text-lg font-bold text-surface-light-foreground">
+              <article className="min-w-0 md:border-l md:border-surface-light-foreground/15 md:pl-12">
+                <Code2 aria-hidden="true" strokeWidth={1.5} className="mx-auto h-16 w-16 text-accent" />
+                <h4 className="mt-6 text-center font-body text-lg font-bold text-accent">
                   Software Development
                 </h4>
-                <ul className="mt-4 space-y-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                <ul className="mx-auto mt-6 max-w-sm space-y-3 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
                   {softwareTech.map((item) => (
                     <li key={item} className="flex gap-3">
                       <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-cyan" />
@@ -181,14 +179,14 @@ function AboutPage() {
         {/* Accessibility & UIX */}
         <section className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 pb-16">
-            <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] sm:p-9">
-              <div className="flex items-center gap-3">
-                <Accessibility aria-hidden="true" className="h-7 w-7 text-brand-sky" />
+            <article className="border-t border-surface-light-foreground/15 pt-14 text-center">
+              <div className="flex flex-col items-center gap-5">
+                <Accessibility aria-hidden="true" strokeWidth={1.5} className="h-20 w-20 text-accent" />
                 <h3 className="font-body text-xl font-bold text-surface-light-foreground sm:text-2xl">
                   Accessibility &amp; UIX
                 </h3>
               </div>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+              <p className="mx-auto mt-5 max-w-3xl text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
                 <strong>
                   Accessibility isn't just a requirement for some levels of training; it helps
                   ALL learners/users in the final deliverables.
@@ -206,14 +204,14 @@ function AboutPage() {
         {/* My Clients */}
         <section className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 pb-20">
-            <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] sm:p-9">
-              <div className="flex items-center gap-3">
-                <Handshake aria-hidden="true" className="h-7 w-7 text-brand-sky" />
+            <article className="border-t border-surface-light-foreground/15 pt-14 text-center">
+              <div className="flex flex-col items-center gap-5">
+                <Handshake aria-hidden="true" strokeWidth={1.5} className="h-20 w-20 text-accent" />
                 <h3 className="font-body text-xl font-bold text-surface-light-foreground sm:text-2xl">
                   My Clients
                 </h3>
               </div>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+              <p className="mx-auto mt-5 max-w-3xl text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
                 I have been honored to work with a variety of Clients over the years, some
                 long-term, some short-term. But each has allowed me to grow as a designer and
                 consultant as well as providing me the opportunity to work alongside their
