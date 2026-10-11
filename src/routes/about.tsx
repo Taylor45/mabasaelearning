@@ -73,7 +73,7 @@ function AboutPage() {
               About Me
             </span>
             <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
-              Never stop learning
+              Never stop <span className="text-brand-cyan">learning</span>
             </h1>
             <p className="mt-5 max-w-2xl text-muted-foreground">
               With nearly three years plus of experience in the field of learning and
