@@ -55,7 +55,7 @@ function PromptEngineeringPage() {
         <section key={section.title}>
           <div className="surface-band border-y border-foreground/10">
             <div className="mx-auto max-w-6xl px-5 py-7">
-              <h2 className="font-body text-xl font-bold sm:text-2xl">{section.title}</h2>
+              <h2 className="text-xl font-bold sm:text-2xl">{section.title}</h2>
               <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{section.blurb}</p>
             </div>
           </div>

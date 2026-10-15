@@ -45,7 +45,7 @@ function WebDesignPage() {
       <section>
         <div className="surface-band border-y border-foreground/10">
           <div className="mx-auto max-w-6xl px-5 py-7">
-            <h2 className="font-body text-xl font-bold sm:text-2xl">Coding Basics For Instructional Design</h2>
+            <h2 className="text-xl font-bold sm:text-2xl">Coding Basics For Instructional Design</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
               A UX research and design case study exploring how coding fundamentals can be taught through a thoughtfully designed learning app.
             </p>
@@ -53,7 +53,7 @@ function WebDesignPage() {
         </div>
         <div className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-12">
-            <h3 className="font-body text-lg font-bold text-surface-light-foreground sm:text-xl">UX Research &amp; Design Case Study</h3>
+            <h3 className="text-lg font-bold text-surface-light-foreground sm:text-xl">UX Research &amp; Design Case Study</h3>
             <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-10">
               <article className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
                 <div className="aspect-[4/3] w-full bg-muted">
@@ -108,7 +108,7 @@ function WebDesignPage() {
       <section>
         <div className="surface-band border-y border-foreground/10">
           <div className="mx-auto max-w-6xl px-5 py-7">
-            <h2 className="font-body text-xl font-bold sm:text-2xl">Wireframes — High Fidelity</h2>
+            <h2 className="text-xl font-bold sm:text-2xl">Wireframes — High Fidelity</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
               Polished high-fidelity wireframes showing layout, navigation, and visual hierarchy before development begins.
             </p>

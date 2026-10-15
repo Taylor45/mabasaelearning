@@ -88,7 +88,7 @@ function BandTitle({
   return (
     <section className="surface-band">
       <div className={`mx-auto max-w-6xl px-5 text-center ${padClass}`}>
-        <h2 className="font-body text-xl font-bold text-white sm:text-2xl">{heading}</h2>
+        <h2 className="text-xl font-bold text-white sm:text-2xl">{heading}</h2>
         <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground">
           {blurb}
         </p>
@@ -223,7 +223,7 @@ function HowCoolIsThatPage() {
               <WorkTile label="Project detail image" />
             </div>
             <article className="flex min-w-0 flex-col rounded-2xl border border-surface-light-foreground/15 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)]">
-              <h3 className="font-body text-lg font-bold text-surface-light-foreground sm:text-xl">
+              <h3 className="text-lg font-bold text-surface-light-foreground sm:text-xl">
                 Learning that holds up at the desk
               </h3>
               <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">

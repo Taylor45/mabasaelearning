@@ -27,7 +27,7 @@ export function ServicePage({
               <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
                 {eyebrow}
               </span>
-              <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
+              <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
                 {title}
               </h1>
               <p className="mt-5 max-w-2xl text-muted-foreground">{intro}</p>
@@ -47,7 +47,7 @@ export function ServicePage({
                   key={block.title}
                   className="flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
                 >
-                  <h2 className="font-body text-xl font-bold text-surface-light-foreground">
+                  <h2 className="text-xl font-bold text-surface-light-foreground">
                     {block.title}
                   </h2>
                   <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
