@@ -94,7 +94,7 @@ function InstructionalDesignPage() {
                   key={item.name}
                    className="group flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated"
                 >
-                   <DocumentPreview src={item.src} title={item.name} href={item.href} presentation={item.action === "Open Presentation"} />
+                   <DocumentPreview src={item.src} title={item.name} presentation={item.action === "Open Presentation"} />
                    <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
                      <h3 className="max-w-full break-words text-lg leading-snug">{item.name}</h3>
                     <a
