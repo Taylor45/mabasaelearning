@@ -162,7 +162,7 @@ function ShowcaseHeading({ children, blurb }: { children: string; blurb?: string
   return (
     <div className="surface-band border-y border-foreground/10">
       <div className="mx-auto max-w-6xl px-5 py-7">
-        <h2 className="text-xl font-bold sm:text-2xl">{children}</h2>
+        <h2 className="font-inter text-xl font-bold sm:text-2xl">{children}</h2>
         {blurb && <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{blurb}</p>}
       </div>
     </div>
