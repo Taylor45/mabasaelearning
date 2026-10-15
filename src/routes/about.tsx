@@ -72,7 +72,7 @@ function AboutPage() {
             <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               About Me
             </span>
-            <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
+            <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
               Never stop <span className="text-brand-cyan">learning</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
