@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { ExternalLink, Maximize, X } from "lucide-react";
+import { Maximize, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function toPreviewSrc(url: string) {
@@ -12,21 +12,16 @@ export function toPreviewSrc(url: string) {
   return url;
 }
 
-function PreviewDialog({ src, title, href }: { src: string; title: string; href: string }) {
+function PreviewDialog({ src, title }: { src: string; title: string }) {
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="fixed inset-0 z-50 bg-background" />
       <Dialog.Content aria-describedby={undefined} className="fixed inset-0 z-50 flex h-dvh min-w-0 flex-col bg-background text-foreground focus:outline-none">
         <header className="grid shrink-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-border p-3 sm:px-6">
           <Dialog.Title className="min-w-0 truncate font-body text-sm font-semibold">{title}</Dialog.Title>
-          <div className="flex shrink-0 items-center gap-1">
-            <Button asChild variant="ghost" size="icon" className="h-11 w-11" title="Open original document">
-              <a href={href} target="_blank" rel="noreferrer" aria-label="Open original document"><ExternalLink /></a>
-            </Button>
-            <Dialog.Close asChild>
-              <Button variant="ghost" size="icon" className="h-11 w-11" title="Close fullscreen preview" aria-label="Close fullscreen preview"><X /></Button>
-            </Dialog.Close>
-          </div>
+          <Dialog.Close asChild>
+            <Button variant="ghost" size="icon" className="h-11 w-11" title="Close fullscreen preview" aria-label="Close fullscreen preview"><X /></Button>
+          </Dialog.Close>
         </header>
         <iframe src={src} title={`${title} — fullscreen`} allowFullScreen className="block min-h-0 w-full min-w-0 flex-1 border-0 bg-surface-light" />
       </Dialog.Content>
@@ -34,10 +29,9 @@ function PreviewDialog({ src, title, href }: { src: string; title: string; href:
   );
 }
 
-export function DocumentPreview({ src, title, href, presentation = false }: {
+export function DocumentPreview({ src, title, presentation = false }: {
   src: string;
   title: string;
-  href: string;
   presentation?: boolean;
 }) {
   return (
@@ -52,7 +46,7 @@ export function DocumentPreview({ src, title, href, presentation = false }: {
           </Button>
         </Dialog.Trigger>
       </div>
-      <PreviewDialog src={src} title={title} href={href} />
+      <PreviewDialog src={src} title={title} />
     </Dialog.Root>
   );
 }
@@ -71,7 +65,7 @@ export function DocumentPreviewButton({ href, title, className, children }: {
           {children}
         </Button>
       </Dialog.Trigger>
-      <PreviewDialog src={toPreviewSrc(href)} title={title} href={href} />
+      <PreviewDialog src={toPreviewSrc(href)} title={title} />
     </Dialog.Root>
   );
 }
