@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiInElearningRouteImport } from './routes/ai-in-elearning'
+import { Route as CaseStudyCodingBasicsRouteImport } from './routes/case-study-coding-basics'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DesignProcessRouteImport } from './routes/design-process'
 import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-development'
@@ -19,6 +20,7 @@ import { Route as ElearningMultimediaRouteImport } from './routes/elearning-mult
 import { Route as HowCoolIsThatRouteImport } from './routes/how-cool-is-that'
 import { Route as InstructionalDesignRouteImport } from './routes/instructional-design'
 import { Route as PromptEngineeringRouteImport } from './routes/prompt-engineering'
+import { Route as WebDesignUxUiRouteImport } from './routes/web-design-ux-ui'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -33,6 +35,11 @@ const AboutRoute = AboutRouteImport.update({
 const AiInElearningRoute = AiInElearningRouteImport.update({
   id: '/ai-in-elearning',
   path: '/ai-in-elearning',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudyCodingBasicsRoute = CaseStudyCodingBasicsRouteImport.update({
+  id: '/case-study-coding-basics',
+  path: '/case-study-coding-basics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -70,11 +77,17 @@ const PromptEngineeringRoute = PromptEngineeringRouteImport.update({
   path: '/prompt-engineering',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WebDesignUxUiRoute = WebDesignUxUiRouteImport.update({
+  id: '/web-design-ux-ui',
+  path: '/web-design-ux-ui',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-in-elearning': typeof AiInElearningRoute
+  '/case-study-coding-basics': typeof CaseStudyCodingBasicsRoute
   '/contact': typeof ContactRoute
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
@@ -82,11 +95,13 @@ export interface FileRoutesByFullPath {
   '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
+  '/web-design-ux-ui': typeof WebDesignUxUiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-in-elearning': typeof AiInElearningRoute
+  '/case-study-coding-basics': typeof CaseStudyCodingBasicsRoute
   '/contact': typeof ContactRoute
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
@@ -94,12 +109,14 @@ export interface FileRoutesByTo {
   '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
+  '/web-design-ux-ui': typeof WebDesignUxUiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-in-elearning': typeof AiInElearningRoute
+  '/case-study-coding-basics': typeof CaseStudyCodingBasicsRoute
   '/contact': typeof ContactRoute
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
@@ -107,6 +124,7 @@ export interface FileRoutesById {
   '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
+  '/web-design-ux-ui': typeof WebDesignUxUiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -114,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-in-elearning'
+    | '/case-study-coding-basics'
     | '/contact'
     | '/design-process'
     | '/elearning-development'
@@ -121,11 +140,13 @@ export interface FileRouteTypes {
     | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
+    | '/web-design-ux-ui'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/ai-in-elearning'
+    | '/case-study-coding-basics'
     | '/contact'
     | '/design-process'
     | '/elearning-development'
@@ -133,11 +154,13 @@ export interface FileRouteTypes {
     | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
+    | '/web-design-ux-ui'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/ai-in-elearning'
+    | '/case-study-coding-basics'
     | '/contact'
     | '/design-process'
     | '/elearning-development'
@@ -145,12 +168,14 @@ export interface FileRouteTypes {
     | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
+    | '/web-design-ux-ui'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AiInElearningRoute: typeof AiInElearningRoute
+  CaseStudyCodingBasicsRoute: typeof CaseStudyCodingBasicsRoute
   ContactRoute: typeof ContactRoute
   DesignProcessRoute: typeof DesignProcessRoute
   ElearningDevelopmentRoute: typeof ElearningDevelopmentRoute
@@ -158,6 +183,7 @@ export interface RootRouteChildren {
   HowCoolIsThatRoute: typeof HowCoolIsThatRoute
   InstructionalDesignRoute: typeof InstructionalDesignRoute
   PromptEngineeringRoute: typeof PromptEngineeringRoute
+  WebDesignUxUiRoute: typeof WebDesignUxUiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -181,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-in-elearning'
       fullPath: '/ai-in-elearning'
       preLoaderRoute: typeof AiInElearningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-study-coding-basics': {
+      id: '/case-study-coding-basics'
+      path: '/case-study-coding-basics'
+      fullPath: '/case-study-coding-basics'
+      preLoaderRoute: typeof CaseStudyCodingBasicsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -232,6 +265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PromptEngineeringRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/web-design-ux-ui': {
+      id: '/web-design-ux-ui'
+      path: '/web-design-ux-ui'
+      fullPath: '/web-design-ux-ui'
+      preLoaderRoute: typeof WebDesignUxUiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -239,6 +279,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AiInElearningRoute: AiInElearningRoute,
+  CaseStudyCodingBasicsRoute: CaseStudyCodingBasicsRoute,
   ContactRoute: ContactRoute,
   DesignProcessRoute: DesignProcessRoute,
   ElearningDevelopmentRoute: ElearningDevelopmentRoute,
@@ -246,6 +287,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowCoolIsThatRoute: HowCoolIsThatRoute,
   InstructionalDesignRoute: InstructionalDesignRoute,
   PromptEngineeringRoute: PromptEngineeringRoute,
+  WebDesignUxUiRoute: WebDesignUxUiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

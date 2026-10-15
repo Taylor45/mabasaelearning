@@ -9,6 +9,7 @@ const serviceItems = [
   { to: "/elearning-development", label: "eLearning Development" },
   { to: "/prompt-engineering", label: "Prompt Engineering" },
   { to: "/instructional-design", label: "Instructional Design" },
+  { to: "/web-design-ux-ui", label: "Web Design / UX & UI" },
   { to: "/elearning-multimedia", label: "eLearning Multimedia" },
   { to: "/ai-in-elearning", label: "AI In eLearning" },
 ] as const;
