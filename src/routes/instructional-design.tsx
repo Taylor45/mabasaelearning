@@ -91,24 +91,28 @@ function InstructionalDesignPage() {
             <div className="mx-auto max-w-6xl px-5 py-12">
                <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
               {section.items.map((item) => (
-                <article
-                  key={item.name}
-                   className="group flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated"
-                >
-                   <DocumentPreview src={item.src} title={item.name} presentation={item.action === "Open Presentation"} />
-                   <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
-                     <h3 className="max-w-full break-words text-lg leading-snug">{item.name}</h3>
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-auto inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
-                    >
-                      {item.action}
-                      <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
-                    </a>
-                  </div>
-                </article>
+                <Dialog.Root key={item.name}>
+                  <article className="group flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
+                    <DocumentPreviewFrame
+                      src={item.src}
+                      title={item.name}
+                      presentation={item.action === "Open Presentation"}
+                    />
+                    <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
+                      <h3 className="max-w-full break-words text-lg leading-snug">{item.name}</h3>
+                      <Dialog.Trigger asChild>
+                        <button
+                          type="button"
+                          className="mt-auto inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                        >
+                          {item.action}
+                          <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                        </button>
+                      </Dialog.Trigger>
+                    </div>
+                  </article>
+                  <PreviewDialog src={item.src} title={item.name} />
+                </Dialog.Root>
               ))}
               </div>
             </div>
