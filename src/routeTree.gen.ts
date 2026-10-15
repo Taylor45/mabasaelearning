@@ -19,7 +19,6 @@ import { Route as ElearningMultimediaRouteImport } from './routes/elearning-mult
 import { Route as HowCoolIsThatRouteImport } from './routes/how-cool-is-that'
 import { Route as InstructionalDesignRouteImport } from './routes/instructional-design'
 import { Route as PromptEngineeringRouteImport } from './routes/prompt-engineering'
-import { Route as WebDesignUxUiRouteImport } from './routes/web-design-ux-ui'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -71,11 +70,6 @@ const PromptEngineeringRoute = PromptEngineeringRouteImport.update({
   path: '/prompt-engineering',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WebDesignUxUiRoute = WebDesignUxUiRouteImport.update({
-  id: '/web-design-ux-ui',
-  path: '/web-design-ux-ui',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -88,7 +82,6 @@ export interface FileRoutesByFullPath {
   '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
-  '/web-design-ux-ui': typeof WebDesignUxUiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -101,7 +94,6 @@ export interface FileRoutesByTo {
   '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
-  '/web-design-ux-ui': typeof WebDesignUxUiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -115,7 +107,6 @@ export interface FileRoutesById {
   '/how-cool-is-that': typeof HowCoolIsThatRoute
   '/instructional-design': typeof InstructionalDesignRoute
   '/prompt-engineering': typeof PromptEngineeringRoute
-  '/web-design-ux-ui': typeof WebDesignUxUiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -130,7 +121,6 @@ export interface FileRouteTypes {
     | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
-    | '/web-design-ux-ui'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -143,7 +133,6 @@ export interface FileRouteTypes {
     | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
-    | '/web-design-ux-ui'
   id:
     | '__root__'
     | '/'
@@ -156,7 +145,6 @@ export interface FileRouteTypes {
     | '/how-cool-is-that'
     | '/instructional-design'
     | '/prompt-engineering'
-    | '/web-design-ux-ui'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -170,7 +158,6 @@ export interface RootRouteChildren {
   HowCoolIsThatRoute: typeof HowCoolIsThatRoute
   InstructionalDesignRoute: typeof InstructionalDesignRoute
   PromptEngineeringRoute: typeof PromptEngineeringRoute
-  WebDesignUxUiRoute: typeof WebDesignUxUiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -245,13 +232,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PromptEngineeringRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/web-design-ux-ui': {
-      id: '/web-design-ux-ui'
-      path: '/web-design-ux-ui'
-      fullPath: '/web-design-ux-ui'
-      preLoaderRoute: typeof WebDesignUxUiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -266,7 +246,6 @@ const rootRouteChildren: RootRouteChildren = {
   HowCoolIsThatRoute: HowCoolIsThatRoute,
   InstructionalDesignRoute: InstructionalDesignRoute,
   PromptEngineeringRoute: PromptEngineeringRoute,
-  WebDesignUxUiRoute: WebDesignUxUiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
