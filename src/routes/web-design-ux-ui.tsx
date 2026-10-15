@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { ServicePage } from "@/components/ServicePage";
 import { WireframeViewer } from "@/components/WireframeViewer";
 import appImg from "@/assets/uxui/app.jpg.asset.json";
@@ -67,15 +68,14 @@ function WebDesignPage() {
                 </div>
                 <div className="flex flex-1 flex-col items-start gap-4 p-6">
                   <h4 className="text-lg leading-snug">Coding-Basics-for-ID-UX-Research-Document</h4>
-                  <a
+                  <DocumentPreviewButton
                     href="https://docs.google.com/document/d/1jGBqk06KW8Ewx_I1Rl9H4BVB8nDX085YuJKeocU8X-Q/view"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-auto inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                    title="Coding-Basics-for-ID-UX-Research-Document"
+                    className="mt-auto h-auto min-h-11 gap-2 whitespace-normal rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                   >
                     Open Document
                     <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
-                  </a>
+                  </DocumentPreviewButton>
                 </div>
               </article>
               <article className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
