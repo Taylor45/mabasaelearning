@@ -156,7 +156,7 @@ function CategoryBand({ highlight, intro }: { highlight: string; intro?: string 
   return (
     <section className="surface-band">
       <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-        <h2 className="font-body text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="text-3xl font-bold text-white sm:text-4xl">
           {highlight}
         </h2>
         {intro ? (
@@ -458,7 +458,7 @@ function Index() {
         {/* Tools & LMS */}
         <section className="surface-band">
           <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-            <h2 className="font-body text-3xl font-bold text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">
               eLearning Tools &amp; Learning Management Systems
             </h2>
             <p className="mt-4 text-sm text-muted-foreground sm:text-base">
@@ -480,7 +480,7 @@ function Index() {
               <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-white">
                 Methodology
               </span>
-              <h2 className="mt-6 font-body text-4xl font-bold sm:text-5xl">
+              <h2 className="mt-6 text-4xl font-bold sm:text-5xl">
                 How your course gets built
                 <br />
                 <span className="text-brand-cyan">the ADDIE</span>{" "}
