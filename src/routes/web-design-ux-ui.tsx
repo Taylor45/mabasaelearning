@@ -93,7 +93,7 @@ function WebDesignPage() {
                       href="https://sites.google.com/view/mabasaelearning/elearning-development/elearning-multimedia"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                      className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-accent bg-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] text-accent-foreground shadow-none transition-colors hover:bg-accent hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                     >
                     View the App Here
                     <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
