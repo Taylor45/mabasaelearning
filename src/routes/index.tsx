@@ -351,7 +351,7 @@ function Index() {
               <span className="inline-block rounded-full border border-border px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em]">
                 About me
               </span>
-              <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
+              <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
                 Hi, I&apos;m Bruce Mabasa.
               </h1>
               <p className="mt-5 max-w-xl text-muted-foreground">

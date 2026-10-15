@@ -123,7 +123,7 @@ function HowCoolIsThatPage() {
             <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               Latest Trends &middot; eLearning &amp; Development
             </span>
-            <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
+            <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
               How cool is that?
             </h1>
             <p className="mt-5 max-w-2xl text-muted-foreground">

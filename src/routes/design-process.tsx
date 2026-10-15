@@ -141,7 +141,7 @@ function DesignProcessPage() {
             <span className="mt-8 inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               Passion Project: Self-Managed
             </span>
-            <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
+            <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
               AI Literacy for Instructional Design: Mastering the art of prompting
             </h1>
             <img
