@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
+import { solidAccentStates } from "@/lib/button-states";
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
 import storylineAiLiteracy from "@/assets/storyline-ai-literacy.png.asset.json";
 import geniallyGuide1 from "@/assets/genially-guide-1.png.asset.json";
@@ -259,7 +260,7 @@ function ELearningPage() {
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {project.links.map((link, li) => {
                           const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5 ${
-                            li > 0 ? "bg-accent text-accent-foreground hover:opacity-90" : "bg-transparent text-card-foreground"
+                            li > 0 ? `bg-accent text-accent-foreground ${solidAccentStates}` : "bg-transparent text-card-foreground"
                           } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`;
                           const inner = (
                             <>

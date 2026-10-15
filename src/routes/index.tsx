@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { solidPrimaryStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
 import portrait from "@/assets/melvon-portrait.png";
 import illPrompt from "@/assets/ill-prompt-engineering.png";
@@ -409,7 +410,7 @@ function Index() {
                 </a>
                 <a
                   href="#"
-                  className="rounded-sm bg-primary px-6 py-2.5 text-center font-display text-primary-foreground transition-opacity hover:opacity-90"
+                  className={`rounded-sm bg-primary px-6 py-2.5 text-center font-display text-primary-foreground ${solidPrimaryStates}`}
                 >
                   View Resume
                 </a>

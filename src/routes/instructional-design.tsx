@@ -3,6 +3,7 @@ import { ServicePage } from "@/components/ServicePage";
 import * as Dialog from "@radix-ui/react-dialog";
 import { DocumentPreviewFrame, PreviewDialog } from "@/components/DocumentPreview";
 import { Button } from "@/components/ui/button";
+import { solidAccentStates } from "@/lib/button-states";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
@@ -105,7 +106,7 @@ function InstructionalDesignPage() {
                         <Button
                           type="button"
                           variant="outline"
-                          className="mt-auto h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent bg-accent px-4 py-2.5 text-xs uppercase tracking-normal text-accent-foreground shadow-none hover:bg-accent hover:text-accent-foreground hover:opacity-90 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5"
+                          className={`mt-auto h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent bg-accent px-4 py-2.5 text-xs uppercase tracking-normal text-accent-foreground shadow-none hover:bg-accent hover:text-accent-foreground lg:w-auto lg:justify-center lg:px-5 ${solidAccentStates}`}
                         >
                           <span className="min-w-0 break-words">{item.action}</span>
                           <span className="shrink-0" aria-hidden="true">→</span>
