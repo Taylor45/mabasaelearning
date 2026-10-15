@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
 import * as Dialog from "@radix-ui/react-dialog";
 import { DocumentPreviewFrame, PreviewDialog } from "@/components/DocumentPreview";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
@@ -101,13 +102,14 @@ function InstructionalDesignPage() {
                     <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
                       <h3 className="max-w-full break-words text-lg leading-snug">{item.name}</h3>
                       <Dialog.Trigger asChild>
-                        <button
+                        <Button
                           type="button"
-                          className="mt-auto inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                          variant="outline"
+                          className="mt-auto h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent bg-transparent px-4 py-2.5 text-xs uppercase tracking-normal text-card-foreground shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5"
                         >
-                          {item.action}
-                          <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
-                        </button>
+                          <span className="min-w-0 break-words">{item.action}</span>
+                          <span className="shrink-0" aria-hidden="true">→</span>
+                        </Button>
                       </Dialog.Trigger>
                     </div>
                   </article>
