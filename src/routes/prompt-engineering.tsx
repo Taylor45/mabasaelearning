@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
+import { DocumentPreviewButton } from "@/components/DocumentPreview";
 
 export const Route = createFileRoute("/prompt-engineering")({
   head: () => ({
@@ -78,15 +79,14 @@ function PromptEngineeringPage() {
                   </div>
                   <div className="flex flex-1 flex-col items-start gap-4 p-6">
                     <h3 className="text-lg leading-snug">{item.name}</h3>
-                    <a
+                    <DocumentPreviewButton
                       href={item.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-auto inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                      title={item.name}
+                      className="mt-auto h-auto min-h-11 gap-2 whitespace-normal rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                     >
                       {item.action}
                       <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
-                    </a>
+                    </DocumentPreviewButton>
                   </div>
                 </article>
               ))}
