@@ -206,7 +206,7 @@ function ELearningPage() {
                   key={block.title}
                   className="flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
                 >
-                  <h2 className="text-xl font-bold text-surface-light-foreground">
+                  <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
                     {block.title}
                   </h2>
                   <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
@@ -232,7 +232,7 @@ function ELearningPage() {
           <section key={section.title}>
             <div className="surface-band border-y border-foreground/10">
               <div className="mx-auto max-w-6xl px-5 py-7">
-                <h2 className="text-xl font-bold sm:text-2xl">{section.title}</h2>
+                <h2 className="font-inter text-xl font-bold sm:text-2xl">{section.title}</h2>
                 <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
                   {section.blurb}
                 </p>
@@ -255,7 +255,7 @@ function ELearningPage() {
                       <div className="surface-band aspect-video w-full" />
                     )}
                     <div className="flex flex-1 flex-col items-start gap-4 p-6">
-                      <h3 className="text-lg leading-snug">{project.name}</h3>
+                      <h3 className="font-inter text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {project.links.map((link, li) => {
                           const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5 ${
