@@ -227,7 +227,7 @@ function CardRow({
                 width={480}
                 height={480}
               />
-              <h3 className="mt-8 font-body text-xl font-bold text-surface-light-foreground">
+              <h3 className="mt-8 text-xl font-bold text-surface-light-foreground">
                 {item.title}
               </h3>
               <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
@@ -512,7 +512,7 @@ function Index() {
                   <span className="mb-3 inline-flex items-center gap-1.5 rounded-[7px] bg-[linear-gradient(120deg,#0047B3,#1DA8E2)] px-[11px] py-[5px] text-[9.5px] font-bold tracking-[0.05em] text-white">
                     {stage.stage}
                   </span>
-                  <h3 className="mb-2 font-body text-base font-semibold tracking-[-0.01em] sm:text-[clamp(1.02rem,2vw,1.25rem)]">
+                  <h3 className="mb-2 text-base font-semibold tracking-[-0.01em] sm:text-[clamp(1.02rem,2vw,1.25rem)]">
                     {stage.title}
                   </h3>
                   <p className="mx-auto mb-3 max-w-[340px] text-sm leading-relaxed text-surface-light-foreground/75 sm:mb-4">

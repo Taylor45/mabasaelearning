@@ -67,7 +67,7 @@ function AudioPlayer({ title, subtitle, src, active, onPlay }: {
     <article className="min-w-0 overflow-hidden rounded-md border border-border bg-card p-5 text-card-foreground sm:p-6">
       <header className="flex items-center justify-between gap-3">
         <div className="min-w-0">
-          <h3 className="font-body text-lg font-semibold">{title}</h3>
+          <h3 className="text-lg font-semibold">{title}</h3>
           <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
         </div>
         <Headphones className="size-6 shrink-0 text-brand-cyan" aria-hidden="true" />

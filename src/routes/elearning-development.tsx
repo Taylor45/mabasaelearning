@@ -206,7 +206,7 @@ function ELearningPage() {
                   key={block.title}
                   className="flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
                 >
-                  <h2 className="font-body text-xl font-bold text-surface-light-foreground">
+                  <h2 className="text-xl font-bold text-surface-light-foreground">
                     {block.title}
                   </h2>
                   <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
@@ -232,7 +232,7 @@ function ELearningPage() {
           <section key={section.title}>
             <div className="surface-band border-y border-foreground/10">
               <div className="mx-auto max-w-6xl px-5 py-7">
-                <h2 className="font-body text-xl font-bold sm:text-2xl">{section.title}</h2>
+                <h2 className="text-xl font-bold sm:text-2xl">{section.title}</h2>
                 <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
                   {section.blurb}
                 </p>

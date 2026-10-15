@@ -111,7 +111,7 @@ function Band({ title, blurb }: { title: string; blurb?: string }) {
   return (
     <div className="surface-band border-y border-foreground/10">
       <div className="mx-auto max-w-6xl px-5 py-7">
-        <h2 className="font-body text-xl font-bold sm:text-2xl">{title}</h2>
+        <h2 className="text-xl font-bold sm:text-2xl">{title}</h2>
         {blurb && <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{blurb}</p>}
       </div>
     </div>
@@ -224,7 +224,7 @@ function DesignProcessPage() {
                 key={item.stage}
                 className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-6 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
               >
-                <h4 className="font-body text-lg font-bold text-surface-light-foreground">
+                <h4 className="text-lg font-bold text-surface-light-foreground">
                   {item.stage}
                 </h4>
                 <p className="mt-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
