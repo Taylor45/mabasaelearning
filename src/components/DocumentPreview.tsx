@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { Maximize, X } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function toPreviewSrc(url: string) {
@@ -12,7 +12,8 @@ export function toPreviewSrc(url: string) {
   return url;
 }
 
-function PreviewDialog({ src, title }: { src: string; title: string }) {
+/** Fullscreen reader: embedded document with a header row and close button. */
+export function PreviewDialog({ src, title }: { src: string; title: string }) {
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="fixed inset-0 z-50 bg-background" />
@@ -29,25 +30,18 @@ function PreviewDialog({ src, title }: { src: string; title: string }) {
   );
 }
 
-export function DocumentPreview({ src, title, presentation = false }: {
+/** Embedded document frame sized to its card. Opened by a Dialog.Trigger elsewhere in the card. */
+export function DocumentPreviewFrame({ src, title, presentation = false }: {
   src: string;
   title: string;
   presentation?: boolean;
 }) {
   return (
-    <Dialog.Root>
-      <div className={presentation
-        ? "relative aspect-video w-full min-w-0 bg-muted sm:aspect-[4/3]"
-        : "relative h-[min(480px,70dvh)] w-full min-w-0 bg-muted sm:aspect-[4/3] sm:h-auto"}>
-        <iframe src={src} title={title} loading="lazy" allowFullScreen className="block h-full w-full max-w-full border-0" />
-        <Dialog.Trigger asChild>
-          <Button variant="outline" size="icon" className="absolute right-3 top-3 h-11 w-11" title="Open fullscreen preview" aria-label={`Open fullscreen preview: ${title}`}>
-            <Maximize />
-          </Button>
-        </Dialog.Trigger>
-      </div>
-      <PreviewDialog src={src} title={title} />
-    </Dialog.Root>
+    <div className={presentation
+      ? "relative aspect-video w-full min-w-0 bg-muted sm:aspect-[4/3]"
+      : "relative h-[min(480px,70dvh)] w-full min-w-0 bg-muted sm:aspect-[4/3] sm:h-auto"}>
+      <iframe src={src} title={title} loading="lazy" allowFullScreen className="block h-full w-full max-w-full border-0" />
+    </div>
   );
 }
 

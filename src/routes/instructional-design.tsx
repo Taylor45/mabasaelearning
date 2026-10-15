@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
-import { DocumentPreview } from "@/components/DocumentPreview";
+import * as Dialog from "@radix-ui/react-dialog";
+import { DocumentPreviewFrame, PreviewDialog } from "@/components/DocumentPreview";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
