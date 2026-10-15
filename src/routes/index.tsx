@@ -7,7 +7,6 @@ import portrait from "@/assets/melvon-portrait.png";
 import illPrompt from "@/assets/ill-prompt-engineering.png";
 import illDesign from "@/assets/ill-instructional-design.png";
 import illDev from "@/assets/ill-elearning-development.png";
-import illWeb from "@/assets/ill-web-design.png";
 import illMedia from "@/assets/ill-multimedia.png";
 import illAi from "@/assets/ill-ai-elearning.png";
 import h5pLogoAsset from "@/assets/h5p-logo.png.asset.json";
@@ -53,7 +52,6 @@ type ServiceLink =
   | "/prompt-engineering"
   | "/instructional-design"
   | "/elearning-development"
-  | "/web-design-ux-ui"
   | "/elearning-multimedia"
   | "/ai-in-elearning";
 
@@ -79,12 +77,6 @@ const categoryOne: { title: string; img: string; copy: string; to: ServiceLink }
 ];
 
 const categoryTwo: { title: string; img: string; copy: string; to: ServiceLink }[] = [
-  {
-    title: "Web Design / UX & UI",
-    img: illWeb,
-    to: "/web-design-ux-ui",
-    copy: "Shape clean, accessible interfaces that make learning effortless to navigate.",
-  },
   {
     title: "eLearning Multimedia",
     img: illMedia,
