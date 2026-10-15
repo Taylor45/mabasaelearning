@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
+import { DocumentPreviewButton } from "@/components/DocumentPreview";
 
 export const Route = createFileRoute("/prompt-engineering")({
   head: () => ({
