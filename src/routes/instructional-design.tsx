@@ -3,6 +3,7 @@ import { ServicePage } from "@/components/ServicePage";
 import * as Dialog from "@radix-ui/react-dialog";
 import { DocumentPreviewFrame, PreviewDialog } from "@/components/DocumentPreview";
 import { Button } from "@/components/ui/button";
+import { solidAccentStates } from "@/lib/button-states";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
