@@ -55,7 +55,7 @@ function ContactPage() {
               ))}
               <a
                 href="mailto:hello@example.com"
-                className="w-full max-w-sm rounded-sm bg-primary px-6 py-3 font-display text-primary-foreground transition-opacity hover:opacity-90"
+                className={`w-full max-w-sm rounded-sm bg-primary px-6 py-3 font-display text-primary-foreground ${solidPrimaryStates}`}
               >
                 Send an Email
               </a>
