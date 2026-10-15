@@ -89,13 +89,21 @@ function WebDesignPage() {
                 </div>
                 <div className="flex flex-1 flex-col items-start gap-4 p-6">
                   <h4 className="text-lg leading-snug">Coding Basics For Instructional Design — App</h4>
-                  <a
-                    href="https://sites.google.com/view/mabasaelearning/elearning-development/elearning-multimedia"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-auto inline-flex items-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
-                  >
-                    View the App Here
+                  <div className="mt-auto flex w-full min-w-0 flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                    <Link
+                      to="/case-study-coding-basics"
+                      className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-accent-foreground transition-colors hover:bg-accent/85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                    >
+                      Read Case Study
+                      <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                    </Link>
+                    <a
+                      href="https://sites.google.com/view/mabasaelearning/elearning-development/elearning-multimedia"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                    >
+                      View the App Here
                     <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
                   </a>
                 </div>

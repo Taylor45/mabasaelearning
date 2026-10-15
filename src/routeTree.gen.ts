@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiInElearningRouteImport } from './routes/ai-in-elearning'
+import { Route as CaseStudyCodingBasicsRouteImport } from './routes/case-study-coding-basics'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DesignProcessRouteImport } from './routes/design-process'
 import { Route as ElearningDevelopmentRouteImport } from './routes/elearning-development'
@@ -34,6 +35,11 @@ const AboutRoute = AboutRouteImport.update({
 const AiInElearningRoute = AiInElearningRouteImport.update({
   id: '/ai-in-elearning',
   path: '/ai-in-elearning',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudyCodingBasicsRoute = CaseStudyCodingBasicsRouteImport.update({
+  id: '/case-study-coding-basics',
+  path: '/case-study-coding-basics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-in-elearning': typeof AiInElearningRoute
+  '/case-study-coding-basics': typeof CaseStudyCodingBasicsRoute
   '/contact': typeof ContactRoute
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-in-elearning': typeof AiInElearningRoute
+  '/case-study-coding-basics': typeof CaseStudyCodingBasicsRoute
   '/contact': typeof ContactRoute
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-in-elearning': typeof AiInElearningRoute
+  '/case-study-coding-basics': typeof CaseStudyCodingBasicsRoute
   '/contact': typeof ContactRoute
   '/design-process': typeof DesignProcessRoute
   '/elearning-development': typeof ElearningDevelopmentRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-in-elearning'
+    | '/case-study-coding-basics'
     | '/contact'
     | '/design-process'
     | '/elearning-development'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-in-elearning'
+    | '/case-study-coding-basics'
     | '/contact'
     | '/design-process'
     | '/elearning-development'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-in-elearning'
+    | '/case-study-coding-basics'
     | '/contact'
     | '/design-process'
     | '/elearning-development'
@@ -163,6 +175,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AiInElearningRoute: typeof AiInElearningRoute
+  CaseStudyCodingBasicsRoute: typeof CaseStudyCodingBasicsRoute
   ContactRoute: typeof ContactRoute
   DesignProcessRoute: typeof DesignProcessRoute
   ElearningDevelopmentRoute: typeof ElearningDevelopmentRoute
@@ -194,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-in-elearning'
       fullPath: '/ai-in-elearning'
       preLoaderRoute: typeof AiInElearningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-study-coding-basics': {
+      id: '/case-study-coding-basics'
+      path: '/case-study-coding-basics'
+      fullPath: '/case-study-coding-basics'
+      preLoaderRoute: typeof CaseStudyCodingBasicsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -259,6 +279,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AiInElearningRoute: AiInElearningRoute,
+  CaseStudyCodingBasicsRoute: CaseStudyCodingBasicsRoute,
   ContactRoute: ContactRoute,
   DesignProcessRoute: DesignProcessRoute,
   ElearningDevelopmentRoute: ElearningDevelopmentRoute,
