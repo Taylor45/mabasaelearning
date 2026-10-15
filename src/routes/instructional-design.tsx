@@ -84,7 +84,7 @@ function InstructionalDesignPage() {
         <section key={section.title}>
           <div className="surface-band border-y border-foreground/10">
             <div className="mx-auto max-w-6xl px-5 py-7">
-              <h2 className="text-xl font-bold sm:text-2xl">{section.title}</h2>
+              <h2 className="font-inter text-xl font-bold sm:text-2xl">{section.title}</h2>
               <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{section.blurb}</p>
             </div>
           </div>
@@ -100,7 +100,7 @@ function InstructionalDesignPage() {
                       presentation={item.action === "Open Presentation"}
                     />
                     <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
-                      <h3 className="max-w-full break-words text-lg leading-snug">{item.name}</h3>
+                      <h3 className="font-inter max-w-full break-words text-lg leading-snug">{item.name}</h3>
                       <Dialog.Trigger asChild>
                         <Button
                           type="button"
