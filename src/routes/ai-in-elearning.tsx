@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
+import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { solidAccentStates } from "@/lib/button-states";
 import app1 from "@/assets/ai-workflow-app-1.png.asset.json";
@@ -15,8 +16,10 @@ const apps = [
   },
 ] as { name: string; image: string; guide?: string; app?: string }[];
 
-const outline =
-  "h-auto min-h-11 gap-2 whitespace-normal rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card";
+const buttonBase =
+  "h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5";
+const buttonOutline = `${buttonBase} bg-transparent text-card-foreground`;
+const buttonSolid = `${buttonBase} bg-accent text-accent-foreground ${solidAccentStates}`;
 
 export const Route = createFileRoute("/ai-in-elearning")({
   head: () => ({
@@ -59,21 +62,29 @@ function AiInELearningPage() {
           <div className="mx-auto max-w-6xl px-5 py-12">
             <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
               {apps.map((item) => (
-                <article key={item.name} className="flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
+                <article key={item.name} className="group flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
                   <img src={item.image} alt={`${item.name} screenshot`} loading="lazy" className="block h-auto w-full" />
-                  <div className="flex min-w-0 flex-col items-start gap-4 p-4 sm:p-6">
-                    <h3 className="font-inter text-lg leading-snug">{item.name}</h3>
+                  <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
+                    <h3 className="font-inter max-w-full break-words text-lg leading-snug">{item.name}</h3>
                     {(item.guide || item.app) && (
-                      <div className="flex w-full min-w-0 flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {item.guide && (
-                          <DocumentPreviewButton href={item.guide} title={`${item.name} — App Guide`} className={outline}>
-                            App Guide <span aria-hidden="true">→</span>
+                          <DocumentPreviewButton
+                            href={item.guide}
+                            title={`${item.name} \u2014 App Guide`}
+                            className={`${buttonOutline} ${item.app ? "lg:mr-auto" : ""}`}
+                          >
+                            <span className="min-w-0 break-words">App Guide</span>
+                            <span className="shrink-0" aria-hidden="true">\u2192</span>
                           </DocumentPreviewButton>
                         )}
                         {item.app && (
-                          <a href={item.app} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center justify-center gap-2 rounded-sm border-2 border-accent px-5 py-2.5 text-xs font-medium uppercase tracking-[0.15em] min-h-11 ${solidAccentStates}`}>
-                            View App <span aria-hidden="true">→</span>
-                          </a>
+                          <Button asChild variant="outline" className={buttonSolid}>
+                            <a href={item.app} target="_blank" rel="noopener noreferrer">
+                              <span className="min-w-0 break-words">View App</span>
+                              <span className="shrink-0" aria-hidden="true">\u2192</span>
+                            </a>
+                          </Button>
                         )}
                       </div>
                     )}
