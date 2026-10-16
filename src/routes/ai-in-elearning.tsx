@@ -70,22 +70,41 @@ function AiInELearningPage() {
                     {(item.guide || item.app) && (
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {item.guide && (
-                          <DocumentPreviewButton
-                            href={item.guide}
-                            title={`${item.name} \u2014 App Guide`}
-                            className={`${buttonOutline} ${item.app ? "lg:mr-auto" : ""}`}
-                          >
-                            <span className="min-w-0 break-words">App Guide</span>
-                            <span className="shrink-0" aria-hidden="true">→</span>
-                          </DocumentPreviewButton>
+                          item.guide === "#" ? (
+                            <Button
+                              type="button"
+                              variant="outline"
+                              title={`${item.name} \u2014 App Guide (link coming soon)`}
+                              className={`${buttonOutline} ${item.app ? "lg:mr-auto" : ""}`}
+                            >
+                              <span className="min-w-0 break-words">App Guide</span>
+                              <span className="shrink-0" aria-hidden="true">→</span>
+                            </Button>
+                          ) : (
+                            <DocumentPreviewButton
+                              href={item.guide}
+                              title={`${item.name} \u2014 App Guide`}
+                              className={`${buttonOutline} ${item.app ? "lg:mr-auto" : ""}`}
+                            >
+                              <span className="min-w-0 break-words">App Guide</span>
+                              <span className="shrink-0" aria-hidden="true">→</span>
+                            </DocumentPreviewButton>
+                          )
                         )}
                         {item.app && (
-                          <Button asChild variant="outline" className={buttonSolid}>
-                            <a href={item.app} target="_blank" rel="noopener noreferrer">
+                          item.app === "#" ? (
+                            <Button type="button" variant="outline" className={buttonSolid} title={`${item.name} (link coming soon)`}>
                               <span className="min-w-0 break-words">View App</span>
                               <span className="shrink-0" aria-hidden="true">→</span>
-                            </a>
-                          </Button>
+                            </Button>
+                          ) : (
+                            <Button asChild variant="outline" className={buttonSolid}>
+                              <a href={item.app} target="_blank" rel="noopener noreferrer">
+                                <span className="min-w-0 break-words">View App</span>
+                                <span className="shrink-0" aria-hidden="true">→</span>
+                              </a>
+                            </Button>
+                          )
                         )}
                       </div>
                     )}
