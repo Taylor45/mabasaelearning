@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ArrowRight, Image as ImageIcon, Plus } from "lucide-react";
+import { ArrowRight, Image as ImageIcon } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { solidAccentStates } from "@/lib/button-states";
@@ -22,7 +21,7 @@ export const Route = createFileRoute("/how-cool-is-that")({
       {
         property: "og:description",
         content:
-          "Five trends reshaping eLearning and Development in 2026, and what I build differently because of each one.",
+          "A plain-language read on the trends reshaping eLearning and Development in 2026, and a snapshot of recent work built with that filter applied.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -37,44 +36,6 @@ const forces = [
   "Learner Experience",
   "Culture & Enablement",
   "L&D Operations & Strategy",
-];
-
-const trends = [
-  {
-    number: "01",
-    title: "Change-Forward Culture",
-    copy: "Change is no longer an initiative with a start and end date. The work is building change capacity — helping managers and teams meet constant shift with curiosity instead of fatigue.",
-    tags: ["Change Capacity", "Resilience", "Manager Capability"],
-    cool: "You stop training people to survive change and start training them to like it.",
-  },
-  {
-    number: "02",
-    title: "Strategic Staff Augmentation",
-    copy: "Budgets are trimmed while demand for specialist skills climbs. Teams right-size by bringing in vetted instructional designers and SMEs for the length of a project, then scale back down.",
-    tags: ["Agile Teams", "SME Access", "Lean Budgets"],
-    cool: "You can rent a senior designer for six weeks instead of hiring one for six years.",
-  },
-  {
-    number: "03",
-    title: "Context Engineering",
-    copy: "A curated, secure layer between your organisation's knowledge and a large language model. It keeps data in house and returns answers that actually match how your business works.",
-    tags: ["Knowledge Base", "Secure LLMs", "Iterative Design"],
-    cool: "Your best answers on tap, without your data walking out the door.",
-  },
-  {
-    number: "04",
-    title: "Conversational Learning In The Flow Of Work",
-    copy: "Just-in-time support at the moment of need, delivered as two-way speech or text rather than a course. It scales the feel of one-to-one coaching to a whole workforce.",
-    tags: ["Moment of Need", "Just-in-Time", "Two-Way Dialogue"],
-    cool: "Ask the question at your desk and get an answer — not a 20-minute module.",
-  },
-  {
-    number: "05",
-    title: "Thinking Outside The LMS",
-    copy: "The LMS keeps doing what it does well, but AI-powered experiences get embedded where the work happens. With AI-generated content flooding in, the designer's job shifts to curator and editor.",
-    tags: ["Ecosystem", "Curation", "Communities of Practice"],
-    cool: "The library stops being a warehouse and starts being a concierge.",
-  },
 ];
 
 function BandTitle({
@@ -174,54 +135,6 @@ function HowCoolIsThatPage() {
               ))}
             </div>
           </div>
-        </section>
-
-        {/* Trend list */}
-        <BandTitle
-          heading="Check out our Frequently Asked Questions section!"
-          blurb="The questions I am asked most often about where learning is heading — answered in plain language, with the reasoning and the evidence behind each one."
-          padClass="pt-8 pb-4"
-        />
-        <section className="surface-hero pt-8">
-          <AccordionPrimitive.Root type="multiple" className="mx-auto flex max-w-4xl flex-col gap-5 px-5 pb-20">
-            {trends.map((trend) => (
-              <AccordionPrimitive.Item
-                key={trend.number}
-                value={trend.number}
-                className="group min-w-0 rounded-2xl border border-border/60 bg-foreground/[0.06] shadow-[0_2px_12px_rgba(0,0,0,0.25)] backdrop-blur-sm transition-colors duration-300 hover:border-brand-sky/50 hover:bg-foreground/[0.1]"
-              >
-                <AccordionPrimitive.Header>
-                  <AccordionPrimitive.Trigger className="flex w-full items-center justify-between gap-4 rounded-2xl px-5 py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:px-8 sm:py-8">
-                    <span className="flex min-w-0 items-baseline gap-4">
-                      <span className="font-display text-2xl text-brand-cyan">{trend.number}</span>
-                      <span className="font-inter min-w-0 text-lg font-bold text-foreground sm:text-xl">
-                        {trend.title}
-                      </span>
-                    </span>
-                    <Plus aria-hidden="true" className="h-6 w-6 shrink-0 text-brand-sky transition-transform duration-200 group-data-[state=open]:rotate-45" />
-                  </AccordionPrimitive.Trigger>
-                </AccordionPrimitive.Header>
-                <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-                  <div className="px-5 pb-7 sm:px-8 sm:pl-[4.5rem]">
-                    <p className="text-[0.95rem] leading-relaxed text-muted-foreground">{trend.copy}</p>
-                    <p className="mt-5 border-l-2 border-brand-cyan pl-3 text-[0.9rem] font-medium italic text-foreground">
-                      {trend.cool}
-                    </p>
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {trend.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-border px-3 py-1 text-[0.7rem] font-semibold text-muted-foreground"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </AccordionPrimitive.Content>
-              </AccordionPrimitive.Item>
-            ))}
-          </AccordionPrimitive.Root>
         </section>
 
         {/* Latest work */}
