@@ -498,7 +498,7 @@ function Index() {
         </section>
 
         {/* ADDIE flash cards on white */}
-        <section className="bg-surface-light">
+        <section className="bg-surface-light surface-light-grad">
           <div className="mx-auto max-w-6xl px-5 py-20">
             <div className="mx-auto grid max-w-[860px] gap-2.5 sm:gap-[clamp(12px,2vw,18px)] md:grid-cols-2">
               {addieStages.map((stage, i) => (
