@@ -115,9 +115,9 @@ function HowCoolIsThatPage() {
         </div>
 
         {/* Intro */}
-        <section className="surface-hero">
+        <section className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-16">
-            <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-foreground/80 sm:text-base">
+            <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-surface-light-foreground/75 sm:text-base">
               Every year I read the research, sit with the tools, and then ask the only question
               that matters on a project: does this actually make learning better for the person
               doing the work? This page is that filter — the trends shaping eLearning and
@@ -128,7 +128,7 @@ function HowCoolIsThatPage() {
               {forces.map((force) => (
                 <span
                   key={force}
-                  className="rounded-full border border-border bg-foreground/[0.05] px-3 py-1 text-xs text-muted-foreground"
+                  className="rounded-full border border-surface-light-foreground/15 bg-surface-light-foreground/[0.05] px-3 py-1 text-xs text-surface-light-foreground/75"
                 >
                   {force}
                 </span>
