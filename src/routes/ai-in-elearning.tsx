@@ -75,14 +75,14 @@ function AiInELearningPage() {
                             className={`${buttonOutline} ${item.app ? "lg:mr-auto" : ""}`}
                           >
                             <span className="min-w-0 break-words">App Guide</span>
-                            <span className="shrink-0" aria-hidden="true">\u2192</span>
+                            <span className="shrink-0" aria-hidden="true">→</span>
                           </DocumentPreviewButton>
                         )}
                         {item.app && (
                           <Button asChild variant="outline" className={buttonSolid}>
                             <a href={item.app} target="_blank" rel="noopener noreferrer">
                               <span className="min-w-0 break-words">View App</span>
-                              <span className="shrink-0" aria-hidden="true">\u2192</span>
+                              <span className="shrink-0" aria-hidden="true">→</span>
                             </a>
                           </Button>
                         )}
