@@ -298,10 +298,10 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
 
   return (
     <div className="w-full max-w-[420px]">
-      <p className="mb-3.5 text-center font-mono text-[0.7rem] font-bold uppercase tracking-[2px] text-white">
+      <p className="mb-3.5 text-center font-mono text-[0.7rem] font-bold uppercase tracking-[2px] text-surface-light-foreground">
         {label}
       </p>
-      <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-2xl bg-surface-light shadow-elevated lg:h-48">
+      <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-2xl border border-surface-light-foreground/20 bg-surface-light shadow-[0_16px_38px_-16px_rgba(0,8,30,0.34)] lg:h-48">
         {items.map((tool, i) => (
           <div
             key={tool.name}
@@ -330,8 +330,8 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
             onClick={() => setActive(i)}
              className={`flex h-11 w-9 items-center justify-center rounded-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
               i === active
-                 ? "text-brand-cyan"
-                 : "text-foreground/30"
+                 ? "text-brand-sky"
+                 : "text-surface-light-foreground/45"
             }`}
            ><span className={`h-2 w-2 rounded-full bg-current ${i === active ? "scale-125" : ""}`} /></Button>
         ))}
@@ -467,7 +467,7 @@ function Index() {
             </p>
           </div>
         </section>
-        <section className="surface-hero">
+        <section className="bg-surface-light surface-light-grad">
           <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-[clamp(14px,4vw,40px)] px-5 py-16">
             <ToolCarousel label="Authoring & Design Tools" items={authoringTools} />
             <ToolCarousel label="Learning Management Systems" items={lmsPlatforms} />
