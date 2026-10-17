@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake } from "lucide-react";
+import { useState } from "react";
+import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake, MonitorCog, CodeXml, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -62,6 +64,12 @@ const softwareTech = [
 ];
 
 function AboutPage() {
+  const [expandedPanel, setExpandedPanel] = useState<string | null>(null);
+  const panels = [
+    { title: "eLearning Technology", icon: MonitorCog, background: "bg-expertise-technology", copy: "Sometimes an eLearning project requires more than authoring tools. Our expertise in eLearning-specific technologies allows us to bridge the gap between instructional design and the underlying technology, developing the functionality behind your learning experience.", details: elearningTech },
+    { title: "Software Development", icon: CodeXml, background: "bg-expertise-software", copy: "With extensive software engineering experience, we can develop the technology behind your learning experience—or help solve a technical challenge in an existing application. Our general software development expertise supports custom applications, integrations, and tools.", details: softwareTech },
+    { title: "Accessibility & UIX", icon: Accessibility, background: "bg-expertise-accessibility", copy: "Accessibility isn't just a requirement for some levels of training; it helps ALL learners/users in the final deliverables. Designing with accessibility in mind promotes easier learning and higher engagement. Sound visual design, closed captions paired with audio, and multiple modalities help everyone.", details: ["While certain entities mandate accessibility-driven materials, experienced instructional designers know that designing with accessibility in mind promotes easier learning and higher engagement among typical learners/users as well.", "Elements such as sound visual design (color, font, and design), closed captions paired with audio, and multiple modalities help everyone."] },
+  ];
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -156,53 +164,21 @@ function AboutPage() {
                 between instructional design and the underlying technology.
               </p>
             </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)]">
-                <h4 className="font-inter text-lg font-bold text-surface-light-foreground">
-                  eLearning Technology
-                </h4>
-                <ul className="mt-4 space-y-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                  {elearningTech.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-cyan" />
-                      {item}
-                    </li>
-                  ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            {panels.map((panel, index) => (
+              <article key={panel.title} className={`${panel.background} flex min-w-0 flex-col items-center px-7 py-16 text-center font-inter text-expertise-foreground md:min-h-[675px] md:px-8 md:pt-32 md:pb-24 lg:px-12`}>
+                <panel.icon aria-hidden="true" strokeWidth={1.3} className="h-20 w-20 shrink-0 text-expertise-icon" />
+                <h4 className="mt-6 font-inter text-base font-semibold uppercase">{panel.title}</h4>
+                <p className="mt-5 max-w-[410px] text-sm font-medium leading-7">{panel.copy}</p>
+                <Button variant="ghost" size="icon" aria-label={`${expandedPanel === panel.title ? "Hide" : "Show"} ${panel.title} details`} aria-expanded={expandedPanel === panel.title} aria-controls={`expertise-details-${index}`} onClick={() => setExpandedPanel(expandedPanel === panel.title ? null : panel.title)} className="mt-9 size-16 shrink-0 rounded-full border-2 border-expertise-foreground bg-transparent text-expertise-foreground hover:bg-expertise-foreground/15 hover:text-expertise-foreground focus-visible:ring-2 focus-visible:ring-expertise-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-transparent active:scale-95 motion-safe:transition-transform [&_svg]:size-9">
+                  <ArrowRight aria-hidden="true" strokeWidth={1.5} className={expandedPanel === panel.title ? "rotate-90" : ""} />
+                </Button>
+                <ul id={`expertise-details-${index}`} hidden={expandedPanel !== panel.title} className="mt-8 max-w-[410px] space-y-3 text-sm leading-7">
+                  {panel.details.map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
               </article>
-              <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)]">
-                <h4 className="font-inter text-lg font-bold text-surface-light-foreground">
-                  Software Development
-                </h4>
-                <ul className="mt-4 space-y-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                  {softwareTech.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-cyan" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </div>
-            <article className="mt-6 rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] sm:p-9">
-              <div className="flex items-center gap-3">
-                <Accessibility aria-hidden="true" className="h-7 w-7 text-brand-sky" />
-                <h3 className="font-inter text-xl font-bold text-surface-light-foreground sm:text-2xl">
-                  Accessibility &amp; UIX
-                </h3>
-              </div>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                <strong>
-                  Accessibility isn't just a requirement for some levels of training; it helps
-                  ALL learners/users in the final deliverables.
-                </strong>{" "}
-                While certain entities mandate accessibility-driven materials, experienced
-                instructional designers know that designing with accessibility in mind promotes
-                easier learning and higher engagement among typical learners/users as well.
-                Elements such as sound visual design (color, font, and design), closed captions
-                paired with audio, and multiple modalities help everyone.
-              </p>
-            </article>
+            ))}
           </div>
         </section>
 
