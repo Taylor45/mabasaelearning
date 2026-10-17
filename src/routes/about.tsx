@@ -139,7 +139,7 @@ function AboutPage() {
           <div className="mx-auto max-w-6xl px-5 py-16">
             <div className="mx-auto max-w-3xl text-center">
               <h3 className="font-inter text-xl font-bold text-white sm:text-2xl">
-                Software Engineering &amp; eLearning Technology
+                eLearning Technology
               </h3>
               <p className="mt-4 text-[0.95rem] leading-relaxed text-muted-foreground">
                 Sometimes an eLearning project requires more than authoring tools. With
