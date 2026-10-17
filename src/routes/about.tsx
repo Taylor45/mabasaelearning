@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake, MonitorCog, CodeXml, Eye, EyeOff } from "lucide-react";
+import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake, Network, CodeXml, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -66,7 +66,7 @@ const softwareTech = [
 function AboutPage() {
   const [expandedPanel, setExpandedPanel] = useState<string | null>(null);
   const panels = [
-    { title: "eLearning Technology", icon: MonitorCog, background: "bg-expertise-technology", focusOffset: "focus-visible:ring-offset-expertise-technology", copy: "Sometimes an eLearning project requires more than authoring tools. Our expertise in eLearning-specific technologies allows us to bridge the gap between instructional design and the underlying technology, developing the functionality behind your learning experience.", details: elearningTech },
+    { title: "eLearning Technology", icon: Network, background: "bg-expertise-technology", focusOffset: "focus-visible:ring-offset-expertise-technology", copy: "Sometimes an eLearning project requires more than authoring tools. Our expertise in eLearning-specific technologies allows us to bridge the gap between instructional design and the underlying technology, developing the functionality behind your learning experience.", details: elearningTech },
     { title: "Software Development", icon: CodeXml, background: "bg-expertise-software", focusOffset: "focus-visible:ring-offset-expertise-software", copy: "With extensive software engineering experience, we can develop the technology behind your learning experience—or help solve a technical challenge in an existing application. Our general software development expertise supports custom applications, integrations, and tools.", details: softwareTech },
     { title: "Accessibility & UIX", icon: Accessibility, background: "bg-expertise-accessibility", focusOffset: "focus-visible:ring-offset-expertise-accessibility", copy: "Accessibility isn't just a requirement for some levels of training; it helps ALL learners/users in the final deliverables. Designing with accessibility in mind promotes easier learning and higher engagement. Sound visual design, closed captions paired with audio, and multiple modalities help everyone.", details: ["While certain entities mandate accessibility-driven materials, experienced instructional designers know that designing with accessibility in mind promotes easier learning and higher engagement among typical learners/users as well.", "Elements such as sound visual design (color, font, and design), closed captions paired with audio, and multiple modalities help everyone."] },
   ];
