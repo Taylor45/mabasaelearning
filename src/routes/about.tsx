@@ -130,10 +130,10 @@ function AboutPage() {
         {/* Bridge the gaps */}
         <section className="surface-band">
           <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-            <h2 className="font-inter text-xl font-bold text-white sm:text-2xl">
+            <h2 className="font-inter text-3xl font-bold text-white sm:text-4xl">
               I aim to bridge the following gaps
             </h2>
-            <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
               Instructional design on one side, the technology underneath it on the other.
             </p>
           </div>
