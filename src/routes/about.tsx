@@ -162,7 +162,12 @@ function AboutPage() {
                 <article key={panel.title} className="relative grid min-w-0 font-inter text-expertise-foreground [perspective:1600px]">
                   <div className={`col-start-1 row-start-1 grid transition-transform duration-700 motion-reduce:transition-none ${flipped ? "[transform:rotateY(180deg)]" : ""}`} style={{ transformStyle: "preserve-3d" }}>
                     <div className={face} aria-hidden={flipped}>
-                      <panel.icon aria-hidden="true" strokeWidth={1.3} className="h-20 w-20 shrink-0 text-expertise-icon" />
+                      <span
+                        aria-hidden="true"
+                        className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full border-2 border-expertise-icon/35 bg-expertise-icon/15 shadow-[0_0_34px_rgba(212,160,23,0.3),0_10px_30px_-12px_rgba(0,80,200,0.45)]"
+                      >
+                        <panel.icon aria-hidden="true" strokeWidth={1.5} className="h-14 w-14 text-expertise-icon" />
+                      </span>
                       <h4 className="mt-6 font-inter text-base font-semibold uppercase">{panel.title}</h4>
                       <p className="mt-5 max-w-[410px] text-sm font-medium leading-7">{panel.copy}</p>
                     </div>
