@@ -189,7 +189,7 @@ function AboutPage() {
 
         {/* Accessibility & UIX */}
         <section className="bg-surface-light">
-          <div className="mx-auto max-w-6xl px-5 pb-16">
+          <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
             <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] sm:p-9">
               <div className="flex items-center gap-3">
                 <Accessibility aria-hidden="true" className="h-7 w-7 text-brand-sky" />
@@ -214,7 +214,7 @@ function AboutPage() {
 
         {/* My Clients */}
         <section className="bg-surface-light">
-          <div className="mx-auto max-w-6xl px-5 pb-20">
+          <div className="mx-auto max-w-6xl px-5 pt-14 pb-20">
             <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] sm:p-9">
               <div className="flex items-center gap-3">
                 <Handshake aria-hidden="true" className="h-7 w-7 text-brand-sky" />
