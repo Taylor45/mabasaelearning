@@ -92,7 +92,7 @@ function AboutPage() {
         {/* eLearning Development + strengths */}
         <section className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-16">
-            <h2 className="text-center text-xl font-bold text-surface-light-foreground sm:text-2xl">
+            <h2 className="font-inter text-center text-xl font-bold text-surface-light-foreground sm:text-2xl">
               eLearning Development
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-center text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
@@ -115,7 +115,7 @@ function AboutPage() {
                       className="h-16 w-16 text-accent"
                     />
                   </span>
-                  <h3 className="mt-6 text-lg font-bold text-surface-light-foreground">
+                  <h3 className="font-inter mt-6 text-lg font-bold text-surface-light-foreground">
                     {item.title}
                   </h3>
                   <p className="mt-3 max-w-64 text-sm leading-relaxed text-surface-light-foreground/75">
@@ -130,7 +130,7 @@ function AboutPage() {
         {/* Bridge the gaps */}
         <section className="surface-band">
           <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-            <h2 className="text-xl font-bold text-white sm:text-2xl">
+            <h2 className="font-inter text-xl font-bold text-white sm:text-2xl">
               I aim to bridge the following gaps
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground">
@@ -141,7 +141,7 @@ function AboutPage() {
         <section className="surface-hero">
           <div className="mx-auto max-w-6xl px-5 py-16">
             <div className="mx-auto max-w-3xl text-center">
-              <h3 className="text-xl font-bold text-white sm:text-2xl">
+              <h3 className="font-inter text-xl font-bold text-white sm:text-2xl">
                 Software Engineering &amp; eLearning Technology
               </h3>
               <p className="mt-4 text-[0.95rem] leading-relaxed text-muted-foreground">
@@ -158,7 +158,7 @@ function AboutPage() {
             </div>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)]">
-                <h4 className="text-lg font-bold text-surface-light-foreground">
+                <h4 className="font-inter text-lg font-bold text-surface-light-foreground">
                   eLearning Technology
                 </h4>
                 <ul className="mt-4 space-y-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
@@ -171,7 +171,7 @@ function AboutPage() {
                 </ul>
               </article>
               <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)]">
-                <h4 className="text-lg font-bold text-surface-light-foreground">
+                <h4 className="font-inter text-lg font-bold text-surface-light-foreground">
                   Software Development
                 </h4>
                 <ul className="mt-4 space-y-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
@@ -193,7 +193,7 @@ function AboutPage() {
             <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] sm:p-9">
               <div className="flex items-center gap-3">
                 <Accessibility aria-hidden="true" className="h-7 w-7 text-brand-sky" />
-                <h3 className="text-xl font-bold text-surface-light-foreground sm:text-2xl">
+                <h3 className="font-inter text-xl font-bold text-surface-light-foreground sm:text-2xl">
                   Accessibility &amp; UIX
                 </h3>
               </div>
@@ -218,7 +218,7 @@ function AboutPage() {
             <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] sm:p-9">
               <div className="flex items-center gap-3">
                 <Handshake aria-hidden="true" className="h-7 w-7 text-brand-sky" />
-                <h3 className="text-xl font-bold text-surface-light-foreground sm:text-2xl">
+                <h3 className="font-inter text-xl font-bold text-surface-light-foreground sm:text-2xl">
                   My Clients
                 </h3>
               </div>
