@@ -138,19 +138,19 @@ function AboutPage() {
             </p>
           </div>
         </section>
-        <section className="bg-surface-light">
+        <section className="surface-hero">
           <div className="mx-auto max-w-6xl px-5 py-16">
             <div className="mx-auto max-w-3xl text-center">
-              <h3 className="text-xl font-bold text-surface-light-foreground sm:text-2xl">
+              <h3 className="text-xl font-bold text-white sm:text-2xl">
                 Software Engineering &amp; eLearning Technology
               </h3>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+              <p className="mt-4 text-[0.95rem] leading-relaxed text-muted-foreground">
                 Sometimes an eLearning project requires more than authoring tools. With
                 extensive software engineering experience, we can develop the technology behind
                 your learning experience—or help solve a technical challenge in an existing
                 application.
               </p>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+              <p className="mt-4 text-[0.95rem] leading-relaxed text-muted-foreground">
                 Our expertise includes both <strong>eLearning-specific technologies</strong> and{" "}
                 <strong>general software development</strong>, allowing us to bridge the gap
                 between instructional design and the underlying technology.
