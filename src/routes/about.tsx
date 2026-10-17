@@ -105,7 +105,16 @@ function AboutPage() {
                   key={item.title}
                   className="flex min-w-0 flex-col items-center text-center"
                 >
-                  <item.icon aria-hidden="true" strokeWidth={1.5} className="h-20 w-20 text-accent" />
+                  <span
+                    aria-hidden="true"
+                    className="flex h-32 w-32 items-center justify-center rounded-full border border-accent/25 bg-accent/10 shadow-[0_10px_30px_-12px_rgba(0,80,200,0.35)]"
+                  >
+                    <item.icon
+                      aria-hidden="true"
+                      strokeWidth={1.5}
+                      className="h-16 w-16 text-accent"
+                    />
+                  </span>
                   <h3 className="mt-6 text-lg font-bold text-surface-light-foreground">
                     {item.title}
                   </h3>
