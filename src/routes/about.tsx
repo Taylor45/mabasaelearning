@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake, MonitorCog, CodeXml, ArrowRight } from "lucide-react";
+import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake, MonitorCog, CodeXml, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -166,19 +166,30 @@ function AboutPage() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3">
-            {panels.map((panel, index) => (
-              <article key={panel.title} className={`${panel.background} flex min-w-0 flex-col items-center px-7 py-16 text-center font-inter text-expertise-foreground md:min-h-[675px] md:px-8 md:pt-32 md:pb-24 lg:px-12`}>
-                <panel.icon aria-hidden="true" strokeWidth={1.3} className="h-20 w-20 shrink-0 text-expertise-icon" />
-                <h4 className="mt-6 font-inter text-base font-semibold uppercase">{panel.title}</h4>
-                <p className="mt-5 max-w-[410px] text-sm font-medium leading-7">{panel.copy}</p>
-                <Button variant="ghost" size="icon" aria-label={`${expandedPanel === panel.title ? "Hide" : "Show"} ${panel.title} details`} aria-expanded={expandedPanel === panel.title} aria-controls={`expertise-details-${index}`} onClick={() => setExpandedPanel(expandedPanel === panel.title ? null : panel.title)} className="mt-9 size-16 shrink-0 rounded-full border-2 border-expertise-foreground bg-transparent text-expertise-foreground hover:bg-expertise-foreground/15 hover:text-expertise-foreground focus-visible:ring-2 focus-visible:ring-expertise-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-transparent active:scale-95 motion-safe:transition-transform [&_svg]:size-9">
-                  <ArrowRight aria-hidden="true" strokeWidth={1.5} className={expandedPanel === panel.title ? "rotate-90" : ""} />
-                </Button>
-                <ul id={`expertise-details-${index}`} hidden={expandedPanel !== panel.title} className="mt-8 max-w-[410px] space-y-3 text-sm leading-7">
-                  {panel.details.map((detail) => <li key={detail}>{detail}</li>)}
-                </ul>
-              </article>
-            ))}
+            {panels.map((panel, index) => {
+              const flipped = expandedPanel === panel.title;
+              const face = `${panel.background} col-start-1 row-start-1 flex min-w-0 flex-col items-center px-7 pt-16 pb-36 text-center md:min-h-[675px] md:px-8 md:pt-32 md:pb-40 lg:px-12 [backface-visibility:hidden]`;
+              return (
+                <article key={panel.title} className="relative grid min-w-0 font-inter text-expertise-foreground [perspective:1600px]">
+                  <div className={`col-start-1 row-start-1 grid transition-transform duration-700 motion-reduce:transition-none ${flipped ? "[transform:rotateY(180deg)]" : ""}`} style={{ transformStyle: "preserve-3d" }}>
+                    <div className={face} aria-hidden={flipped}>
+                      <panel.icon aria-hidden="true" strokeWidth={1.3} className="h-20 w-20 shrink-0 text-expertise-icon" />
+                      <h4 className="mt-6 font-inter text-base font-semibold uppercase">{panel.title}</h4>
+                      <p className="mt-5 max-w-[410px] text-sm font-medium leading-7">{panel.copy}</p>
+                    </div>
+                    <div className={`${face} justify-center [transform:rotateY(180deg)]`} aria-hidden={!flipped}>
+                      <h4 className="font-inter text-base font-semibold uppercase">{panel.title}</h4>
+                      <ul id={`expertise-details-${index}`} className="mt-6 max-w-[410px] space-y-3 text-left text-sm leading-7">
+                        {panel.details.map((detail) => <li key={detail}>{detail}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                  <Button variant="ghost" size="icon" aria-label={flipped ? `Hide ${panel.title} details` : `View ${panel.title} details`} aria-expanded={flipped} aria-controls={`expertise-details-${index}`} onClick={() => setExpandedPanel(flipped ? null : panel.title)} className="absolute bottom-12 left-1/2 size-16 -translate-x-1/2 rounded-full border-2 border-expertise-foreground bg-transparent text-expertise-foreground hover:bg-expertise-foreground/15 hover:text-expertise-foreground focus-visible:ring-2 focus-visible:ring-expertise-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-transparent active:scale-95 motion-safe:transition-transform [&_svg]:size-9">
+                    {flipped ? <EyeOff aria-hidden="true" strokeWidth={1.5} /> : <Eye aria-hidden="true" strokeWidth={1.5} />}
+                  </Button>
+                </article>
+              );
+            })}
           </div>
         </section>
 
