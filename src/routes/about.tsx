@@ -173,7 +173,7 @@ function AboutPage() {
                     </div>
                     <div className={`${face} justify-center [transform:rotateY(180deg)]`} aria-hidden={!flipped}>
                       <h4 className="font-inter text-base font-semibold uppercase">{panel.title}</h4>
-                      <ul id={`expertise-details-${index}`} className="mt-6 max-w-[410px] space-y-3 text-left text-sm leading-7">
+                      <ul id={`expertise-details-${index}`} className="mt-6 max-w-[410px] list-disc space-y-3 pl-6 text-left text-sm leading-7 marker:text-expertise-icon">
                         {panel.details.map((detail) => <li key={detail}>{detail}</li>)}
                       </ul>
                     </div>
