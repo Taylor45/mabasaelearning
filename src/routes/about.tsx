@@ -164,7 +164,7 @@ function AboutPage() {
                     <div className={face} aria-hidden={flipped}>
                       <span
                         aria-hidden="true"
-                        className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full border border-expertise-icon/30 bg-expertise-icon/10 shadow-[0_10px_30px_-12px_rgba(212,160,23,0.5)]"
+                        className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full border border-expertise-icon/60 bg-expertise-icon/15 shadow-[0_10px_30px_-12px_rgba(212,160,23,0.55)]"
                       >
                         <panel.icon aria-hidden="true" strokeWidth={1.5} className="h-14 w-14 text-expertise-icon" />
                       </span>
