@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 import {
   Popover,
+  PopoverArrow,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
