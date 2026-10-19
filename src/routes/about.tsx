@@ -190,23 +190,7 @@ function AboutPage() {
 
         {/* My Clients */}
         <section className="bg-surface-light">
-          <div className="mx-auto max-w-6xl px-5 pt-14 pb-20">
-            <article className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] sm:p-9">
-              <div className="flex items-center gap-3">
-                <Handshake aria-hidden="true" className="h-7 w-7 text-brand-sky" />
-                <h3 className="font-inter text-xl font-bold text-surface-light-foreground sm:text-2xl">
-                  My Clients
-                </h3>
-              </div>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                I have been honored to work with a variety of Clients over the years, some
-                long-term, some short-term. But each has allowed me to grow as a designer and
-                consultant as well as providing me the opportunity to work alongside their
-                leaders to design, develop, and implement training programs and individual
-                courses alike.
-              </p>
-            </article>
-          </div>
+          <div className="mx-auto max-w-6xl px-5 pt-14 pb-20" />
         </section>
       </main>
       <SiteFooter />
