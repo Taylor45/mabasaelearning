@@ -2,8 +2,14 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { solidPrimaryStates } from "@/lib/button-states";
+import { solidAccentStates, solidPrimaryStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
+import { Info } from "lucide-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import portrait from "@/assets/melvon-portrait.png";
 import illPrompt from "@/assets/ill-prompt-engineering.png";
 import illDesign from "@/assets/ill-instructional-design.png";
@@ -388,16 +394,44 @@ function Index() {
             </div>
 
             <div className="flex min-w-0 flex-col items-center">
-              <div className="rounded-full border-2 border-foreground/80 p-3">
-                <div className="rounded-full border border-foreground/50 p-2">
-                  <img
-                    src={portrait}
-                    alt="Portrait of Bruce Mabasa"
-                    className="h-52 w-52 rounded-full object-cover min-[360px]:h-60 min-[360px]:w-60 sm:h-72 sm:w-72"
-                    width={288}
-                    height={288}
-                  />
+              <div className="relative">
+                <div className="rounded-full border-2 border-foreground/80 p-3">
+                  <div className="rounded-full border border-foreground/50 p-2">
+                    <img
+                      src={portrait}
+                      alt="Portrait of Bruce Mabasa"
+                      className="h-52 w-52 rounded-full object-cover min-[360px]:h-60 min-[360px]:w-60 sm:h-72 sm:w-72"
+                      width={288}
+                      height={288}
+                    />
+                  </div>
                 </div>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <button
+                      type="button"
+                      aria-label="More about the companies I have worked with"
+                      className={`absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-elevated sm:h-9 sm:w-9 ${solidAccentStates}`}
+                    >
+                      <Info className="h-4 w-4" aria-hidden="true" />
+                    </button>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    side="bottom"
+                    align="center"
+                    sideOffset={12}
+                    className="w-[min(88vw,22rem)] rounded-xl border border-border bg-popover p-4 text-popover-foreground shadow-elevated"
+                  >
+                    <p className="font-inter text-[0.9rem] leading-relaxed">
+                      I have been honored to work with a variety of companies over
+                      the years, some long-term, some short-term. But each has
+                      allowed me to grow as a designer and consultant as well as
+                      providing me the opportunity to work alongside their leaders
+                      to design, develop, and implement training programs and
+                      individual courses alike.
+                    </p>
+                  </PopoverContent>
+                </Popover>
               </div>
               <div className="mt-10 flex w-full max-w-sm flex-col gap-4">
                 <a
