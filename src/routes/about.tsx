@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Handshake, Network, CodeXml, Eye, EyeOff } from "lucide-react";
+import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Network, CodeXml, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
