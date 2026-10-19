@@ -417,9 +417,9 @@ function Index() {
                     </button>
                   </PopoverTrigger>
                   <PopoverContent
-                    side="bottom"
+                    side="top"
                     align="center"
-                    sideOffset={12}
+                    sideOffset={14}
                     className="w-[min(88vw,22rem)] rounded-xl border border-border bg-popover p-4 text-popover-foreground shadow-elevated"
                   >
                     <p className="font-inter text-[0.9rem] leading-relaxed">
