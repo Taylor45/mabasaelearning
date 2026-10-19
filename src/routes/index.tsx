@@ -423,6 +423,7 @@ function Index() {
                     sideOffset={12}
                     className="w-[min(88vw,22rem)] rounded-xl border border-border bg-popover p-4 text-popover-foreground shadow-elevated"
                   >
+                    <PopoverArrow className="fill-popover" width={14} height={7} />
                     <p className="font-inter text-[0.9rem] leading-relaxed">
                       I have been honored to work with a variety of companies over
                       the years, some long-term, some short-term. But each has
