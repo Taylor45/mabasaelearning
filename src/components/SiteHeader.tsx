@@ -53,7 +53,7 @@ export function SiteHeader() {
                   <DropdownMenuItem key={item.to} asChild>
                     <Link
                       to={item.to}
-                      className="min-h-11 cursor-pointer rounded-none px-5 py-2.5 text-[15px] font-normal text-surface-light-foreground data-[highlighted]:bg-menu-highlight data-[highlighted]:text-foreground [&.active]:bg-menu-highlight [&.active]:text-foreground"
+                      className="min-h-11 cursor-pointer rounded-none! px-5 py-2.5 text-[15px] font-normal text-surface-light-foreground data-[highlighted]:rounded-none data-[highlighted]:bg-menu-highlight data-[highlighted]:text-foreground [&.active]:bg-menu-highlight [&.active]:text-foreground"
                     >
                       {item.label}
                     </Link>
