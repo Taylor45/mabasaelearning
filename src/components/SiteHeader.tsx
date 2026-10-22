@@ -83,16 +83,45 @@ export function SiteHeader() {
               <Menu aria-hidden="true" />
             </Button>
           </SheetTrigger>
-          <SheetContent className="w-[min(90vw,360px)] overflow-y-auto bg-ink px-5 pt-7" aria-describedby={undefined}>
-            <SheetTitle className="font-display text-xl">Mabasa.</SheetTitle>
-            <nav aria-label="Mobile navigation" className="mt-8 flex flex-col gap-1">
-              <Link to="/" activeOptions={{ exact: true }} onClick={() => setMobileOpen(false)} className="flex min-h-12 items-center rounded-md px-3 font-display text-foreground hover:bg-muted [&.active]:bg-muted">Home</Link>
-              <p className="mb-1 mt-5 px-3 text-xs uppercase tracking-widest text-muted-foreground">eLearning</p>
+          <SheetContent
+            className="w-[min(90vw,360px)] overflow-y-auto border-border/10 bg-surface-light px-0 pt-7 text-surface-light-foreground [&>button[data-state=open]]:bg-transparent"
+            aria-describedby={undefined}
+          >
+            <SheetTitle className="px-5 font-display text-xl text-surface-light-foreground">Mabasa.</SheetTitle>
+            <nav aria-label="Mobile navigation" className="mt-6 flex flex-col py-2">
+              <Link
+                to="/"
+                activeOptions={{ exact: true }}
+                onClick={() => setMobileOpen(false)}
+                className="flex min-h-12 items-center px-5 text-[15px] text-surface-light-foreground hover:bg-menu-highlight hover:text-expertise-foreground focus-visible:bg-menu-highlight focus-visible:text-expertise-foreground focus-visible:outline-none [&.active]:bg-menu-highlight [&.active]:text-expertise-foreground"
+              >
+                Home
+              </Link>
+              <p className="mb-1 mt-5 px-5 text-xs uppercase tracking-widest text-surface-light-foreground/60">eLearning</p>
               {serviceItems.map((item) => (
-                <Link key={item.to} to={item.to} onClick={() => setMobileOpen(false)} className="flex min-h-12 items-center rounded-md px-3 py-3 text-sm text-foreground hover:bg-muted [&.active]:bg-muted">{item.label}</Link>
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex min-h-12 items-center px-5 text-[15px] text-surface-light-foreground hover:bg-menu-highlight hover:text-expertise-foreground focus-visible:bg-menu-highlight focus-visible:text-expertise-foreground focus-visible:outline-none [&.active]:bg-menu-highlight [&.active]:text-expertise-foreground"
+                >
+                  {item.label}
+                </Link>
               ))}
-              <Link to="/about" onClick={() => setMobileOpen(false)} className="flex min-h-12 items-center rounded-md px-3 font-display text-foreground hover:bg-muted [&.active]:bg-muted">About</Link>
-              <Link to="/contact" onClick={() => setMobileOpen(false)} className="flex min-h-12 items-center rounded-md px-3 font-display text-foreground hover:bg-muted [&.active]:bg-muted">Contact</Link>
+              <Link
+                to="/about"
+                onClick={() => setMobileOpen(false)}
+                className="flex min-h-12 items-center px-5 text-[15px] text-surface-light-foreground hover:bg-menu-highlight hover:text-expertise-foreground focus-visible:bg-menu-highlight focus-visible:text-expertise-foreground focus-visible:outline-none [&.active]:bg-menu-highlight [&.active]:text-expertise-foreground"
+              >
+                About
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="flex min-h-12 items-center px-5 text-[15px] text-surface-light-foreground hover:bg-menu-highlight hover:text-expertise-foreground focus-visible:bg-menu-highlight focus-visible:text-expertise-foreground focus-visible:outline-none [&.active]:bg-menu-highlight [&.active]:text-expertise-foreground"
+              >
+                Contact
+              </Link>
             </nav>
           </SheetContent>
         </Sheet>
