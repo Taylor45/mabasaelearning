@@ -418,10 +418,10 @@ function Index() {
                     </button>
                   </PopoverTrigger>
                   <PopoverContent
-                    side="bottom"
-                    align="center"
+                    side="top"
+                    align="end"
                     sideOffset={12}
-                    className="w-[min(88vw,22rem)] rounded-none border border-border/10 bg-surface-light p-4 text-surface-light-foreground shadow-elevated"
+                    className="w-[min(88vw,30rem)] rounded-none border border-border/10 bg-surface-light p-4 text-surface-light-foreground shadow-elevated"
                   >
                     <PopoverArrow className="fill-surface-light" width={14} height={7} />
                     <p className="font-inter text-[0.9rem] leading-relaxed">
