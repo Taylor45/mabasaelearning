@@ -48,10 +48,15 @@ export function SiteHeader() {
                 eLearning Development <ChevronDown aria-hidden="true" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-64 bg-ink text-foreground">
+            <DropdownMenuContent align="end" className="w-72 rounded-none border-border/10 bg-surface-light p-0 py-2 text-surface-light-foreground shadow-elevated">
                 {serviceItems.map((item) => (
                   <DropdownMenuItem key={item.to} asChild>
-                    <Link to={item.to} className="min-h-11 cursor-pointer [&.active]:underline">{item.label}</Link>
+                    <Link
+                      to={item.to}
+                      className="min-h-11 cursor-pointer rounded-none px-5 py-2.5 text-[15px] font-normal text-surface-light-foreground data-[highlighted]:bg-menu-highlight data-[highlighted]:text-foreground [&.active]:bg-menu-highlight [&.active]:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
                   </DropdownMenuItem>
                 ))}
             </DropdownMenuContent>
