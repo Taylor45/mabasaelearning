@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { solidAccentStates, solidPrimaryStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
-import {
-  Popover,
-  PopoverArrow,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import portrait from "@/assets/melvon-portrait.png";
 import illPrompt from "@/assets/ill-prompt-engineering.png";
 import illDesign from "@/assets/ill-instructional-design.png";
@@ -348,6 +342,23 @@ function ToolCarousel({ label, items }: { label: string; items: Tool[] }) {
 }
 
 function Index() {
+  const [clientsOpen, setClientsOpen] = useState(false);
+  const clientsBtnRef = useRef<HTMLButtonElement>(null);
+  const clientsNoteRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!clientsOpen) return;
+    clientsNoteRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setClientsOpen(false);
+        clientsBtnRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [clientsOpen]);
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -407,33 +418,17 @@ function Index() {
                     />
                   </div>
                 </div>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <button
-                      type="button"
-                      aria-label="More about the companies I have worked with"
-                      className={`absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-elevated sm:h-9 sm:w-9 ${solidAccentStates}`}
-                    >
-                      <Info className="h-4 w-4" aria-hidden="true" />
-                    </button>
-                  </PopoverTrigger>
-                  <PopoverContent
-                    side="bottom"
-                    align="center"
-                    sideOffset={12}
-                    className="w-[min(88vw,22rem)] rounded-none border border-border/10 bg-surface-light p-4 text-surface-light-foreground shadow-elevated"
-                  >
-                    <PopoverArrow className="fill-surface-light" width={14} height={7} />
-                    <p className="font-inter text-[0.9rem] leading-relaxed">
-                      I have been honored to work with a variety of companies over
-                      the years, some long-term, some short-term. But each has
-                      allowed me to grow as a designer and consultant as well as
-                      providing me the opportunity to work alongside their leaders
-                      to design, develop, and implement training programs and
-                      individual courses alike.
-                    </p>
-                  </PopoverContent>
-                </Popover>
+                <button
+                  ref={clientsBtnRef}
+                  type="button"
+                  aria-label="More about the companies I have worked with"
+                  aria-expanded={clientsOpen}
+                  aria-controls="clients-note"
+                  onClick={() => setClientsOpen((open) => !open)}
+                  className={`absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-elevated sm:h-9 sm:w-9 ${solidAccentStates}`}
+                >
+                  <Info className="h-4 w-4" aria-hidden="true" />
+                </button>
               </div>
               <div className="mt-10 flex w-full max-w-sm flex-col gap-4">
                 <a
@@ -451,6 +446,24 @@ function Index() {
                   View Resume
                 </a>
               </div>
+              {clientsOpen && (
+                <div
+                  id="clients-note"
+                  ref={clientsNoteRef}
+                  role="note"
+                  tabIndex={-1}
+                  className="mt-6 w-full max-w-sm animate-in fade-in slide-in-from-top-2 duration-200 rounded-none border border-border/10 bg-surface-light p-4 text-surface-light-foreground shadow-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  <p className="font-inter text-[0.9rem] leading-relaxed">
+                    I have been honored to work with a variety of companies over
+                    the years, some long-term, some short-term. But each has
+                    allowed me to grow as a designer and consultant as well as
+                    providing me the opportunity to work alongside their leaders
+                    to design, develop, and implement training programs and
+                    individual courses alike.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </section>
