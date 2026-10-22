@@ -27,6 +27,7 @@
   --color-brand-sky: var(--brand-sky);
   --color-surface-light: var(--surface-light);
   --color-surface-light-foreground: var(--surface-light-foreground);
+  --color-menu-highlight: var(--menu-highlight);
   --color-expertise-technology: var(--expertise-technology);
   --color-expertise-software: var(--expertise-software);
   --color-expertise-accessibility: var(--expertise-accessibility);
