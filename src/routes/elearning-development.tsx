@@ -230,7 +230,7 @@ function ELearningPage() {
                       {block.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-surface-light/45 bg-background/40 px-3 py-1 text-[0.7rem] font-semibold text-surface-light/95 shadow-[0_1px_2px_rgba(0,8,30,0.28)] [text-shadow:0_1px_6px_rgba(0,8,30,0.9)]"
+                          className="rounded-full border border-surface-light/35 bg-surface-light/10 px-3 py-1 text-[0.7rem] font-semibold text-surface-light/95 shadow-[0_1px_2px_rgba(0,8,30,0.28)]"
                         >
                           {tag}
                         </span>
