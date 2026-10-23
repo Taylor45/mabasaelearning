@@ -210,10 +210,10 @@ function ELearningPage() {
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col">
                   <div className="flex h-full flex-col items-center rounded-2xl border-2 border-surface-light/70 bg-transparent px-6 py-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.45),inset_0_-1px_0_rgba(0,8,30,0.25),0_26px_50px_-18px_rgba(0,8,30,0.72),0_10px_22px_-10px_rgba(0,8,30,0.5)] transition-all duration-300 hover:-translate-y-2 hover:border-surface-light/90 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(0,8,30,0.3),0_36px_64px_-20px_rgba(0,8,30,0.8),0_16px_30px_-12px_rgba(0,8,30,0.6)]">
-                    <h2 className="font-inter text-xl font-bold text-surface-light [text-shadow:0_2px_18px_rgba(0,8,30,0.9)]">
+                    <h2 className="font-inter text-xl font-bold text-surface-light [text-shadow:0_0_1px_rgba(0,8,30,0.9),0_0_6px_rgba(0,8,30,0.9),0_2px_18px_rgba(0,8,30,0.9)]">
                       {block.title}
                     </h2>
-                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-surface-light/90 [text-shadow:0_1px_12px_rgba(0,8,30,0.95),0_0_2px_rgba(0,8,30,0.9)]">
+                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-surface-light/90 [text-shadow:0_0_1px_rgba(0,8,30,1),0_0_5px_rgba(0,8,30,0.95),0_1px_12px_rgba(0,8,30,0.9)]">
                       {block.copy}
                     </p>
                     <div className="mt-5 flex flex-wrap justify-center gap-2">
