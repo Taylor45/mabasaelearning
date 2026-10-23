@@ -196,7 +196,15 @@ function ELearningPage() {
           </div>
         </section>
 
-        <section className="flow-root bg-surface-light">
+        <section className="flow-root relative bg-surface-light">
+          <img
+            src={elearningBg.url}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-background/45" />
           <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
@@ -206,14 +214,14 @@ function ELearningPage() {
                       {block.title}
                     </h2>
                   </div>
-                  <p className="mt-5 flex-1 px-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                  <p className="mt-5 flex-1 px-2 text-[0.95rem] leading-relaxed text-foreground/85">
                     {block.copy}
                   </p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
                     {block.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70"
+                        className="rounded-full border border-foreground/30 px-3 py-1 text-[0.7rem] font-semibold text-foreground/80"
                       >
                         {tag}
                       </span>
