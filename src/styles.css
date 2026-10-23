@@ -30,7 +30,6 @@
   --color-surface-light: var(--surface-light);
   --color-surface-light-foreground: var(--surface-light-foreground);
   --color-menu-highlight: var(--menu-highlight);
-  --color-course-feature: var(--course-feature);
   --color-expertise-technology: var(--expertise-technology);
   --color-expertise-software: var(--expertise-software);
   --color-expertise-accessibility: var(--expertise-accessibility);
@@ -108,7 +107,6 @@
   --surface-light: oklch(1 0 0);
   --surface-light-foreground: oklch(0.24 0.06 262);
   --menu-highlight: oklch(0.47 0.1 268);
-  --course-feature: oklch(0.965 0.006 90);
   --expertise-technology: oklch(0.38 0.09 257.208);
   --expertise-software: oklch(0.23985730 0.07550878 257.20819583);
   --expertise-accessibility: oklch(0.5 0.06 257.208);
