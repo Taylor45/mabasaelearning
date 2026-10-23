@@ -29,12 +29,12 @@ const SolidLinkedin = (props: React.SVGProps<SVGSVGElement>) => (
 
 /**
  * White square tile behind a contact icon, as in the reference picture:
- * flat white surface, sharp corners, dark navy glyph.
+ * flat white surface, sharp corners, theme-cyan glyph matching the list bullets.
  */
 const IconTile = (props: { children: React.ReactNode }) => (
   <span
     aria-hidden="true"
-    className="grid size-9 shrink-0 place-items-center bg-white text-background shadow-sm ring-1 ring-white/70 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:scale-105 motion-safe:group-focus-visible:scale-105 motion-safe:group-focus-visible:ring-2 motion-safe:group-focus-visible:ring-brand-cyan motion-safe:group-focus-visible:ring-offset-2 motion-safe:group-focus-visible:ring-offset-ink"
+    className="grid size-9 shrink-0 place-items-center bg-white text-brand-cyan shadow-sm ring-1 ring-white/70 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:scale-105 motion-safe:group-focus-visible:scale-105 motion-safe:group-focus-visible:ring-2 motion-safe:group-focus-visible:ring-brand-cyan motion-safe:group-focus-visible:ring-offset-2 motion-safe:group-focus-visible:ring-offset-ink"
   >
     {props.children}
   </span>
