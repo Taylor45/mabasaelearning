@@ -27,6 +27,19 @@ const SolidLinkedin = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+/**
+ * White square tile behind a contact icon, as in the reference picture:
+ * flat white surface, sharp corners, dark navy glyph.
+ */
+const IconTile = (props: { children: React.ReactNode }) => (
+  <span
+    aria-hidden="true"
+    className="grid size-9 shrink-0 place-items-center bg-white text-background shadow-sm ring-1 ring-white/70 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:scale-105 motion-safe:group-focus-visible:scale-105 motion-safe:group-focus-visible:ring-2 motion-safe:group-focus-visible:ring-brand-cyan motion-safe:group-focus-visible:ring-offset-2 motion-safe:group-focus-visible:ring-offset-ink"
+  >
+    {props.children}
+  </span>
+);
+
 const expertise = [
   "Instructional Desgin",
   "Articulate Storyline 360 & xAPI",
@@ -70,23 +83,29 @@ export function SiteFooter() {
               <li>
                 <a
                   href="mailto:brucemabasa4@gmail.com"
-                  className="inline-flex items-center gap-3 hover:text-foreground"
+                  className="group inline-flex items-center gap-4 hover:text-foreground"
                 >
-                  <SolidMail width={16} height={16} className="shrink-0 text-brand-cyan" />
+                  <IconTile>
+                    <SolidMail width={18} height={18} />
+                  </IconTile>
                   brucemabasa4@gmail.com
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+27825965691"
-                  className="inline-flex items-center gap-3 hover:text-foreground"
+                  className="group inline-flex items-center gap-4 hover:text-foreground"
                 >
-                  <SolidPhone width={16} height={16} className="shrink-0 text-brand-cyan" />
+                  <IconTile>
+                    <SolidPhone width={18} height={18} />
+                  </IconTile>
                   +27 (0) 82 596 5691
                 </a>
               </li>
-              <li className="inline-flex items-center gap-3">
-                <SolidMapPin width={16} height={16} className="shrink-0 text-brand-cyan" />
+              <li className="inline-flex items-center gap-4">
+                <IconTile>
+                  <SolidMapPin width={18} height={18} />
+                </IconTile>
                 Gauteng, South Africa &amp; Remote Global
               </li>
               <li>
@@ -94,9 +113,11 @@ export function SiteFooter() {
                   href="https://www.linkedin.com/in/bruce-mabasa-12121426a"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-3 hover:text-foreground"
+                  className="group inline-flex items-center gap-4 hover:text-foreground"
                 >
-                  <SolidLinkedin width={16} height={16} className="shrink-0 text-brand-cyan" />
+                  <IconTile>
+                    <SolidLinkedin width={18} height={18} />
+                  </IconTile>
                   Let`s Connect: LinkedIn
                 </a>
               </li>
