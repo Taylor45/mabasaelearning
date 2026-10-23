@@ -82,7 +82,7 @@ function PromptEngineeringPage() {
                     <DocumentPreviewButton
                       href={item.href}
                       title={item.name}
-                      className="mt-auto h-auto min-h-11 gap-2 whitespace-normal rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                      className="mt-auto h-auto min-h-11 gap-2 whitespace-normal rounded-sm border-2 border-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-btn-primary hover:text-btn-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                     >
                       {item.action}
                       <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
