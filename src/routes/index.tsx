@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { solidAccentStates, solidPrimaryStates } from "@/lib/button-states";
+import { solidBrandStates, solidPrimaryStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 import portrait from "@/assets/melvon-portrait.png";
@@ -425,7 +425,7 @@ function Index() {
                   aria-expanded={clientsOpen}
                   aria-controls="clients-note"
                   onClick={() => setClientsOpen((open) => !open)}
-                  className={`absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-elevated sm:h-9 sm:w-9 ${solidAccentStates}`}
+                  className={`absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-btn-primary text-btn-primary-foreground shadow-elevated sm:h-9 sm:w-9 ${solidBrandStates}`}
                 >
                   <Info className="h-4 w-4" aria-hidden="true" />
                 </button>
