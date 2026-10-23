@@ -13,7 +13,6 @@ import digitalEbook1 from "@/assets/digital-ebook-1.png.asset.json";
 import ispringCourse1 from "@/assets/ispring-course-1.png.asset.json";
 import ispringCourse2 from "@/assets/ispring-course-2.png.asset.json";
 import ispringSafety1 from "@/assets/ispring-safety-1.png.asset.json";
-import elearningBg from "@/assets/elearning-bg.jpg.asset.json";
 
 export const Route = createFileRoute("/elearning-development")({
   head: () => ({
