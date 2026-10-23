@@ -204,33 +204,39 @@ function ELearningPage() {
           </div>
         </section>
 
-        <section className="relative flow-root bg-surface-light">
+        <section className="relative flow-root bg-background">
           <img
             src={elearningBg.url}
             alt=""
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-surface-light/60 via-surface-light/88 to-surface-light/96" />
+          {/* Navy overlay keeps the artwork from competing with the card text */}
+          <div className="pointer-events-none absolute inset-0 bg-background/72" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_60%_at_50%_40%,rgba(2,6,23,0.8),transparent_78%)]" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-background/85" />
+
           <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-20 sm:-mt-16">
 
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col">
-                  <div className="flex min-h-36 flex-col items-center justify-center rounded-2xl bg-surface-light px-6 py-7 text-center shadow-[0_18px_40px_-18px_rgba(0,8,30,0.35),0_6px_16px_-8px_rgba(0,8,30,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_26px_52px_-18px_rgba(0,8,30,0.42),0_10px_22px_-10px_rgba(0,8,30,0.24)]">
-                    <h2 className="font-inter text-xl font-bold leading-snug text-surface-light-foreground">
+                  <div className="flex min-h-36 flex-col items-center justify-center rounded-2xl border border-surface-light/25 bg-background/55 px-6 py-7 text-center shadow-[0_18px_40px_-18px_rgba(0,8,30,0.65),0_6px_16px_-8px_rgba(0,8,30,0.45)] backdrop-blur-[3px] transition-all duration-300 hover:-translate-y-1.5 hover:border-surface-light/45 hover:shadow-[0_26px_52px_-18px_rgba(0,8,30,0.75),0_10px_22px_-10px_rgba(0,8,30,0.5)]">
+                    <h2 className="font-inter text-xl font-bold leading-snug text-surface-light [text-shadow:0_2px_14px_rgba(2,6,23,0.9)]">
                       {block.title}
                     </h2>
                   </div>
-                  <p className="mt-6 flex-1 px-1 text-center text-[0.95rem] font-medium leading-relaxed text-surface-light-foreground/90">
+
+                  <p className="mt-6 flex-1 px-1 text-center text-[0.95rem] font-medium leading-relaxed text-surface-light/95 [text-shadow:0_1px_12px_rgba(2,6,23,0.95)]">
                     {block.copy}
                   </p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
                     {block.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-surface-light-foreground/30 bg-surface-light px-3.5 py-1.5 text-[0.72rem] font-semibold text-surface-light-foreground/90"
+                        className="rounded-full border border-surface-light/35 bg-background/60 px-3.5 py-1.5 text-[0.72rem] font-semibold text-surface-light [text-shadow:0_1px_8px_rgba(2,6,23,0.9)]"
                       >
+
                         {tag}
                       </span>
                     ))}
