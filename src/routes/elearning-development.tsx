@@ -209,18 +209,18 @@ function ELearningPage() {
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col">
-                  <div className="flex h-full flex-col items-center rounded-2xl border border-foreground/25 bg-surface-light/60 px-6 py-7 text-center shadow-[10px_10px_24px_rgba(0,8,30,0.2)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-foreground/40 hover:bg-surface-light/75 hover:shadow-[12px_14px_30px_rgba(0,8,30,0.26)]">
+                  <div className="flex h-full flex-col items-center rounded-2xl border border-surface-light-foreground/25 bg-surface-light/60 px-6 py-7 text-center shadow-[10px_10px_24px_rgba(0,8,30,0.2)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-surface-light-foreground/45 hover:bg-surface-light/75 hover:shadow-[12px_14px_30px_rgba(0,8,30,0.26)]">
                     <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
                       {block.title}
                     </h2>
-                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-foreground/85">
+                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/80">
                       {block.copy}
                     </p>
                     <div className="mt-5 flex flex-wrap justify-center gap-2">
                       {block.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-foreground/30 px-3 py-1 text-[0.7rem] font-semibold text-foreground/80"
+                          className="rounded-full border border-surface-light-foreground/30 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/80"
                         >
                           {tag}
                         </span>
