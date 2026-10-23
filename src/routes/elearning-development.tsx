@@ -207,7 +207,7 @@ function ELearningPage() {
           <div className="absolute inset-0 bg-background/60" />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(115deg,oklch(0.13_0.06_262)_0%,oklch(0.2_0.1_263)_45%,oklch(0.42_0.17_259)_100%)] [mask-image:linear-gradient(to_bottom,black_0%,black_10%,transparent_100%)]"
+            className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(115deg,oklch(0.158_0.08_263.1)_0%,oklch(0.187_0.09_262.5)_45%,oklch(0.339_0.138_260)_100%)] [mask-image:linear-gradient(to_bottom,black_0%,black_10%,transparent_100%)]"
           />
           <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
 
