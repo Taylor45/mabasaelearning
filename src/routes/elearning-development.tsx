@@ -197,7 +197,7 @@ function ELearningPage() {
           </div>
         </section>
 
-        <section className="flow-root bg-surface-light">
+        <section className="relative flow-root bg-surface-light">
           <img
             src={elearningBg.url}
             alt=""
