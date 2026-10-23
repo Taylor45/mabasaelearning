@@ -206,7 +206,12 @@ function ELearningPage() {
           />
           <div className="absolute inset-0 bg-background/60" />
           <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -inset-x-6 -top-2 bottom-8 rounded-[3rem] bg-[radial-gradient(ellipse_115%_95%_at_50%_58%,rgba(2,6,23,0.55),rgba(2,6,23,0.34)_52%,rgba(2,6,23,0)_88%)] blur-[10px]"
+            />
+            <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col">
                   <div className="flex h-full flex-col items-center rounded-2xl border-2 border-surface-light/70 bg-transparent px-6 py-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.45),inset_0_-1px_0_rgba(0,8,30,0.25),0_26px_50px_-18px_rgba(0,8,30,0.72),0_10px_22px_-10px_rgba(0,8,30,0.5)] transition-all duration-300 hover:-translate-y-2 hover:border-surface-light/90 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(0,8,30,0.3),0_36px_64px_-20px_rgba(0,8,30,0.8),0_16px_30px_-12px_rgba(0,8,30,0.6)]">
