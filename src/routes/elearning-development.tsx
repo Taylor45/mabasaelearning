@@ -205,7 +205,12 @@ function ELearningPage() {
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-background/60" />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(115deg,oklch(0.13_0.06_262)_0%,oklch(0.2_0.1_263)_45%,oklch(0.42_0.17_259)_100%)] [mask-image:linear-gradient(to_bottom,black_0%,black_10%,transparent_100%)]"
+          />
           <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
+
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -inset-x-6 -top-2 bottom-8 rounded-[3rem] bg-[radial-gradient(ellipse_115%_95%_at_50%_58%,rgba(2,6,23,0.55),rgba(2,6,23,0.34)_52%,rgba(2,6,23,0)_88%)] blur-[10px]"
