@@ -183,7 +183,7 @@ function ELearningPage() {
       <SiteHeader />
       <main className="flex-1">
         <section className="surface-hero">
-          <div className="mx-auto max-w-6xl px-5 pt-20 pb-24 sm:pb-28">
+          <div className="mx-auto max-w-6xl px-5 pt-20 pb-36 sm:pb-44">
             <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               Development &amp; AI
             </span>
