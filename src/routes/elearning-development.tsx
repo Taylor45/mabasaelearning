@@ -13,7 +13,6 @@ import digitalEbook1 from "@/assets/digital-ebook-1.png.asset.json";
 import ispringCourse1 from "@/assets/ispring-course-1.png.asset.json";
 import ispringCourse2 from "@/assets/ispring-course-2.png.asset.json";
 import ispringSafety1 from "@/assets/ispring-safety-1.png.asset.json";
-import elearningBg from "@/assets/elearning-bg.jpg.asset.json";
 
 export const Route = createFileRoute("/elearning-development")({
   head: () => ({
@@ -196,46 +195,28 @@ function ELearningPage() {
           </div>
         </section>
 
-        <section className="flow-root relative bg-surface-light">
-          <img
-            src={elearningBg.url}
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-background/60" />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(115deg,oklch(0.158_0.08_263.1)_0%,oklch(0.187_0.09_262.5)_45%,oklch(0.375_0.15_260)_100%)] [mask-image:linear-gradient(to_bottom,black_0%,black_10%,transparent_100%)]"
-          />
-          <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
-            <div
-
-              aria-hidden="true"
-              className="pointer-events-none absolute -inset-x-6 -top-2 bottom-8 rounded-[3rem] bg-[radial-gradient(ellipse_115%_95%_at_50%_58%,rgba(2,6,23,0.55),rgba(2,6,23,0.34)_52%,rgba(2,6,23,0)_88%)] blur-[10px]"
-            />
-            <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-
+        <section className="flow-root bg-surface-light">
+          <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-20 sm:-mt-16">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col">
-                  <div className="flex h-full flex-col items-center rounded-2xl bg-surface-light px-6 py-7 text-center shadow-[0_20px_44px_-16px_rgba(0,8,30,0.4),0_8px_18px_-10px_rgba(0,8,30,0.22)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_60px_-18px_rgba(0,8,30,0.5),0_12px_26px_-12px_rgba(0,8,30,0.3)]">
-                    <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
+                  <div className="flex min-h-36 flex-col items-center justify-center rounded-2xl bg-surface-light px-6 py-7 text-center shadow-[0_18px_40px_-18px_rgba(0,8,30,0.35),0_6px_16px_-8px_rgba(0,8,30,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_26px_52px_-18px_rgba(0,8,30,0.42),0_10px_22px_-10px_rgba(0,8,30,0.24)]">
+                    <h2 className="font-inter text-xl font-bold leading-snug text-surface-light-foreground">
                       {block.title}
                     </h2>
-                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                      {block.copy}
-                    </p>
-                    <div className="mt-5 flex flex-wrap justify-center gap-2">
-                      {block.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-surface-light-foreground/20 bg-surface-light-foreground/5 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/80 shadow-[0_1px_2px_rgba(0,8,30,0.08)]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  </div>
+                  <p className="mt-6 flex-1 px-1 text-center text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                    {block.copy}
+                  </p>
+                  <div className="mt-5 flex flex-wrap justify-center gap-2">
+                    {block.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-surface-light-foreground/20 bg-surface-light px-3.5 py-1.5 text-[0.72rem] font-semibold text-surface-light-foreground/75"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </article>
               ))}
