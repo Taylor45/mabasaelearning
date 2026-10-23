@@ -200,3 +200,12 @@
 @utility shadow-elevated {
   box-shadow: var(--shadow-elevated);
 }
+
+/*
+ * Strong keyboard-focus indicator for the interactive gradient cards.
+ * Deliberately unlayered so no Tailwind utility can override it.
+ */
+.dev-card-focus:focus-visible {
+  outline: 3px solid var(--btn-primary);
+  outline-offset: 5px;
+}
