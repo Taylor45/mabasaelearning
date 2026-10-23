@@ -5,8 +5,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { solidBrandStates } from "@/lib/button-states";
-import elearningBg from "@/assets/elearning-bg.jpg.asset.json";
-
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
 import storylineAiLiteracy from "@/assets/storyline-ai-literacy.png.asset.json";
 import geniallyGuide1 from "@/assets/genially-guide-1.png.asset.json";
@@ -119,7 +117,6 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
 
   useEffect(() => {
     if (images.length < 2) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(
       () => setIndex((i) => (i + 1) % images.length),
       4000
@@ -144,23 +141,17 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
         />
       ))}
       {images.length > 1 && (
-        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1">
+        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
           {images.map((_, i) => (
             <button
               key={i}
               type="button"
-              aria-label={`Show image ${i + 1} of ${images.length}`}
-              aria-current={i === index}
+              aria-label={`Show image ${i + 1}`}
               onClick={() => setIndex(i)}
-              className="flex h-6 w-6 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <span
-                aria-hidden="true"
-                className={`block h-2 w-2 rounded-full ring-1 ring-background/70 transition-colors ${
-                  i === index ? "bg-accent" : "bg-surface-light-foreground/45"
-                }`}
-              />
-            </button>
+              className={`h-2 w-2 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                i === index ? "bg-accent" : "bg-foreground/50"
+              }`}
+            />
           ))}
         </div>
       )}
@@ -204,39 +195,25 @@ function ELearningPage() {
           </div>
         </section>
 
-        <section className="relative flow-root bg-background">
-          <img
-            src={elearningBg.url}
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
-          />
-          {/* Navy overlay keeps the artwork from competing with the card text */}
-          <div className="pointer-events-none absolute inset-0 bg-background/72" />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_60%_at_50%_40%,rgba(2,6,23,0.8),transparent_78%)]" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-background/85" />
-
-          <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-20 sm:-mt-16">
-
+        <section className="flow-root bg-surface-light">
+          <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
-                <article key={block.title} className="flex flex-col">
-                  <div className="flex min-h-36 flex-col items-center justify-center rounded-2xl border border-surface-light/25 bg-background/55 px-6 py-7 text-center shadow-[0_18px_40px_-18px_rgba(0,8,30,0.65),0_6px_16px_-8px_rgba(0,8,30,0.45)] backdrop-blur-[3px] transition-all duration-300 hover:-translate-y-1.5 hover:border-surface-light/45 hover:shadow-[0_26px_52px_-18px_rgba(0,8,30,0.75),0_10px_22px_-10px_rgba(0,8,30,0.5)]">
-                    <h2 className="font-inter text-xl font-bold leading-snug text-surface-light [text-shadow:0_2px_14px_rgba(2,6,23,0.9)]">
+                <article key={block.title} className="flex flex-col items-center text-center">
+                  <div className="flex min-h-28 w-full items-center justify-center rounded-2xl border border-surface-light-foreground/10 bg-surface-light px-6 py-6 shadow-[10px_10px_24px_rgba(0,8,30,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[12px_14px_30px_rgba(0,8,30,0.26)]">
+                    <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
                       {block.title}
                     </h2>
                   </div>
-
-                  <p className="mt-6 flex-1 px-1 text-center text-[0.95rem] font-medium leading-relaxed text-surface-light/95 [text-shadow:0_1px_12px_rgba(2,6,23,0.95)]">
+                  <p className="mt-5 flex-1 px-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
                     {block.copy}
                   </p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
                     {block.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-surface-light/35 bg-background/60 px-3.5 py-1.5 text-[0.72rem] font-semibold text-surface-light [text-shadow:0_1px_8px_rgba(2,6,23,0.9)]"
+                        className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70"
                       >
-
                         {tag}
                       </span>
                     ))}
