@@ -201,23 +201,23 @@ function ELearningPage() {
 
         <section className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-16">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid items-stretch gap-6 md:grid-cols-3">
               {blocks.map((block) => (
                 <article
                   key={block.title}
-                  className="flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
+                  className="flex flex-col items-center justify-center rounded-[18px] bg-course-feature px-7 py-10 text-center lg:px-8 lg:py-12"
                 >
-                  <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
+                  <h2 className="font-inter text-2xl font-bold leading-snug text-ink">
                     {block.title}
                   </h2>
-                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                  <p className="mt-5 flex-1 text-[0.95rem] leading-relaxed text-ink/75">
                     {block.copy}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-7 flex flex-wrap justify-center gap-2">
                     {block.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70"
+                        className="rounded-full border border-ink/20 px-3 py-1 text-[0.7rem] font-semibold text-ink/70"
                       >
                         {tag}
                       </span>
