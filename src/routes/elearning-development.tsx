@@ -254,7 +254,7 @@ function ELearningPage() {
                 {section.projects.map((project) => (
                   <article
                     key={project.name}
-                    className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated transition-transform duration-300 hover:-translate-y-1"
+                    className="card-grow group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated"
                   >
                     {project.images.length > 0 ? (
                       <ImageCarousel

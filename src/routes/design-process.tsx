@@ -222,7 +222,7 @@ function DesignProcessPage() {
             {addie.map((item) => (
               <article
                 key={item.stage}
-                className="rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-6 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
+                className="card-grow rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-6 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-colors duration-300 hover:border-accent/40"
               >
                 <h4 className="text-lg font-bold text-surface-light-foreground">
                   {item.stage}

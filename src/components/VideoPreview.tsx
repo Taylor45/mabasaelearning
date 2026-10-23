@@ -11,7 +11,7 @@ export function VideoPreview({ id, title }: { id: string; title: string }) {
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
-      <figure className="relative aspect-video overflow-hidden rounded-md border border-foreground/15 bg-card">
+      <figure className="card-grow relative aspect-video overflow-hidden rounded-md border border-foreground/15 bg-card">
         {!open && (
           <iframe src={src} title={title} loading="lazy" allow={videoPermissions} allowFullScreen className="block h-full w-full border-0" />
         )}

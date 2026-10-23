@@ -209,3 +209,25 @@
   outline: 3px solid var(--btn-primary);
   outline-offset: 5px;
 }
+
+/*
+ * Grow-and-shrink card hover: the card smoothly scales up on hover and
+ * returns to its exact original size on leave, with a deeper shadow.
+ * Unlayered so utilities cannot override the recipe.
+ */
+.card-grow {
+  transition-property: transform, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+.card-grow:hover {
+  transform: scale(1.045);
+  box-shadow: 0 18px 38px rgba(0, 8, 30, 0.18);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-grow,
+  .card-grow:hover {
+    transition: none;
+    transform: none;
+  }
+}

@@ -56,7 +56,7 @@ function WebDesignPage() {
         <div className="bg-surface-light">
           <div className="mx-auto max-w-6xl px-5 py-12">
             <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-10">
-              <article className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
+              <article className="card-grow group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
                 <div className="aspect-[4/3] w-full bg-muted">
                   <iframe
                     src="https://docs.google.com/document/d/1jGBqk06KW8Ewx_I1Rl9H4BVB8nDX085YuJKeocU8X-Q/preview"
@@ -78,7 +78,7 @@ function WebDesignPage() {
                   </DocumentPreviewButton>
                 </div>
               </article>
-              <article className="group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
+              <article className="card-grow group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
                 <div className="aspect-[4/3] w-full overflow-hidden bg-muted">
                   <img
                     src={appImg.url}

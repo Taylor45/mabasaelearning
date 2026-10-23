@@ -63,7 +63,7 @@ function AiInELearningPage() {
           <div className="mx-auto max-w-6xl px-5 py-12">
             <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
               {apps.map((item) => (
-                <article key={item.name} className="group flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated transition-transform duration-300 hover:-translate-y-1">
+                <article key={item.name} className="card-grow group flex min-w-0 flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
                   <img src={item.image} alt={`${item.name} screenshot`} loading="lazy" className="block h-auto w-full" />
                   <div className="flex min-w-0 flex-1 flex-col items-start gap-4 p-4 sm:p-6">
                     <h3 className="font-inter max-w-full break-words text-lg leading-snug">{item.name}</h3>
