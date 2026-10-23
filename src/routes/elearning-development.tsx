@@ -5,6 +5,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { solidBrandStates } from "@/lib/button-states";
+import elearningBg from "@/assets/elearning-bg.jpg.asset.json";
+
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
 import storylineAiLiteracy from "@/assets/storyline-ai-literacy.png.asset.json";
 import geniallyGuide1 from "@/assets/genially-guide-1.png.asset.json";
@@ -196,7 +198,15 @@ function ELearningPage() {
         </section>
 
         <section className="flow-root bg-surface-light">
+          <img
+            src={elearningBg.url}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-surface-light/55 via-surface-light/78 to-surface-light/92" />
           <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-20 sm:-mt-16">
+
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col">
