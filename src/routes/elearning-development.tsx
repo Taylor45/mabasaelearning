@@ -119,6 +119,7 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
 
   useEffect(() => {
     if (images.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(
       () => setIndex((i) => (i + 1) % images.length),
       4000
@@ -143,17 +144,23 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
         />
       ))}
       {images.length > 1 && (
-        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1">
           {images.map((_, i) => (
             <button
               key={i}
               type="button"
-              aria-label={`Show image ${i + 1}`}
+              aria-label={`Show image ${i + 1} of ${images.length}`}
+              aria-current={i === index}
               onClick={() => setIndex(i)}
-              className={`h-2 w-2 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                i === index ? "bg-accent" : "bg-foreground/50"
-              }`}
-            />
+              className="flex h-6 w-6 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <span
+                aria-hidden="true"
+                className={`block h-2 w-2 rounded-full ring-1 ring-background/70 transition-colors ${
+                  i === index ? "bg-accent" : "bg-surface-light-foreground/45"
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}
@@ -215,14 +222,14 @@ function ELearningPage() {
                       {block.title}
                     </h2>
                   </div>
-                  <p className="mt-6 flex-1 px-1 text-center text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
+                  <p className="mt-6 flex-1 px-1 text-center text-[0.95rem] font-medium leading-relaxed text-surface-light-foreground/90">
                     {block.copy}
                   </p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
                     {block.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-surface-light-foreground/20 bg-surface-light px-3.5 py-1.5 text-[0.72rem] font-semibold text-surface-light-foreground/75"
+                        className="rounded-full border border-surface-light-foreground/30 bg-surface-light px-3.5 py-1.5 text-[0.72rem] font-semibold text-surface-light-foreground/90"
                       >
                         {tag}
                       </span>
