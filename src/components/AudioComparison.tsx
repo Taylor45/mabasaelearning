@@ -64,7 +64,7 @@ function AudioPlayer({ title, subtitle, src, active, onPlay }: {
   };
 
   return (
-    <article className="min-w-0 overflow-hidden rounded-md border border-border bg-card p-5 text-card-foreground sm:p-6">
+    <article className="card-grow min-w-0 overflow-hidden rounded-md border border-border bg-card p-5 text-card-foreground sm:p-6">
       <header className="flex items-center justify-between gap-3">
         <div className="min-w-0">
           <h3 className="text-lg font-semibold">{title}</h3>

@@ -181,7 +181,7 @@ function GalleryImage({
   natural?: boolean;
 }) {
   return (
-    <figure className={`overflow-hidden rounded-md border border-foreground/15 bg-card ${className}`}>
+    <figure className={`card-grow overflow-hidden rounded-md border border-foreground/15 bg-card ${className}`}>
       <img
         src={src}
         alt={alt}
@@ -190,7 +190,7 @@ function GalleryImage({
         height={720}
         className={`${
           natural ? "block h-auto w-full" : "h-full w-full object-contain"
-        } transition-transform duration-500 hover:scale-[1.015]`}
+        }`}
       />
     </figure>
   );
