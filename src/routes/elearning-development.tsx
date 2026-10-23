@@ -262,7 +262,7 @@ function ELearningPage() {
                           const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 px-4 py-2.5 text-xs uppercase tracking-normal shadow-none lg:w-auto lg:justify-center lg:px-5 ${
                             li > 0
                               ? `border-btn-primary bg-btn-primary text-btn-primary-foreground ${solidBrandStates}`
-                              : "border-accent bg-transparent text-card-foreground hover:bg-btn-primary hover:text-btn-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                              : "border-btn-primary bg-transparent text-card-foreground hover:bg-btn-primary hover:text-btn-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                           } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`;
                           const inner = (
                             <>
