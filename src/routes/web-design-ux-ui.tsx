@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { ServicePage } from "@/components/ServicePage";
 import { WireframeViewer } from "@/components/WireframeViewer";
-import { solidAccentStates } from "@/lib/button-states";
+import { solidBrandStates } from "@/lib/button-states";
 import appImg from "@/assets/uxui/app.jpg.asset.json";
 import wire1 from "@/assets/uxui/wire1.png.asset.json";
 import wire2 from "@/assets/uxui/wire2.png.asset.json";
@@ -94,7 +94,7 @@ function WebDesignPage() {
                       href="https://sites.google.com/view/mabasaelearning/elearning-development/elearning-multimedia"
                       target="_blank"
                       rel="noreferrer"
-                      className={`inline-flex items-center justify-center gap-2 rounded-sm border-2 border-accent bg-accent px-5 py-2.5 text-xs uppercase tracking-[0.15em] text-accent-foreground shadow-none hover:bg-accent hover:text-accent-foreground ${solidAccentStates}`}
+                      className={`inline-flex items-center justify-center gap-2 rounded-sm border-2 border-btn-primary bg-btn-primary px-5 py-2.5 text-xs uppercase tracking-[0.15em] text-btn-primary-foreground shadow-none ${solidBrandStates}`}
                     >
                     View the App Here
                     <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>

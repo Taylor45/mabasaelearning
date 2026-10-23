@@ -25,6 +25,8 @@
   --color-ink: var(--ink);
   --color-brand-cyan: var(--brand-cyan);
   --color-brand-sky: var(--brand-sky);
+  --color-btn-primary: var(--btn-primary);
+  --color-btn-primary-foreground: var(--btn-primary-foreground);
   --color-surface-light: var(--surface-light);
   --color-surface-light-foreground: var(--surface-light-foreground);
   --color-menu-highlight: var(--menu-highlight);
@@ -99,6 +101,9 @@
   --ink: oklch(0.09 0 0);
   --brand-cyan: oklch(0.79 0.12 197);
   --brand-sky: oklch(0.72 0.14 245);
+  /* Solid primary action buttons — cyan sampled from the home ADDIE heading. */
+  --btn-primary: var(--brand-cyan);
+  --btn-primary-foreground: var(--primary-foreground);
   --surface-light: oklch(1 0 0);
   --surface-light-foreground: oklch(0.24 0.06 262);
   --menu-highlight: oklch(0.47 0.1 268);

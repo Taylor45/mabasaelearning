@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
 import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
-import { solidAccentStates } from "@/lib/button-states";
+import { solidBrandStates } from "@/lib/button-states";
 import app1 from "@/assets/ai-workflow-app-1.png.asset.json";
 import app2 from "@/assets/ai-workflow-app-2.png.asset.json";
 
@@ -18,9 +18,9 @@ const apps = [
 ] as { name: string; image: string; guide?: string; app?: string }[];
 
 const buttonBase =
-  "h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-accent px-4 py-2.5 text-xs uppercase tracking-normal shadow-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card lg:w-auto lg:justify-center lg:px-5";
-const buttonOutline = `${buttonBase} bg-transparent text-card-foreground`;
-const buttonSolid = `${buttonBase} bg-accent text-accent-foreground ${solidAccentStates}`;
+  "h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 px-4 py-2.5 text-xs uppercase tracking-normal shadow-none lg:w-auto lg:justify-center lg:px-5";
+const buttonOutline = `${buttonBase} border-accent bg-transparent text-card-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card`;
+const buttonSolid = `${buttonBase} border-btn-primary bg-btn-primary text-btn-primary-foreground ${solidBrandStates}`;
 
 export const Route = createFileRoute("/ai-in-elearning")({
   head: () => ({
