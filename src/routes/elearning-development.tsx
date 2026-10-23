@@ -223,7 +223,7 @@ function ELearningPage() {
                     <h2 className="font-inter text-xl font-bold text-surface-light">
                       {block.title}
                     </h2>
-                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-surface-light/90 [text-shadow:0_0_1px_rgba(0,8,30,1),0_0_5px_rgba(0,8,30,0.95),0_1px_12px_rgba(0,8,30,0.9)]">
+                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-surface-light/90">
                       {block.copy}
                     </p>
                     <div className="mt-5 flex flex-wrap justify-center gap-2">
