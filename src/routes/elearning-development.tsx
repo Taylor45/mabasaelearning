@@ -205,14 +205,14 @@ function ELearningPage() {
                       {block.title}
                     </h2>
                   </div>
-                  <p className="mt-6 flex-1 px-1 text-center text-[0.95rem] leading-relaxed text-foreground/75">
+                  <p className="mt-6 flex-1 px-1 text-center text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
                     {block.copy}
                   </p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
                     {block.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-foreground/15 bg-surface-light px-3.5 py-1.5 text-[0.72rem] font-semibold text-foreground/70"
+                        className="rounded-full border border-surface-light-foreground/20 bg-surface-light px-3.5 py-1.5 text-[0.72rem] font-semibold text-surface-light-foreground/75"
                       >
                         {tag}
                       </span>
