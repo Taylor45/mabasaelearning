@@ -200,7 +200,7 @@ function ELearningPage() {
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col items-center text-center">
-                  <div className="surface-hero flex min-h-20 w-full items-center justify-center rounded-2xl border border-foreground/15 px-5 py-4 shadow-[10px_10px_24px_rgba(0,8,30,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[12px_14px_30px_rgba(0,8,30,0.26)]">
+                  <div className="surface-hero flex min-h-20 w-full items-center justify-center rounded-2xl border border-foreground/25 px-5 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.10),10px_10px_24px_rgba(0,8,30,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.16),12px_14px_30px_rgba(0,8,30,0.3)]">
                     <h2 className="font-inter text-xl font-bold text-foreground">
                       {block.title}
                     </h2>
