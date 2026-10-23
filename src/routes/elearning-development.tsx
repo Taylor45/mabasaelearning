@@ -209,7 +209,7 @@ function ELearningPage() {
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col">
-                  <div className="flex h-full flex-col items-center rounded-2xl border-2 border-surface-light-foreground/40 bg-surface-light/60 px-6 py-7 text-center shadow-[10px_10px_24px_rgba(0,8,30,0.2)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-surface-light-foreground/60 hover:bg-surface-light/75 hover:shadow-[12px_14px_30px_rgba(0,8,30,0.26)]">
+                  <div className="flex h-full flex-col items-center rounded-2xl border-2 border-surface-light-foreground/40 bg-surface-light/70 px-6 py-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.7),inset_0_-1px_0_rgba(0,8,30,0.14),0_26px_50px_-18px_rgba(0,8,30,0.72),0_10px_22px_-10px_rgba(0,8,30,0.5)] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-surface-light-foreground/60 hover:bg-surface-light/80 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),inset_0_-1px_0_rgba(0,8,30,0.18),0_36px_64px_-20px_rgba(0,8,30,0.8),0_16px_30px_-12px_rgba(0,8,30,0.6)]">
                     <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
                       {block.title}
                     </h2>
@@ -220,7 +220,7 @@ function ELearningPage() {
                       {block.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-surface-light-foreground/30 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/80"
+                          className="rounded-full border border-surface-light-foreground/30 bg-surface-light/50 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/85 shadow-[0_1px_2px_rgba(0,8,30,0.18)]"
                         >
                           {tag}
                         </span>
