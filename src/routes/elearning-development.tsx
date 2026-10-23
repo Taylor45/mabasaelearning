@@ -207,7 +207,7 @@ function ELearningPage() {
                   <div
                     tabIndex={0}
                     aria-labelledby={`dev-block-title-${blockIndex}`}
-                    className="surface-hero flex min-h-24 w-full items-center justify-center rounded-2xl border border-foreground/25 px-5 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.10),10px_10px_24px_rgba(0,8,30,0.25)] outline-none transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.16),12px_14px_30px_rgba(0,8,30,0.3)] focus-visible:ring-4 focus-visible:ring-btn-primary focus-visible:ring-offset-4 focus-visible:ring-offset-surface-light focus-visible:shadow-[0_0_0_1px_rgba(255,255,255,0.16)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                    className="surface-hero flex min-h-24 w-full items-center justify-center rounded-2xl border border-foreground/25 px-5 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.10),10px_10px_24px_rgba(0,8,30,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.16),12px_14px_30px_rgba(0,8,30,0.3)] focus-visible:outline-[3px] focus-visible:outline-btn-primary focus-visible:outline-offset-[5px] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                   >
                     <h2
                       id={`dev-block-title-${blockIndex}`}
