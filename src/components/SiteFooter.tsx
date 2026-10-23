@@ -72,7 +72,7 @@ export function SiteFooter() {
                   href="mailto:brucemabasa4@gmail.com"
                   className="inline-flex items-center gap-3 hover:text-foreground"
                 >
-                  <Mail aria-hidden="true" size={16} className="shrink-0 text-brand-cyan" />
+                  <SolidMail width={16} height={16} className="shrink-0 text-brand-cyan" />
                   brucemabasa4@gmail.com
                 </a>
               </li>
@@ -81,12 +81,12 @@ export function SiteFooter() {
                   href="tel:+27825965691"
                   className="inline-flex items-center gap-3 hover:text-foreground"
                 >
-                  <Phone aria-hidden="true" size={16} className="shrink-0 text-brand-cyan" />
+                  <SolidPhone width={16} height={16} className="shrink-0 text-brand-cyan" />
                   +27 (0) 82 596 5691
                 </a>
               </li>
               <li className="inline-flex items-center gap-3">
-                <MapPin aria-hidden="true" size={16} className="shrink-0 text-brand-cyan" />
+                <SolidMapPin width={16} height={16} className="shrink-0 text-brand-cyan" />
                 Gauteng, South Africa &amp; Remote Global
               </li>
               <li>
@@ -96,7 +96,7 @@ export function SiteFooter() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-3 hover:text-foreground"
                 >
-                  <Linkedin aria-hidden="true" size={16} className="shrink-0 text-brand-cyan" />
+                  <SolidLinkedin width={16} height={16} className="shrink-0 text-brand-cyan" />
                   Let`s Connect: LinkedIn
                 </a>
               </li>
