@@ -219,7 +219,7 @@ function ELearningPage() {
 
               {blocks.map((block) => (
                 <article key={block.title} className="flex flex-col">
-                  <div className="flex h-full flex-col items-center rounded-2xl border border-surface-light-foreground/10 bg-surface-light px-6 py-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-1px_0_rgba(0,8,30,0.06),0_26px_50px_-18px_rgba(0,8,30,0.55),0_10px_22px_-10px_rgba(0,8,30,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),inset_0_-1px_0_rgba(0,8,30,0.08),0_36px_64px_-20px_rgba(0,8,30,0.65),0_16px_30px_-12px_rgba(0,8,30,0.45)]">
+                  <div className="flex h-full flex-col items-center rounded-2xl bg-surface-light px-6 py-7 text-center shadow-[0_20px_44px_-16px_rgba(0,8,30,0.4),0_8px_18px_-10px_rgba(0,8,30,0.22)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_60px_-18px_rgba(0,8,30,0.5),0_12px_26px_-12px_rgba(0,8,30,0.3)]">
                     <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
                       {block.title}
                     </h2>
