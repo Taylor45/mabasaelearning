@@ -195,7 +195,7 @@ function ELearningPage() {
           </div>
         </section>
 
-        <section className="bg-surface-light">
+        <section className="flow-root bg-surface-light">
           <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {blocks.map((block) => (
