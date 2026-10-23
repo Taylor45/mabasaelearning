@@ -219,7 +219,7 @@ function CardRow({
               key={item.title}
               to={item.to}
               aria-label={`Explore ${item.title}`}
-              className="group flex min-w-0 flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
+              className="card-grow group flex min-w-0 flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-colors duration-300 hover:border-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
             >
               <img
                 src={item.img}
@@ -553,7 +553,7 @@ function Index() {
               {addieStages.map((stage, i) => (
                 <div
                   key={stage.title}
-                  className={`rounded-xl border border-surface-light-foreground/12 bg-surface-light px-4 py-4 text-center text-surface-light-foreground shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)] sm:rounded-[14px] sm:px-[clamp(16px,2.2vw,22px)] sm:py-[clamp(18px,2.5vw,24px)] ${
+                  className={`card-grow rounded-xl border border-surface-light-foreground/12 bg-surface-light px-4 py-4 text-center text-surface-light-foreground shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-colors duration-300 hover:border-accent/40 sm:rounded-[14px] sm:px-[clamp(16px,2.2vw,22px)] sm:py-[clamp(18px,2.5vw,24px)] ${
                     i === addieStages.length - 1
                       ? "md:col-span-2 md:mx-auto md:w-[calc(50%-9px)]"
                       : ""
