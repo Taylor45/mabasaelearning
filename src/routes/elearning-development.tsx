@@ -183,7 +183,7 @@ function ELearningPage() {
       <SiteHeader />
       <main className="flex-1">
         <section className="surface-hero">
-          <div className="mx-auto max-w-6xl px-5 py-20">
+          <div className="mx-auto max-w-6xl px-5 pt-20 pb-32 sm:pb-36">
             <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               Development &amp; AI
             </span>
@@ -195,17 +195,13 @@ function ELearningPage() {
           </div>
         </section>
 
-        <div className="surface-hero">
-          <div className="h-0.5 w-full bg-foreground" />
-        </div>
-
         <section className="bg-surface-light">
-          <div className="mx-auto max-w-6xl px-5 py-16">
+          <div className="relative mx-auto -mt-16 max-w-6xl px-5 pb-16 sm:-mt-20">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {blocks.map((block) => (
                 <article
                   key={block.title}
-                  className="flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
+                  className="flex flex-col items-center rounded-2xl bg-surface-light p-8 text-center shadow-[0_18px_40px_rgba(0,8,30,0.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,8,30,0.28)]"
                 >
                   <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
                     {block.title}
@@ -213,7 +209,7 @@ function ELearningPage() {
                   <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
                     {block.copy}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-6 flex flex-wrap justify-center gap-2">
                     {block.tags.map((tag) => (
                       <span
                         key={tag}
