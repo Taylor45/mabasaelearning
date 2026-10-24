@@ -19,6 +19,11 @@ import ispringSafety1 from "@/assets/ispring-safety-1.png.asset.json";
 const buttonStates =
   "hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card";
 
+// "Design Process" buttons read as secondary: a white outline on the navy card,
+// no fill, no lift, no drop shadow — just a visible keyboard-focus ring.
+const outlineButtonStates =
+  "hover:bg-transparent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-card";
+
 export const Route = createFileRoute("/elearning-development")({
   head: () => ({
     meta: [
@@ -273,9 +278,12 @@ function ELearningPage() {
                       <h3 className="font-inter text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {project.links.map((link, li) => {
-                          const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-0 bg-primary px-4 py-2.5 text-xs uppercase tracking-normal text-primary-foreground shadow-none lg:w-auto lg:justify-center lg:px-5 ${buttonStates} ${
-                            li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""
-                          }`;
+                          const isSecondary = link.label === "Design Process";
+                          const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm px-4 py-2.5 text-xs uppercase tracking-normal shadow-none lg:w-auto lg:justify-center lg:px-5 ${
+                            isSecondary
+                              ? `border border-white bg-transparent text-white ${outlineButtonStates}`
+                              : `border-0 bg-primary text-primary-foreground ${buttonStates}`
+                          } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`;
                           const inner = (
                             <>
                               <span className="min-w-0 break-words">{link.label}</span>
