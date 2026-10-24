@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/design-process/hero.png";
 import courseImg from "@/assets/design-process/course.png";
 import thumbLink from "@/assets/design-process/thumb-link.png";
@@ -286,15 +287,14 @@ function DesignProcessPage() {
                 className="w-full transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </a>
-            <a
+            <Button asChild variant="portfolio" className="mt-4"><a
               href={COURSE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 rounded-sm border-2 border-btn-primary px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-btn-primary hover:text-btn-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2"
             >
               Click to view course
               <span aria-hidden="true">→</span>
-            </a>
+            </a></Button>
           </div>
           </div>
         </div>
@@ -312,15 +312,14 @@ function DesignProcessPage() {
             >
               <div className="grid grid-cols-1 items-center gap-4 border-b border-border px-4 py-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:px-6">
                 <h3 className="min-w-0 text-lg">{m.title}</h3>
-                <a
+                <Button asChild variant="portfolio"><a
                   href={m.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-sm border-2 border-btn-primary px-5 py-2.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-btn-primary hover:text-btn-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                 >
                   Open {m.kind}
                   <span aria-hidden="true">→</span>
-                </a>
+                </a></Button>
               </div>
               <iframe
                 src={m.embed}

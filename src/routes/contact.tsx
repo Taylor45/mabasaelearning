@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { solidPrimaryStates } from "@/lib/button-states";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -43,22 +43,19 @@ function ContactPage() {
             </p>
             <div className="mt-10 flex flex-col items-center gap-3">
               {channels.map((c) => (
-                <a
-                  key={c.label}
+                <Button asChild variant={c.label === "LinkedIn" ? "portfolioOutline" : "portfolio"} key={c.label} className="w-full max-w-sm"><a
                   href={c.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full max-w-sm rounded-sm border border-border bg-primary/0 px-6 py-3 font-display transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
                   {c.value}
-                </a>
+                </a></Button>
               ))}
-              <a
+              <Button asChild variant="portfolio" className="w-full max-w-sm"><a
                 href="mailto:hello@example.com"
-                className={`w-full max-w-sm rounded-sm bg-primary px-6 py-3 font-display text-primary-foreground ${solidPrimaryStates}`}
               >
                 Send an Email
-              </a>
+              </a></Button>
             </div>
           </div>
         </section>

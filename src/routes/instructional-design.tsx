@@ -3,7 +3,6 @@ import { ServicePage } from "@/components/ServicePage";
 import * as Dialog from "@radix-ui/react-dialog";
 import { DocumentPreviewFrame, PreviewDialog } from "@/components/DocumentPreview";
 import { Button } from "@/components/ui/button";
-import { solidBrandStates } from "@/lib/button-states";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
@@ -105,8 +104,8 @@ function InstructionalDesignPage() {
                       <Dialog.Trigger asChild>
                         <Button
                           type="button"
-                          variant="outline"
-                          className={`mt-auto h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 border-btn-primary bg-btn-primary px-4 py-2.5 text-xs uppercase tracking-normal text-btn-primary-foreground shadow-none lg:w-auto lg:justify-center lg:px-5 ${solidBrandStates}`}
+                          variant="portfolio"
+                          className="mt-auto w-full min-w-0 justify-between lg:w-auto lg:justify-center"
                         >
                           <span className="min-w-0 break-words">{item.action}</span>
                           <span className="shrink-0" aria-hidden="true">→</span>

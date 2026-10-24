@@ -55,7 +55,7 @@ export function DocumentPreviewButton({ href, title, className, children }: {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button type="button" variant="outline" title={`Preview: ${title}`} className={className}>
+        <Button type="button" variant="portfolio" title={`Preview: ${title}`} className={className}>
           {children}
         </Button>
       </Dialog.Trigger>
