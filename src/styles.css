@@ -27,6 +27,9 @@
   --color-brand-sky: var(--brand-sky);
   --color-btn-primary: var(--btn-primary);
   --color-btn-primary-foreground: var(--btn-primary-foreground);
+  --color-btn-navy: var(--btn-navy);
+  --color-btn-navy-deep: var(--btn-navy-deep);
+  --color-btn-navy-glow: var(--btn-navy-glow);
   --color-surface-light: var(--surface-light);
   --color-surface-light-foreground: var(--surface-light-foreground);
   --color-menu-highlight: var(--menu-highlight);
@@ -104,6 +107,11 @@
   /* Solid primary action buttons — cyan sampled from the home ADDIE heading. */
   --btn-primary: var(--brand-cyan);
   --btn-primary-foreground: var(--primary-foreground);
+  /* Deep-navy hover pair for the eLearning Development action buttons:
+     navy fill on hover, darker navy when pressed, soft light-blue glow. */
+  --btn-navy: oklch(0.3612 0.11806 259.699);
+  --btn-navy-deep: oklch(0.2948 0.09534 259.535);
+  --btn-navy-glow: oklch(0.7155 0.08681 254.816);
   --surface-light: oklch(1 0 0);
   --surface-light-foreground: oklch(0.24 0.06 262);
   --menu-highlight: oklch(0.47 0.1 268);
