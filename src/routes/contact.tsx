@@ -49,7 +49,7 @@ function ContactPage() {
                   rel="noreferrer"
                 >
                   {c.value}
-                </a></Button></Button>
+                </a></Button>
               ))}
               <Button asChild variant="portfolio" className="w-full max-w-sm"><a
                 href="mailto:hello@example.com"
