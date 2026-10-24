@@ -4,7 +4,6 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
-import { solidBrandStates } from "@/lib/button-states";
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
 import storylineAiLiteracy from "@/assets/storyline-ai-literacy.png.asset.json";
 import geniallyGuide1 from "@/assets/genially-guide-1.png.asset.json";
@@ -270,9 +269,11 @@ function ELearningPage() {
                         {project.links.map((link, li) => {
                           const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 px-4 py-2.5 text-xs uppercase tracking-normal shadow-none lg:w-auto lg:justify-center lg:px-5 ${
                             li > 0
-                              ? `border-btn-primary bg-btn-primary text-btn-primary-foreground ${solidBrandStates}`
-                              : "border-btn-primary bg-transparent text-card-foreground hover:bg-btn-primary hover:text-btn-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
-                          } ${li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""}`;
+                              ? "border-btn-primary bg-btn-primary text-btn-primary-foreground"
+                              : "border-btn-primary bg-transparent text-card-foreground"
+                          } ${buttonHoverStates} ${
+                            li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""
+                          }`;
                           const inner = (
                             <>
                               <span className="min-w-0 break-words">{link.label}</span>
