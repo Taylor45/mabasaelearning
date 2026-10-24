@@ -13,6 +13,7 @@ import digitalEbook1 from "@/assets/digital-ebook-1.png.asset.json";
 import ispringCourse1 from "@/assets/ispring-course-1.png.asset.json";
 import ispringCourse2 from "@/assets/ispring-course-2.png.asset.json";
 import ispringSafety1 from "@/assets/ispring-safety-1.png.asset.json";
+import elearningHeroBg from "@/assets/elearning-hero-bg.jpg.asset.json";
 
 import { actionPrimary, actionSecondary } from "@/lib/action-buttons";
 
@@ -184,8 +185,16 @@ function ELearningPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <section className="surface-hero">
-          <div className="mx-auto max-w-6xl px-5 pt-20 pb-36 sm:pb-44">
+        <section className="relative overflow-hidden">
+          <img
+            src={elearningHeroBg.url}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="surface-hero-scrim absolute inset-0" aria-hidden="true" />
+          <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-36 sm:pb-44">
             <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               Development &amp; AI
             </span>

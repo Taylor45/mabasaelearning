@@ -199,6 +199,16 @@
   background-image: var(--gradient-band);
 }
 
+/* Dark scrim over photo hero backgrounds so titles stay readable. */
+@utility surface-hero-scrim {
+  background-image: linear-gradient(
+    100deg,
+    oklch(0.1 0.06 262 / 0.95) 0%,
+    oklch(0.12 0.07 262 / 0.78) 45%,
+    oklch(0.13 0.07 262 / 0.42) 100%
+  );
+}
+
 @utility shadow-elevated {
   box-shadow: var(--shadow-elevated);
 }
