@@ -15,3 +15,4 @@
 - Use the shared header's Radix menu on desktop and focus-managed sheet on mobile so all portfolio navigation remains keyboard and touch accessible.
 - Keep audio comparisons in a shared browser-side player with dynamically imported WaveSurfer and native audio controls; coordinate playback so recordings never overlap.
 - Use the shared portfolio Button variants and action recipes for text actions, including document triggers; keep icon-only tools separate so presentation stays consistent without changing media controls.
+- Keep service overview cards in the shared ServiceFeatures component so every service page uses the same overlapping header layout and accessible focus styling.

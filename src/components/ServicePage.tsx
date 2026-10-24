@@ -2,7 +2,9 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
-export type ServiceBlock = { title: string; copy: string; tags: string[] };
+import { ServiceFeatures, type ServiceBlock } from "@/components/ServiceFeatures";
+
+export type { ServiceBlock } from "@/components/ServiceFeatures";
 
 export function ServicePage({
   eyebrow,
@@ -22,7 +24,7 @@ export function ServicePage({
       <SiteHeader />
       <main className="flex-1">
         <section className="surface-hero">
-          <div className="mx-auto max-w-6xl px-5 py-20">
+          <div className="mx-auto max-w-6xl px-5 pt-20 pb-36 sm:pb-44">
             <div>
               <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
                 {eyebrow}
@@ -35,39 +37,7 @@ export function ServicePage({
           </div>
         </section>
 
-        <div className="surface-hero">
-          <div className="h-0.5 w-full bg-foreground" />
-        </div>
-
-        <section className="bg-surface-light">
-          <div className="mx-auto max-w-6xl px-5 py-16">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {blocks.map((block) => (
-                <article
-                  key={block.title}
-                  className="flex flex-col rounded-2xl border border-surface-light-foreground/12 bg-surface-light p-7 shadow-[0_2px_10px_rgba(0,8,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,8,30,0.14)]"
-                >
-                  <h2 className="font-inter text-xl font-bold text-surface-light-foreground">
-                    {block.title}
-                  </h2>
-                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                    {block.copy}
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {block.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceFeatures blocks={blocks} />
 
         {children}
       </main>

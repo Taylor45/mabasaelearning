@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ServiceFeatures } from "@/components/ServiceFeatures";
 import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import storylineStakeholder from "@/assets/storyline-stakeholder-communication.png.asset.json";
@@ -196,48 +197,7 @@ function ELearningPage() {
           </div>
         </section>
 
-        <section className="flow-root bg-surface-light">
-          <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
-            <div className="grid items-stretch gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-              {blocks.map((block, blockIndex) => (
-                <article
-                  key={block.title}
-                  aria-labelledby={`dev-block-title-${blockIndex}`}
-                  className="flex flex-col items-center text-center"
-                >
-                  <div
-                    tabIndex={0}
-                    aria-labelledby={`dev-block-title-${blockIndex}`}
-                    className="surface-hero dev-card-focus flex min-h-24 w-full origin-center items-center justify-center rounded-2xl border border-foreground/25 px-5 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.10),10px_10px_24px_rgba(0,8,30,0.25)] transition-[transform,box-shadow] duration-300 ease-out hover:scale-[1.045] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.16),14px_18px_36px_rgba(0,8,30,0.32)] motion-reduce:transition-none motion-reduce:hover:scale-100"
-                  >
-                    <h2
-                      id={`dev-block-title-${blockIndex}`}
-                      className="font-inter text-xl font-bold text-foreground"
-                    >
-                      {block.title}
-                    </h2>
-                  </div>
-                  <p className="mt-5 flex-1 px-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-                    {block.copy}
-                  </p>
-                  <ul
-                    aria-label="Tools and techniques used"
-                    className="mt-5 flex list-none flex-wrap justify-center gap-2 p-0"
-                  >
-                    {block.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceFeatures blocks={blocks} />
 
         {sections.map((section) => (
           <section key={section.title}>
