@@ -206,7 +206,7 @@ function ELearningPage() {
           </div>
         </section>
 
-        <ServiceFeatures blocks={blocks} />
+        <ServiceFeatures blocks={blocks} titleStyle="hero" />
 
         {sections.map((section) => (
           <section key={section.title}>

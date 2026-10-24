@@ -303,6 +303,10 @@
   transform: scale(1.045);
   box-shadow: var(--shadow-feature-hover);
 }
+/* Page opt-in: deep midnight navy -> royal indigo instead of the brand blue. */
+.service-feature-title-hero {
+  background-image: var(--gradient-hero);
+}
 @media (prefers-reduced-motion: reduce) {
   .service-feature-title,
   .service-feature-title:hover {
