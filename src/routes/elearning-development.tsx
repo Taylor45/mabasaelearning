@@ -273,11 +273,7 @@ function ELearningPage() {
                       <h3 className="font-inter text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {project.links.map((link, li) => {
-                          const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-2 px-4 py-2.5 text-xs uppercase tracking-normal shadow-none lg:w-auto lg:justify-center lg:px-5 ${
-                            li > 0
-                              ? "border-btn-primary bg-btn-primary text-btn-primary-foreground"
-                              : "border-btn-primary bg-transparent text-card-foreground"
-                          } ${buttonHoverStates} ${
+                          const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-0 bg-primary px-4 py-2.5 text-xs uppercase tracking-normal text-primary-foreground shadow-none lg:w-auto lg:justify-center lg:px-5 ${buttonHoverStates} ${
                             li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""
                           }`;
                           const inner = (
