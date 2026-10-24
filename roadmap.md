@@ -1,4 +1,4 @@
 - [x] Fix the top navigation for phones and tablets.
 - [x] Fix mobile content sizing and verify portfolio pages at narrow widths.
 - [x] Delete the "How cool is that?" page and remove it from the header.
-- [ ] Unify text action buttons across all pages and verify previews and focus.
+- [x] Unify text action buttons across all pages and verify previews and focus.
