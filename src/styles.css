@@ -254,6 +254,36 @@
 }
 
 /*
+ * Opt-in hover animation for text actions: the button smoothly grows and
+ * lifts with a soft glow, then shrinks back to its exact original size on
+ * leave. Unlayered and doubled-class so it beats the base no-hover recipe.
+ */
+.portfolio-action-hover {
+  transition-property: transform, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+.portfolio-action.portfolio-action-hover:hover,
+.portfolio-action.portfolio-action-hover:focus-visible {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 14px 30px rgba(4, 12, 34, 0.28), 0 0 0 1px rgba(34, 211, 238, 0.35);
+}
+.portfolio-action.portfolio-action-hover:active {
+  transform: scale(0.99) translateY(0);
+  box-shadow: 0 6px 14px rgba(4, 12, 34, 0.22);
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-action.portfolio-action-hover,
+  .portfolio-action.portfolio-action-hover:hover,
+  .portfolio-action.portfolio-action-hover:active {
+    transition: none;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+
+/*
  * Strong keyboard-focus indicator for the interactive gradient cards.
  * Deliberately unlayered so no Tailwind utility can override it.
  */
