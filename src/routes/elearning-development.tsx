@@ -13,10 +13,11 @@ import ispringCourse1 from "@/assets/ispring-course-1.png.asset.json";
 import ispringCourse2 from "@/assets/ispring-course-2.png.asset.json";
 import ispringSafety1 from "@/assets/ispring-safety-1.png.asset.json";
 
-// These buttons keep a visible keyboard-focus ring only: no hover fill, no lift,
-// no drop shadow.
-const buttonFocusStates =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card";
+// These buttons hold their white look: the hover classes below only pin the
+// colours in place so the button variant's own indigo hover never shows.
+// No lift, no drop shadow — just a visible keyboard-focus ring.
+const buttonStates =
+  "hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card";
 
 export const Route = createFileRoute("/elearning-development")({
   head: () => ({
@@ -272,7 +273,7 @@ function ELearningPage() {
                       <h3 className="font-inter text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {project.links.map((link, li) => {
-                          const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-0 bg-primary px-4 py-2.5 text-xs uppercase tracking-normal text-primary-foreground shadow-none lg:w-auto lg:justify-center lg:px-5 ${buttonFocusStates} ${
+                          const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm border-0 bg-primary px-4 py-2.5 text-xs uppercase tracking-normal text-primary-foreground shadow-none lg:w-auto lg:justify-center lg:px-5 ${buttonStates} ${
                             li === 0 && project.links.length > 1 ? "lg:mr-auto" : ""
                           }`;
                           const inner = (
