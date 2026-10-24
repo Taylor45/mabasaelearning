@@ -285,6 +285,7 @@
 }
 
 .service-feature-title {
+  background-image: linear-gradient(120deg, #0047b3, #1da8e2);
   box-shadow: var(--shadow-feature);
   transition: transform 300ms ease-out, box-shadow 300ms ease-out;
 }
