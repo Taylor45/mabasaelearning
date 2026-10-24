@@ -1,6 +1,12 @@
 export type ServiceBlock = { title: string; copy: string; tags: string[] };
 
-export function ServiceFeatures({ blocks }: { blocks: ServiceBlock[] }) {
+export function ServiceFeatures({
+  blocks,
+  titleStyle = "brand",
+}: {
+  blocks: ServiceBlock[];
+  titleStyle?: "brand" | "hero";
+}) {
   return (
     <section aria-label="Service expertise" className="flow-root bg-surface-light">
       <div className="relative mx-auto -mt-14 max-w-6xl px-5 pb-16 sm:-mt-16">
