@@ -14,3 +14,4 @@
 - Keep multimedia video previews in a shared Radix Dialog viewer with only one player mounted per video so fullscreen dismissal restores focus and prevents duplicate audio.
 - Use the shared header's Radix menu on desktop and focus-managed sheet on mobile so all portfolio navigation remains keyboard and touch accessible.
 - Keep audio comparisons in a shared browser-side player with dynamically imported WaveSurfer and native audio controls; coordinate playback so recordings never overlap.
+- Use the shared portfolio Button variants and action recipes for text actions, including document triggers; keep icon-only tools separate so presentation stays consistent without changing media controls.

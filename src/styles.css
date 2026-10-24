@@ -201,6 +201,56 @@
   box-shadow: var(--shadow-elevated);
 }
 
+/* Shared text actions; icon-only navigation and media controls stay independent. */
+.portfolio-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  height: auto;
+  max-width: 100%;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.portfolio-action-primary,
+.portfolio-action-primary:hover,
+.portfolio-action-primary:active {
+  background: var(--surface-light);
+  color: var(--primary-foreground);
+  border: 0;
+}
+.portfolio-action-secondary,
+.portfolio-action-secondary:hover,
+.portfolio-action-secondary:active {
+  background: transparent;
+  color: var(--surface-light);
+  border: 1px solid var(--surface-light);
+}
+.portfolio-action,
+.portfolio-action:hover,
+.portfolio-action:active {
+  box-shadow: none;
+  transform: none;
+  filter: none;
+  transition: none;
+}
+.portfolio-action:focus-visible {
+  outline: 2px solid var(--brand-cyan);
+  outline-offset: 4px;
+  box-shadow: none;
+}
+.portfolio-action-secondary:focus-visible {
+  outline-color: var(--surface-light);
+}
+
 /*
  * Strong keyboard-focus indicator for the interactive gradient cards.
  * Deliberately unlayered so no Tailwind utility can override it.
