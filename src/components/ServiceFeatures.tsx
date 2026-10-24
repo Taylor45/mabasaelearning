@@ -11,9 +11,9 @@ export function ServiceFeatures({ blocks }: { blocks: ServiceBlock[] }) {
                 <h2 id={`service-block-title-${index}`} className="font-inter text-xl font-bold text-foreground">{block.title}</h2>
               </div>
               <p className="mt-5 flex-1 px-2 text-[0.95rem] leading-relaxed text-surface-light-foreground/75">{block.copy}</p>
-              <ul aria-label="Tools and techniques used" className="mt-5 flex list-none flex-wrap justify-center gap-2 p-0">
+              <ul aria-label="Tools and techniques used" className="mt-5 flex list-none flex-wrap justify-center gap-1.5 p-0">
                 {block.tags.map((tag) => (
-                  <li key={tag} className="rounded-full border border-surface-light-foreground/20 px-3 py-1 text-[0.7rem] font-semibold text-surface-light-foreground/70">{tag}</li>
+                  <li key={tag} className="whitespace-nowrap rounded-full border-[1.2px] border-[#1DA8E2]/50 bg-white px-[9px] py-1 text-[8.5px] font-semibold uppercase tracking-[0.02em] text-[#0047B3] transition-all duration-200 hover:-translate-y-px hover:border-transparent hover:bg-[linear-gradient(120deg,#19D4C8,#1DA8E2)] hover:text-white sm:px-[11px] sm:py-[5px] sm:text-[9px]">{tag}</li>
                 ))}
               </ul>
             </article>
