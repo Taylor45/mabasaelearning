@@ -431,14 +431,14 @@ function Index() {
                 </button>
               </div>
               <div className="mt-10 flex w-full max-w-sm flex-col gap-4">
-                <Button asChild variant="portfolioOutline" className="portfolio-action-hover"><a
+                <Button asChild variant="portfolioOutline"><a
                   href="https://www.linkedin.com/in/bruce-mabasa-12121426a"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Let`s Connect: LinkedIn
                 </a></Button>
-                <Button asChild variant="portfolio" className="portfolio-action-hover"><a
+                <Button asChild variant="portfolio"><a
                   href="#"
                 >
                   View Resume
