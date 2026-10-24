@@ -2,3 +2,4 @@
 - [x] Fix mobile content sizing and verify portfolio pages at narrow widths.
 - [x] Delete the "How cool is that?" page and remove it from the header.
 - [x] Unify text action buttons across all pages and verify previews and focus.
+- [ ] Match the other service pages to the overlapping gradient feature cards and verify desktop/mobile layouts.
