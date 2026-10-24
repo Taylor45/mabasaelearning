@@ -13,6 +13,12 @@ import ispringCourse1 from "@/assets/ispring-course-1.png.asset.json";
 import ispringCourse2 from "@/assets/ispring-course-2.png.asset.json";
 import ispringSafety1 from "@/assets/ispring-safety-1.png.asset.json";
 
+// Hover treatment for this page's action buttons: the fill turns deep navy and a
+// soft glow in the same blue family spreads underneath; pressing sinks to a darker
+// navy and drops the glow. Tokens only — see --btn-navy* in src/styles.css.
+const buttonHoverStates =
+  "transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-btn-navy hover:text-foreground hover:shadow-xl hover:shadow-btn-navy-glow/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card active:translate-y-0.5 active:scale-[0.98] active:bg-btn-navy-deep active:shadow-none motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:translate-y-0 motion-reduce:active:scale-100";
+
 export const Route = createFileRoute("/elearning-development")({
   head: () => ({
     meta: [
