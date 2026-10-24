@@ -80,8 +80,8 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
       {
         name: "ADDIE Instructional Design Model",
         links: [
-          { label: "Design Process", href: "https://docs.google.com/document/d/119C3v8BY-gFXwdF89U8fu9tp6kT-b0idIahm7uO7evs/edit?usp=sharing", preview: true },
           { label: "View Course", href: "https://view.genially.com/6941bdb422107ef3f6f9798b" },
+          { label: "Design Process", href: "https://docs.google.com/document/d/119C3v8BY-gFXwdF89U8fu9tp6kT-b0idIahm7uO7evs/edit?usp=sharing", preview: true },
         ],
         images: [geniallyGuide1.url, geniallyGuide2.url],
       },
