@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { solidBrandStates, solidPrimaryStates } from "@/lib/button-states";
+import { solidBrandStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 import portrait from "@/assets/melvon-portrait.png";
@@ -431,20 +431,18 @@ function Index() {
                 </button>
               </div>
               <div className="mt-10 flex w-full max-w-sm flex-col gap-4">
-                <a
+                <Button asChild variant="portfolioOutline"><a
                   href="https://www.linkedin.com/in/bruce-mabasa-12121426a"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-sm border border-foreground/70 px-6 py-2.5 text-center font-display transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
                   Let`s Connect: LinkedIn
-                </a>
-                <a
+                </a></Button>
+                <Button asChild variant="portfolio"><a
                   href="#"
-                  className={`rounded-sm bg-primary px-6 py-2.5 text-center font-display text-primary-foreground ${solidPrimaryStates}`}
                 >
                   View Resume
-                </a>
+                </a></Button>
               </div>
               {clientsOpen && (
                 <div
