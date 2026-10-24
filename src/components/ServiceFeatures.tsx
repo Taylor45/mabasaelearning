@@ -2,7 +2,7 @@ export type ServiceBlock = { title: string; copy: string; tags: string[] };
 
 export function ServiceFeatures({
   blocks,
-  titleStyle = "brand",
+  titleStyle = "hero",
 }: {
   blocks: ServiceBlock[];
   titleStyle?: "brand" | "hero";
