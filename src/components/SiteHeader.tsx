@@ -84,7 +84,7 @@ export function SiteHeader() {
             </Button>
           </SheetTrigger>
           <SheetContent
-            className="w-[min(90vw,360px)] overflow-y-auto border-border/10 bg-surface-light px-0 pt-7 text-surface-light-foreground [&>button[data-state=open]]:bg-transparent"
+            className="w-[min(90vw,360px)] overflow-y-auto border-border/10 bg-surface-light px-0 pt-7 text-surface-light-foreground"
             aria-describedby={undefined}
           >
             <SheetTitle className="px-5 font-display text-xl text-surface-light-foreground">Mabasa.</SheetTitle>
