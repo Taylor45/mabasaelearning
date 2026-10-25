@@ -384,9 +384,9 @@ function Index() {
               </p>
               <p className="mt-4 max-w-xl text-muted-foreground">
                 I stand at the intersection of{" "}
-                <span className="font-semibold text-brand-sky">Education</span>,{" "}
-                <span className="font-semibold text-brand-sky">Creativity</span>, and{" "}
-                <span className="font-semibold text-brand-sky">Technology</span>.
+                <span className="font-semibold text-gradient-accent">Education</span>,{" "}
+                <span className="font-semibold text-gradient-accent">Creativity</span>, and{" "}
+                <span className="font-semibold text-gradient-accent">Technology</span>.
               </p>
               <ul className="mt-6 space-y-3 text-muted-foreground">
                 {[
