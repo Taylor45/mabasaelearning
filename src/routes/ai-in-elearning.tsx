@@ -5,10 +5,11 @@ import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { actionPrimary, actionSecondary } from "@/lib/action-buttons";
 import app1 from "@/assets/ai-workflow-app-1.png.asset.json";
 import app2 from "@/assets/ai-workflow-app-2.png.asset.json";
+import scormintellGuide from "@/assets/scormintell-enterprise-documentation-guide.pdf.asset.json";
 
 const apps = [
-  // Guide/app links pending — buttons render without navigation until real URLs arrive.
-  { name: "PDF to SCORM Packager App", image: app1.url, guide: "#", app: "#" },
+  // App link pending — the button renders without navigation until the real URL arrives.
+  { name: "PDF to SCORM Packager App", image: app1.url, guide: scormintellGuide.url, app: "#" },
   {
     name: "Storyline Theme Generator",
     image: app2.url,
