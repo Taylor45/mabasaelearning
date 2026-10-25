@@ -38,7 +38,7 @@ export const Route = createFileRoute("/elearning-development")({
   component: ELearningPage,
 });
 
-type ProjectLink = { label: string; href: string; preview?: boolean };
+type ProjectLink = { label: string; href: string; preview?: boolean; secondary?: boolean };
 
 const sections: { title: string; blurb: string; projects: { name: string; links: ProjectLink[]; images: string[] }[] }[] = [
   {
@@ -87,7 +87,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "Digital eBook",
         links: [
           { label: "VIEW EBOOK", href: "https://read.bookcreator.com/QPcUKyNvDVPMQ5RGGKJAjxWhTP12/JDaqxZtXT6mXbh1IHZoWkQ" },
-          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing", preview: true },
+          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing", preview: true, secondary: true },
         ],
         images: [digitalEbook1.url],
       },
@@ -238,7 +238,7 @@ function ELearningPage() {
                       <h3 className="font-inter text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {project.links.map((link, li) => {
-                          const isSecondary = link.label === "Design Process";
+                          const isSecondary = link.secondary === true;
                           const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm px-4 py-2.5 text-xs uppercase tracking-normal shadow-none lg:w-auto lg:justify-center lg:px-5 ${
                             isSecondary
                               ? actionSecondary
@@ -255,6 +255,7 @@ function ELearningPage() {
                               key={link.label}
                               href={link.href}
                               title={`${link.label} — ${project.name}`}
+                              variant={isSecondary ? "portfolioOutline" : "portfolio"}
                               className={buttonClasses}
                             >
                               {inner}
