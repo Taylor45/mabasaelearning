@@ -8,7 +8,7 @@ import app2 from "@/assets/ai-workflow-app-2.png.asset.json";
 
 const apps = [
   // Guide/app links pending — buttons render without navigation until real URLs arrive.
-  { name: "Production Workflow App", image: app1.url, guide: "#", app: "#" },
+  { name: "PDF to SCORM Packager App", image: app1.url, guide: "#", app: "#" },
   {
     name: "Storyline Theme Generator",
     image: app2.url,
