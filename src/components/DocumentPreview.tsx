@@ -46,16 +46,17 @@ export function DocumentPreviewFrame({ src, title, presentation = false }: {
 }
 
 /** Button that opens a document in the shared fullscreen preview dialog. */
-export function DocumentPreviewButton({ href, title, className, children }: {
+export function DocumentPreviewButton({ href, title, className, variant = "portfolio", children }: {
   href: string;
   title: string;
   className?: string;
+  variant?: "portfolio" | "portfolioOutline";
   children: React.ReactNode;
 }) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button type="button" variant="portfolio" title={`Preview: ${title}`} className={className}>
+        <Button type="button" variant={variant} title={`Preview: ${title}`} className={className}>
           {children}
         </Button>
       </Dialog.Trigger>

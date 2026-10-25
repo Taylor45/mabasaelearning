@@ -38,7 +38,7 @@ export const Route = createFileRoute("/elearning-development")({
   component: ELearningPage,
 });
 
-type ProjectLink = { label: string; href: string; preview?: boolean };
+type ProjectLink = { label: string; href: string; preview?: boolean; secondary?: boolean };
 
 const sections: { title: string; blurb: string; projects: { name: string; links: ProjectLink[]; images: string[] }[] }[] = [
   {
@@ -50,7 +50,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "Mastering Stakeholder Communication",
         links: [
           { label: "View Course", href: "https://taylor45.github.io/Mastering-Stakeholder-Communication/" },
-          { label: "Design Process", href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/edit?usp=sharing", preview: true },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/edit?usp=sharing", preview: true, secondary: true },
         ],
         images: [
           "/__l5e/assets-v1/559cfe86-3387-41f3-9eb2-a5a03c362c4f/storyline-stakeholder-communication.png",
@@ -61,7 +61,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "AI Literacy for Instructional Design",
         links: [
           { label: "View Course", href: "https://taylor45.github.io/Storyline/" },
-          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing", preview: true },
+          { label: "Design Process", href: "https://docs.google.com/document/d/1Ayug1LSljBaM4HMgiFX-3Pg5vtfJzTMVeqQ8qWrTR0Y/edit?usp=sharing", preview: true, secondary: true },
         ],
         images: [
           "/__l5e/assets-v1/f8a711a1-f971-4a5d-90a1-eb7fa32d4106/storyline-ai-literacy.png",
@@ -79,7 +79,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "ADDIE Instructional Design Model",
         links: [
           { label: "View Course", href: "https://view.genially.com/6941bdb422107ef3f6f9798b" },
-          { label: "Design Process", href: "https://docs.google.com/document/d/119C3v8BY-gFXwdF89U8fu9tp6kT-b0idIahm7uO7evs/edit?usp=sharing", preview: true },
+          { label: "Design Process", href: "https://docs.google.com/document/d/119C3v8BY-gFXwdF89U8fu9tp6kT-b0idIahm7uO7evs/edit?usp=sharing", preview: true, secondary: true },
         ],
         images: [geniallyGuide1.url, geniallyGuide2.url],
       },
@@ -87,7 +87,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "Digital eBook",
         links: [
           { label: "VIEW EBOOK", href: "https://read.bookcreator.com/QPcUKyNvDVPMQ5RGGKJAjxWhTP12/JDaqxZtXT6mXbh1IHZoWkQ" },
-          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing", preview: true },
+          { label: "View PDF", href: "https://drive.google.com/file/d/13Fl8FXCEDHT1Nkhhnn132qx0_6qpq7Bg/view?usp=sharing", preview: true, secondary: true },
         ],
         images: [digitalEbook1.url],
       },
@@ -102,7 +102,7 @@ const sections: { title: string; blurb: string; projects: { name: string; links:
         name: "Onboarding Short Course",
         links: [
           { label: "View Course", href: "https://taylor45.github.io/Onboarding-Course/" },
-          { label: "Design Process", href: "https://taylor45.github.io/Onboarding-Course-Storyboard/" },
+          { label: "Design Process", href: "https://taylor45.github.io/Onboarding-Course-Storyboard/", secondary: true },
         ],
         images: [ispringCourse1.url, ispringCourse2.url],
       },
@@ -238,7 +238,7 @@ function ELearningPage() {
                       <h3 className="font-inter text-lg leading-snug">{project.name}</h3>
                       <div className="mt-auto flex w-full min-w-0 flex-col items-stretch justify-end gap-3 lg:flex-row lg:flex-wrap lg:items-center">
                         {project.links.map((link, li) => {
-                          const isSecondary = link.label === "Design Process";
+                          const isSecondary = link.secondary === true;
                           const buttonClasses = `h-auto min-h-11 w-full min-w-0 justify-between whitespace-normal rounded-sm px-4 py-2.5 text-xs uppercase tracking-normal shadow-none lg:w-auto lg:justify-center lg:px-5 ${
                             isSecondary
                               ? actionSecondary
@@ -255,6 +255,7 @@ function ELearningPage() {
                               key={link.label}
                               href={link.href}
                               title={`${link.label} — ${project.name}`}
+                              variant={isSecondary ? "portfolioOutline" : "portfolio"}
                               className={buttonClasses}
                             >
                               {inner}
