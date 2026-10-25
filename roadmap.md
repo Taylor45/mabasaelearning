@@ -3,3 +3,5 @@
 - [x] Delete the "How cool is that?" page and remove it from the header.
 - [x] Unify text action buttons across all pages and verify previews and focus.
 - [x] Match the other service pages to the overlapping gradient feature cards and verify desktop/mobile layouts.
+- [x] Attach the SCORMINTELL documentation guide to the PDF to SCORM Packager App card's App Guide button.
+- [ ] Add the PDF to SCORM Packager App's own app URL to its View App button — blocked: waiting for the URL from Bruce.
