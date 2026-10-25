@@ -209,6 +209,25 @@
   );
 }
 
+/*
+ * Turquoise-to-sky brand gradient painted onto text.
+ * Falls back to the solid sky colour where background-clip is unsupported.
+ */
+@utility text-gradient-accent {
+  background-image: linear-gradient(120deg, #19d4c8, #1da8e2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@supports not (background-clip: text) {
+  .text-gradient-accent {
+    color: var(--brand-sky);
+    -webkit-text-fill-color: var(--brand-sky);
+  }
+}
+
 @utility shadow-elevated {
   box-shadow: var(--shadow-elevated);
 }
