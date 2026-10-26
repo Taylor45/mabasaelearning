@@ -90,14 +90,10 @@ function WebDesignPage() {
                 <div className="flex flex-1 flex-col items-start gap-4 p-6">
                   <h4 className="text-lg leading-snug">Coding Basics For Instructional Design — App</h4>
                   <div className="mt-auto flex w-full min-w-0 flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                    <Button asChild variant="portfolio"><a
-                      href="https://sites.google.com/view/mabasaelearning/elearning-development/elearning-multimedia"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                    View the App Here
-                    <span aria-hidden="true" >→</span>
-                    </a></Button>
+                    <Button type="button" variant="portfolio">
+                      View the App Here
+                      <span aria-hidden="true" >→</span>
+                    </Button>
                   </div>
                 </div>
               </article>
