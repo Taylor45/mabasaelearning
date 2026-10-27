@@ -11,7 +11,7 @@ const apps = [
   { name: "PDF to SCORM Packager", image: scormintellShowcase.url, guide: scormintellGuide.url, app: "https://pdf-scorm-packager.vercel.app/" },
   {
     name: "Articulate Storyline Theme Generator",
-    image: app2.url,
+    image: storylineShowcase.url,
     guide: "https://docs.google.com/document/d/1AyTC3RxYmw3bJ0Rscer7hGmxMAUVI8SEwtr1pWM1PEA/view",
     app: "https://storyline-theme.vercel.app/",
   },
