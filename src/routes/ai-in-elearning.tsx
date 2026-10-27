@@ -8,7 +8,7 @@ import app2 from "@/assets/ai-workflow-app-2.png.asset.json";
 import scormintellGuide from "@/assets/scormintell-enterprise-documentation-guide.pdf.asset.json";
 
 const apps = [
-  { name: "PDF to SCORM Packager App", image: scormintellShowcase.url, guide: scormintellGuide.url, app: "https://pdf-scorm-packager.vercel.app/" },
+  { name: "PDF to SCORM Packager", image: scormintellShowcase.url, guide: scormintellGuide.url, app: "https://pdf-scorm-packager.vercel.app/" },
   {
     name: "Articulate Storyline Theme Generator",
     image: app2.url,
