@@ -10,7 +10,7 @@ import scormintellGuide from "@/assets/scormintell-enterprise-documentation-guid
 const apps = [
   { name: "PDF to SCORM Packager App", image: app1.url, guide: scormintellGuide.url, app: "https://pdf-scorm-packager.vercel.app/" },
   {
-    name: "Storyline Theme Generator",
+    name: "Articulate Storyline Theme Generator",
     image: app2.url,
     guide: "https://docs.google.com/document/d/1AyTC3RxYmw3bJ0Rscer7hGmxMAUVI8SEwtr1pWM1PEA/view",
     app: "https://storyline-theme.vercel.app/",
