@@ -8,8 +8,7 @@ import app2 from "@/assets/ai-workflow-app-2.png.asset.json";
 import scormintellGuide from "@/assets/scormintell-enterprise-documentation-guide.pdf.asset.json";
 
 const apps = [
-  // App link pending — the button renders without navigation until the real URL arrives.
-  { name: "PDF to SCORM Packager App", image: app1.url, guide: scormintellGuide.url, app: "#" },
+  { name: "PDF to SCORM Packager App", image: app1.url, guide: scormintellGuide.url, app: "https://pdf-scorm-packager.vercel.app/" },
   {
     name: "Storyline Theme Generator",
     image: app2.url,
