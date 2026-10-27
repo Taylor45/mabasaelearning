@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { actionPrimary, actionSecondary } from "@/lib/action-buttons";
 import scormintellShowcase from "@/assets/dual-monitor-scormintell-showcase.png.asset.json";
-import app2 from "@/assets/ai-workflow-app-2.png.asset.json";
+import storylineShowcase from "@/assets/dual-monitor-storyline-design-showcase.png.asset.json";
 import scormintellGuide from "@/assets/scormintell-enterprise-documentation-guide.pdf.asset.json";
 
 const apps = [
