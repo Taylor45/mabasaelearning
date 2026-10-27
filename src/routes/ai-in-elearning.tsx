@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { actionPrimary, actionSecondary } from "@/lib/action-buttons";
 import scormintellShowcase from "@/assets/dual-monitor-scormintell-showcase.png.asset.json";
-import app2 from "@/assets/ai-workflow-app-2.png.asset.json";
+import storylineShowcase from "@/assets/dual-monitor-storyline-design-showcase.png.asset.json";
 import scormintellGuide from "@/assets/scormintell-enterprise-documentation-guide.pdf.asset.json";
 
 const apps = [
   { name: "PDF to SCORM Packager", image: scormintellShowcase.url, guide: scormintellGuide.url, app: "https://pdf-scorm-packager.vercel.app/" },
   {
     name: "Articulate Storyline Theme Generator",
-    image: app2.url,
+    image: storylineShowcase.url,
     guide: "https://docs.google.com/document/d/1AyTC3RxYmw3bJ0Rscer7hGmxMAUVI8SEwtr1pWM1PEA/view",
     app: "https://storyline-theme.vercel.app/",
   },
