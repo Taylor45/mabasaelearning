@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Portfolio of  Mabasa — instructional design, eLearning development, prompt engineering, UX/UI and AI in learning.",
       },
-      { name: "author", content: "Melvon Mabasa" },
+      { name: "author", content: "Bruce Mabasa" },
       { property: "og:title", content: "Mabasa | eLearning & Instructional Design Portfolio" },
       {
         property: "og:description",

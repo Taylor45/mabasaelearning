@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { solidBrandStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
-import portrait from "@/assets/melvon-portrait.png";
+import portrait from "@/assets/bruce-portrait.png";
 import illPrompt from "@/assets/ill-prompt-engineering.png";
 import illDesign from "@/assets/ill-instructional-design.png";
 import illDev from "@/assets/ill-elearning-development.png";
