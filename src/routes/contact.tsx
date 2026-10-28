@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Melvon Mabasa | eLearning Designer" },
+      { title: "Contact Bruce Mabasa | eLearning Designer" },
       {
         name: "description",
         content:
-          "Get in touch with Melvon Mabasa for instructional design, eLearning development, and AI-assisted learning projects.",
+          "Get in touch with Bruce Mabasa for instructional design, eLearning development, and AI-assisted learning projects.",
       },
-      { property: "og:title", content: "Contact Melvon Mabasa" },
+      { property: "og:title", content: "Contact Bruce Mabasa" },
       {
         property: "og:description",
         content: "Reach out about instructional design and eLearning development work.",

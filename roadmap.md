@@ -5,3 +5,4 @@
 - [x] Match the other service pages to the overlapping gradient feature cards and verify desktop/mobile layouts.
 - [x] Attach the SCORMINTELL documentation guide to the PDF to SCORM Packager App card's App Guide button.
 - [x] Add the PDF to SCORM Packager App app URL (https://pdf-scorm-packager.vercel.app/) to its View App button.
+- [x] Remove the name Melvon from page titles, meta tags, the author field and the portrait file name.

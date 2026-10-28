@@ -20,11 +20,11 @@ import { actionPrimary, actionSecondary } from "@/lib/action-buttons";
 export const Route = createFileRoute("/elearning-development")({
   head: () => ({
     meta: [
-      { title: "eLearning Development Work | Melvon Mabasa" },
+      { title: "eLearning Development Work | Bruce Mabasa" },
       {
         name: "description",
         content:
-          "Articulate Storyline, Genially, iSpring and interactive eBook SCORM projects built by Melvon Mabasa.",
+          "Articulate Storyline, Genially, iSpring and interactive eBook SCORM projects built by Bruce Mabasa.",
       },
       { property: "og:title", content: "eLearning Development Work" },
       {
