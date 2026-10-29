@@ -1,5 +1,3 @@
-import portrait from "@/assets/bruce-portrait.png";
-
 const PROJECT_URL = "https://id-dev-journey.lovable.app";
 
 function PlayIcon() {
@@ -48,16 +46,7 @@ export function FeaturedProjectCode() {
           </div>
 
           {/* Editor body */}
-          <div className="flex items-start gap-[clamp(12px,2vw,22px)] p-[clamp(12px,2vw,22px)] pr-[clamp(12px,2.5vw,28px)]">
-            <img
-              src={portrait}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-              className="h-11 w-11 shrink-0 rounded-full border border-white/20 object-cover sm:h-12 sm:w-12 lg:mt-1.5 lg:ml-3"
-              width={48}
-              height={48}
-            />
+          <div className="p-[clamp(12px,2vw,22px)] pr-[clamp(12px,2.5vw,28px)]">
             <div
               className="code-lines min-w-0 flex-1 text-left text-[clamp(10px,1.35vw,15px)] font-normal leading-[1.75]"
             >
