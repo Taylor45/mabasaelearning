@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { FeaturedProjectCode } from "@/components/FeaturedProjectCode";
 import { solidBrandStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
