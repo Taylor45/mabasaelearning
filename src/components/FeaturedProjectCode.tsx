@@ -2,7 +2,7 @@ const PROJECT_URL = "https://id-dev-journey.lovable.app";
 
 function PlayIcon() {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[18px] w-[18px] fill-current">
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5 fill-current">
       <path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z" />
     </svg>
   );
@@ -117,12 +117,12 @@ export function FeaturedProjectCode() {
           </div>
 
           {/* Footer bar */}
-          <div className="flex items-center justify-between gap-3 bg-black py-2 pl-6 pr-[22px] max-[700px]:justify-end max-[700px]:px-3">
-            <p className="min-w-0 truncate text-[clamp(10px,1vw,12px)] text-[#8b949e] max-[700px]:hidden">
+          <div className="flex items-center justify-between gap-3 bg-black py-1.5 pl-4 pr-3.5 max-[700px]:justify-end max-[700px]:px-2.5">
+            <p className="min-w-0 truncate text-[clamp(9px,0.9vw,11px)] text-[#8b949e] max-[700px]:hidden">
               <span className="font-medium text-[#33dd2e]">●</span> JavaScript &nbsp;·&nbsp; UTF-8
               &nbsp;·&nbsp; Ln 9, Col 3
             </p>
-            <div className="flex items-center gap-3.5">
+            <div className="flex items-center gap-2.5">
               <a
                 href={PROJECT_URL}
                 target="_blank"
