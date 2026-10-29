@@ -583,6 +583,9 @@ function Index() {
             </div>
           </div>
         </section>
+
+        {/* Featured Project — script.js code window */}
+        <FeaturedProjectCode />
       </main>
       <SiteFooter />
     </div>
