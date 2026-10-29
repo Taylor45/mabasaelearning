@@ -1,4 +1,4 @@
-const PROJECT_URL = "https://id-dev-journey.lovable.app";
+import { Link } from "@tanstack/react-router";
 
 function PlayIcon() {
   return (
@@ -117,23 +117,19 @@ export function FeaturedProjectCode() {
               &nbsp;·&nbsp; Ln 9, Col 3
             </p>
             <div className="flex items-center gap-2.5">
-              <a
-                href={PROJECT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/web-design-ux-ui"
                 className="cw-btn cw-btn-run"
               >
                 <PlayIcon />
                 Run
-              </a>
-              <a
-                href={PROJECT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              </Link>
+              <Link
+                to="/elearning-development"
                 className="cw-btn cw-btn-explore"
               >
                 Explore
-              </a>
+              </Link>
             </div>
           </div>
         </div>
