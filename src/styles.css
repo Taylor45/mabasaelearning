@@ -22,6 +22,7 @@
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --font-inter: var(--font-inter);
+  --font-jetbrains: var(--font-jetbrains);
   --color-ink: var(--ink);
   --color-brand-cyan: var(--brand-cyan);
   --color-brand-sky: var(--brand-sky);
@@ -120,6 +121,7 @@
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Work Sans", system-ui, sans-serif;
   --font-inter: "Inter", system-ui, sans-serif;
+  --font-jetbrains: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -351,6 +353,136 @@
 @media (prefers-reduced-motion: reduce) {
   .card-grow,
   .card-grow:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/*
+ * Featured Project — "script.js" code window (home page).
+ * VS Code Dark+ style syntax colours, line reveal and blinking caret,
+ * matching the reference design supplied by Bruce.
+ */
+.code-window {
+  font-family: var(--font-jetbrains);
+}
+.code-window .tok-kw      { color: #569cd6; }  /* const */
+.code-window .tok-var     { color: #4fc1ff; }  /* specialist */
+.code-window .tok-key     { color: #9cdcfe; }  /* role, focus */
+.code-window .tok-str     { color: #ce9178; }  /* strings */
+.code-window .tok-punc    { color: #ffd700; }  /* { } ; */
+.code-window .tok-brk     { color: #da70d6; }  /* [ ] */
+.code-window .tok-op      { color: #d4d4d4; }
+.code-window .tok-comment { color: #6a9955; font-style: italic; }
+
+.code-lines {
+  counter-reset: cwl;
+  font-family: var(--font-jetbrains);
+}
+.code-line {
+  display: flex;
+  counter-increment: cwl;
+  border-radius: 4px;
+  padding-right: 10px;
+  white-space: pre-wrap;
+}
+.code-line::before {
+  content: counter(cwl);
+  flex: 0 0 2.4em;
+  text-align: right;
+  margin-right: 1.6em;
+  color: #4a4f57;
+  user-select: none;
+}
+.code-line.active { background: rgb(255 255 255 / 6%); }
+.code-line.active::before { color: #c6c6c6; }
+
+.code-caret {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background: #9cdcfe;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: cw-blink 1.05s steps(1) infinite;
+}
+@keyframes cw-blink {
+  50% { opacity: 0; }
+}
+
+/* Line-by-line reveal on load. */
+.code-line {
+  opacity: 0;
+  animation: cw-reveal 0.45s ease forwards;
+}
+.code-line:nth-child(1) { animation-delay: 0.1s; }
+.code-line:nth-child(2) { animation-delay: 0.25s; }
+.code-line:nth-child(3) { animation-delay: 0.4s; }
+.code-line:nth-child(4) { animation-delay: 0.55s; }
+.code-line:nth-child(5) { animation-delay: 0.7s; }
+.code-line:nth-child(6) { animation-delay: 0.85s; }
+.code-line:nth-child(7) { animation-delay: 1s; }
+.code-line:nth-child(8) { animation-delay: 1.15s; }
+.code-line:nth-child(9) { animation-delay: 1.3s; }
+@keyframes cw-reveal {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Footer action buttons: green Run pill, red Explore tile. */
+.cw-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: var(--font-jetbrains);
+  font-weight: 700;
+  font-size: clamp(14px, 1.4vw, 17px);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+.cw-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+.cw-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+.cw-btn-run {
+  background: #33dd2e;
+  padding: 10px 26px;
+  border-radius: 999px;
+}
+.cw-btn-run:hover {
+  box-shadow: 0 0 18px 2px rgb(51 221 46 / 40%);
+}
+.cw-btn-explore {
+  background: #b30000;
+  padding: 11px 24px;
+  border-radius: 14px;
+}
+.code-window a:focus-visible {
+  outline: 2px solid var(--brand-cyan);
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .cw-btn-run { padding: 8px 18px; }
+  .cw-btn-explore { padding: 9px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .code-line {
+    animation: none;
+    opacity: 1;
+  }
+  .code-caret {
+    animation: none;
+  }
+  .cw-btn,
+  .cw-btn:hover,
+  .cw-btn:active {
     transition: none;
     transform: none;
   }
