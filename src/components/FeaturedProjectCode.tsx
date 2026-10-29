@@ -83,13 +83,7 @@ export function FeaturedProjectCode() {
               <div className="code-line">
                 <span>
                   {"  "}
-                  <span className="tok-comment">// How do I approach eLearning projects that focus on</span>
-                </span>
-              </div>
-              <div className="code-line">
-                <span>
-                  {"  "}
-                  <span className="tok-comment">// learning objectives requiring practical application,</span>
+                  <span className="tok-comment">// How do I approach eLearning projects that focus on learning objectives requiring practical application,</span>
                 </span>
               </div>
               <div className="code-line">
@@ -120,7 +114,7 @@ export function FeaturedProjectCode() {
           <div className="flex items-center justify-between gap-3 bg-black py-1.5 pl-4 pr-3.5 max-[700px]:justify-end max-[700px]:px-2.5">
             <p className="min-w-0 truncate text-[clamp(9px,0.9vw,11px)] text-[#8b949e] max-[700px]:hidden">
               <span className="font-medium text-[#33dd2e]">●</span> JavaScript &nbsp;·&nbsp; UTF-8
-              &nbsp;·&nbsp; Ln 9, Col 3
+              &nbsp;·&nbsp; Ln 8, Col 3
             </p>
             <div className="flex items-center gap-2.5">
               <a
