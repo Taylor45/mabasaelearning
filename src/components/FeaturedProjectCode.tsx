@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 function PlayIcon() {
@@ -8,7 +9,26 @@ function PlayIcon() {
   );
 }
 
+type TabId = "script" | "outcomes";
+
+const tabs: { id: TabId; label: string; badge: string; badgeClass: string }[] = [
+  {
+    id: "script",
+    label: "script.js",
+    badge: "JS",
+    badgeClass: "bg-[#f7df1e] text-black",
+  },
+  {
+    id: "outcomes",
+    label: "outcomes.md",
+    badge: "MD",
+    badgeClass: "bg-[#1DA8E2] text-black",
+  },
+];
+
 export function FeaturedProjectCode() {
+  const [activeTab, setActiveTab] = useState<TabId>("script");
+
   return (
     <section aria-labelledby="featured-project-title" className="surface-hero">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:py-16">
@@ -27,27 +47,59 @@ export function FeaturedProjectCode() {
           aria-label="Featured project code window"
           className="code-window mx-auto mt-8 w-full max-w-[900px] overflow-hidden rounded-[18px] bg-[#0d0d0d] text-[#d4d4d4] shadow-[0_10px_30px_rgba(0,0,0,0.35)] sm:mt-10 max-[700px]:rounded-xl"
         >
-          {/* Title bar with tab */}
+          {/* Title bar with tabs */}
           <div className="flex h-11 items-center gap-4 bg-black px-4 pt-2 max-[700px]:h-9 max-[700px]:gap-2.5 max-[700px]:px-3">
             <div aria-hidden="true" className="flex gap-2.5 pb-2 max-[700px]:gap-1.5">
               <span className="h-3.5 w-3.5 rounded-full bg-[#ff5f57] max-[700px]:h-2.5 max-[700px]:w-2.5" />
               <span className="h-3.5 w-3.5 rounded-full bg-[#febc2e] max-[700px]:h-2.5 max-[700px]:w-2.5" />
               <span className="h-3.5 w-3.5 rounded-full bg-[#28c840] max-[700px]:h-2.5 max-[700px]:w-2.5" />
             </div>
-            <div className="flex h-full items-center gap-2 rounded-t-[8px] border-t-2 border-[#4fc1ff] bg-[#0d0d0d] px-4 text-[clamp(11px,1.1vw,13px)] text-white max-[700px]:px-2.5">
-              <span className="rounded-[3px] bg-[#f7df1e] px-1 py-px text-[9px] font-bold leading-[1.3] text-black">
-                JS
-              </span>
-              script.js
-              <span aria-hidden="true" className="ml-1.5 text-[13px] text-[#4a4f57]">
-                ×
-              </span>
+            <div role="tablist" aria-label="Featured project files" className="flex h-full items-end gap-1">
+              {tabs.map((tab) => {
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    id={`featured-tab-${tab.id}`}
+                    aria-selected={isActive}
+                    aria-controls={`featured-panel-${tab.id}`}
+                    tabIndex={isActive ? 0 : -1}
+                    onClick={() => setActiveTab(tab.id)}
+                    onKeyDown={(event) => {
+                      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+                      event.preventDefault();
+                      const next: TabId = activeTab === "script" ? "outcomes" : "script";
+                      setActiveTab(next);
+                      document.getElementById(`featured-tab-${next}`)?.focus();
+                    }}
+                    className={`flex h-full items-center gap-2 rounded-t-[8px] border-t-2 px-4 text-[clamp(11px,1.1vw,13px)] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-cyan max-[700px]:px-2.5 ${
+                      isActive
+                        ? "border-[#4fc1ff] bg-[#0d0d0d] text-white"
+                        : "border-transparent bg-transparent text-[#8b949e] hover:text-[#d4d4d4]"
+                    }`}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`rounded-[3px] px-1 py-px text-[9px] font-bold leading-[1.3] ${tab.badgeClass}`}
+                    >
+                      {tab.badge}
+                    </span>
+                    {tab.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
           {/* Editor body */}
           <div className="px-[clamp(14px,2vw,22px)] py-[clamp(12px,1.8vw,18px)]">
             <div
+              role="tabpanel"
+              id="featured-panel-script"
+              aria-labelledby="featured-tab-script"
+              hidden={activeTab !== "script"}
               className="code-lines min-w-0 text-left text-[clamp(10px,1.15vw,13.5px)] font-normal leading-[1.8]"
             >
               <div className="code-line">
@@ -104,7 +156,57 @@ export function FeaturedProjectCode() {
                 <span>
                   <span className="tok-punc">{"}"}</span>
                   <span className="tok-op">;</span>
-                  <span className="code-caret" aria-hidden="true" />
+                  {activeTab === "script" && <span className="code-caret" aria-hidden="true" />}
+                </span>
+              </div>
+            </div>
+
+            <div
+              role="tabpanel"
+              id="featured-panel-outcomes"
+              aria-labelledby="featured-tab-outcomes"
+              hidden={activeTab !== "outcomes"}
+              className="code-lines min-w-0 text-left text-[clamp(10px,1.15vw,13.5px)] font-normal leading-[1.8]"
+            >
+              <div className="code-line">
+                <span>
+                  <span className="tok-kw">#</span>{" "}
+                  <span className="tok-var">Project Outcomes</span>
+                </span>
+              </div>
+              <div className="code-line">
+                <span> </span>
+              </div>
+              <div className="code-line">
+                <span>
+                  <span className="tok-punc">-</span>{" "}
+                  <span className="tok-str">Delivered a complete interactive course that teaches instructional designers practical coding basics.</span>
+                </span>
+              </div>
+              <div className="code-line">
+                <span>
+                  <span className="tok-punc">-</span>{" "}
+                  <span className="tok-str">Turned technical concepts into hands-on, applied learning activities.</span>
+                </span>
+              </div>
+              <div className="code-line">
+                <span>
+                  <span className="tok-punc">-</span>{" "}
+                  <span className="tok-str">Built a clear visual learning architecture from storyboard to final build.</span>
+                </span>
+              </div>
+              <div className="code-line">
+                <span>
+                  <span className="tok-punc">-</span>{" "}
+                  <span className="tok-str">Equipped learners with skills they can use immediately in real projects.</span>
+                </span>
+              </div>
+              <div className="code-line">
+                <span> </span>
+              </div>
+              <div className="code-line active">
+                <span>
+                  {activeTab === "outcomes" && <span className="code-caret" aria-hidden="true" />}
                 </span>
               </div>
             </div>
@@ -113,8 +215,9 @@ export function FeaturedProjectCode() {
           {/* Footer bar */}
           <div className="flex items-center justify-between gap-3 bg-black py-1.5 pl-4 pr-3.5 max-[700px]:justify-end max-[700px]:px-2.5">
             <p className="min-w-0 truncate text-[clamp(9px,0.9vw,11px)] text-[#8b949e] max-[700px]:hidden">
-              <span className="font-medium text-[#33dd2e]">●</span> JavaScript &nbsp;·&nbsp; UTF-8
-              &nbsp;·&nbsp; Ln 9, Col 3
+              <span className="font-medium text-[#33dd2e]">●</span>{" "}
+              {activeTab === "script" ? "JavaScript" : "Markdown"} &nbsp;·&nbsp; UTF-8
+              &nbsp;·&nbsp; {activeTab === "script" ? "Ln 9, Col 3" : "Ln 8, Col 1"}
             </p>
             <div className="flex items-center gap-2.5">
               <Link
