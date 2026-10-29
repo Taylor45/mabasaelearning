@@ -88,7 +88,7 @@ function WebDesignPage() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col items-start gap-4 p-6">
-                  <h4 className="text-lg leading-snug">Coding Basics For Instructional Design — App</h4>
+                  <h4 className="text-lg leading-snug">Coding Basics For Instructional Design</h4>
                   <div className="mt-auto flex w-full min-w-0 flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                     <Button type="button" variant="portfolio">
                       View the App Here
