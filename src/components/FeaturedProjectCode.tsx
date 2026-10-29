@@ -1,5 +1,3 @@
-import portrait from "@/assets/bruce-portrait.png";
-
 const PROJECT_URL = "https://id-dev-journey.lovable.app";
 
 function PlayIcon() {
