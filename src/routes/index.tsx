@@ -493,6 +493,9 @@ function Index() {
           </div>
         </section>
 
+        {/* Featured Project — script.js code window */}
+        <FeaturedProjectCode />
+
         <CategoryBand
           highlight="Design & Strategy"
           intro="Laying the foundation for impactful learning experiences through smart design, strategy, and innovation."
@@ -583,9 +586,6 @@ function Index() {
             </div>
           </div>
         </section>
-
-        {/* Featured Project — script.js code window */}
-        <FeaturedProjectCode />
       </main>
       <SiteFooter />
     </div>
