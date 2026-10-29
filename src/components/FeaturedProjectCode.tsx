@@ -16,9 +16,9 @@ export function FeaturedProjectCode() {
           <h2 id="featured-project-title" className="font-inter text-2xl font-bold text-white sm:text-3xl">
             Featured Project
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-sky-200/70 sm:text-base">
-            Instructional frameworks, visual learning architecture, and strategic
-            storyboarding.
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
+            A closer look at how the Coding Basics for Instructional Design course was
+            storyboarded, developed, and brought to life.
           </p>
         </div>
 
