@@ -380,17 +380,22 @@
   font-family: var(--font-jetbrains);
 }
 .code-line {
-  display: flex;
+  display: block;
+  position: relative;
   counter-increment: cwl;
   border-radius: 4px;
   padding-right: 10px;
+  /* Hanging indent: wrapped lines align under the code, not under the gutter. */
+  padding-left: calc(1.9em + 1.4em + 0.3em);
   white-space: pre-wrap;
 }
 .code-line::before {
   content: counter(cwl);
-  flex: 0 0 1.9em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.9em;
   text-align: right;
-  margin-right: 1.4em;
   color: #4a4f57;
   user-select: none;
 }
