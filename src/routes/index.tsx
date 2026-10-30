@@ -426,7 +426,7 @@ function Index() {
                   aria-expanded={clientsOpen}
                   aria-controls="clients-note"
                   onClick={() => setClientsOpen((open) => !open)}
-                  className={`absolute -bottom-1 -right-1 flex h-10 w-10 items-center justify-center rounded-full p-0.5 sm:h-11 sm:w-11 ${solidBrandStates}`}
+                  className={`absolute -bottom-2 -right-2 flex h-14 w-14 items-center justify-center rounded-full p-0.5 sm:h-16 sm:w-16 ${solidBrandStates}`}
                 >
                   <img
                     src={clientsInfoIcon.url}
