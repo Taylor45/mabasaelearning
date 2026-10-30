@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Network, CodeXml, Eye, EyeOff } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Network, CodeXml } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -63,13 +61,28 @@ const softwareTech = [
   "Cloud-based application development",
 ];
 
+const techRows = [
+  {
+    icon: Network,
+    title: "eLearning Technology",
+    copy: "Sometimes an eLearning project requires more than authoring tools. Our expertise in eLearning-specific technologies allows us to bridge the gap between instructional design and the underlying technology, developing the functionality behind your learning experience.",
+    details: elearningTech,
+  },
+  {
+    icon: CodeXml,
+    title: "Software Development",
+    copy: "With extensive software engineering experience, we can develop the technology behind your learning experience—or help solve a technical challenge in an existing application. Our general software development expertise supports custom applications, integrations, and tools.",
+    details: softwareTech,
+  },
+  {
+    icon: Accessibility,
+    title: "Accessibility & UIX",
+    copy: "Accessibility isn't just a requirement for some levels of training; it helps ALL learners/users in the final deliverables. Designing with accessibility in mind promotes easier learning and higher engagement. Sound visual design, closed captions paired with audio, and multiple modalities help everyone.",
+    note: "While certain entities mandate accessibility-driven materials, experienced instructional designers know that designing with accessibility in mind promotes easier learning and higher engagement among typical learners/users as well. Elements such as sound visual design (color, font, and design), closed captions paired with audio, and multiple modalities help everyone.",
+  },
+];
+
 function AboutPage() {
-  const [expandedPanel, setExpandedPanel] = useState<string | null>(null);
-  const panels = [
-    { title: "eLearning Technology", icon: Network, background: "bg-expertise-technology", focusOffset: "focus-visible:ring-offset-expertise-technology", copy: "Sometimes an eLearning project requires more than authoring tools. Our expertise in eLearning-specific technologies allows us to bridge the gap between instructional design and the underlying technology, developing the functionality behind your learning experience.", details: elearningTech },
-    { title: "Software Development", icon: CodeXml, background: "bg-expertise-software", focusOffset: "focus-visible:ring-offset-expertise-software", copy: "With extensive software engineering experience, we can develop the technology behind your learning experience—or help solve a technical challenge in an existing application. Our general software development expertise supports custom applications, integrations, and tools.", details: softwareTech },
-    { title: "Accessibility & UIX", icon: Accessibility, background: "bg-expertise-accessibility", focusOffset: "focus-visible:ring-offset-expertise-accessibility", copy: "Accessibility isn't just a requirement for some levels of training; it helps ALL learners/users in the final deliverables. Designing with accessibility in mind promotes easier learning and higher engagement. Sound visual design, closed captions paired with audio, and multiple modalities help everyone.", details: ["While certain entities mandate accessibility-driven materials, experienced instructional designers know that designing with accessibility in mind promotes easier learning and higher engagement among typical learners/users as well.", "Elements such as sound visual design (color, font, and design), closed captions paired with audio, and multiple modalities help everyone."] },
-  ];
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -135,58 +148,60 @@ function AboutPage() {
           </div>
         </section>
 
+        {/* eLearning Technology */}
         <section className="surface-hero">
           <div className="mx-auto max-w-6xl px-5 py-16">
-            <div className="mx-auto max-w-3xl text-center">
-              <h3 className="font-inter text-xl font-bold text-white sm:text-2xl">
-                eLearning Technology
-              </h3>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-muted-foreground">
-                Sometimes an eLearning project requires more than authoring tools. With
-                extensive software engineering experience, we can develop the technology behind
-                your learning experience—or help solve a technical challenge in an existing
-                application.
-              </p>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-muted-foreground">
-                Our expertise includes both <strong>eLearning-specific technologies</strong> and{" "}
-                <strong>general software development</strong>, allowing us to bridge the gap
-                between instructional design and the underlying technology.
-              </p>
+            <div className="rounded-3xl border border-foreground/10 bg-expertise-software/70 p-6 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)] sm:p-10 lg:p-12">
+              <h2 className="font-inter text-2xl font-bold uppercase tracking-wide text-foreground sm:text-3xl lg:text-4xl">
+                eLearning <span className="text-gradient-accent">Technology</span>
+              </h2>
+              <div
+                aria-hidden="true"
+                className="mt-4 h-[3px] w-14 rounded-full bg-gradient-to-r from-brand-cyan to-brand-sky"
+              />
+              <div className="mt-10 divide-y divide-foreground/10">
+                {techRows.map((row) => (
+                  <article
+                    key={row.title}
+                    className="grid gap-5 py-8 first:pt-0 last:pb-0 sm:grid-cols-[auto_1fr] sm:gap-7"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-cyan to-brand-sky shadow-[0_0_28px_-8px_rgba(25,212,200,0.6)]"
+                    >
+                      <row.icon strokeWidth={2} className="h-5 w-5 text-foreground" />
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="font-inter text-lg font-bold text-foreground sm:text-xl">
+                        {row.title}
+                      </h3>
+                      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                        {row.copy}
+                      </p>
+                      {row.note ? (
+                        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground/80">
+                          {row.note}
+                        </p>
+                      ) : null}
+                      {row.details ? (
+                        <ul
+                          aria-label={`${row.title} capabilities`}
+                          className="mt-4 grid list-disc gap-x-10 gap-y-2 pl-5 text-sm text-muted-foreground marker:text-brand-sky sm:grid-cols-2"
+                        >
+                          {row.details.map((detail) => (
+                            <li key={detail} className="leading-relaxed">
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3">
-            {panels.map((panel, index) => {
-              const flipped = expandedPanel === panel.title;
-              const face = `${panel.background} col-start-1 row-start-1 flex min-w-0 flex-col items-center px-7 pt-16 pb-36 text-center md:min-h-[675px] md:px-8 md:pt-32 md:pb-40 lg:px-12 [backface-visibility:hidden]`;
-              return (
-                <article key={panel.title} className="relative grid min-w-0 font-inter text-expertise-foreground [perspective:1600px]">
-                  <div className={`col-start-1 row-start-1 grid transition-transform duration-700 motion-reduce:transition-none ${flipped ? "[transform:rotateY(180deg)]" : ""}`} style={{ transformStyle: "preserve-3d" }}>
-                    <div className={face} aria-hidden={flipped}>
-                      <span
-                        aria-hidden="true"
-                        className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full border-2 border-expertise-icon/40 bg-expertise-icon/15 shadow-[0_0_34px_rgba(0,80,200,0.4),0_10px_30px_-12px_rgba(0,80,200,0.45)]"
-                      >
-                        <panel.icon aria-hidden="true" strokeWidth={1.5} className="h-14 w-14 text-expertise-icon" />
-                      </span>
-                      <h4 className="mt-6 font-inter text-base font-semibold uppercase">{panel.title}</h4>
-                      <p className="mt-5 max-w-[410px] text-sm font-medium leading-7">{panel.copy}</p>
-                    </div>
-                    <div className={`${face} justify-center [transform:rotateY(180deg)]`} aria-hidden={!flipped}>
-                      <h4 className="font-inter text-base font-semibold uppercase">{panel.title}</h4>
-                      <ul id={`expertise-details-${index}`} className="mt-6 max-w-[410px] list-disc space-y-3 pl-6 text-left text-sm leading-7 marker:text-expertise-icon">
-                        {panel.details.map((detail) => <li key={detail}>{detail}</li>)}
-                      </ul>
-                    </div>
-                  </div>
-                  <Button type="button" variant="ghost" size="icon" aria-label={flipped ? `Hide details for the ${panel.title} card` : `Show details for the ${panel.title} card`} title={flipped ? `Hide ${panel.title} details` : `Show ${panel.title} details`} aria-expanded={flipped} aria-controls={`expertise-details-${index}`} onClick={() => setExpandedPanel(flipped ? null : panel.title)} className={`absolute bottom-12 left-1/2 size-16 -translate-x-1/2 rounded-full border-2 border-expertise-foreground bg-transparent text-expertise-foreground hover:scale-105 hover:bg-expertise-foreground/15 hover:text-expertise-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-expertise-foreground focus-visible:ring-offset-4 focus-visible:scale-105 focus-visible:bg-expertise-foreground/20 ${panel.focusOffset} active:scale-95 motion-safe:transition-transform motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:focus-visible:scale-100 [&_svg]:size-9`}>
-                    {flipped ? <EyeOff aria-hidden="true" strokeWidth={1.5} /> : <Eye aria-hidden="true" strokeWidth={1.5} />}
-                  </Button>
-                </article>
-              );
-            })}
-          </div>
         </section>
-
 
         {/* My Clients */}
         <section className="bg-surface-light">
