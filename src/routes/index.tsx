@@ -5,8 +5,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { FeaturedProjectCode } from "@/components/FeaturedProjectCode";
 import { solidBrandStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
-import { Info } from "lucide-react";
 import portrait from "@/assets/bruce-portrait.png";
+import clientsInfoIcon from "@/assets/clients-info-icon.png.asset.json";
 import illPrompt from "@/assets/ill-prompt-engineering.png";
 import illDesign from "@/assets/ill-instructional-design.png";
 import illDev from "@/assets/ill-elearning-development.png";
@@ -426,9 +426,14 @@ function Index() {
                   aria-expanded={clientsOpen}
                   aria-controls="clients-note"
                   onClick={() => setClientsOpen((open) => !open)}
-                  className={`absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-btn-primary text-btn-primary-foreground shadow-elevated sm:h-9 sm:w-9 ${solidBrandStates}`}
+                  className={`absolute -bottom-1 -right-1 flex h-10 w-10 items-center justify-center rounded-full p-0.5 sm:h-11 sm:w-11 ${solidBrandStates}`}
                 >
-                  <Info className="h-4 w-4" aria-hidden="true" />
+                  <img
+                    src={clientsInfoIcon.url}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-full w-full rounded-full object-contain"
+                  />
                 </button>
               </div>
               <div className="mt-10 flex w-full max-w-sm flex-col gap-4">
