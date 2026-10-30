@@ -3,6 +3,7 @@ import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Network, CodeXml } fro
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroBg from "@/assets/elearning-hero-bg.jpg.asset.json";
+import techBg from "@/assets/elearning-tech-bg.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -157,9 +158,16 @@ function AboutPage() {
         </section>
 
         {/* eLearning Technology */}
-        <section className="surface-hero">
-          <div className="mx-auto max-w-6xl px-5 py-16">
-            <div className="rounded-3xl border border-foreground/10 bg-expertise-software/70 p-6 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)] sm:p-10 lg:p-12">
+        <section className="relative overflow-hidden">
+          <img
+            src={techBg.url}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="surface-hero-scrim absolute inset-0" aria-hidden="true" />
+          <div className="relative mx-auto max-w-6xl px-5 py-16">
+            <div className="rounded-3xl border border-foreground/10 bg-expertise-software/85 p-6 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)] sm:p-10 lg:p-12">
               <h2 className="font-inter text-2xl font-bold uppercase tracking-wide text-foreground sm:text-3xl lg:text-4xl">
                 eLearning <span className="text-gradient-accent">Technology</span>
               </h2>
