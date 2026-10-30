@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Network, CodeXml } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import heroBg from "@/assets/elearning-hero-bg.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -88,8 +89,15 @@ function AboutPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}
-        <section className="surface-hero">
-          <div className="mx-auto max-w-6xl px-5 py-20 text-center">
+        <section className="relative overflow-hidden">
+          <img
+            src={heroBg.url}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="surface-hero-scrim absolute inset-0" aria-hidden="true" />
+          <div className="relative mx-auto max-w-6xl px-5 py-20 text-center">
             <span className="inline-block rounded-full border border-brand-sky px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-sky">
               About Me
             </span>
