@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Network, CodeXml } from "lucide-react";
+import { Accessibility, Network, CodeXml } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroBg from "@/assets/elearning-hero-bg.jpg.asset.json";
 import techBg from "@/assets/elearning-tech-bg.jpg.asset.json";
+import expertiseBadge from "@/assets/eLearning_Expertise_Badge.png.asset.json";
+import engagementBadge from "@/assets/Learning_Engagement_Badge.png.asset.json";
+import lmsBadge from "@/assets/LMS_Knowledge_Badge.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -29,17 +32,20 @@ export const Route = createFileRoute("/about")({
 
 const strengths = [
   {
-    icon: BookOpenCheck,
+    image: expertiseBadge,
+    alt: "eLearning Expertise badge",
     title: "eLearning Expertise",
     copy: "Custom Storyline & Rise course development.",
   },
   {
-    icon: BarChart3,
+    image: engagementBadge,
+    alt: "Learning Engagement badge",
     title: "Learning Engagement",
     copy: "Media assets built for learning, not just watching.",
   },
   {
-    icon: Puzzle,
+    image: lmsBadge,
+    alt: "LMS Knowledge badge",
     title: "LMS Knowledge",
     copy: "Experienced with LMS requirements and constraints.",
   },
@@ -135,16 +141,12 @@ function AboutPage() {
                   key={item.title}
                   className="flex min-w-0 flex-col items-center text-center"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="flex h-32 w-32 items-center justify-center rounded-full border border-accent/25 bg-accent/10 shadow-[0_10px_30px_-12px_rgba(0,80,200,0.35)]"
-                  >
-                    <item.icon
-                      aria-hidden="true"
-                      strokeWidth={1.5}
-                      className="h-16 w-16 text-accent"
-                    />
-                  </span>
+                  <img
+                    src={item.image.url}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="h-36 w-36 drop-shadow-[0_12px_28px_rgba(0,60,160,0.25)]"
+                  />
                   <h3 className="font-inter mt-6 text-lg font-bold text-surface-light-foreground">
                     {item.title}
                   </h3>
