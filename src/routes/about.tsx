@@ -140,16 +140,12 @@ function AboutPage() {
                   key={item.title}
                   className="flex min-w-0 flex-col items-center text-center"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="flex h-32 w-32 items-center justify-center rounded-full border border-accent/25 bg-accent/10 shadow-[0_10px_30px_-12px_rgba(0,80,200,0.35)]"
-                  >
-                    <item.icon
-                      aria-hidden="true"
-                      strokeWidth={1.5}
-                      className="h-16 w-16 text-accent"
-                    />
-                  </span>
+                  <img
+                    src={item.image.url}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="h-36 w-36 drop-shadow-[0_12px_28px_rgba(0,60,160,0.25)]"
+                  />
                   <h3 className="font-inter mt-6 text-lg font-bold text-surface-light-foreground">
                     {item.title}
                   </h3>
