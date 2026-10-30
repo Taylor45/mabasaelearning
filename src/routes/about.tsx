@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Puzzle, BookOpenCheck, BarChart3, Accessibility, Network, CodeXml } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroBg from "@/assets/elearning-hero-bg.jpg.asset.json";
 import techBg from "@/assets/elearning-tech-bg.jpg.asset.json";
+import expertiseBadge from "@/assets/eLearning_Expertise_Badge.png.asset.json";
+import engagementBadge from "@/assets/Learning_Engagement_Badge.png.asset.json";
+import lmsBadge from "@/assets/LMS_Knowledge_Badge.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -29,17 +31,20 @@ export const Route = createFileRoute("/about")({
 
 const strengths = [
   {
-    icon: BookOpenCheck,
+    image: expertiseBadge,
+    alt: "eLearning Expertise badge",
     title: "eLearning Expertise",
     copy: "Custom Storyline & Rise course development.",
   },
   {
-    icon: BarChart3,
+    image: engagementBadge,
+    alt: "Learning Engagement badge",
     title: "Learning Engagement",
     copy: "Media assets built for learning, not just watching.",
   },
   {
-    icon: Puzzle,
+    image: lmsBadge,
+    alt: "LMS Knowledge badge",
     title: "LMS Knowledge",
     copy: "Experienced with LMS requirements and constraints.",
   },
