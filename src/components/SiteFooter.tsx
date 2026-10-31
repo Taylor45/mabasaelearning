@@ -87,6 +87,12 @@ export function SiteFooter() {
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.1em]">
               3+ years eLearning &amp; development leadership
             </p>
+            <div className="mt-8 flex items-center gap-3">
+              <span className="font-display text-lg">Mabasa.</span>
+              <span className="rounded-full border border-border px-3 py-0.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                eLearning
+              </span>
+            </div>
           </div>
 
           <div>
