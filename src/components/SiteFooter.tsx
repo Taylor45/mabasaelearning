@@ -1,4 +1,27 @@
-const SolidMail = (props: React.SVGProps<SVGSVGElement>) => (
+import * as Dialog from "@radix-ui/react-dialog";
+import { PreviewDialog } from "@/components/DocumentPreview";
+import termsAsset from "@/assets/mabasa-terms-of-use.pdf.asset.json";
+import privacyAsset from "@/assets/mabasa-privacy-policy.pdf.asset.json";
+
+/** Footer link that opens its document in the shared fullscreen reader. */
+const LegalLink = ({ href, title, children }: {
+  href: string;
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <Dialog.Root>
+    <Dialog.Trigger asChild>
+      <button
+        type="button"
+        title={`Preview: ${title}`}
+        className="rounded-sm text-xs text-muted-foreground underline-offset-4 hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink motion-safe:transition-colors motion-safe:duration-200"
+      >
+        {children}
+      </button>
+    </Dialog.Trigger>
+    <PreviewDialog src={href} title={title} />
+  </Dialog.Root>
+);
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
     <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
     <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
