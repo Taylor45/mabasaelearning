@@ -1,7 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { PreviewDialog } from "@/components/DocumentPreview";
-import termsAsset from "@/assets/mabasa-terms-of-use.pdf.asset.json";
-import privacyAsset from "@/assets/mabasa-privacy-policy.pdf.asset.json";
+
+const TERMS_URL = "/legal/terms-of-use.html";
+const PRIVACY_URL = "/legal/privacy-policy.html";
 
 /** Footer link that opens its document in the shared fullscreen reader. */
 const LegalLink = ({ href, title, children }: {
@@ -165,13 +166,13 @@ export function SiteFooter() {
               reserved.
             </p>
             <div className="flex items-center gap-x-4">
-              <LegalLink href={termsAsset.url} title="Terms of Use">
+              <LegalLink href={TERMS_URL} title="Terms of Use">
                 Terms of Use
               </LegalLink>
               <span aria-hidden="true" className="text-xs text-muted-foreground">
                 |
               </span>
-              <LegalLink href={privacyAsset.url} title="Privacy Policy">
+              <LegalLink href={PRIVACY_URL} title="Privacy Policy">
                 Privacy Policy
               </LegalLink>
             </div>
