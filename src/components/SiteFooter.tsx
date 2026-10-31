@@ -163,11 +163,15 @@ export function SiteFooter() {
             <LegalLink href={termsAsset.url} title="Terms of Use">
               Terms of Use
             </LegalLink>
-            <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-cyan" />
+            <span aria-hidden="true" className="text-xs text-muted-foreground">
+              |
+            </span>
             <LegalLink href={privacyAsset.url} title="Privacy Policy">
               Privacy Policy
             </LegalLink>
-            <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-cyan" />
+            <span aria-hidden="true" className="text-xs text-muted-foreground">
+              |
+            </span>
             <p className="text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} Mabasa eLearning. All rights
               reserved.
