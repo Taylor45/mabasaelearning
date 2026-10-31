@@ -160,15 +160,8 @@ function AboutPage() {
         </section>
 
         {/* eLearning Technology */}
-        <section className="relative overflow-hidden">
-          <img
-            src={techBg.url}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
-          <div className="surface-hero-scrim absolute inset-0" aria-hidden="true" />
-          <div className="relative mx-auto max-w-6xl px-5 py-16">
+        <section className="bg-surface-light">
+          <div className="mx-auto max-w-6xl px-5 py-16">
             <div className="rounded-3xl border border-foreground/10 bg-expertise-software/85 p-6 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)] sm:p-10 lg:p-12">
               <h2 className="font-inter text-2xl font-bold uppercase tracking-wide text-foreground sm:text-3xl lg:text-4xl">
                 eLearning <span className="text-gradient-accent">Technology</span>
