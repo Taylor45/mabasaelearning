@@ -155,22 +155,24 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
-          <div className="flex flex-col items-start gap-2 sm:items-end">
+        <div className="mt-12 border-t border-border pt-6">
+          <nav
+            aria-label="Legal"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
+          >
+            <LegalLink href={termsAsset.url} title="Terms of Use">
+              Terms of Use
+            </LegalLink>
+            <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-cyan" />
+            <LegalLink href={privacyAsset.url} title="Privacy Policy">
+              Privacy Policy
+            </LegalLink>
+            <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-cyan" />
             <p className="text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} Mabasa eLearning. All rights
               reserved.
             </p>
-            <nav aria-label="Legal" className="flex items-center gap-4">
-              <LegalLink href={privacyAsset.url} title="Privacy Policy">
-                Privacy Policy
-              </LegalLink>
-              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-cyan" />
-              <LegalLink href={termsAsset.url} title="Terms of Use">
-                Terms of Use
-              </LegalLink>
-            </nav>
-          </div>
+          </nav>
         </div>
       </div>
     </footer>
