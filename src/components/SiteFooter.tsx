@@ -1,3 +1,27 @@
+import * as Dialog from "@radix-ui/react-dialog";
+import { PreviewDialog } from "@/components/DocumentPreview";
+import termsAsset from "@/assets/mabasa-terms-of-use.pdf.asset.json";
+import privacyAsset from "@/assets/mabasa-privacy-policy.pdf.asset.json";
+
+/** Footer link that opens its document in the shared fullscreen reader. */
+const LegalLink = ({ href, title, children }: {
+  href: string;
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <Dialog.Root>
+    <Dialog.Trigger asChild>
+      <button
+        type="button"
+        title={`Preview: ${title}`}
+        className="rounded-sm text-xs text-muted-foreground underline-offset-4 hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink motion-safe:transition-colors motion-safe:duration-200"
+      >
+        {children}
+      </button>
+    </Dialog.Trigger>
+    <PreviewDialog src={href} title={title} />
+  </Dialog.Root>
+);
 const SolidMail = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
     <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
@@ -132,10 +156,21 @@ export function SiteFooter() {
               eLearning
             </span>
           </div>
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Mabasa eLearning. All rights
-            reserved.
-          </p>
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            <p className="text-xs text-muted-foreground">
+              &copy; {new Date().getFullYear()} Mabasa eLearning. All rights
+              reserved.
+            </p>
+            <nav aria-label="Legal" className="flex items-center gap-4">
+              <LegalLink href={privacyAsset.url} title="Privacy Policy">
+                Privacy Policy
+              </LegalLink>
+              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-cyan" />
+              <LegalLink href={termsAsset.url} title="Terms of Use">
+                Terms of Use
+              </LegalLink>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
