@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroBg from "@/assets/elearning-hero-bg.jpg.asset.json";
 import techBg from "@/assets/elearning-tech-bg.jpg.asset.json";
-import expertiseBadge from "@/assets/eLearning_Expertise_Badge.png.asset.json";
+import expertiseBadge from "@/assets/eLearning_Expertise_Badge_v2.png.asset.json";
 import engagementBadge from "@/assets/Media_Assets_Icon.png.asset.json";
 import lmsBadge from "@/assets/LMS_Knowledge_Badge.png.asset.json";
 
