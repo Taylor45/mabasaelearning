@@ -156,10 +156,21 @@ export function SiteFooter() {
               eLearning
             </span>
           </div>
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Mabasa eLearning. All rights
-            reserved.
-          </p>
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            <p className="text-xs text-muted-foreground">
+              &copy; {new Date().getFullYear()} Mabasa eLearning. All rights
+              reserved.
+            </p>
+            <nav aria-label="Legal" className="flex items-center gap-4">
+              <LegalLink href={privacyAsset.url} title="Privacy Policy">
+                Privacy Policy
+              </LegalLink>
+              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-cyan" />
+              <LegalLink href={termsAsset.url} title="Terms of Use">
+                Terms of Use
+              </LegalLink>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
