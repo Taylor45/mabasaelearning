@@ -165,7 +165,7 @@ function AboutPage() {
             src={techBg.url}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
           <div className="surface-hero-scrim absolute inset-0" aria-hidden="true" />
           <div className="relative mx-auto max-w-6xl px-5 py-16">
