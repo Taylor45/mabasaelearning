@@ -248,7 +248,9 @@ function ELearningPage() {
                           const inner = (
                             <>
                               <span className="min-w-0 break-words">{link.label}</span>
-                              <span className="shrink-0" aria-hidden="true"><Eye size={14} strokeWidth={2} /></span>
+                              <span className="shrink-0" aria-hidden="true">
+                                {link.preview ? "→" : <Eye size={14} strokeWidth={2} />}
+                              </span>
                             </>
                           );
                           return link.preview ? (
