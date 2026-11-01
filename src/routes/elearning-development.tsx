@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -247,7 +248,7 @@ function ELearningPage() {
                           const inner = (
                             <>
                               <span className="min-w-0 break-words">{link.label}</span>
-                              <span className="shrink-0" aria-hidden="true">→</span>
+                              <span className="shrink-0" aria-hidden="true"><Eye size={14} strokeWidth={2} /></span>
                             </>
                           );
                           return link.preview ? (
