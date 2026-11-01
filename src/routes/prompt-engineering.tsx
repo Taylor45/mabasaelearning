@@ -114,14 +114,11 @@ function PromptEngineeringPage() {
                   </div>
                   <div className="flex flex-1 flex-col items-start gap-4 p-6">
                     <h3 className="text-lg leading-snug">{item.name}</h3>
-                    <DocumentPreviewButton
+                    <OpenDocumentPillButton
                       href={item.href}
                       title={item.name}
                       className="mt-auto"
-                    >
-                      {item.action}
-                      <span aria-hidden="true" >→</span>
-                    </DocumentPreviewButton>
+                    />
                   </div>
                 </article>
               ))}
