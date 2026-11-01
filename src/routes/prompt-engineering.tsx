@@ -30,8 +30,8 @@ const materialSections = [
     items: [
       {
         name: "AI Avatar Image Prompting Guide",
-        src: "https://docs.google.com/document/d/1ZyG0XoReb6op2_N3S6I_AZ2iiFz_3HwmH14bXCiJ0uY/preview",
-        href: "https://docs.google.com/document/d/1ZyG0XoReb6op2_N3S6I_AZ2iiFz_3HwmH14bXCiJ0uY/view",
+        src: "https://docs.google.com/document/d/10uCwSWOpwPar0YeDSAWSpH89ShmF-OlR/preview",
+        href: "https://docs.google.com/document/d/10uCwSWOpwPar0YeDSAWSpH89ShmF-OlR/view",
         action: "Open Document",
       },
       {
