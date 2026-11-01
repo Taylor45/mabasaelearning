@@ -113,7 +113,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
                 </p>
               )}
             </div>
-            <div className="-mt-6 flex h-8 items-end justify-end">
+            <div className="-mt-4 flex h-8 items-end justify-end">
               <span
                 aria-hidden="true"
                 className="text-gradient-accent font-inter text-4xl font-black leading-none transition-opacity duration-500 sm:text-5xl"
