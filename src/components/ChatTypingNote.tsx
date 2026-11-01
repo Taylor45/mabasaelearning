@@ -48,7 +48,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
     return () => window.removeEventListener("resize", update);
   }, [text]);
 
-  const bodyClasses = "font-inter text-[0.95rem] leading-relaxed text-foreground";
+  const bodyClasses = "font-inter text-[0.95rem] leading-relaxed text-surface-light-foreground";
 
   return (
     <div
@@ -108,7 +108,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
                 <p aria-hidden="true" className={bodyClasses}>
                   {text.slice(0, count)}
                   {phase === "typing" && (
-                    <span className="ml-0.5 inline-block h-4 w-0.5 translate-y-0.5 animate-pulse bg-foreground" />
+                    <span className="ml-0.5 inline-block h-4 w-0.5 translate-y-0.5 animate-pulse bg-surface-light-foreground" />
                   )}
                 </p>
               )}
