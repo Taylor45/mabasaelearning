@@ -234,6 +234,13 @@
   box-shadow: var(--shadow-elevated);
 }
 
+/* Soft blue ambient glow for light testimonial-style cards. */
+@utility shadow-testimonial {
+  box-shadow:
+    0 30px 60px -30px oklch(0.55 0.12 245 / 0.35),
+    0 12px 28px -16px oklch(0.55 0.12 245 / 0.2);
+}
+
 /* Shared text actions; icon-only navigation and media controls stay independent. */
 .portfolio-action {
   display: inline-flex;
