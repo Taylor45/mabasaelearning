@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import * as Dialog from "@radix-ui/react-dialog";
 import { ServicePage } from "@/components/ServicePage";
-import { DocumentPreviewButton } from "@/components/DocumentPreview";
+import { PreviewDialog, toPreviewSrc } from "@/components/DocumentPreview";
+import { solidBrandStates } from "@/lib/button-states";
 
 export const Route = createFileRoute("/prompt-engineering")({
   head: () => ({
@@ -44,6 +46,39 @@ const materialSections = [
   },
 ];
 
+// Page-local action style: white pill, navy label, circular arrow —
+// matches the reference look requested for this page only.
+const openDocPill = `group inline-flex min-h-11 max-w-full items-center gap-3.5 rounded-full bg-surface-light py-2.5 pl-7 pr-2.5 text-surface-light-foreground shadow-elevated ${solidBrandStates}`;
+
+function OpenDocumentPillButton({ href, title, className }: {
+  href: string;
+  title: string;
+  className?: string;
+}) {
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <button
+          type="button"
+          title={`Preview: ${title}`}
+          aria-label={`Preview: ${title}`}
+          className={`${openDocPill}${className ? ` ${className}` : ""}`}
+        >
+          <span className="font-inter text-sm font-bold uppercase tracking-wide">Open Document</span>
+          <span aria-hidden="true" className="h-6 w-px shrink-0 bg-surface-light-foreground/20" />
+          <span
+            aria-hidden="true"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-foreground text-foreground transition-transform duration-200 ease-out group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+          >
+            →
+          </span>
+        </button>
+      </Dialog.Trigger>
+      <PreviewDialog src={toPreviewSrc(href)} title={title} />
+    </Dialog.Root>
+  );
+}
+
 function PromptEngineeringPage() {
   return (
     <ServicePage
@@ -79,14 +114,11 @@ function PromptEngineeringPage() {
                   </div>
                   <div className="flex flex-1 flex-col items-start gap-4 p-6">
                     <h3 className="text-lg leading-snug">{item.name}</h3>
-                    <DocumentPreviewButton
+                    <OpenDocumentPillButton
                       href={item.href}
                       title={item.name}
                       className="mt-auto"
-                    >
-                      {item.action}
-                      <span aria-hidden="true" >→</span>
-                    </DocumentPreviewButton>
+                    />
                   </div>
                 </article>
               ))}
