@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 type Props = { id: string; text: string; avatarSrc: string; avatarAlt: string };
 
@@ -8,8 +8,6 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
 ) {
   const [phase, setPhase] = useState<"dots" | "typing" | "done">("dots");
   const [count, setCount] = useState(0);
-  const measureRef = useRef<HTMLDivElement>(null);
-  const [minH, setMinH] = useState(0);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -37,18 +35,6 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
     };
   }, [text]);
 
-  // Reserve the final text height up front so the card frame never shifts
-  // while the words type out.
-  useEffect(() => {
-    const update = () => {
-      if (measureRef.current) setMinH(measureRef.current.offsetHeight);
-    };
-    update();
-    window.addEventListener("resize", update);
-    document.fonts?.ready.then(update);
-    return () => window.removeEventListener("resize", update);
-  }, [text]);
-
   const bodyClasses = "font-inter text-[0.8rem] leading-snug text-surface-light-foreground";
 
   return (
@@ -72,8 +58,8 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
                   src={avatarSrc}
                   alt={avatarAlt}
                   className="h-full w-full scale-[1.5] object-cover"
-                  width={96}
-                  height={96}
+                  width={64}
+                  height={64}
                 />
               </span>
             </span>
@@ -86,27 +72,27 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
             >
               &ldquo;
             </span>
-            <div className="relative mt-0.5" style={minH ? { minHeight: `${minH}px` } : undefined}>
-              <div
-                ref={measureRef}
-                aria-hidden="true"
-                className={`pointer-events-none invisible absolute inset-x-0 top-0 ${bodyClasses}`}
-              >
+            {/* Full text sits invisibly in flow so the card height never shifts; the typed copy overlays it. */}
+            <div className="relative mt-0.5">
+              <div aria-hidden="true" className={`invisible ${bodyClasses}`}>
                 {text}
               </div>
               <span className="sr-only">{text}</span>
               {phase === "dots" ? (
-                <span aria-hidden="true" className="flex h-6 items-center gap-1.5">
+                <span
+                  aria-hidden="true"
+                  className="absolute top-0 left-0 flex h-6 items-center gap-1.5"
+                >
                   {[0, 150, 300].map((d) => (
                     <span
                       key={d}
-                      className="h-2 w-2 animate-bounce rounded-full bg-brand-sky"
+                      className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-sky"
                       style={{ animationDelay: `${d}ms` }}
                     />
                   ))}
                 </span>
               ) : (
-                <p aria-hidden="true" className={bodyClasses}>
+                <p aria-hidden="true" className={`absolute inset-x-0 top-0 ${bodyClasses}`}>
                   {text.slice(0, count)}
                   {phase === "typing" && (
                     <span className="ml-0.5 inline-block h-3.5 w-0.5 translate-y-0.5 animate-pulse bg-surface-light-foreground" />
@@ -117,7 +103,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
             <div className="flex h-6 items-end justify-end">
               <span
                 aria-hidden="true"
-                className="text-gradient-accent font-inter text-4xl font-black leading-none transition-opacity duration-500 sm:text-5xl"
+                className="text-gradient-accent font-inter text-xl font-black leading-none transition-opacity duration-500 sm:text-2xl"
               >
                 &rdquo;
               </span>
