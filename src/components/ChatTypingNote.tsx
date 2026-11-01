@@ -56,7 +56,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
       ref={ref}
       role="note"
       tabIndex={-1}
-      className="mt-8 w-full max-w-2xl animate-in fade-in slide-in-from-bottom-2 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="mt-8 w-full max-w-2xl sm:w-[calc(100%+2.5rem)] md:w-[calc(100%+3.5rem)] animate-in fade-in slide-in-from-bottom-2 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
     >
       <div className="relative overflow-hidden rounded-[2rem] bg-surface-light shadow-testimonial">
         <div
@@ -113,7 +113,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
                 </p>
               )}
             </div>
-            <div className="mt-1 flex items-end justify-end">
+            <div className="-mt-6 flex h-8 items-end justify-end">
               <span
                 aria-hidden="true"
                 className="text-gradient-accent font-inter text-4xl font-black leading-none transition-opacity duration-500 sm:text-5xl"
@@ -123,7 +123,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
             </div>
             <div
               aria-hidden="true"
-              className="mt-1.5 h-1 w-2/3 rounded-full bg-gradient-to-r from-brand-cyan to-brand-sky"
+              className="mt-2 h-1 w-2/3 rounded-full bg-gradient-to-r from-brand-cyan to-brand-sky"
             />
           </div>
         </div>
