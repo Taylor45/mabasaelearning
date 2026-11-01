@@ -31,7 +31,7 @@ const materialSections = [
       "Scripts and design documents that define objectives, structure, narration, and on-screen treatment before development starts.",
     items: [
       {
-        name: "Design Document: Mastering Stakeholder Communication: Strategies for Building Trust and Resolving Conflicts",
+        name: "Design Document: Mastering Stakeholder Communication",
         src: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/preview",
         href: "https://docs.google.com/document/d/1eKDP1lEPxj_rAiboQmzlIAGR7ggX1sRNjPzbIqNgwC4/view",
         action: "Open Document",
