@@ -45,6 +45,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
     };
     update();
     window.addEventListener("resize", update);
+    document.fonts?.ready.then(update);
     return () => window.removeEventListener("resize", update);
   }, [text]);
 
