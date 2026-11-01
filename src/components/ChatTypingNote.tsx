@@ -45,13 +45,15 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
     >
       <div className="border border-border/10 bg-surface-light p-4 text-surface-light-foreground shadow-elevated">
         <div className="flex items-start gap-3">
-          <img
-            src={avatarSrc}
-            alt={avatarAlt}
-            className="h-10 w-10 shrink-0 rounded-full border-2 border-brand-cyan object-cover"
-            width={40}
-            height={40}
-          />
+          <span className="block h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-brand-cyan">
+            <img
+              src={avatarSrc}
+              alt={avatarAlt}
+              className="h-full w-full scale-[1.5] object-cover"
+              width={40}
+              height={40}
+            />
+          </span>
           <div className="min-w-0 flex-1">
             <span className="sr-only">{text}</span>
             {phase === "dots" ? (
