@@ -45,6 +45,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
     };
     update();
     window.addEventListener("resize", update);
+    document.fonts?.ready.then(update);
     return () => window.removeEventListener("resize", update);
   }, [text]);
 
@@ -56,17 +57,17 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
       ref={ref}
       role="note"
       tabIndex={-1}
-      className="mt-8 w-full max-w-xl animate-in fade-in slide-in-from-bottom-2 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="mt-8 w-full max-w-2xl sm:w-[calc(100%+2.5rem)] md:w-[calc(100%+3.5rem)] animate-in fade-in slide-in-from-bottom-2 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
     >
       <div className="relative overflow-hidden rounded-[2rem] bg-surface-light shadow-testimonial">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gradient-to-br from-brand-cyan/25 via-brand-sky/10 to-transparent blur-2xl"
         />
-        <div className="relative flex items-center p-5 sm:p-6">
-          <div className="flex w-20 shrink-0 items-center justify-center sm:w-36">
+        <div className="relative flex items-center p-4 sm:p-5">
+          <div className="flex w-16 shrink-0 items-center justify-center sm:w-28">
             <span className="block rounded-full bg-gradient-to-br from-brand-cyan to-brand-sky p-[3px]">
-              <span className="block h-14 w-14 overflow-hidden rounded-full bg-surface-light sm:h-24 sm:w-24">
+              <span className="block h-12 w-12 overflow-hidden rounded-full bg-surface-light sm:h-20 sm:w-20">
                 <img
                   src={avatarSrc}
                   alt={avatarAlt}
@@ -77,15 +78,15 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
               </span>
             </span>
           </div>
-          <div aria-hidden="true" className="mx-4 w-px self-stretch bg-border/50 sm:mx-6" />
+          <div aria-hidden="true" className="mx-3 w-px self-stretch bg-border/50 sm:mx-5" />
           <div className="min-w-0 flex-1">
             <span
               aria-hidden="true"
-              className="block text-gradient-accent font-inter text-4xl font-black leading-none sm:text-5xl"
+              className="block text-gradient-accent font-inter text-3xl font-black leading-none sm:text-4xl"
             >
               &ldquo;
             </span>
-            <div className="relative mt-2" style={minH ? { minHeight: `${minH}px` } : undefined}>
+            <div className="relative mt-1" style={minH ? { minHeight: `${minH}px` } : undefined}>
               <div
                 ref={measureRef}
                 aria-hidden="true"
@@ -113,7 +114,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
                 </p>
               )}
             </div>
-            <div className="mt-1 flex items-end justify-end">
+            <div className="-mt-4 flex h-8 items-end justify-end">
               <span
                 aria-hidden="true"
                 className="text-gradient-accent font-inter text-4xl font-black leading-none transition-opacity duration-500 sm:text-5xl"
