@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { FeaturedProjectCode } from "@/components/FeaturedProjectCode";
+import { ChatTypingNote } from "@/components/ChatTypingNote";
 import { solidBrandStates } from "@/lib/button-states";
 import { Button } from "@/components/ui/button";
 import portrait from "@/assets/bruce-portrait.png";
@@ -404,6 +405,15 @@ function Index() {
                   </li>
                 ))}
               </ul>
+              {clientsOpen && (
+                <ChatTypingNote
+                  id="clients-note"
+                  ref={clientsNoteRef}
+                  avatarSrc={portrait}
+                  avatarAlt="Bruce Mabasa"
+                  text="I have been honored to work with a variety of companies over the years, some long-term, some short-term. But each has allowed me to grow as a designer and consultant as well as providing me the opportunity to work alongside their leaders to design, develop, and implement training programs and individual courses alike."
+                />
+              )}
             </div>
 
             <div className="flex min-w-0 flex-col items-center">
@@ -451,24 +461,6 @@ function Index() {
                 </a></Button>
               </div>
 
-              {clientsOpen && (
-                <div
-                  id="clients-note"
-                  ref={clientsNoteRef}
-                  role="note"
-                  tabIndex={-1}
-                  className="mt-6 w-full max-w-sm animate-in fade-in slide-in-from-top-2 duration-200 rounded-none border border-border/10 bg-surface-light p-4 text-surface-light-foreground shadow-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  <p className="font-inter text-[0.9rem] leading-relaxed">
-                    I have been honored to work with a variety of companies over
-                    the years, some long-term, some short-term. But each has
-                    allowed me to grow as a designer and consultant as well as
-                    providing me the opportunity to work alongside their leaders
-                    to design, develop, and implement training programs and
-                    individual courses alike.
-                  </p>
-                </div>
-              )}
             </div>
           </div>
         </section>
