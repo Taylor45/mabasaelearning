@@ -249,7 +249,7 @@ function ELearningPage() {
                             <>
                               <span className="min-w-0 break-words">{link.label}</span>
                               <span className="shrink-0" aria-hidden="true">
-                                {link.preview ? "→" : <Eye size={14} strokeWidth={2} />}
+                                {link.preview || isSecondary ? "→" : <Eye size={14} strokeWidth={2} />}
                               </span>
                             </>
                           );
