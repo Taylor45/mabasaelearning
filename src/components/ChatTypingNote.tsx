@@ -43,7 +43,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
       ref={ref}
       role="note"
       tabIndex={-1}
-      className="mt-6 w-full min-w-0 max-w-full sm:mt-8 lg:max-w-2xl animate-in fade-in slide-in-from-bottom-2 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="mt-6 w-full min-w-0 max-w-full sm:mt-8 lg:max-w-2xl animate-in fade-in slide-in-from-bottom-2 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-0"
     >
       <div className="relative overflow-hidden rounded-[2rem] bg-transparent">
         <div
