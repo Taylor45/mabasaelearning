@@ -35,7 +35,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
     };
   }, [text]);
 
-  const bodyClasses = "font-inter text-[0.8rem] leading-snug text-surface-light-foreground";
+  const bodyClasses = "font-inter text-[0.8rem] leading-snug text-foreground";
 
   return (
     <div
@@ -43,9 +43,9 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
       ref={ref}
       role="note"
       tabIndex={-1}
-      className="mt-6 w-full min-w-0 max-w-full sm:mt-8 lg:max-w-2xl animate-in fade-in slide-in-from-bottom-2 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="mt-6 w-full min-w-0 max-w-full sm:mt-8 lg:max-w-2xl animate-in fade-in slide-in-from-bottom-2 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-0"
     >
-      <div className="relative overflow-hidden rounded-[2rem] bg-surface-light shadow-testimonial">
+      <div className="relative overflow-hidden rounded-[2rem] bg-transparent">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gradient-to-br from-brand-cyan/25 via-brand-sky/10 to-transparent blur-2xl"
@@ -95,7 +95,7 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
                 <p aria-hidden="true" className={`absolute inset-x-0 top-0 ${bodyClasses}`}>
                   {text.slice(0, count)}
                   {phase === "typing" && (
-                    <span className="ml-0.5 inline-block h-3.5 w-0.5 translate-y-0.5 animate-pulse bg-surface-light-foreground" />
+                    <span className="ml-0.5 inline-block h-3.5 w-0.5 translate-y-0.5 animate-pulse bg-foreground" />
                   )}
                 </p>
               )}
