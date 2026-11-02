@@ -15,6 +15,7 @@ import ispringCourse1 from "@/assets/ispring-course-1.png.asset.json";
 import ispringCourse2 from "@/assets/ispring-course-2.png.asset.json";
 import ispringSafety1 from "@/assets/ispring-safety-1.png.asset.json";
 import elearningHeroBg from "@/assets/elearning-hero-bg.jpg.asset.json";
+import sectionPattern from "@/assets/section-cube-pattern.png.asset.json";
 
 import { actionPrimary, actionSecondary } from "@/lib/action-buttons";
 
@@ -219,7 +220,11 @@ function ELearningPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-surface-light">
+            <div className="relative isolate overflow-hidden bg-surface-light">
+              <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+                <img src={sectionPattern.url} alt="" className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px]" />
+                <img src={sectionPattern.url} alt="" className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180" />
+              </div>
               <div className="mx-auto max-w-6xl px-5 py-12">
                 <div className="grid gap-8 sm:grid-cols-2 lg:gap-10">
                 {section.projects.map((project) => (
