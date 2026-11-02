@@ -113,7 +113,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href="mailto:brucemabasa4@gmail.com"
-                  className="group inline-flex items-center gap-4 hover:text-foreground"
+                  className="group inline-flex max-w-full min-w-0 items-center gap-4 break-all hover:text-foreground"
                 >
                   <IconTile>
                     <SolidMail width={18} height={18} />
@@ -124,7 +124,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href="tel:+27825965691"
-                  className="group inline-flex items-center gap-4 hover:text-foreground"
+                  className="group inline-flex max-w-full min-w-0 items-center gap-4 break-all hover:text-foreground"
                 >
                   <IconTile>
                     <SolidPhone width={18} height={18} />
@@ -143,7 +143,7 @@ export function SiteFooter() {
                   href="https://www.linkedin.com/in/bruce-mabasa-12121426a"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-4 hover:text-foreground"
+                  className="group inline-flex max-w-full min-w-0 items-center gap-4 break-all hover:text-foreground"
                 >
                   <IconTile>
                     <SolidLinkedin width={18} height={18} />
