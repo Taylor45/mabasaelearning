@@ -3,6 +3,7 @@ import { ServicePage } from "@/components/ServicePage";
 import * as Dialog from "@radix-ui/react-dialog";
 import { DocumentPreviewFrame, PreviewDialog } from "@/components/DocumentPreview";
 import { Button } from "@/components/ui/button";
+import sectionPattern from "@/assets/section-cube-pattern.png.asset.json";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
@@ -88,7 +89,15 @@ function InstructionalDesignPage() {
               <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{section.blurb}</p>
             </div>
           </div>
-          <div className="bg-surface-light">
+            <div
+              className="bg-surface-light"
+              style={{
+                backgroundImage: `url(${sectionPattern.url})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
             <div className="mx-auto max-w-6xl px-5 py-12">
                <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
               {section.items.map((item) => (
