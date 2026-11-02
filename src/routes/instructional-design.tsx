@@ -3,6 +3,7 @@ import { ServicePage } from "@/components/ServicePage";
 import * as Dialog from "@radix-ui/react-dialog";
 import { DocumentPreviewFrame, PreviewDialog } from "@/components/DocumentPreview";
 import { Button } from "@/components/ui/button";
+import sectionPattern from "@/assets/section-cube-pattern.png.asset.json";
 
 export const Route = createFileRoute("/instructional-design")({
   head: () => ({
