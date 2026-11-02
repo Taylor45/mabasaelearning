@@ -36,8 +36,8 @@ const materialSections = [
       },
       {
         name: "Gamified Learning Prompt Worksheet",
-        src: "https://docs.google.com/document/d/1IMJZSaM928JGmkdZ-9z9uLTvGLHDQ47I1O3zmd0qk-U/preview",
-        href: "https://docs.google.com/document/d/1IMJZSaM928JGmkdZ-9z9uLTvGLHDQ47I1O3zmd0qk-U/view",
+        src: "https://docs.google.com/document/d/1miW6cOJMw_jLw_ZFUi_gW0gMxtXuSp9ZwObvBvpJv3o/preview",
+        href: "https://docs.google.com/document/d/1miW6cOJMw_jLw_ZFUi_gW0gMxtXuSp9ZwObvBvpJv3o/view",
         action: "Open Document",
       },
     ],
