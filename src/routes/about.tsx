@@ -6,6 +6,7 @@ import heroBg from "@/assets/elearning-hero-bg.jpg.asset.json";
 import expertiseBadge from "@/assets/eLearning_Expertise_Badge_v2.png.asset.json";
 import engagementBadge from "@/assets/Media_Assets_Icon.png.asset.json";
 import lmsBadge from "@/assets/LMS_Knowledge_Badge_v2.png.asset.json";
+import sectionPattern from "@/assets/section-cube-pattern.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -125,7 +126,22 @@ function AboutPage() {
         </div>
 
         {/* eLearning Development + strengths */}
-        <section className="bg-surface-light">
+        <section className="relative isolate overflow-hidden bg-surface-light">
+          <div
+            className="pointer-events-none absolute inset-0 -z-10"
+            aria-hidden="true"
+          >
+            <img
+              src={sectionPattern.url}
+              alt=""
+              className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px] opacity-55 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%"
+            />
+            <img
+              src={sectionPattern.url}
+              alt=""
+              className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180 opacity-55 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%"
+            />
+          </div>
           <div className="mx-auto max-w-6xl px-5 py-16">
             <h2 className="font-inter text-center text-xl font-bold text-surface-light-foreground sm:text-2xl">
               eLearning Development
@@ -159,7 +175,22 @@ function AboutPage() {
         </section>
 
         {/* eLearning Technology */}
-        <section className="bg-surface-light">
+        <section className="relative isolate overflow-hidden bg-surface-light">
+          <div
+            className="pointer-events-none absolute inset-0 -z-10"
+            aria-hidden="true"
+          >
+            <img
+              src={sectionPattern.url}
+              alt=""
+              className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px] opacity-55 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%"
+            />
+            <img
+              src={sectionPattern.url}
+              alt=""
+              className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180 opacity-55 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%"
+            />
+          </div>
           <div className="mx-auto max-w-6xl px-5 py-16">
             <div className="surface-hero rounded-3xl border border-foreground/10 p-6 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)] sm:p-10 lg:p-12">
               <h2 className="font-inter text-2xl font-bold uppercase tracking-wide text-foreground sm:text-3xl lg:text-4xl">
