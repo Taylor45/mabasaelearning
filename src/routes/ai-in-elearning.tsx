@@ -6,6 +6,7 @@ import { actionPrimary, actionSecondary } from "@/lib/action-buttons";
 import scormintellShowcase from "@/assets/dual-monitor-scormintell-showcase.png.asset.json";
 import storylineShowcase from "@/assets/dual-monitor-storyline-design-showcase.png.asset.json";
 import scormintellGuide from "@/assets/scormintell-enterprise-documentation-guide.pdf.asset.json";
+import sectionPattern from "@/assets/section-cube-pattern.png.asset.json";
 
 const apps = [
   { name: "PDF to SCORM Packager", image: scormintellShowcase.url, guide: scormintellGuide.url, app: "https://pdf-scorm-packager.vercel.app/" },
@@ -59,7 +60,11 @@ function AiInELearningPage() {
             </p>
           </div>
         </div>
-        <div className="bg-surface-light">
+        <div className="relative isolate overflow-hidden bg-surface-light">
+          <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+            <img src={sectionPattern.url} alt="" className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px] opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+            <img src={sectionPattern.url} alt="" className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180 opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+          </div>
           <div className="mx-auto max-w-6xl px-5 py-12">
             <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
               {apps.map((item) => (

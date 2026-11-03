@@ -3,6 +3,7 @@ import { DocumentPreviewButton } from "@/components/DocumentPreview";
 import { ServicePage } from "@/components/ServicePage";
 import { WireframeViewer } from "@/components/WireframeViewer";
 import { Button } from "@/components/ui/button";
+import sectionPattern from "@/assets/section-cube-pattern.png.asset.json";
 import appImg from "@/assets/uxui/app.jpg.asset.json";
 import wire1 from "@/assets/uxui/wire1.png.asset.json";
 import wire2 from "@/assets/uxui/wire2.png.asset.json";
@@ -53,7 +54,11 @@ function WebDesignPage() {
             </p>
           </div>
         </div>
-        <div className="bg-surface-light">
+        <div className="relative isolate overflow-hidden bg-surface-light">
+          <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+            <img src={sectionPattern.url} alt="" className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px] opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+            <img src={sectionPattern.url} alt="" className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180 opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+          </div>
           <div className="mx-auto max-w-6xl px-5 py-12">
             <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-10">
               <article className="card-grow group flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-elevated">
@@ -111,7 +116,11 @@ function WebDesignPage() {
             </p>
           </div>
         </div>
-        <div className="bg-surface-light">
+        <div className="relative isolate overflow-hidden bg-surface-light">
+          <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+            <img src={sectionPattern.url} alt="" className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px] opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+            <img src={sectionPattern.url} alt="" className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180 opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+          </div>
           <div className="mx-auto max-w-6xl px-5 py-12">
             <WireframeViewer images={wireframes} />
           </div>
