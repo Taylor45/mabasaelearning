@@ -22,6 +22,7 @@ import iconTimeSpent from "@/assets/icon-Time_spent.png.asset.json";
 import iconTranscripts from "@/assets/icon-Transcripts.png.asset.json";
 import iconWatchVideo from "@/assets/icon-Watch_the_video.png.asset.json";
 import iconWriting from "@/assets/icon-4.png.asset.json";
+import sectionPattern from "@/assets/section-cube-pattern.png.asset.json";
 
 export const Route = createFileRoute("/elearning-multimedia")({
   head: () => ({
@@ -198,7 +199,11 @@ function GalleryImage({
 
 function MultimediaShowcase() {
   return (
-    <section aria-label="Multimedia portfolio" className="bg-surface-light">
+    <section aria-label="Multimedia portfolio" className="relative isolate overflow-hidden bg-surface-light">
+      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <img src={sectionPattern.url} alt="" className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px] opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+        <img src={sectionPattern.url} alt="" className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180 opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+      </div>
       <ShowcaseHeading blurb="Branded visual assets, symposium banners, and promotional graphics designed for online and distance education events.">
         Graphic Design
       </ShowcaseHeading>
