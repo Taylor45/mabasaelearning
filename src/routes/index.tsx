@@ -411,7 +411,7 @@ function Index() {
                   ref={clientsNoteRef}
                   avatarSrc={portrait}
                   avatarAlt="Bruce Mabasa"
-                  text="I have been honored to work with a variety of companies over the years, some long-term, some short-term. But each has allowed me to grow as a designer and consultant as well as providing me the opportunity to work alongside their leaders to design, develop, and implement training programs and individual courses alike."
+                  text="As a freelance in EdTech, I have worked for diverse organisations on both short- and long-term projects. I collaborate with teams to design, develop, and implement effective training programmes and digital learning solutions, helping reduce workloads and save valuable time."
                 />
               )}
             </div>
