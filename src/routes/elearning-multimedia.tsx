@@ -197,79 +197,107 @@ function GalleryImage({
   );
 }
 
+function EdgeArt() {
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+      <img src={sectionPattern.url} alt="" className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px] opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+      <img src={sectionPattern.url} alt="" className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180 opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
+    </div>
+  );
+}
+
+function ShowcaseArea({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative isolate overflow-hidden bg-surface-light">
+      <EdgeArt />
+      {children}
+    </div>
+  );
+}
+
 function MultimediaShowcase() {
   return (
     <section aria-label="Multimedia portfolio" className="relative isolate overflow-hidden bg-surface-light">
-      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-        <img src={sectionPattern.url} alt="" className="absolute left-0 top-0 h-auto w-[32%] max-w-[432px] opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
-        <img src={sectionPattern.url} alt="" className="absolute bottom-0 right-0 h-auto w-[32%] max-w-[432px] rotate-180 opacity-40 mix-blend-multiply mask-r-from-50% mask-r-to-100% mask-b-from-50% mask-b-to-100%" />
-      </div>
       <ShowcaseHeading blurb="Branded visual assets, symposium banners, and promotional graphics designed for online and distance education events.">
         Graphic Design
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2">
-        {graphicDesigns.map((image) => (
-          <GalleryImage key={image.src} {...image} natural />
-        ))}
-      </div>
+      <ShowcaseArea>
+        <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2">
+          {graphicDesigns.map((image) => (
+            <GalleryImage key={image.src} {...image} natural />
+          ))}
+        </div>
+      </ShowcaseArea>
 
       <ShowcaseHeading blurb="Scripted, narrated, and edited learning videos covering AI-powered design, motion graphics, and event highlights.">
-        Videos (Canva, CapCut & Camtasia)
+        Videos (Canva, CapCut &amp; Camtasia)
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
-        {videos.map((video) => (
-          <VideoPreview key={video.id} {...video} />
-        ))}
-      </div>
+      <ShowcaseArea>
+        <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
+          {videos.map((video) => (
+            <VideoPreview key={video.id} {...video} />
+          ))}
+        </div>
+      </ShowcaseArea>
 
       <ShowcaseHeading blurb="Original and AI-cloned narration for a health systems learning module.">
         Audio &amp; Narration
       </ShowcaseHeading>
-      <AudioComparison />
+      <ShowcaseArea>
+        <AudioComparison />
+      </ShowcaseArea>
 
       <ShowcaseHeading blurb="AI-generated professional avatars and character portraits engineered through structured prompt design for learning scenarios.">
         Generative AI Prompt Engineering (Avatars)
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 lg:grid-cols-[3fr_1fr]">
-        <GalleryImage src={aiAvatarsBoard.url} alt="Collection of AI-generated professional learning avatars" className="aspect-video" />
-        <GalleryImage src={aiAvatarPortrait.url} alt="AI-generated professional male learning avatar" className="min-h-72" />
-      </div>
+      <ShowcaseArea>
+        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 lg:grid-cols-[3fr_1fr]">
+          <GalleryImage src={aiAvatarsBoard.url} alt="Collection of AI-generated professional learning avatars" className="aspect-video" />
+          <GalleryImage src={aiAvatarPortrait.url} alt="AI-generated professional male learning avatar" className="min-h-72" />
+        </div>
+      </ShowcaseArea>
 
       <ShowcaseHeading blurb="AI-generated workplace and healthcare scenario storyboards created through iterative prompt engineering.">
         Generative AI &amp; Prompt Engineering (Scenes)
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
-        <GalleryImage src={aiScenes1.url} alt="AI-generated workplace learning scenario storyboard" className="aspect-video" />
-        <GalleryImage src={aiScenes2.url} alt="AI-generated healthcare learning scenario storyboard" className="aspect-video" />
-      </div>
+      <ShowcaseArea>
+        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
+          <GalleryImage src={aiScenes1.url} alt="AI-generated workplace learning scenario storyboard" className="aspect-video" />
+          <GalleryImage src={aiScenes2.url} alt="AI-generated healthcare learning scenario storyboard" className="aspect-video" />
+        </div>
+      </ShowcaseArea>
 
       <ShowcaseHeading blurb="Course banners and module icons that establish visual identity and navigation cues across learning materials.">
         Banners / Icons
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr]">
-        <BannerCarousel images={banners} />
-        <IconCarousel images={courseIcons} />
-      </div>
+      <ShowcaseArea>
+        <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr]">
+          <BannerCarousel images={banners} />
+          <IconCarousel images={courseIcons} />
+        </div>
+      </ShowcaseArea>
 
       <ShowcaseHeading blurb="Genially-powered interactive images that turn static content into explorable, clickable learning experiences.">
         Interactive Images
       </ShowcaseHeading>
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
-        <iframe
-          src="https://view.genially.com/6729c6fc4c6f9a8e6bcb4bf3"
-          title="Sample approach interactive learning image"
-          loading="lazy"
-          allowFullScreen
-          className="aspect-video w-full rounded-md border border-foreground/15 bg-card"
-        />
-        <iframe
-          src="https://view.genially.com/69b97876a4fe1ca25e3c3d18"
-          title="Fourth Industrial Revolution interactive learning image"
-          loading="lazy"
-          allowFullScreen
-          className="aspect-video w-full rounded-md border border-foreground/15 bg-card"
-        />
-      </div>
+      <ShowcaseArea>
+        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 sm:grid-cols-2">
+          <iframe
+            src="https://view.genially.com/6729c6fc4c6f9a8e6bcb4bf3"
+            title="Sample approach interactive learning image"
+            loading="lazy"
+            allowFullScreen
+            className="aspect-video w-full rounded-md border border-foreground/15 bg-card"
+          />
+          <iframe
+            src="https://view.genially.com/69b97876a4fe1ca25e3c3d18"
+            title="Fourth Industrial Revolution interactive learning image"
+            loading="lazy"
+            allowFullScreen
+            className="aspect-video w-full rounded-md border border-foreground/15 bg-card"
+          />
+        </div>
+      </ShowcaseArea>
     </section>
   );
 }
