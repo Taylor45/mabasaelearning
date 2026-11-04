@@ -1,4 +1,5 @@
 import { forwardRef, useEffect, useState } from "react";
+import { Network } from "lucide-react";
 
 type Props = { id: string; text: string; avatarSrc: string; avatarAlt: string };
 
@@ -52,16 +53,12 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
         />
         <div className="relative flex items-center p-3 sm:p-4">
           <div className="flex w-14 shrink-0 items-center justify-center sm:w-24">
-            <span className="block rounded-full bg-gradient-to-br from-brand-cyan to-brand-sky p-[3px]">
-              <span className="block h-10 w-10 overflow-hidden rounded-full bg-surface-light sm:h-16 sm:w-16">
-                <img
-                  src={avatarSrc}
-                  alt={avatarAlt}
-                  className="h-full w-full scale-[1.5] object-cover"
-                  width={64}
-                  height={64}
-                />
-              </span>
+            <span
+              role="img"
+              aria-label={avatarAlt}
+              className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-sky text-primary-foreground shadow-[0_0_24px_-4px_var(--brand-cyan)] sm:h-16 sm:w-16"
+            >
+              <Network className="h-5 w-5 sm:h-8 sm:w-8" strokeWidth={2} aria-hidden="true" />
             </span>
           </div>
           <div aria-hidden="true" className="mx-2.5 w-px self-stretch bg-border/50 sm:mx-4" />
