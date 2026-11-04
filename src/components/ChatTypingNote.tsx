@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useState } from "react";
-import { Network } from "lucide-react";
+import peopleNetworkIcon from "@/assets/people-network-icon.png.asset.json";
 
 type Props = { id: string; text: string; avatarSrc: string; avatarAlt: string };
 
