@@ -206,7 +206,7 @@ function EdgeArt() {
   );
 }
 
-function ShowcaseArea({ children }: { children: React.ReactNode }) {
+function ShowcaseArea({ children }: { children: ReactNode }) {
   return (
     <div className="relative isolate overflow-hidden bg-surface-light">
       <EdgeArt />
