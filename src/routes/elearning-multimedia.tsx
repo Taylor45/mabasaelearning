@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { ServicePage } from "@/components/ServicePage";
 import { VideoPreview } from "@/components/VideoPreview";
 import { AudioComparison } from "@/components/AudioComparison";
