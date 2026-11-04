@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useState } from "react";
-import { Network } from "lucide-react";
+import peopleNetworkIcon from "@/assets/people-network-icon.png.asset.json";
 
 type Props = { id: string; text: string; avatarSrc: string; avatarAlt: string };
 
@@ -53,13 +53,11 @@ export const ChatTypingNote = forwardRef<HTMLDivElement, Props>(function ChatTyp
         />
         <div className="relative flex items-center p-3 sm:p-4">
           <div className="flex w-14 shrink-0 items-center justify-center sm:w-24">
-            <span
-              role="img"
-              aria-label={avatarAlt}
-              className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-sky text-primary-foreground shadow-[0_0_24px_-4px_var(--brand-cyan)] sm:h-16 sm:w-16"
-            >
-              <Network className="h-5 w-5 sm:h-8 sm:w-8" strokeWidth={2} aria-hidden="true" />
-            </span>
+            <img
+              src={peopleNetworkIcon.url}
+              alt={avatarAlt}
+              className="h-10 w-10 sm:h-16 sm:w-16 drop-shadow-[0_0_18px_-4px_var(--brand-cyan)]"
+            />
           </div>
           <div aria-hidden="true" className="mx-2.5 w-px self-stretch bg-border/50 sm:mx-4" />
           <div className="min-w-0 flex-1">
