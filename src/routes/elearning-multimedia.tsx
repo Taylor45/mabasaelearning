@@ -44,11 +44,11 @@ const blocks = [
   { title: "Audio & Narration", copy: "Clean voice-over, sound design, and accurate captioning for accessible playback everywhere.", tags: ["Voice-over", "Captions", "Sound Design"] },
 ];
 
-const graphicDesigns: { src: string; alt: string; className?: string; natural?: boolean }[] = [
+const graphicDesigns = [
   { src: graphicDesign1.url, alt: "Online distance education symposium keynote graphic" },
   { src: graphicDesign2.url, alt: "Online distance education symposium AI graphic" },
   { src: codingBasicsCourseBanner.url, alt: "Coding Basics for Instructional Design online course banner" },
-  { src: graphicDesign4.url, alt: "Online symposium opening screen graphic", className: "aspect-[1200/628]", natural: false },
+  { src: graphicDesign4.url, alt: "Online symposium opening screen graphic" },
 ];
 
 const banners = [
@@ -224,7 +224,7 @@ function MultimediaShowcase() {
       <ShowcaseArea>
         <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2">
           {graphicDesigns.map((image) => (
-            <GalleryImage key={image.src} {...image} natural={image.natural !== false} />
+            <GalleryImage key={image.src} {...image} natural />
           ))}
         </div>
       </ShowcaseArea>
