@@ -5,7 +5,7 @@ import { VideoPreview } from "@/components/VideoPreview";
 import { AudioComparison } from "@/components/AudioComparison";
 import graphicDesign1 from "@/assets/graphic-design-1.jpg.asset.json";
 import graphicDesign2 from "@/assets/graphic-design-2.jpg.asset.json";
-import graphicDesign3 from "@/assets/graphic-design-3.jpg.asset.json";
+import codingBasicsCourseBanner from "@/assets/coding-basics-course-banner.png.asset.json";
 import graphicDesign4 from "@/assets/graphic-design-4.jpg.asset.json";
 import aiAvatarsBoard from "@/assets/ai-avatars-board.jpg.asset.json";
 import aiAvatarPortrait from "@/assets/ai-avatar-portrait.jpg.asset.json";
@@ -47,7 +47,7 @@ const blocks = [
 const graphicDesigns = [
   { src: graphicDesign1.url, alt: "Online distance education symposium keynote graphic" },
   { src: graphicDesign2.url, alt: "Online distance education symposium AI graphic" },
-  { src: graphicDesign3.url, alt: "Fully Online Distance Education Symposium banner" },
+  { src: codingBasicsCourseBanner.url, alt: "Coding Basics for Instructional Design online course banner" },
   { src: graphicDesign4.url, alt: "Online symposium opening screen graphic" },
 ];
 
