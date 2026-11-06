@@ -226,8 +226,7 @@ function VideosCarousel() {
     if (!api || paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
-      if (api.canScrollNext()) api.scrollNext();
-      else api.scrollTo(0);
+      api.scrollNext();
     }, 5000);
     return () => window.clearInterval(timer);
   }, [api, paused, current]);
@@ -265,7 +264,7 @@ function VideosCarousel() {
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
     >
-      <Carousel setApi={setApi} opts={{ align: "start", slidesToScroll: "auto" }} aria-label="Videos">
+      <Carousel setApi={setApi} opts={{ align: "start", slidesToScroll: "auto", loop: true }} aria-label="Videos">
         <CarouselContent className="-ml-6">
           {videos.map((video) => (
             <CarouselItem key={video.id} className="basis-full pl-6 sm:basis-1/2">
@@ -276,7 +275,7 @@ function VideosCarousel() {
       </Carousel>
       {snaps.length > 1 && (
         <div className="mt-6 flex items-center justify-center gap-4">
-          <button type="button" className={arrow} onClick={() => api?.scrollPrev()} disabled={current === 0} aria-label="Previous videos">
+          <button type="button" className={arrow} onClick={() => api?.scrollPrev()} aria-label="Previous videos">
             <ChevronLeft size={18} />
           </button>
           <div className="flex items-center gap-2">
@@ -295,7 +294,7 @@ function VideosCarousel() {
               );
             })}
           </div>
-          <button type="button" className={arrow} onClick={() => api?.scrollNext()} disabled={current === snaps.length - 1} aria-label="Next videos">
+          <button type="button" className={arrow} onClick={() => api?.scrollNext()} aria-label="Next videos">
             <ChevronRight size={18} />
           </button>
         </div>
