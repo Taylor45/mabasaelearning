@@ -7,7 +7,7 @@ const videoPermissions = "accelerometer; autoplay; clipboard-write; encrypted-me
 
 export function VideoPreview({ id, title }: { id: string; title: string }) {
   const [open, setOpen] = useState(false);
-  const src = `https://www.youtube-nocookie.com/embed/${id}`;
+  const src = `https://www.youtube-nocookie.com/embed/${id}?enablejsapi=1`;
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
