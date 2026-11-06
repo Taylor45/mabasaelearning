@@ -33,7 +33,7 @@ export function SiteHeader() {
             eLearning
           </span>
         </Link>
-        <nav aria-label="Main navigation" className="hidden shrink-0 items-center gap-5 text-sm md:flex">
+        <nav aria-label="Main navigation" className="hidden shrink-0 items-center gap-5 pr-2 text-sm md:flex md:pr-4">
           <Link
             to="/"
             activeOptions={{ exact: true }}
