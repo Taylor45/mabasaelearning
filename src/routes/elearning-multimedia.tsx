@@ -3,6 +3,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { ServicePage } from "@/components/ServicePage";
 import { VideoPreview } from "@/components/VideoPreview";
 import { AudioComparison } from "@/components/AudioComparison";
+import { ImageLightbox, ImageLightboxTrigger, useImageLightbox } from "@/components/ImageLightbox";
 import graphicDesign1 from "@/assets/graphic-design-1.jpg.asset.json";
 import graphicDesign2 from "@/assets/graphic-design-2.jpg.asset.json";
 import codingBasicsCourseBanner from "@/assets/coding-basics-course-banner.png.asset.json";
@@ -111,19 +112,22 @@ function IconCarousel({ images }: { images: { src: string; alt: string }[] }) {
 
 function BannerCarousel({ images }: { images: { src: string; alt: string }[] }) {
   const [index, setIndex] = useState(0);
+  const { isOpen } = useImageLightbox();
 
   useEffect(() => {
+    if (isOpen) return;
     const id = setInterval(() => setIndex((i) => (i + 1) % images.length), 4000);
     return () => clearInterval(id);
-  }, [images.length]);
+  }, [images.length, isOpen]);
 
   return (
     <figure className="relative aspect-[5/1] overflow-hidden rounded-md border border-foreground/15 bg-card">
+      <ImageLightboxTrigger index={graphicDesigns.length + index} variant="ghost" className="absolute inset-0 h-full w-full rounded-none p-0 focus-visible:ring-inset" aria-label={`Open ${images[index]?.alt ?? "course banner"}`} title="Open full-size banner">
       {images.map((image, i) => (
         <img
           key={image.src}
           src={image.src}
-          alt={i === 0 ? image.alt : ""}
+          alt={i === index ? image.alt : ""}
           aria-hidden={i !== index}
           loading="lazy"
           width={1920}
@@ -133,6 +137,7 @@ function BannerCarousel({ images }: { images: { src: string; alt: string }[] }) 
           }`}
         />
       ))}
+      </ImageLightboxTrigger>
       <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
         {images.map((_, i) => (
           <button
@@ -175,24 +180,18 @@ function GalleryImage({
   alt,
   className = "",
   natural = false,
+  previewIndex,
 }: {
   src: string;
   alt: string;
   className?: string;
   natural?: boolean;
+  previewIndex?: number;
 }) {
+  const image = <img src={src} alt={alt} loading="lazy" width={1280} height={720} className={natural ? "block h-auto w-full" : "h-full w-full object-contain"} />;
   return (
     <figure className={`card-grow overflow-hidden rounded-md border border-foreground/15 bg-card ${className}`}>
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        width={1280}
-        height={720}
-        className={`${
-          natural ? "block h-auto w-full" : "h-full w-full object-contain"
-        }`}
-      />
+      {previewIndex === undefined ? image : <ImageLightboxTrigger index={previewIndex} variant="ghost" className="block h-auto w-full rounded-none p-0 focus-visible:ring-inset" aria-label={`Open ${alt}`} title="Open full-size banner">{image}</ImageLightboxTrigger>}
     </figure>
   );
 }
@@ -217,14 +216,15 @@ function ShowcaseArea({ children }: { children: ReactNode }) {
 
 function MultimediaShowcase() {
   return (
+    <ImageLightbox images={[...graphicDesigns, ...banners]}>
     <section aria-label="Multimedia portfolio" className="relative isolate overflow-hidden bg-surface-light">
       <ShowcaseHeading blurb="Branded visual assets, symposium banners, and promotional graphics designed for online and distance education events.">
         Graphic Design
       </ShowcaseHeading>
       <ShowcaseArea>
         <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2">
-          {graphicDesigns.map((image) => (
-            <GalleryImage key={image.src} {...image} natural />
+          {graphicDesigns.map((image, index) => (
+            <GalleryImage key={image.src} {...image} natural previewIndex={index} />
           ))}
         </div>
       </ShowcaseArea>
@@ -299,6 +299,7 @@ function MultimediaShowcase() {
         </div>
       </ShowcaseArea>
     </section>
+    </ImageLightbox>
   );
 }
 

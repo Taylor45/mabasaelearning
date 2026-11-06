@@ -16,3 +16,4 @@
 - Keep audio comparisons in a shared browser-side player with dynamically imported WaveSurfer and native audio controls; coordinate playback so recordings never overlap.
 - Use the shared portfolio Button variants and action recipes for text actions, including document triggers; keep icon-only tools separate so presentation stays consistent without changing media controls.
 - Keep service overview cards in the shared ServiceFeatures component so every service page uses the same overlapping header layout and accessible focus styling.
+- Keep multimedia banner previews in the shared Radix ImageLightbox with original asset URLs, zoom controls and trigger focus restoration so visitors can inspect details without losing their place.
