@@ -122,7 +122,7 @@ function BannerCarousel({ images }: { images: { src: string; alt: string }[] }) 
 
   return (
     <figure className="relative aspect-[5/1] overflow-hidden rounded-md border border-foreground/15 bg-card">
-      <ImageLightboxTrigger index={graphicDesigns.length + index} variant="ghost" className="absolute inset-0 h-full w-full rounded-none p-0 focus-visible:ring-inset" aria-label={`Open ${images[index]?.alt ?? "course banner"}`} title="Open full-size banner">
+      <ImageLightboxTrigger index={index} variant="ghost" className="absolute inset-0 h-full w-full rounded-none p-0 focus-visible:ring-inset" aria-label={`Open ${images[index]?.alt ?? "course banner"}`} title="Open full-size banner">
       {images.map((image, i) => (
         <img
           key={image.src}
@@ -216,17 +216,18 @@ function ShowcaseArea({ children }: { children: ReactNode }) {
 
 function MultimediaShowcase() {
   return (
-    <ImageLightbox images={[...graphicDesigns, ...banners]}>
     <section aria-label="Multimedia portfolio" className="relative isolate overflow-hidden bg-surface-light">
       <ShowcaseHeading blurb="Branded visual assets, symposium banners, and promotional graphics designed for online and distance education events.">
         Graphic Design
       </ShowcaseHeading>
       <ShowcaseArea>
+        <ImageLightbox images={graphicDesigns}>
         <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2">
           {graphicDesigns.map((image, index) => (
             <GalleryImage key={image.src} {...image} natural previewIndex={index} />
           ))}
         </div>
+        </ImageLightbox>
       </ShowcaseArea>
 
       <ShowcaseHeading blurb="Scripted, narrated, and edited learning videos covering AI-powered design, motion graphics, and event highlights.">
@@ -272,7 +273,9 @@ function MultimediaShowcase() {
       </ShowcaseHeading>
       <ShowcaseArea>
         <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-10 lg:grid-cols-[4fr_1fr]">
+          <ImageLightbox images={banners}>
           <BannerCarousel images={banners} />
+          </ImageLightbox>
           <IconCarousel images={courseIcons} />
         </div>
       </ShowcaseArea>
@@ -299,7 +302,6 @@ function MultimediaShowcase() {
         </div>
       </ShowcaseArea>
     </section>
-    </ImageLightbox>
   );
 }
 
