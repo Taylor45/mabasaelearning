@@ -220,6 +220,17 @@ function VideosCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [snaps, setSnaps] = useState<number[]>([]);
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (!api || paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      if (api.canScrollNext()) api.scrollNext();
+      else api.scrollTo(0);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [api, paused, current]);
 
   useEffect(() => {
     if (!api) return;
@@ -247,7 +258,13 @@ function VideosCarousel() {
   const arrow = "inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-cyan/60 text-surface-light-foreground transition hover:bg-brand-cyan/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan disabled:opacity-40";
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-10">
+    <div
+      className="mx-auto max-w-6xl px-5 py-10"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={() => setPaused(false)}
+    >
       <Carousel setApi={setApi} opts={{ align: "start", slidesToScroll: "auto" }} aria-label="Videos">
         <CarouselContent className="-ml-6">
           {videos.map((video) => (
