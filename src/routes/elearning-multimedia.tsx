@@ -48,7 +48,7 @@ const graphicDesigns = [
   { src: graphicDesign1.url, alt: "Online distance education symposium keynote graphic" },
   { src: graphicDesign2.url, alt: "Online distance education symposium AI graphic" },
   { src: codingBasicsCourseBanner.url, alt: "Coding Basics for Instructional Design online course banner" },
-  { src: graphicDesign4.url, alt: "Online symposium opening screen graphic" },
+  { src: graphicDesign4.url, alt: "Online symposium opening screen graphic", className: "aspect-[1200/628]" },
 ];
 
 const banners = [
