@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { ServicePage } from "@/components/ServicePage";
 import { VideoPreview } from "@/components/VideoPreview";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AudioComparison } from "@/components/AudioComparison";
 import { ImageLightbox, ImageLightboxTrigger, useImageLightbox } from "@/components/ImageLightbox";
 import graphicDesign1 from "@/assets/graphic-design-1.jpg.asset.json";
@@ -214,6 +216,77 @@ function ShowcaseArea({ children }: { children: ReactNode }) {
   );
 }
 
+function VideosCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [snaps, setSnaps] = useState<number[]>([]);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    const update = () => {
+      setSnaps(api.scrollSnapList());
+      setCurrent(api.selectedScrollSnap());
+    };
+    const pauseAll = () => {
+      api.rootNode().querySelectorAll("iframe").forEach((frame) => {
+        frame.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "pauseVideo", args: [] }), "*");
+      });
+    };
+    update();
+    api.on("select", update);
+    api.on("reInit", update);
+    api.on("select", pauseAll);
+    return () => {
+      api.off("select", update);
+      api.off("reInit", update);
+      api.off("select", pauseAll);
+    };
+  }, [api]);
+
+  const perView = snaps.length > 0 ? Math.ceil(videos.length / snaps.length) : 2;
+  const arrow = "inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-cyan/60 text-surface-light-foreground transition hover:bg-brand-cyan/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan disabled:opacity-40";
+
+  return (
+    <div className="mx-auto max-w-6xl px-5 py-10">
+      <Carousel setApi={setApi} opts={{ align: "start", slidesToScroll: "auto" }} aria-label="Videos">
+        <CarouselContent className="-ml-6">
+          {videos.map((video) => (
+            <CarouselItem key={video.id} className="basis-full pl-6 sm:basis-1/2">
+              <VideoPreview {...video} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      {snaps.length > 1 && (
+        <div className="mt-6 flex items-center justify-center gap-4">
+          <button type="button" className={arrow} onClick={() => api?.scrollPrev()} disabled={current === 0} aria-label="Previous videos">
+            <ChevronLeft size={18} />
+          </button>
+          <div className="flex items-center gap-2">
+            {snaps.map((_, i) => {
+              const first = i * perView + 1;
+              const last = Math.min(first + perView - 1, videos.length);
+              return (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => api?.scrollTo(i)}
+                  aria-label={first === last ? `Go to video ${first}` : `Go to videos ${first}–${last}`}
+                  aria-current={i === current ? "true" : undefined}
+                  className={`h-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 ${i === current ? "w-7 bg-brand-cyan" : "w-2.5 bg-surface-light-foreground/25 hover:bg-surface-light-foreground/45"}`}
+                />
+              );
+            })}
+          </div>
+          <button type="button" className={arrow} onClick={() => api?.scrollNext()} disabled={current === snaps.length - 1} aria-label="Next videos">
+            <ChevronRight size={18} />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function MultimediaShowcase() {
   return (
     <section aria-label="Multimedia portfolio" className="relative isolate overflow-hidden bg-surface-light">
@@ -234,11 +307,7 @@ function MultimediaShowcase() {
         Videos (Canva, CapCut &amp; Camtasia)
       </ShowcaseHeading>
       <ShowcaseArea>
-        <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
-          {videos.map((video) => (
-            <VideoPreview key={video.id} {...video} />
-          ))}
-        </div>
+        <VideosCarousel />
       </ShowcaseArea>
 
       <ShowcaseHeading blurb="Original and AI-cloned narration for a health systems learning module.">
