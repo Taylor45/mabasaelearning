@@ -65,13 +65,14 @@ const IconTile = (props: { children: React.ReactNode }) => (
 );
 
 const expertise = [
-  "\n\nInstructional Design",
+  "Instructional Design",
   "Articulate Storyline 360 & xAPI",
   "Prompt Engineering-Generative AIs",
   "eLearning Graphic Design",
   "eLearning Multimedia",
   "UX/UI Design",
-  "\n\nWeb Design & Development\n\neLearning & Development\n\n\n\n\n\n\n\n",
+  "Web Design & Development",
+  "eLearning & Development",
 ];
 
 export function SiteFooter() {
