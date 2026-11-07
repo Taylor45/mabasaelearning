@@ -73,13 +73,13 @@ const techRows = [
   {
     icon: Network,
     title: "eLearning Technology",
-    copy: "Sometimes an eLearning project requires more than authoring tools. Our expertise in eLearning-specific technologies allows us to bridge the gap between instructional design and the underlying technology, developing the functionality behind your learning experience.",
+    copy: "Sometimes an eLearning project requires more than authoring tools. my\u00a0 expertise in eLearning-specific technologies allows me to bridge the gap between instructional design and the underlying technology, developing the functionality behind your learning experience.",
     details: elearningTech,
   },
   {
     icon: CodeXml,
     title: "Software Development",
-    copy: "With extensive software engineering experience, we can develop the technology behind your learning experience—or help solve a technical challenge in an existing application. Our general software development expertise supports custom applications, integrations, and tools.",
+    copy: "With extensive software engineering experience, I can develop the technology behind your learning experience—or help solve a technical challenge in an existing application. My general software development expertise supports custom applications, integrations, and tools.",
     details: softwareTech,
   },
   {
@@ -147,7 +147,7 @@ function AboutPage() {
               eLearning Development
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-center text-[0.95rem] leading-relaxed text-surface-light-foreground/75">
-              Tap into our creative and technical expertise. Our team delivers high-impact
+              Tap into my creative and technical expertise. I deliver high-impact
               courses and interactive experiences that grab attention and drive results.
             </p>
             <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-3">
