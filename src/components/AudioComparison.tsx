@@ -67,7 +67,7 @@ function AudioPlayer({ title, subtitle, src, active, onPlay }: {
   };
 
   const cycleSpeed = () => {
-    const next = SPEEDS[(SPEEDS.indexOf(speed) + 1) % SPEEDS.length];
+    const next = SPEEDS[(SPEEDS.indexOf(speed) + 1) % SPEEDS.length] ?? 1;
     setSpeed(next);
     if (media.current) media.current.playbackRate = next;
   };
